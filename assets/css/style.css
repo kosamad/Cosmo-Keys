@@ -18,7 +18,8 @@ body{ background-color: black;}
         -o-background-size: cover;
         border-radius: 1.5rem;
         max-height: 75vw;
-        padding: 10%; 
+        padding: 6%;
+        position: relative; 
 }
 
 .main-overlay{
