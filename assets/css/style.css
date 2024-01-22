@@ -1,15 +1,20 @@
+/*----General styles----*/
+
+/*-Google Fonts-*/
+
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap');
 
+/*-Page background-*/
 
- /* // <uniquifier>: Use a uniquifier for the class name 
-// <weight>: Use a value from 100 to 900 */
 body{ background-color: black;}
 
 .page {
     height: 100vh;
 }
 
+/*----Index.html styles----*/
 
+/*-Home Image-*/
 .main-bg{
         background: url(../images/space-bg.jpg) no-repeat center center;
         background-size: cover;
@@ -17,10 +22,12 @@ body{ background-color: black;}
         -moz-background-size: cover;
         -o-background-size: cover;
         border-radius: 1.5rem;
-        max-height: 75vw;
         padding: 6%;
         position: relative; 
+        max-height: 75vw;
 }
+
+/*-Container plus inner feature styles (words/buttons)-*/
 
 .main-overlay{
     background-color: rgba(7, 4, 60, 0.8);
@@ -42,3 +49,96 @@ body{ background-color: black;}
     padding-top: 25px;
 }
 
+.home-buttons {
+    margin-top: 40px;       
+}
+
+.btn {
+    color:black;
+    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
+    border-color: #3a096f;
+    font-family: "Lexend", sans-serif;
+    font-size: 30px;
+    font-weight: 600; 
+    margin: 3% 3% 5% 3%;
+    border-radius: 1rem;  
+    padding: 4%;
+       }
+ 
+ .btn-play {
+    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
+    border-color: #3a096f;
+    border-radius: 1rem;  
+    
+    }
+
+    .fa-play {
+         color: black;
+
+    }
+
+
+ /*-Media Query-*/  
+
+
+ /* If the screen size is 1024px wide or less */
+
+ @media screen and (max-width:1024px) {
+      
+    .btn-ms{
+        margin-bottom: 5%;
+        font-size: 25px;
+        padding:8% 0.5%;           
+    }
+   }
+
+
+/* If the screen size is 780px wide or less */
+@media screen and (max-width:780px) {
+
+ 
+    .main-bg{      
+        padding: 4%;
+        max-height: 100vw;
+}
+
+.title{
+            font-size:10vw;            
+        }
+
+        .main-overlay{
+                       padding: 5%;           
+        }
+        
+        .btn-ms{
+            margin-bottom: 5%;
+            font-size: 25px;
+            padding:3% 0.5%;   
+                    }
+}
+
+/* If the screen size is 425px wide or less */
+
+@media screen and (max-width:425px) {
+
+    .main-bg{      
+        padding: 4%;
+        max-height: 100vh;
+}
+       
+    .description{
+    
+        font-size: 20px;
+        font-weight: 400;
+        padding-top: 20px;
+    }
+
+   
+.home-buttons {
+    margin-top: 20px;
+    border-radius: 1.5rem;      
+}
+}
+
+
+    
