@@ -24,7 +24,8 @@ body{ background-color: black;}
         border-radius: 1.5rem;
         padding: 6%;
         position: relative; 
-        max-height: 75vw;
+        max-height: 80vw;
+        margin: 10%;
 }
 
 /*-Container plus inner feature styles (words/buttons)-*/
@@ -64,19 +65,23 @@ body{ background-color: black;}
     border-radius: 1rem;  
     padding: 4%;
        }
+
+.btn:hover {background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);
+    border-color:black;
+    cursor: pointer;
+    color: black;
+}
  
  .btn-play {
     background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
     border-color: #3a096f;
-    border-radius: 1rem;  
-    
+    border-radius: 1rem;      
     }
 
     .fa-play {
          color: black;
-
     }
-
+   
 
  /*-Media Query-*/  
 
