@@ -82,6 +82,25 @@ body{ background-color: black;}
          color: black;
     }
    
+/*----Level.html styles----*/
+
+.btn-level {padding: 5% 20%;
+}
+
+.level-text {margin: 7% 5% 9% 5%;
+font-size: 35px;
+font-family: "Lexend", sans-serif;
+font-weight: 600;
+}
+
+  #level-1 { background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);}
+
+  #level-2 {background-image: linear-gradient(to right, #eab02f, #eab02f, #eab02f, #eab02f, #eab02f);}
+
+  #level-3 {background-image: linear-gradient(to right, #e72b2b, #e72b2b, #e72b2b, #e72b2b, #e72b2b);}
+
+
+
 
  /*-Media Query-*/  
 
@@ -89,7 +108,8 @@ body{ background-color: black;}
  /* If the screen size is 1024px wide or less */
 
  @media screen and (max-width:1024px) {
-      
+
+/*----Index.html MQ styles----*/
     .btn-ms{
         margin-bottom: 5%;
         font-size: 25px;
@@ -101,7 +121,7 @@ body{ background-color: black;}
 /* If the screen size is 780px wide or less */
 @media screen and (max-width:780px) {
 
- 
+ /*----Index.html MQ styles----*/
     .main-bg{      
         padding: 4%;
         max-height: 100vw;
@@ -120,12 +140,16 @@ body{ background-color: black;}
             font-size: 25px;
             padding:3% 0.5%;   
                     }
+
+
+                                  
 }
 
-/* If the screen size is 425px wide or less */
+/* If the screen size is 430px wide or less */
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:430px) {
 
+/*----Index.html MQ styles----*/
     .main-bg{      
         padding: 4%;
         max-height: 100vh;
@@ -142,7 +166,11 @@ body{ background-color: black;}
 .home-buttons {
     margin-top: 20px;
     border-radius: 1.5rem;      
-}
+} 
+
+/*----Level.html MQ styles----*/
+.level-text {margin: 7% 5% 9% 5%;
+            font-size: 25px;}
 }
 
 
