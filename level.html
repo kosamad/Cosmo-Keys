@@ -54,14 +54,19 @@
   <section>
     <div class ="container">
     <div class="row page align-items-center justify-content-center">
-        <div class="col-10 col-lg-8 main-bg">
-            <div class="col-12 main-overlay text-center">
-              <div class="col-2"> <a href="game.html" class="btn" id="back-btn" type="button" aria-label="back to home button"><i class="fa-solid fa-arrow-left"></i>
-              </a></div>
-            <div><h4 class="level-text" >Choose Your Level</h4></div>
-                <ul class="list-unstyled d-flex justify-content-center flex-wrap">  <!--Not sure which way need to write buttons so that JS can listen and stat at correct level-->     
+        <div class="col-10 col-lg-8 main-bg-level ">
+            <div class="col-12 main-overlay-level text-center">
+              <div class="top-boarder-container col-12">
+                <div class="row">
+                <div class="col-2"> <a href="game.html" class="btn" id="back-btn" type="button" aria-label="back to home button"><i class="fa-solid fa-arrow-left"></i>
+                </a></div>
+                <div class="col-8"><h4 class="level-text" >Choose Your Level</h4></div>
+              </div></div>
+              <div clas="row align-items-center justify-content-center">
+                <div class= "col-12">
+                <ul class="list-unstyled d-flex flex-wrap">  <!--Not sure which way need to write buttons so that JS can listen and stat at correct level-->     
                   <li class="col-12 d-flex align-items-center justify-content-center" aria-label="">
-                   <a href="game.html" class="btn btn-level  d-flex align-items-center justify-content-center" id="level-1" type="button">Level 1
+                   <a href="game.html" class="btn btn-level d-flex align-items-center justify-content-center" id="level-1" type="button">Level 1
                    </a>                                                       
                  </li>
                  <li class=" col-12 d-flex align-items-center justify-content-center" aria-label="">
@@ -72,6 +77,8 @@
                   <a href="game.html" class="btn btn-level  d-flex align-items-center justify-content-center" id="level-3" type="button">Level 3
                   </a>                                                       
                 </li>
+              </div>
+            </div>
                
               </div>
               </div>

@@ -9,7 +9,7 @@
 body{ background-color: black;}
 
 .page {
-    height: 100vh;
+    max-height: 100vh;
 }
 
 /*----Index.html styles----*/
@@ -74,7 +74,7 @@ body{ background-color: black;}
 
 /*----buttons on each page----*/
 
-#back-btn {padding: 10% 25%;
+#back-btn {padding: 1.5vh 2vh;
 }
 
 .btn {
@@ -84,7 +84,7 @@ body{ background-color: black;}
     font-family: "Lexend", sans-serif;
     font-size: 30px;
     font-weight: 600; 
-    margin: 3% 3% 5% 3%;
+    margin: 1vh;
     border-radius: 1rem;  
     padding: 4%;
        }
@@ -94,18 +94,19 @@ body{ background-color: black;}
 .main-overlay{
     background-color: rgba(7, 4, 60, 0.8);
     color:white;
-    padding: 5% 10% 10% 5%;
+    padding: 3vh 3vh 3vh 1vh;
     border-radius: 1.5rem;
 }
 
 
-.btn-level {padding: 5% 20%;
+.btn-level {padding: 2vh 10vh;
 }
 
-.level-text {margin: 5% 5% 7% 5%;
+.level-text {margin: 1vh;
 font-size: 35px;
 font-family: "Lexend", sans-serif;
 font-weight: 600;
+padding: 2vh 
 }
 
   #level-1 { background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);}
@@ -114,7 +115,26 @@ font-weight: 600;
 
   #level-3 {background-image: linear-gradient(to right, #e72b2b, #e72b2b, #e72b2b, #e72b2b, #e72b2b);}
 
+.main-bg-level {
+    background: url(../images/space-bg.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    border-radius: 1.5rem;
+    padding:7vh;
+    position: relative; 
+    max-height: 80vh;
+    margin: 10vh;
+}
 
+  .main-overlay-level {
+    background-color: rgba(7, 4, 60, 0.8);
+    color:white;
+    padding: 3vh;
+    border-radius: 1.5rem;
+    max-height: 75vh;
+   }
 
 
  /*-Media Query-*/  
@@ -130,6 +150,14 @@ font-weight: 600;
         font-size: 25px;
         padding:8% 0.5%;           
     }
+
+.main-bg{      
+        padding: 4%;
+        max-height: 80vh;
+}
+
+.level-text { padding: 3vh 0 2vh 0;}
+
    }
 
 
@@ -137,28 +165,39 @@ font-weight: 600;
 @media screen and (max-width:780px) {
 
  /*----Index.html MQ styles----*/
-    .main-bg{      
+.main-bg{      
         padding: 4%;
-        max-height: 100vw;
+        max-height: 100vh;
 }
 
 .title{
             font-size:10vw;            
         }
 
-        .main-overlay{
-                       padding: 5%;           
+.main-overlay{
+             padding: 5%;           
         }
         
-        .btn-ms{
+.btn-ms{
             margin-bottom: 5%;
             font-size: 25px;
             padding:3% 0.5%;   
                     }
 
+/*----level.html MQ styles----*/
 
-                                  
+ .level-text {
+  font-size: 25px;
+font-family: "Lexend", sans-serif;
+  font-weight: 600;
+                        }
+     
+.btn-level {font-size: 20px;
+    padding: 1vh 8vh;
+                        }
 }
+
+
 
 /* If the screen size is 430px wide or less */
 
@@ -184,9 +223,28 @@ font-weight: 600;
 } 
 
 /*----Level.html MQ styles----*/
-.level-text {margin: 7% 5% 9% 5%;
-            font-size: 25px;}
+.level-text {font-size: 25px;
+    padding: 3vh 0 2vh 0;}
+
+#back-btn {padding: 1.5vh 2vh;
+    font-size: 20px;
+            }
+
+.main-bg-level {                
+                padding:4vh;
+                            }
 }
 
+/* If the screen size is 380px wide or less */
 
-    
+@media screen and (max-width:380px) {
+
+    .main-overlay-level {
+        background-color: rgba(7, 4, 60, 0.8);
+        color:white;
+        padding: 2vh;
+               }
+
+    .level-text {font-size: 20px;
+        margin: 4vh 0 2vh 1.5vh;}
+}      
