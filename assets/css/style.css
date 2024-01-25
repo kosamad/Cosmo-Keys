@@ -30,7 +30,7 @@ body{ background-color: black;}
 
 /*-Container plus inner feature styles (words/buttons)-*/
 
-.main-overlay{
+.main-overlay-home{
     background-color: rgba(7, 4, 60, 0.8);
     color:white;
     padding: 10%;
@@ -54,17 +54,7 @@ body{ background-color: black;}
     margin-top: 40px;       
 }
 
-.btn {
-    color:black;
-    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
-    border-color: #3a096f;
-    font-family: "Lexend", sans-serif;
-    font-size: 30px;
-    font-weight: 600; 
-    margin: 3% 3% 5% 3%;
-    border-radius: 1rem;  
-    padding: 4%;
-       }
+
 
 .btn:hover {background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);
     border-color:black;
@@ -78,16 +68,41 @@ body{ background-color: black;}
     border-radius: 1rem;      
     }
 
-    .fa-play {
-         color: black;
+.fa-play {
+     color: black;
     }
+
+/*----buttons on each page----*/
+
+#back-btn {padding: 10% 25%;
+background-color: ;}
+
+.btn {
+    color:black;
+    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
+    border-color: #3a096f;
+    font-family: "Lexend", sans-serif;
+    font-size: 30px;
+    font-weight: 600; 
+    margin: 3% 3% 5% 3%;
+    border-radius: 1rem;  
+    padding: 4%;
+       }
    
 /*----Level.html styles----*/
+
+.main-overlay{
+    background-color: rgba(7, 4, 60, 0.8);
+    color:white;
+    padding: 5% 10% 10% 5%;
+    border-radius: 1.5rem;
+}
+
 
 .btn-level {padding: 5% 20%;
 }
 
-.level-text {margin: 7% 5% 9% 5%;
+.level-text {margin: 5% 5% 7% 5%;
 font-size: 35px;
 font-family: "Lexend", sans-serif;
 font-weight: 600;
