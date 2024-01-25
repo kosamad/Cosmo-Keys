@@ -17,17 +17,17 @@ body {
 /*----Index.html styles----*/
 
 /*-Home Image-*/
-.main-bg {
+.main-bg-home {
 	background: url(../images/space-bg.jpg) no-repeat center center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
-	padding: 6%;
+	padding: 8vh;
 	position: relative;
-	max-height: 80vw;
-	margin: 10%;
+	max-height: 95vh;
+	margin: 10vh;
 }
 
 /*-Container plus inner feature styles (words/buttons)-*/
@@ -35,8 +35,9 @@ body {
 .main-overlay-home {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 10%;
+	padding: 3vh;
 	border-radius: 1.5rem;
+	max-height: 75vh;
 }
 
 .title {
@@ -50,11 +51,46 @@ body {
 	font-family: "Lexend", sans-serif;
 	font-size: 30px;
 	font-weight: 400;
-	padding-top: 25px;
+	padding-top: 4vh;
+}
+
+.btn-home {
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+	font-family: "Lexend", sans-serif;
+	font-size: 30px;
+	font-weight: 600;
+	margin: 1vh;
+	border-radius: 1rem;
+	padding: 2vh 1vh;
+}
+
+#btn-play {
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+	margin: 1vh;
+	border-radius: 1rem;
+	padding: 2vh 0;
 }
 
 .home-buttons {
-	margin-top: 40px;
+	margin-top: 5vh;
 }
 
 .btn:hover {
@@ -71,21 +107,9 @@ body {
 	color: black;
 }
 
-.btn-play {
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
-	border-color: #3a096f;
-	border-radius: 1rem;
-}
-
 .fa-play {
 	color: black;
+	font-size: 45px;
 }
 
 /*----buttons on each page----*/
@@ -94,35 +118,16 @@ body {
 	padding: 1.5vh 2vh;
 }
 
-.btn {
+/*----Level.html styles----*/
+
+.btn-level {
 	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
 	border-color: #3a096f;
 	font-family: "Lexend", sans-serif;
 	font-size: 30px;
 	font-weight: 600;
 	margin: 1vh;
 	border-radius: 1rem;
-	padding: 4%;
-}
-
-/*----Level.html styles----*/
-
-.main-overlay {
-	background-color: rgba(7, 4, 60, 0.8);
-	color: white;
-	padding: 3vh 3vh 3vh 1vh;
-	border-radius: 1.5rem;
-}
-
-.btn-level {
 	padding: 2vh 10vh;
 }
 
@@ -135,36 +140,15 @@ body {
 }
 
 #level-1 {
-	background-image: linear-gradient(
-		to right,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862
-	);
+	background-color: #27e862;
 }
 
 #level-2 {
-	background-image: linear-gradient(
-		to right,
-		#eab02f,
-		#eab02f,
-		#eab02f,
-		#eab02f,
-		#eab02f
-	);
+	background-color: #eab02f;
 }
 
 #level-3 {
-	background-image: linear-gradient(
-		to right,
-		#e72b2b,
-		#e72b2b,
-		#e72b2b,
-		#e72b2b,
-		#e72b2b
-	);
+	background-color: #e72b2b;
 }
 
 .main-bg-level {
@@ -174,7 +158,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
-	padding: 7vh;
+	padding: 8vh;
 	position: relative;
 	max-height: 80vh;
 	margin: 10vh;
@@ -194,16 +178,27 @@ body {
 
 @media screen and (max-width: 1024px) {
 	/*----Index.html MQ styles----*/
-	.btn-ms {
-		margin-bottom: 5%;
-		font-size: 25px;
-		padding: 8% 0.5%;
+
+	.home-buttons {
+		padding-right: 0;
+		padding-left: 0;
 	}
 
-	.main-bg {
-		padding: 4%;
-		max-height: 80vh;
+	.btn-home {
+		padding: 2vh;
+		font-size: 25px;
 	}
+
+	#btn-play {
+		font-size: 25px;
+		padding: 2vh;
+	}
+
+	.fa-play {
+		font-size: 35px;
+	}
+
+	/*----Level.html MQ styles----*/
 
 	.level-text {
 		padding: 3vh 0 2vh 0;
@@ -211,29 +206,32 @@ body {
 }
 
 /* If the screen size is 780px wide or less */
+
 @media screen and (max-width: 780px) {
 	/*----Index.html MQ styles----*/
-	.main-bg {
-		padding: 4%;
-		max-height: 100vh;
+
+	.main-bg-home {
+		padding: 3.5vh;
 	}
 
 	.title {
-		font-size: 10vw;
+		font-size: 8vw;
 	}
 
-	.main-overlay {
-		padding: 5%;
+	.btn-home {
+		padding: 2.3vh;
 	}
 
-	.btn-ms {
-		margin-bottom: 5%;
-		font-size: 25px;
-		padding: 3% 0.5%;
+	.fa-play {
+		padding: 1vh;
+		font-size: 30px;
+	}
+
+	.main-overlay-home {
+		padding: 4vh;
 	}
 
 	/*----level.html MQ styles----*/
-
 	.level-text {
 		font-size: 25px;
 		font-family: "Lexend", sans-serif;
@@ -246,24 +244,48 @@ body {
 	}
 }
 
+/* If the screen size is 745px wide or less */
+
+@media screen and (max-width: 745px) {
+	/*----Index.html MQ styles----*/
+
+	.title {
+		font-size: 8vw;
+	}
+
+	.description {
+		font-size: 22px;
+		padding-top: 1.5vh;
+	}
+
+	.home-buttons {
+		margin-top: 1.5vh;
+	}
+}
+
 /* If the screen size is 430px wide or less */
 
 @media screen and (max-width: 430px) {
 	/*----Index.html MQ styles----*/
-	.main-bg {
-		padding: 4%;
+	.main-bg-home {
+		padding: 4vh;
 		max-height: 100vh;
 	}
 
-	.description {
-		font-size: 20px;
-		font-weight: 400;
-		padding-top: 20px;
+	.btn-home {
+		margin: 1vh;
+		border-radius: 1rem;
+		padding: 2vh;
+		font-size: 15px;
 	}
 
-	.home-buttons {
-		margin-top: 20px;
-		border-radius: 1.5rem;
+	#btn-play {
+		padding: 0.75vh;
+	}
+
+	.fa-play {
+		color: black;
+		font-size: 25px;
 	}
 
 	/*----Level.html MQ styles----*/
@@ -285,14 +307,19 @@ body {
 /* If the screen size is 380px wide or less */
 
 @media screen and (max-width: 380px) {
+	/*----Index.html MQ styles----*/
+	.description {
+		font-size: 15px;
+		padding-top: 1.5vh;
+	}
+	/*----Level.html MQ styles----*/
+	.level-text {
+		font-size: 20px;
+		margin: 4vh 0 2vh 1.5vh;
+	}
 	.main-overlay-level {
 		background-color: rgba(7, 4, 60, 0.8);
 		color: white;
 		padding: 2vh;
-	}
-
-	.level-text {
-		font-size: 20px;
-		margin: 4vh 0 2vh 1.5vh;
 	}
 }
