@@ -2,249 +2,297 @@
 
 /*-Google Fonts-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
 /*-Page background-*/
 
-body{ background-color: black;}
+body {
+	background-color: black;
+}
 
 .page {
-    max-height: 100vh;
+	max-height: 100vh;
 }
 
 /*----Index.html styles----*/
 
 /*-Home Image-*/
-.main-bg{
-        background: url(../images/space-bg.jpg) no-repeat center center;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        border-radius: 1.5rem;
-        padding: 6%;
-        position: relative; 
-        max-height: 80vw;
-        margin: 10%;
+.main-bg {
+	background: url(../images/space-bg.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	border-radius: 1.5rem;
+	padding: 6%;
+	position: relative;
+	max-height: 80vw;
+	margin: 10%;
 }
 
 /*-Container plus inner feature styles (words/buttons)-*/
 
-.main-overlay-home{
-    background-color: rgba(7, 4, 60, 0.8);
-    color:white;
-    padding: 10%;
-    border-radius: 1.5rem;
+.main-overlay-home {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 10%;
+	border-radius: 1.5rem;
 }
 
-.title {    
-    font-size: 75px;
-    font-family: "Audiowide", sans-serif;
-    font-weight: 600;
-    font-style: normal;}
+.title {
+	font-size: 75px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
 
-.description{
-    font-family: "Lexend", sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    padding-top: 25px;
+.description {
+	font-family: "Lexend", sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	padding-top: 25px;
 }
 
 .home-buttons {
-    margin-top: 40px;       
+	margin-top: 40px;
 }
 
-
-
-.btn:hover {background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);
-    border-color:black;
-    cursor: pointer;
-    color: black;
+.btn:hover {
+	background-image: linear-gradient(
+		to right,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862
+	);
+	border-color: black;
+	cursor: pointer;
+	color: black;
 }
- 
- .btn-play {
-    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
-    border-color: #3a096f;
-    border-radius: 1rem;      
-    }
+
+.btn-play {
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+	border-radius: 1rem;
+}
 
 .fa-play {
-     color: black;
-    }
+	color: black;
+}
 
 /*----buttons on each page----*/
 
-#back-btn {padding: 1.5vh 2vh;
+#back-btn {
+	padding: 1.5vh 2vh;
 }
 
 .btn {
-    color:black;
-    background-image: linear-gradient(to right top, #e597f6, #d27ff0, #bd67eb, #a64fe7, #8a38e3);
-    border-color: #3a096f;
-    font-family: "Lexend", sans-serif;
-    font-size: 30px;
-    font-weight: 600; 
-    margin: 1vh;
-    border-radius: 1rem;  
-    padding: 4%;
-       }
-   
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+	font-family: "Lexend", sans-serif;
+	font-size: 30px;
+	font-weight: 600;
+	margin: 1vh;
+	border-radius: 1rem;
+	padding: 4%;
+}
+
 /*----Level.html styles----*/
 
-.main-overlay{
-    background-color: rgba(7, 4, 60, 0.8);
-    color:white;
-    padding: 3vh 3vh 3vh 1vh;
-    border-radius: 1.5rem;
+.main-overlay {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 3vh 3vh 3vh 1vh;
+	border-radius: 1.5rem;
 }
 
-
-.btn-level {padding: 2vh 10vh;
+.btn-level {
+	padding: 2vh 10vh;
 }
 
-.level-text {margin: 1vh;
-font-size: 35px;
-font-family: "Lexend", sans-serif;
-font-weight: 600;
-padding: 2vh 
+.level-text {
+	margin: 1vh;
+	font-size: 35px;
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	padding: 2vh;
 }
 
-  #level-1 { background-image: linear-gradient(to right, #27e862, #27e862, #27e862, #27e862, #27e862);}
+#level-1 {
+	background-image: linear-gradient(
+		to right,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862
+	);
+}
 
-  #level-2 {background-image: linear-gradient(to right, #eab02f, #eab02f, #eab02f, #eab02f, #eab02f);}
+#level-2 {
+	background-image: linear-gradient(
+		to right,
+		#eab02f,
+		#eab02f,
+		#eab02f,
+		#eab02f,
+		#eab02f
+	);
+}
 
-  #level-3 {background-image: linear-gradient(to right, #e72b2b, #e72b2b, #e72b2b, #e72b2b, #e72b2b);}
+#level-3 {
+	background-image: linear-gradient(
+		to right,
+		#e72b2b,
+		#e72b2b,
+		#e72b2b,
+		#e72b2b,
+		#e72b2b
+	);
+}
 
 .main-bg-level {
-    background: url(../images/space-bg.jpg) no-repeat center center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    border-radius: 1.5rem;
-    padding:7vh;
-    position: relative; 
-    max-height: 80vh;
-    margin: 10vh;
+	background: url(../images/space-bg.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	border-radius: 1.5rem;
+	padding: 7vh;
+	position: relative;
+	max-height: 80vh;
+	margin: 10vh;
 }
 
-  .main-overlay-level {
-    background-color: rgba(7, 4, 60, 0.8);
-    color:white;
-    padding: 3vh;
-    border-radius: 1.5rem;
-    max-height: 75vh;
-   }
-
-
- /*-Media Query-*/  
-
-
- /* If the screen size is 1024px wide or less */
-
- @media screen and (max-width:1024px) {
-
-/*----Index.html MQ styles----*/
-    .btn-ms{
-        margin-bottom: 5%;
-        font-size: 25px;
-        padding:8% 0.5%;           
-    }
-
-.main-bg{      
-        padding: 4%;
-        max-height: 80vh;
+.main-overlay-level {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 3vh;
+	border-radius: 1.5rem;
+	max-height: 75vh;
 }
 
-.level-text { padding: 3vh 0 2vh 0;}
+/*-Media Query-*/
 
-   }
+/* If the screen size is 1024px wide or less */
 
+@media screen and (max-width: 1024px) {
+	/*----Index.html MQ styles----*/
+	.btn-ms {
+		margin-bottom: 5%;
+		font-size: 25px;
+		padding: 8% 0.5%;
+	}
+
+	.main-bg {
+		padding: 4%;
+		max-height: 80vh;
+	}
+
+	.level-text {
+		padding: 3vh 0 2vh 0;
+	}
+}
 
 /* If the screen size is 780px wide or less */
-@media screen and (max-width:780px) {
+@media screen and (max-width: 780px) {
+	/*----Index.html MQ styles----*/
+	.main-bg {
+		padding: 4%;
+		max-height: 100vh;
+	}
 
- /*----Index.html MQ styles----*/
-.main-bg{      
-        padding: 4%;
-        max-height: 100vh;
+	.title {
+		font-size: 10vw;
+	}
+
+	.main-overlay {
+		padding: 5%;
+	}
+
+	.btn-ms {
+		margin-bottom: 5%;
+		font-size: 25px;
+		padding: 3% 0.5%;
+	}
+
+	/*----level.html MQ styles----*/
+
+	.level-text {
+		font-size: 25px;
+		font-family: "Lexend", sans-serif;
+		font-weight: 600;
+	}
+
+	.btn-level {
+		font-size: 20px;
+		padding: 1vh 8vh;
+	}
 }
-
-.title{
-            font-size:10vw;            
-        }
-
-.main-overlay{
-             padding: 5%;           
-        }
-        
-.btn-ms{
-            margin-bottom: 5%;
-            font-size: 25px;
-            padding:3% 0.5%;   
-                    }
-
-/*----level.html MQ styles----*/
-
- .level-text {
-  font-size: 25px;
-font-family: "Lexend", sans-serif;
-  font-weight: 600;
-                        }
-     
-.btn-level {font-size: 20px;
-    padding: 1vh 8vh;
-                        }
-}
-
-
 
 /* If the screen size is 430px wide or less */
 
-@media screen and (max-width:430px) {
+@media screen and (max-width: 430px) {
+	/*----Index.html MQ styles----*/
+	.main-bg {
+		padding: 4%;
+		max-height: 100vh;
+	}
 
-/*----Index.html MQ styles----*/
-    .main-bg{      
-        padding: 4%;
-        max-height: 100vh;
-}
-       
-    .description{
-    
-        font-size: 20px;
-        font-weight: 400;
-        padding-top: 20px;
-    }
+	.description {
+		font-size: 20px;
+		font-weight: 400;
+		padding-top: 20px;
+	}
 
-   
-.home-buttons {
-    margin-top: 20px;
-    border-radius: 1.5rem;      
-} 
+	.home-buttons {
+		margin-top: 20px;
+		border-radius: 1.5rem;
+	}
 
-/*----Level.html MQ styles----*/
-.level-text {font-size: 25px;
-    padding: 3vh 0 2vh 0;}
+	/*----Level.html MQ styles----*/
+	.level-text {
+		font-size: 25px;
+		padding: 3vh 0 2vh 0;
+	}
 
-#back-btn {padding: 1.5vh 2vh;
-    font-size: 20px;
-            }
+	#back-btn {
+		padding: 1.5vh 2vh;
+		font-size: 20px;
+	}
 
-.main-bg-level {                
-                padding:4vh;
-                            }
+	.main-bg-level {
+		padding: 4vh;
+	}
 }
 
 /* If the screen size is 380px wide or less */
 
-@media screen and (max-width:380px) {
+@media screen and (max-width: 380px) {
+	.main-overlay-level {
+		background-color: rgba(7, 4, 60, 0.8);
+		color: white;
+		padding: 2vh;
+	}
 
-    .main-overlay-level {
-        background-color: rgba(7, 4, 60, 0.8);
-        color:white;
-        padding: 2vh;
-               }
-
-    .level-text {font-size: 20px;
-        margin: 4vh 0 2vh 1.5vh;}
-}      
+	.level-text {
+		font-size: 20px;
+		margin: 4vh 0 2vh 1.5vh;
+	}
+}
