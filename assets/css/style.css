@@ -94,13 +94,13 @@ body {
 }
 
 .btn:hover {
-	background-image: linear-gradient(
-		to right,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
 	);
 	border-color: black;
 	cursor: pointer;
@@ -111,7 +111,6 @@ body {
 	color: black;
 	font-size: 45px;
 }
-
 
 /*----Level.html styles----*/
 
@@ -181,14 +180,14 @@ body {
 	border-color: #3a096f;
 }
 
-#back-btn-level :hover {
-	background-image: linear-gradient(
-		to right,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862
+#back-btn-level:hover {
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
 	);
 	border-color: black;
 	cursor: pointer;
@@ -229,17 +228,36 @@ body {
 		#8a38e3
 	);
 	border-color: #3a096f;
+	margin-left: 5%;
 }
 
+#back-btn-game:hover {
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
+	cursor: pointer;
+}
 
-#volume {padding: 1.5vh 2vh;
-	font-size: 25px;}
+#volume {
+	padding: 1.5vh 2vh;
+	font-size: 25px;
+}
+
+#volume:hover {
+	color: #6adef2;
+}
 
 .ilevel-text {
-font-size: 25px;
-font-family: "Lexend", sans-serif;
-font-weight: 600;
-padding: 1.5vh 2vh;
+	font-size: 25px;
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	padding: 1.5vh;
+	margin-left: 45px;
 }
 
 #info-btn {
@@ -254,38 +272,76 @@ padding: 1.5vh 2vh;
 		#8a38e3
 	);
 	border-color: #3a096f;
+	margin-right: 5%;
 }
 
 #info-btn:hover {
-	background-image: linear-gradient(
-		to right,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862,
-		#27e862
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
 	);
 	border-color: black;
 	cursor: pointer;
 	color: black;
 }
 
-#quiz-box-container {background-image: linear-gradient(to right top, #ea505a, #f2624a, #f57639, #f28b27, #eba012);
+#quiz-box-container {
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-width: 150px;
-height: 150px;
-margin: 5vh;
+	margin: 3%;
+	padding: 7%;
 }
 
-#quiz-letter {font-family: "Lexend", sans-serif;
+#quiz-letter {
+	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	color: black;
-font-size: 60px;
-padding: 20px;
+	font-size: 60px;
 }
 
+.score-time-container {
+	background-image: radial-gradient(
+		circle,
+		#eceaf3,
+		#e5e1f1,
+		#ddd8f0,
+		#d5d0ee,
+		#cdc7ed
+	);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	margin: 8vh 0vh;
+}
+
+#score {
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+	font-size: 25px;
+	padding: 25% 0;
+}
+
+#timer {
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+	font-size: 25px;
+	padding: 25% 0;
+}
 
 /*-Media Query-*/
 
@@ -318,7 +374,10 @@ padding: 20px;
 	.level-text {
 		padding: 3vh 0 2vh 0;
 	}
-}
+
+	/*----Game.html MQ styles----*/
+
+	}
 
 /* If the screen size is 780px wide or less */
 
@@ -356,6 +415,22 @@ padding: 20px;
 	.btn-level {
 		font-size: 20px;
 		padding: 1vh 8vh;
+	}
+
+	/*----game.html MQ styles----*/
+
+	.score-time-container {
+		margin: 12vh 0vh;
+	}
+
+	#score {
+		font-size: 20px;
+		padding: 20% 0;
+	}
+
+	#timer {
+		font-size: 20px;
+		padding: 20% 0;
 	}
 }
 
@@ -418,46 +493,52 @@ padding: 20px;
 		padding: 4vh;
 	}
 
-/*----Game.html MQ styles----*/
+	/*----Game.html MQ styles----*/
 	#info-btn {
 		padding: 1vh 1.9vh;
 		font-size: 15px;
 	}
 
 	.ilevel-text {
-		font-size: 20px;
-		padding: 3vh 0 2vh 0;
+		font-size: 15px;
+		padding: 2vh 0;
 	}
 
 	.main-bg-game {
 		padding: 4vh;
 	}
 
-	.main-overlay-game {	
+	.main-overlay-game {
 		padding: 1.5vh;
 	}
-	
-	#back-btn-game{
+
+	#back-btn-game {
 		padding: 1vh 1vh; /*will need to change this once know vh's*/
-		font-size: 15px;		
+		font-size: 15px;
 	}
 
-	#volume {padding: 1vh 1vh; /*will need to change this once know vh's*/
-		font-size: 15px;	}
-
-	#quiz-box-container {
-	width: 100px;
-	height: 100px;
-	margin: 3vh;
-	}
-	
-	#quiz-letter {font-family: "Lexend", sans-serif;
-		font-weight: 600;
-		color: black;
-	font-size: 40px;
-	padding: 20px;
+	#volume {
+		padding: 1vh 1vh; /*will need to change this once know vh's*/
+		font-size: 15px;
 	}
 
+	#quiz-letter {
+		font-size: 40px;
+	}
+
+	.score-time-container {
+		margin: 7vh 0vh;
+	}
+
+	#score {
+		font-size: 15px;
+		padding: 20% 0;
+	}
+
+	#timer {
+		font-size: 15px;
+		padding: 20% 0;
+	}
 }
 
 /* If the screen size is 380px wide or less */
@@ -477,5 +558,28 @@ padding: 20px;
 		background-color: rgba(7, 4, 60, 0.8);
 		color: white;
 		padding: 2vh;
+	}
+
+	/*----Game.html MQ styles----*/
+
+	#info-btn {
+		padding: 1vh 1.9vh;
+		font-size: 15px;
+	}
+
+	.ilevel-text {
+		font-size: 10px;
+		padding: 2vh 0;
+		margin-left: 20px;
+	}
+
+	#score {
+		font-size: 12px;
+		padding: 20% 0;
+	}
+
+	#timer {
+		font-size: 12px;
+		padding: 20% 0;
 	}
 }
