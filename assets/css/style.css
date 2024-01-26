@@ -112,11 +112,6 @@ body {
 	font-size: 45px;
 }
 
-/*----buttons on each page----*/
-
-#back-btn {
-	padding: 1.5vh 2vh;
-}
 
 /*----Level.html styles----*/
 
@@ -171,6 +166,107 @@ body {
 	border-radius: 1.5rem;
 	max-height: 75vh;
 }
+
+#back-btn-level {
+	padding: 1.5vh 2vh;
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+}
+
+#back-btn-level :hover {
+	background-image: linear-gradient(
+		to right,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862
+	);
+	border-color: black;
+	cursor: pointer;
+	color: black;
+}
+
+/*----Game.html styles----*/
+.main-bg-game {
+	background: url(../images/space-bg.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	border-radius: 1.5rem;
+	padding: 8vh;
+	position: relative;
+	max-height: 95vh;
+	margin: 10vh;
+}
+
+.main-overlay-game {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 3vh;
+	border-radius: 1.5rem;
+	max-height: 75vh;
+}
+
+#back-btn-game {
+	padding: 1.5vh 2vh;
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+}
+
+.ilevel-text {
+font-size: 25px;
+font-family: "Lexend", sans-serif;
+font-weight: 600;
+padding: 1.5vh 2vh;
+}
+
+#info-btn {
+	padding: 1.5vh 2.8vh;
+	background-color: ;
+	color: black;
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
+	border-color: #3a096f;
+}
+
+#info-btn:hover {
+	background-image: linear-gradient(
+		to right,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862,
+		#27e862
+	);
+	border-color: black;
+	cursor: pointer;
+	color: black;
+}
+
 
 /*-Media Query-*/
 
@@ -294,14 +390,39 @@ body {
 		padding: 3vh 0 2vh 0;
 	}
 
-	#back-btn {
+	#back-btn-level {
 		padding: 1.5vh 2vh;
-		font-size: 20px;
+		font-size: 15px;
 	}
 
 	.main-bg-level {
 		padding: 4vh;
 	}
+
+/*----Game.html MQ styles----*/
+	#info-btn {
+		padding: 1vh 1.9vh;
+		font-size: 15px;
+	}
+
+	.ilevel-text {
+		font-size: 20px;
+		padding: 3vh 0 2vh 0;
+	}
+
+	.main-bg-game {
+		padding: 4vh;
+	}
+
+	.main-overlay-game {	
+		padding: 1.5vh;
+	}
+	
+	#back-btn-game{
+		padding: 1vh 1vh;
+		font-size: 15px;		
+	}
+
 }
 
 /* If the screen size is 380px wide or less */
