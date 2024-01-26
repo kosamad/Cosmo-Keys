@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 //level 1 play
 
+//FUNC = new function
+
 
 
 const array1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -24,4 +26,6 @@ function getNextLetter(arr) {
 }
 
 const result = getNextLetter(array1);
+document.getElementById("quiz-letter").innerHTML = result
+
 console.log(result);
