@@ -8,10 +8,12 @@
 
 body {
 	background-color: black;
-}
+}	
+
 
 .page {
 	max-height: 100vh;
+	
 }
 
 /*----Index.html styles----*/
@@ -202,18 +204,19 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
-	padding: 8vh;
+	padding: 5%;
 	position: relative;
-	max-height: 95vh;
-	margin: 10vh;
+	max-height: 90%;
+	margin: 10% auto;
+	max-width: 75vw;
 }
 
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 3vh 1vh;
+	padding: 5%;
 	border-radius: 1.5rem;
-	max-height: 75vh;
+	max-height: 80%;
 }
 
 #back-btn-game {
@@ -253,15 +256,15 @@ body {
 }
 
 .ilevel-text {
-	font-size: 25px;
+	font-size: 20px;
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
-	padding: 1.5vh;
-	margin-left: 45px;
+	padding: 0.7rem;
+	
 }
 
 #info-btn {
-	padding: 1.5vh 2.8vh;
+	padding: 1.5vh 3vh;
 	color: black;
 	background-image: linear-gradient(
 		to right top,
@@ -304,6 +307,15 @@ body {
 	margin: 3%;
 	padding: 7%;
 }
+
+#quiz-box-container:hover {background-image: radial-gradient(
+	circle,
+	#6ee4ef,
+	#6adef2,
+	#69d8f4,
+	#6bd1f5,
+	#70caf5
+);}
 
 #quiz-letter {
 	font-family: "Lexend", sans-serif;
@@ -420,18 +432,19 @@ body {
 	/*----game.html MQ styles----*/
 
 	.score-time-container {
-		margin: 12vh 0vh;
+		margin: 15% 2%;
 	}
 
 	#score {
 		font-size: 20px;
 		padding: 20% 0;
+		
 	}
 
 	#timer {
 		font-size: 20px;
 		padding: 20% 0;
-	}
+			}
 }
 
 /* If the screen size is 745px wide or less */
@@ -452,6 +465,36 @@ body {
 		margin-top: 1.5vh;
 	}
 }
+
+
+/* If the screen size is 580px wide or less */
+@media screen and (max-width: 580px) {
+
+#info-btn {
+	padding: 1vh 2.5vh;
+	font-size: 15px;
+}
+
+.main-bg-game {
+	padding: 1rem;
+	max-height: 98vh;
+	margin: 10rem;
+	max-width: 85vw;
+}
+
+.main-overlay-game {
+	padding: 1.5vh;
+	max-height: 95vh;
+	max-width: 80vw;
+}
+
+#back-btn-game {
+	padding: 1vh 1.5vh; /*will need to change this once know vh's*/
+	font-size: 15px;
+}
+		
+}
+
 
 /* If the screen size is 430px wide or less */
 
@@ -583,3 +626,4 @@ body {
 		padding: 20% 0;
 	}
 }
+
