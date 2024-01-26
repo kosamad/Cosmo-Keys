@@ -11,11 +11,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 
+//click event listner to start the game
+
 //level 1 play
 
 //FUNC = new function
 
+// function that slects which level function to impletment using if/if else.
 
+
+document.querySelector("#start-game").addEventListener('click', startGame);
+
+function startGame (){
 
 const array1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
@@ -29,3 +36,7 @@ const result = getNextLetter(array1);
 document.getElementById("quiz-letter").innerHTML = result
 
 console.log(result);
+
+}
+
+
