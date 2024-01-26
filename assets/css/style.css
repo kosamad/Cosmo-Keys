@@ -212,7 +212,7 @@ body {
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 3vh;
+	padding: 3vh 1vh;
 	border-radius: 1.5rem;
 	max-height: 75vh;
 }
@@ -231,6 +231,10 @@ body {
 	border-color: #3a096f;
 }
 
+
+#volume {padding: 1.5vh 2vh;
+	font-size: 25px;}
+
 .ilevel-text {
 font-size: 25px;
 font-family: "Lexend", sans-serif;
@@ -240,7 +244,6 @@ padding: 1.5vh 2vh;
 
 #info-btn {
 	padding: 1.5vh 2.8vh;
-	background-color: ;
 	color: black;
 	background-image: linear-gradient(
 		to right top,
@@ -265,6 +268,22 @@ padding: 1.5vh 2vh;
 	border-color: black;
 	cursor: pointer;
 	color: black;
+}
+
+#quiz-box-container {background-image: linear-gradient(to right top, #ea505a, #f2624a, #f57639, #f28b27, #eba012);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+width: 150px;
+height: 150px;
+margin: 5vh;
+}
+
+#quiz-letter {font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+font-size: 60px;
+padding: 20px;
 }
 
 
@@ -419,8 +438,24 @@ padding: 1.5vh 2vh;
 	}
 	
 	#back-btn-game{
-		padding: 1vh 1vh;
+		padding: 1vh 1vh; /*will need to change this once know vh's*/
 		font-size: 15px;		
+	}
+
+	#volume {padding: 1vh 1vh; /*will need to change this once know vh's*/
+		font-size: 15px;	}
+
+	#quiz-box-container {
+	width: 100px;
+	height: 100px;
+	margin: 3vh;
+	}
+	
+	#quiz-letter {font-family: "Lexend", sans-serif;
+		font-weight: 600;
+		color: black;
+	font-size: 40px;
+	padding: 20px;
 	}
 
 }

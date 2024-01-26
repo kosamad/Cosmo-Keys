@@ -49,7 +49,7 @@
 					<div class="col-10 col-lg-8 main-bg-game">
 						<div class="col-12 main-overlay-game text-center">
 							<div class="top-boarder-container container-fluid">
-								<div class="row justify-content-center">
+								<div class="row no-gutters">
 									<div class="col-2">
 										<a
 											href="level.html"
@@ -60,20 +60,28 @@
 											><i class="fa-solid fa-arrow-left"></i>
 										</a>
 									</div>
-									<div class="col-8">
+                  <div class="col-2"><i class="fa-solid fa-volume-xmark" id="volume"></i><!-- needs to change <i class="fa-solid fa-volume-high"></i> to when clicked--></div>
+						                    <div class="col-4">
 										<h4 class="ilevel-text" id="level-indicator">Level 1</h4>
-									</div>
-									<div class="col-2">
+									
+                </div>                  
+									<div class="col-2 offset-2">
 										<a
 											href=""
 											class="btn"
 											id="info-btn"
 											type="button"
-											aria-label="back to home button"
+											aria-label="instructions"
 											><i class="fa-solid fa-info"></i>
 										</a>
 									</div>
 								</div>
+                <div class="row justify-content-center">
+                  <div class="col-4" id="quiz-box-container">
+                   <div class="col-12 align-self-center" id="quiz-letter">L</div></div>
+                   <!-- need to modify above to be a start button which changes to the letter once game is running -->
+                  </div>
+                </div>
 							</div>
 						</div>
 					</div>
