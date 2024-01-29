@@ -44,28 +44,39 @@ function showGameArea(){
 //timer function
 function startTimer(){
 
-let startTime = 3;
+let startTime = 60;
     const timerT = document.querySelector('#timer');
+    const timerColor = document.querySelector('.time-container');
+
+    timerColor.style.backgroundImage = 'radial-gradient(circle, #d0fdcc, #b1fdaa, #91fb85, #6bf95c, #30f61e)';
+    
     timerT.innerHTML = `${startTime}`;
 
     const countDown = setInterval(() => {
         startTime--;
         timerT.innerHTML = `${startTime}`;
+
+        //if statements to change the colour of the time-container as time reduces
+        if (startTime <= 50 && startTime >= 41) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #e5f6c2, #d2ee9c, #bee676, #a8de4c, #90d600)';
+        } else if (startTime <= 40  && startTime >= 31) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #fdf9b2, #f9f392, #f5ed71, #f0e74c, #ece10f)';
+        } else if (startTime <= 30  && startTime >= 21) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f3d7a5, #f2c983, #f1ba61, #f0ab3e, #ef9b09)';
+        } else if (startTime <= 20  && startTime >= 11) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8c7a8, #f8ae80, #f6945a, #f27934, #ec5b00)';
+        }else if (startTime <= 10  && startTime >= 0) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8afaf, #ff8f8b, #ff6d64, #fb473a, #f10000)';
+        };
+
         if(startTime === 0){
             clearInterval (countDown);
         }
-},1000);
-
+        }, 1000);
 }
 
 
-
-// function to change colour of background as time running 
-//const timerColor = document.getElementById('timer');
-
-//if(remainingTime < 50){
-   // timerColor.style.display = 'figure out how to do tis'
-    
+   
 //}
 // listening for when the play button is clicked to start the game //
 
