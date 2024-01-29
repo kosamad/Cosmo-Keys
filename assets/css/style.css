@@ -8,12 +8,10 @@
 
 body {
 	background-color: black;
-}	
-
+}
 
 .page {
 	max-height: 100vh;
-	
 }
 
 /*----Index.html styles----*/
@@ -260,7 +258,6 @@ body {
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	padding: 0.7rem;
-	
 }
 
 #info-btn {
@@ -304,24 +301,57 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 3%;
-	padding: 7%;
+	margin: 7% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6em;	
 }
 
-#quiz-box-container:hover {background-image: radial-gradient(
-	circle,
-	#6ee4ef,
-	#6adef2,
-	#69d8f4,
-	#6bd1f5,
-	#70caf5
-);}
+#quiz-box-container:hover {
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
+}
 
 #quiz-letter {
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	color: black;
-	font-size: 60px;
+	font-size: 30px;	
+		}
+
+#player-answer {
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+	font-size: 30px;	
+}
+
+
+#answer-container {
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	margin: 7% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6em;
+	
 }
 
 .score-time-container {
@@ -336,7 +366,11 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 8vh 0vh;
+	margin: 0% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4em;	
 }
 
 #score {
@@ -386,10 +420,8 @@ body {
 	.level-text {
 		padding: 3vh 0 2vh 0;
 	}
-
-	/*----Game.html MQ styles----*/
-
-	}
+	
+}
 
 /* If the screen size is 780px wide or less */
 
@@ -431,20 +463,16 @@ body {
 
 	/*----game.html MQ styles----*/
 
-	.score-time-container {
-		margin: 15% 2%;
-	}
-
+	
 	#score {
 		font-size: 20px;
 		padding: 20% 0;
-		
 	}
 
 	#timer {
 		font-size: 20px;
 		padding: 20% 0;
-			}
+	}
 }
 
 /* If the screen size is 745px wide or less */
@@ -466,35 +494,31 @@ body {
 	}
 }
 
-
 /* If the screen size is 580px wide or less */
 @media screen and (max-width: 580px) {
+	#info-btn {
+		padding: 1vh 2.5vh;
+		font-size: 15px;
+	}
 
-#info-btn {
-	padding: 1vh 2.5vh;
-	font-size: 15px;
-}
+	.main-bg-game {
+		padding: 1rem;
+		max-height: 98vh;
+		margin: 10rem;
+		max-width: 85vw;
+	}
 
-.main-bg-game {
-	padding: 1rem;
-	max-height: 98vh;
-	margin: 10rem;
-	max-width: 85vw;
-}
+	.main-overlay-game {
+		padding: 1.5vh;
+		max-height: 95vh;
+		max-width: 80vw;
+	}
 
-.main-overlay-game {
-	padding: 1.5vh;
-	max-height: 95vh;
-	max-width: 80vw;
+	#back-btn-game {
+		padding: 1vh 1.5vh; /*will need to change this once know vh's*/
+		font-size: 15px;
+	}
 }
-
-#back-btn-game {
-	padding: 1vh 1.5vh; /*will need to change this once know vh's*/
-	font-size: 15px;
-}
-		
-}
-
 
 /* If the screen size is 430px wide or less */
 
@@ -569,18 +593,12 @@ body {
 		font-size: 40px;
 	}
 
-	.score-time-container {
-		margin: 7vh 0vh;
-	}
-
 	#score {
-		font-size: 15px;
-		padding: 20% 0;
+		font-size: 15px;		
 	}
 
 	#timer {
-		font-size: 15px;
-		padding: 20% 0;
+		font-size: 15px;		
 	}
 }
 
@@ -626,4 +644,3 @@ body {
 		padding: 20% 0;
 	}
 }
-
