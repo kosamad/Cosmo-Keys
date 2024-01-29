@@ -67,20 +67,36 @@
 								<div class="col-4 offset-2">
 									<h4 class="ilevel-text" id="level-indicator">Level 1</h4>
 								</div>
-								<div class="col-2">
-									<a
-										href=""
-										class="btn"
-										id="info-btn"
-										type="button"
-										aria-label="instructions"
-										><i class="fa-solid fa-info"></i>
-									</a>
-								</div>
+								<div class="col-2"><button
+									class="btn"
+									id="info-btn"
+									type="button"
+									aria-label="instructions"
+									data-bs-toggle="modal" 
+									data-bs-target="#infoModal">
+									<i class="fa-solid fa-info"></i>
+								</button>
+
+								<!-- info, how to play modal-->
+								<div class ="modal" tabindex="-1" id="infoModal" aria-labelledby="instructions Modal" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+										  <div class="row">
+											<h5 class="imodal-title col-12">How To Play
+											<button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button></h5>
+										  </div>
+										  <div class="imodal-body">
+											<p>This is how we play the game</p>
+										  </div>
+											</div>
+									  </div>
+									</div>
+									
+								
 							</div>
 							<div class="row justify-content-center click-hidden">
 								<div class="col-6" id="start-box-container">
-									<button class="btn start-game col-12" onclick="showGameArea()"><i class="fa-solid fa-play" id="start-game"></i>
+									<button class="btn start-game col-12" onclick="showGameArea()"><i class="fa-solid fa-play" id="start-game"></i></button>
 								</div>
 							</div>
 							<div class="row justify-content-center start-hidden hide">

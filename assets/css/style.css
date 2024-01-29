@@ -14,6 +14,28 @@ body {
 	max-height: 100vh;
 }
 
+/*- Modals-*/
+
+.imodal-title {
+	color: black;
+	font-size: 30px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	margin: 0 auto;
+	padding-top: 5%;
+}
+
+.imodal-body{color: black;	
+	font-family: "Lexend", sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	padding: 5% 0;
+	}
+
+
+
+
 /*----Index.html styles----*/
 
 /*-Home Image-*/
@@ -330,7 +352,7 @@ body {
 	display: none;
 }
 
-.score-time-container {
+.score-container {
 	background-image: radial-gradient(
 		circle,
 		#eceaf3,
@@ -355,6 +377,25 @@ body {
 	color: black;
 	font-size: 25px;
 	padding: 25% 0;
+}
+
+.time-container {
+	background-image: radial-gradient(
+		circle,
+		#eceaf3,
+		#e5e1f1,
+		#ddd8f0,
+		#d5d0ee,
+		#cdc7ed
+	);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	margin: 0% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4em;	
 }
 
 #timer {
