@@ -195,6 +195,7 @@ body {
 }
 
 /*----Game.html styles----*/
+/*-- backgrounds --*/
 .main-bg-game {
 	background: url(../images/space-bg.jpg) no-repeat center center;
 	background-size: cover;
@@ -216,6 +217,8 @@ body {
 	border-radius: 1.5rem;
 	max-height: 80%;
 }
+
+/*-- top buttons and info--*/
 
 #back-btn-game {
 	padding: 1.5vh 2vh;
@@ -289,7 +292,11 @@ body {
 	color: black;
 }
 
-#quiz-box-container {
+/*-- start game large button--*/
+
+.start-game {border: none;}
+
+#start-box-container {
 	background-image: linear-gradient(
 		to right top,
 		#ea505a,
@@ -308,7 +315,7 @@ body {
   height: 6em;	
 }
 
-#quiz-box-container:hover {
+#start-box-container:hover {
 	background-image: radial-gradient(
 		circle,
 		#6ee4ef,
@@ -319,39 +326,8 @@ body {
 	);
 }
 
-#quiz-letter {
-	font-family: "Lexend", sans-serif;
-	font-weight: 600;
-	color: black;
-	font-size: 30px;	
-		}
-
-#player-answer {
-	font-family: "Lexend", sans-serif;
-	font-weight: 600;
-	color: black;
-	font-size: 30px;	
-}
-
-
-#answer-container {
-	background-image: linear-gradient(
-		to right top,
-		#ea505a,
-		#f2624a,
-		#f57639,
-		#f28b27,
-		#eba012
-	);
-	border-color: black;
-	cursor: pointer;
-	border-radius: 0.5rem;
-	margin: 7% 3% 5% 3%;
-	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 6em;
-	
+.hide {
+	display: none;
 }
 
 .score-time-container {
@@ -388,6 +364,67 @@ body {
 	font-size: 25px;
 	padding: 25% 0;
 }
+
+/*-- game play display--*/
+
+#quiz-box-container {
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	margin: 7% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6em;	
+}
+
+
+#quiz-letter {
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+	font-size: 30px;	
+		}
+
+#player-answer {
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	color: black;
+	font-size: 30px;
+	outline: 0px solid transparent;	
+	color: white;
+}
+
+
+#answer-container {
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
+	border-color: black;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	margin: 7% 3% 5% 3%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6em;
+	
+}
+
+
 
 /*-Media Query-*/
 

@@ -78,15 +78,19 @@
 									</a>
 								</div>
 							</div>
-							<div class="row justify-content-center">
+							<div class="row justify-content-center click-hidden">
+								<div class="col-6" id="start-box-container">
+									<button class="btn start-game col-12" onclick="showGameArea()"><i class="fa-solid fa-play" id="start-game"></i>
+								</div>
+							</div>
+							<div class="row justify-content-center start-hidden hide">
 								<div class="col-4" id="quiz-box-container">
 									<div class="col-12" id="quiz-letter">
-										<i class="fa-solid fa-play" id="start-game"></i>
+										<div id="start-game">x</div>
 									</div>
 								</div>
 								<div class="col-4" id="answer-container">
-									<div class="col-12" id="player-answer" contenteditable="true">
-										T
+									<div class="col-12" id="player-answer" contenteditable="true" autofocus>T										
 									</div>
 								</div>
 							</div>
@@ -101,12 +105,12 @@
 										<div id="timer">0:00</div>
 									</div>
 								</div>
-							</div>
-						</div>
+							
+						
 						<!-- need to modify above to be a start button which changes to the letter once game is running -->
 					</div>
-				</div>
-			</div>
+			
+			
 		</section>
 
 		<script
