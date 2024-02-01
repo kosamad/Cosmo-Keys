@@ -53,30 +53,39 @@
 								<div class="col-2">
 									<a
 										href="level.html"
-										class="btn"
+										class="btn btn-game-menu"
 										id="back-btn-game"
 										type="button"
 										aria-label="back to home button"
 										><i class="fa-solid fa-arrow-left"></i>
 									</a>
 								</div>
-								<div class="col-2">
-									<i class="fa-solid fa-volume-xmark" id="volume"></i
-									><!-- needs to change <i class="fa-solid fa-volume-high"></i> to when clicked-->
+								<div class="col-4 justify-content-center">
+									<div class="row">
+										<div class="col-4"><i class="fa-solid fa-volume-xmark icon" id="volume"></i><!-- needs to change <i class="fa-solid fa-volume-high"></i> to when clicked--></div>
+										<div class="col-4"><i class="fa-solid fa-pause icon"></i></div>
+										<div class="col-4"><a
+											href="game.html"
+											id="reset-game"				
+											type="button"
+											aria-label="reset game"
+											><i class="fa-solid fa-arrow-rotate-right icon"></i>
+										</a></div>
+									</div>
 								</div>
-								<div class="col-4 offset-2">
-									<h4 class="ilevel-text" id="level-indicator">Level 1</h4>
+														
+								<div class="col-4 ilevel-text">
+									<h4 id="level-indicator">Level 1</h4>
 								</div>
 								<div class="col-2"><button
-									class="btn"
-									id="info-btn"
+									class="btn btn-game-menu"
+									id="i-btn-game"								
 									type="button"
 									aria-label="instructions"
 									data-bs-toggle="modal" 
-									data-bs-target="#infoModal">
-									<i class="fa-solid fa-info"></i>
+									data-bs-target="#infoModal"><i class="fa-solid fa-info"></i>
+									
 								</button>
-
 								<!-- info, how to play modal-->
 								<div class ="modal" tabindex="-1" id="infoModal" aria-labelledby="game instructions" aria-hidden="true">
 									<div class="modal-dialog">
@@ -93,7 +102,7 @@
 											</div>
 									  </div>
 									</div>
-									
+								</div>	
 								
 							</div>
 
@@ -119,7 +128,7 @@
 							<div class="row align-items-center justify-content-center">
 								<div class="col-4 score-container">
 									<div class="row">
-										<div id="score">Score:<span id="js-score">0</span></div>
+										<div id="score">Score:<span id="js-score"> 0</span></div>
 									</div>
 								</div>
 								<div class="col-4 time-container">
