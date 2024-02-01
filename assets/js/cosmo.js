@@ -101,7 +101,7 @@ reStart.onclick =() {
     Interval=setInterval()
 }
 
-
+//THIS IS WHERE I AM, NEED TO FINISH THIS TIMER FUNCTION
 
 
 }
