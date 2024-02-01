@@ -103,7 +103,7 @@ body {
 	padding: 1.5vh 3vh;	
 }
 
-#btn-home:hover {
+.btn-home:hover {
 	background-image: radial-gradient(
 		circle,
 		#6ee4ef,
@@ -156,12 +156,15 @@ body {
 	padding: 2vh 10vh;
 }
 
-.level-text {
+#back-btn-level {font-size: 30px;}
+
+.level-h4-text {
 	margin: 1vh;
 	font-size: 35px;
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	padding: 2vh;
+	margin-bottom: 4%;
 }
 
 #level-1 {
@@ -185,14 +188,14 @@ body {
 	border-radius: 1.5rem;
 	padding: 8vh;
 	position: relative;
-	max-height: 80vh;
+	max-height: 95vh;
 	margin: 10vh;
 }
 
 .main-overlay-level {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 3vh;
+	padding: 3.5vh;
 	border-radius: 1.5rem;
 	max-height: 75vh;
 }
@@ -501,9 +504,6 @@ body {
 
 	/*----Level.html MQ styles----*/
 
-	.level-text {
-		padding: 3vh 0 2vh 0;
-	}
 	
 }
 
@@ -527,18 +527,22 @@ body {
 
 	.main-overlay-home {
 		padding: 4vh;
-	}
+	}	
 
 	/*----level.html MQ styles----*/
-	.level-text {
-		font-size: 25px;
-		font-family: "Lexend", sans-serif;
-		font-weight: 600;
+	.level-h4-text {
+		font-size: 25px;				
 	}
+
+	#back-btn-level {font-size: 25px;}
 
 	.btn-level {
 		font-size: 20px;
 		padding: 1vh 8vh;
+	}
+
+	.main-bg-level {
+		padding: 3.5vh;
 	}
 
 	/*----game.html MQ styles----*/
@@ -623,8 +627,8 @@ body {
 
 	
 	/*----Level.html MQ styles----*/
-	.level-text {
-		font-size: 25px;
+	.level-h4-text {
+		font-size: 23px;
 		padding: 3vh 0 2vh 0;
 	}
 
@@ -688,14 +692,12 @@ body {
 		padding-top: 1.5vh;
 	}
 	/*----Level.html MQ styles----*/
-	.level-text {
+	.level-h4-text {
 		font-size: 20px;
 		margin: 4vh 0 2vh 1.5vh;
 	}
 	.main-overlay-level {
-		background-color: rgba(7, 4, 60, 0.8);
-		color: white;
-		padding: 2vh;
+		padding: 2.5vh;
 	}
 
 	/*----Game.html MQ styles----*/
