@@ -247,15 +247,14 @@ body {
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 5%;
+	padding: 4%;
 	border-radius: 1.5rem;
 	max-height: 80%;
 }
 
 /*-- top buttons and info--*/
 
-#back-btn-game {
-	padding: 1.5vh 2vh;
+.btn-game-menu {	
 	color: black;
 	background-image: linear-gradient(
 		to right top,
@@ -266,53 +265,10 @@ body {
 		#8a38e3
 	);
 	border-color: #3a096f;
-	margin-left: 5%;
+	border-radius: 0.5rem;	
 }
 
-#back-btn-game:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
-	cursor: pointer;
-}
-
-#volume {
-	padding: 1.5vh 2vh;
-	font-size: 25px;
-}
-
-#volume:hover {
-	color: #6adef2;
-}
-
-.ilevel-text {
-	font-size: 20px;
-	font-family: "Lexend", sans-serif;
-	font-weight: 600;
-	padding: 0.7rem;
-}
-
-#info-btn {
-	padding: 1.5vh 3vh;
-	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
-	border-color: #3a096f;
-	margin-right: 5%;
-}
-
-#info-btn:hover {
+.btn-game-menu:hover {
 	background-image: radial-gradient(
 		circle,
 		#6ee4ef,
@@ -325,6 +281,28 @@ body {
 	cursor: pointer;
 	color: black;
 }
+
+#back-btn-game {padding: 1vw 1.5vw;}
+#i-btn-game {padding: 1vw 2vw;}
+
+
+.icon {padding: 1.5vh;
+	font-size: 25px;
+}
+
+.icon:hover {
+	color: #6adef2;
+	cursor: pointer;
+}
+
+.ilevel-text {
+	font-size: 20px;
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
+	padding: 0.5rem;
+}
+
+
 
 /*-- start game large button--*/
 
@@ -642,32 +620,25 @@ body {
 	}
 
 	/*----Game.html MQ styles----*/
-	#info-btn {
-		padding: 1vh 1.9vh;
-		font-size: 15px;
-	}
+	
 
 	.ilevel-text {
-		font-size: 15px;
-		padding: 2vh 0;
-	}
+	font-size: 15px;
+	padding: 0.2rem;
+	}	/*----Need to adjust this size/padding----*/
 
 	.main-bg-game {
 		padding: 4vh;
 	}
 
 	.main-overlay-game {
-		padding: 1.5vh;
+		padding: 3vh;
 	}
+	
+	#i-btn-game {padding: 1vw 2.6vw;}
 
-	#back-btn-game {
-		padding: 1vh 1vh; /*will need to change this once know vh's*/
-		font-size: 15px;
-	}
-
-	#volume {
-		padding: 1vh 1vh; /*will need to change this once know vh's*/
-		font-size: 15px;
+	.icon {
+		font-size: 20px;
 	}
 
 	#quiz-letter {
