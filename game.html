@@ -78,7 +78,7 @@
 								</button>
 
 								<!-- info, how to play modal-->
-								<div class ="modal" tabindex="-1" id="infoModal" aria-labelledby="instructions Modal" aria-hidden="true">
+								<div class ="modal" tabindex="-1" id="infoModal" aria-labelledby="game instructions" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
 										  <div class="row">
@@ -86,7 +86,9 @@
 											<button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button></h5>
 										  </div>
 										  <div class="imodal-body">
-											<p>This is how we play the game</p>
+											<p>The aim of the game is to correctly type the same letter (level 1) or word (level 2+) as the computer.</p>
+											<p>The timer will go for 1 minute, how many can you get?</p>
+										
 										  </div>
 											</div>
 									  </div>
@@ -94,6 +96,8 @@
 									
 								
 							</div>
+
+							<!-- play button which switches to letter and user input upon pressing-->
 							<div class="row justify-content-center click-hidden">
 								<div class="col-6" id="start-box-container">
 									<button class="btn start-game col-12" onclick="showGameArea()"><i class="fa-solid fa-play" id="start-game"></i></button>
@@ -110,6 +114,8 @@
 									</div>
 								</div>
 							</div>
+
+							<!-- score counter and timer-->
 							<div class="row align-items-center justify-content-center">
 								<div class="col-4 score-container">
 									<div class="row">
@@ -120,10 +126,9 @@
 									<div class="row justify-content-center align-items-center">
 										<div id="timer">60</div>
 									</div>
-								</div>
-							
+								</div>				
 						
-						<!-- need to modify above to be a start button which changes to the letter once game is running -->
+						
 					</div>
 			
 			
