@@ -61,31 +61,70 @@
 									class="home-buttons list-unstyled d-flex flex-wrap align-items-center justify-content-center"
 								>
 									<li
-										class="col-md-3 col-8 order-md-2 d-flex align-items-center justify-content-center"
-										id="btn-play"
-										aria-label="play button"
-									>
-										<i class="fa-solid fa-play"></i>
+										class="btn-home col-md-3 col-8 order-md-2 d-flex align-items-center justify-content-center"
+										type="button"
+										aria-label="play button">
 										<a
 											href="game.html"
-											class="d-flex align-items-center justify-content-center"
-											><span class="sr-only">Play Button</span>
-										</a>
+											class="d-flex align-items-center justify-content-center">
+										<span class="hidden ">P</span><i class="fa-solid fa-play"></i><span class="hidden ">P</span>
+										<span class="sr-only">Play Button</span>
+										</a>									
 									</li>
-									<li
-										class="btn-home btn-ms col-md-3 col-8 order-md-1"
-										aria-label="Rules button"
-									>
-										Rules
-										<!--Method for JS rules Modal-->
+
+									<li	class="btn-home btn-ms col-md-3 col-8 order-md-1"
+									id="info-btn-home"
+									type="button"
+									aria-label="Instructions button"
+									data-bs-toggle="modal" 
+									data-bs-target="#infoModal">								
+									Rules										
 									</li>
-									<li
-										class="btn-home btn-ms col-md-3 col-8 order-md-3"
-										aria-label="About the site button"
-									>
-										About
-										<!--Method for JS rules Modal-->
-									</li>
+
+									<!-- info, how to play modal-->
+								<div class ="modal" tabindex="-1" id="infoModal" aria-labelledby="game instructions" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+										  <div class="row">
+											<h5 class="imodal-title col-12">How To Play
+											<button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button></h5>
+										  </div>
+										  <div class="imodal-body">
+											<p>The aim of the game is to correctly type the same letter (level 1) or word (level 2+) as the computer.</p>
+											<p>The timer will go for 1 minute, how many can you get?</p>
+											  </div>
+											</div>
+									  </div>
+									</div>
+
+									<li	class="btn-home btn-ms col-md-3 col-8 order-md-3"
+									id="about-btn-home"
+									type="button"
+									aria-label="About the site button"
+									data-bs-toggle="modal" 
+									data-bs-target="#aboutModal">								
+									About									
+									</li>	
+									
+										<!-- About the site  modal DO I NEED TO FIX THIS SO VI CAN USE SCREEN READERS??-->
+								<div class ="modal" tabindex="-1" id="aboutModal" aria-labelledby="about the game" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+										  <div class="row">
+											<h5 class="imodal-title col-12">How To Play
+											<button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button></h5>
+										  </div>
+										  <div class="amodal-body">
+
+											<p>This game is a typing challenge! It’s been created with visually impaired users in mind, but anyone can use it to practise their typing skills.</p>
+											<p>The game reads each challenge to you and will announce your score at the end. On the next page you can select your level, each corresponds to the number of letters challenged at a time e.g level 1 will give 1 letter before waiting for your typed response.</p> 
+
+											<p>Want to contact us? Email: Cosmokeys@fictionalemail.com We’d love to hear from you!</p>
+											 </div>
+											</div>
+									  </div>
+									</div>
+									
 								</ul>
 							</div>
 						</div>

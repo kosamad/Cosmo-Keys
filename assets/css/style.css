@@ -28,12 +28,20 @@ body {
 
 .imodal-body{color: black;	
 	font-family: "Lexend", sans-serif;
-	font-size: 30px;
+	font-size: 15px;
 	font-weight: 400;
-	padding: 5% 0;
+	padding: 5% 3%;	
 	}
 
 
+.amodal-body{color: black;	
+	font-family: "Lexend", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 5% 5%;
+	text-align: justify;
+	
+	}
 
 
 /*----Index.html styles----*/
@@ -57,7 +65,7 @@ body {
 .main-overlay-home {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 3vh;
+	padding: 3.5vh;
 	border-radius: 1.5rem;
 	max-height: 75vh;
 }
@@ -92,24 +100,25 @@ body {
 	font-weight: 600;
 	margin: 1vh;
 	border-radius: 1rem;
-	padding: 2vh 1vh;
+	padding: 1.5vh 3vh;	
 }
 
-#btn-play {
-	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
+#btn-home:hover {
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
 	);
-	border-color: #3a096f;
-	margin: 1vh;
-	border-radius: 1rem;
-	padding: 2vh 0;
-}
+	border-color: black;
+	cursor: pointer;
+	}
+
+.btn-home a {text-decoration: none;}
+
+.hidden {opacity: 0;}
 
 .home-buttons {
 	margin-top: 5vh;
@@ -127,11 +136,11 @@ body {
 	border-color: black;
 	cursor: pointer;
 	color: black;
-}
+} 
 
 .fa-play {
 	color: black;
-	font-size: 45px;
+	font-size: 20px;
 }
 
 /*----Level.html styles----*/
@@ -484,12 +493,9 @@ body {
 		font-size: 25px;
 	}
 
-	#btn-play {
-		font-size: 25px;
-		padding: 2vh;
-	}
-
+	
 	.fa-play {
+		color: black;
 		font-size: 35px;
 	}
 
@@ -518,10 +524,6 @@ body {
 		padding: 2.3vh;
 	}
 
-	.fa-play {
-		padding: 1vh;
-		font-size: 30px;
-	}
 
 	.main-overlay-home {
 		padding: 4vh;
@@ -614,15 +616,12 @@ body {
 		font-size: 15px;
 	}
 
-	#btn-play {
-		padding: 0.75vh;
-	}
-
 	.fa-play {
 		color: black;
-		font-size: 25px;
+		font-size: 20px;
 	}
 
+	
 	/*----Level.html MQ styles----*/
 	.level-text {
 		font-size: 25px;
