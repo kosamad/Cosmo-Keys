@@ -83,8 +83,30 @@ let startTime = 60;
 //pausing the timer/game and changing the symbol written in the DOM to restart the timer/game again. 
 
 $('.btn-pause').click(function(){
-    $(this).find('i').toggleClass('fa-pause fa-play')
+    $(this).find('i').toggleClass('fa-pause fa-play');
+    pauseGame();
 });
+
+function pauseGame() {
+
+let pauseBtn = document.querySelector('.btn-pause');
+let reStart = document.querySelector('.fa-play');
+
+pauseBtn.onclick = () {
+        clearInterval(Interval);
+    };
+
+reStart.onclick =() {
+    clearInterval(Interval);
+    Interval=setInterval()
+}
+
+
+
+
+}
+
+
 
    
 //}
