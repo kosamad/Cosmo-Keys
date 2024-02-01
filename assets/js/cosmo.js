@@ -41,8 +41,12 @@ function showGameArea(){
 }
 
 
+
+
 //timer function
 function startTimer(){
+
+  
 
 let startTime = 60;
     const timerT = document.querySelector('#timer');
@@ -75,6 +79,12 @@ let startTime = 60;
         }, 1000);
 }
 
+
+//pausing the timer/game and changing the symbol written in the DOM to restart the timer/game again. 
+
+$('.btn-pause').click(function(){
+    $(this).find('i').toggleClass('fa-pause fa-play')
+});
 
    
 //}
