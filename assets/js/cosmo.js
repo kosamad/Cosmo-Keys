@@ -133,6 +133,10 @@ if (matchResult()){
         playerAnswer.innerHTML='';
     },500);
     score++;
+} else {setTimeout(()=>{
+    levelOne(letters);
+    playerAnswer.innerHTML='';
+},500);
 }
 
 scoreDisplay.innerHTML = score;
