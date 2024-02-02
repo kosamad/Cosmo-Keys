@@ -18,28 +18,6 @@ function setLevelId(level){
     localStorage.setItem('selectedLevel', level);
       }
 
-
-
-// const levelButtons = document.querySelectorAll('.btn-level')
-// let levelId = document.getElementById('level-indicator')
-
-// function levelIndicator(event){
-//     const clickedLevelName = event.target.getAttribute('id');
-//     console.log (`selected level ${clickedLevelName}`);
-    
-//   if (clickedLevelName==='level-1'){
-// levelId.innerHTML='Level 1'
-//     } else if (clickedLevelName ==='level-2')
-//     {levelId.innerHTML='Level 2'
-//     } else if (clickedLevelName === 'level-3') {
-//         levelId.innerHTML = 'Level 3';
-//     };
-// }
-
-// levelButtons.forEach(button=>{
-//     button.addEventListener('click', levelIndicator);
-// })
-
 //let game {
     //score: 0,
     //currentGame: [],
