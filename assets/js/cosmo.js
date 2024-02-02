@@ -118,6 +118,7 @@ function startGame() {
 	//level 1 play - load word from array //
 	levelOne(letters);
 
+   
 	//listens for player feedback function and checks if they match
 
 	playerAnswer.addEventListener("input", matchCheck);
