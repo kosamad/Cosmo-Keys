@@ -76,9 +76,12 @@ function startTimer(){
             timerColor.style.backgroundImage = 'radial-gradient(circle, #f8afaf, #ff8f8b, #ff6d64, #fb473a, #f10000)';
         };
 
-        if(remainingTime=== 0){
+        if(remainingTime === 0){
             clearInterval (countDown);
-            gameRunning = false;            
+            gameRunning = false;
+            message.innerHTML = 'Game Over';
+            playerAnswer.contentEditable="false" 
+            playerAnswer.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>'           
         }
         }
         }, 1000);
@@ -90,40 +93,65 @@ function startTimer(){
 let score = 0;
 let gameRunning; //he calls isPlaying
 const currentLetter = document.getElementById("quiz-letter");
+const playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
+const scoreDisplay = document.getElementById("js-score");
 
 //array for level 1 play    
 const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 function startGame (){
-
+    
+playerAnswer.contentEditable = "true"
+gameRunning = true;
 document.getElementById('player-answer').focus()
 
 //level 1 play - load word from array //
 levelOne(letters);
 
-//listens for player feedback function
+//listens for player feedback function and checks if they match
 
-//if correct moves to next letter function
+playerAnswer.addEventListener('input', matchCheck);
 
-//checks to see if the game is over //CHANGE THE NAME OF THE FUNCTION
-setInterval(checkStatus);
 }
 
 
 //level 1 play - load word from array //
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
-
-
 function levelOne(letters) {
     const randomIndex = Math.floor(Math.random() * letters.length);
     currentLetter.innerHTML=letters[randomIndex];
 }
 
-function checkStatus() {
-    if(!gameRunning && remainingTime === 0) {
-        message.innerHTML = 'Game Over';
-        }
+
+
+//checks if user and computer inputs match. if yes (true) updates score, and ,after a delay, calls the next letter and clears the player input box
+function matchCheck() {
+if (matchResult()){
+    setTimeout(()=>{
+        levelOne(letters);
+        playerAnswer.innerHTML='';
+    },500);
+    score++;
+}
+
+scoreDisplay.innerHTML = score;
+}
+    
+//trim function is required otherwise the answer returns wrong due to the presence of the space
+
+function matchResult() {
+const playerAnswerContent = playerAnswer.innerHTML.trim();
+
+
+    if(playerAnswerContent === currentLetter.innerHTML){
+        message.innerHTML = 'Correct!';         
+      return true;
+    } else {
+        message.innerHTML = 'Wrong!'
+        return false;
+    }
+   
 }
 
 
