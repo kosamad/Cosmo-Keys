@@ -1,10 +1,44 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', function () {
 
-//const displayCurrentLevel = document.querySelector('#level-indicator')    
-//let currentLevel = 1
+    //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
+    const levelId = localStorage.getItem('selectedLevel');
+    const levelIndicator = document.getElementById('level-indicator');
+    if (levelId === 'level-1'){
+        levelIndicator.innerHTML = 'Level 1';
+    } else if (levelId === 'level-2'){
+        levelIndicator.innerHTML = 'Level 2';
+    } else if (levelId === 'level-3'){
+        levelIndicator.innerHTML = 'Level 3';
+    };  
 
-})
+});
 
+// setting the select level key on the level.html page and storing it locally.
+function setLevelId(level){
+    localStorage.setItem('selectedLevel', level);
+      }
+
+
+
+// const levelButtons = document.querySelectorAll('.btn-level')
+// let levelId = document.getElementById('level-indicator')
+
+// function levelIndicator(event){
+//     const clickedLevelName = event.target.getAttribute('id');
+//     console.log (`selected level ${clickedLevelName}`);
+    
+//   if (clickedLevelName==='level-1'){
+// levelId.innerHTML='Level 1'
+//     } else if (clickedLevelName ==='level-2')
+//     {levelId.innerHTML='Level 2'
+//     } else if (clickedLevelName === 'level-3') {
+//         levelId.innerHTML = 'Level 3';
+//     };
+// }
+
+// levelButtons.forEach(button=>{
+//     button.addEventListener('click', levelIndicator);
+// })
 
 //let game {
     //score: 0,
@@ -66,7 +100,10 @@ function startTimer(){
         
 }
 
+
 //event that listens for when the start button is clicked and toggles the displayed divs
+//i.e going from a play button to the game play area.
+//starts the first game + timer
 const startHidden = document.querySelector('.start-hidden');
 const clickHidden = document.querySelector('.click-hidden');
 
@@ -74,20 +111,13 @@ function showGameArea(){
     startHidden.classList.toggle('hide');
     clickHidden.classList.toggle('hide');
 
-    //call function to start the timer
-    
-    startTimer();
 
+   startTimer();
 };
 
 
 
-
-
-
 //pausing the timer and changing the symbol written in the DOM to restart the timer again. 
-
-
 let pauseBtn = document.getElementById('pause-btn');
 let removeIcon = document.getElementById('pause-remove');
 
@@ -102,17 +132,6 @@ pauseBtn.addEventListener('click',function() {
         paused=false;
         }         
 });
-
-
-
-//when it comes to it this resets the timer
-//function resetTimer() {
-    //clearInterval(countDown);
-   // remainingTime = startTime;
-    //startTimer();
-///}
-
-
 
 
 
