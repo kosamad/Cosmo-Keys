@@ -18,29 +18,35 @@ function setLevelId(level){
     localStorage.setItem('selectedLevel', level);
       }
 
-//let game {
-    //score: 0,
-    //currentGame: [],
-    //playerMoves:[],
-    //}
+
+
+
+
+
+
+
+
+
 
 
 // random word generator = wordnik API
-//my API key = 
+//my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
 
 
 
-//click event listner to start the game
 
-//level 1 play
-//js
-//FUNC = new function
+
+
+
+
+
+
 
 // function that slects which level function to impletment using if/if else.
 
 //timer function
 
-let startTime = 60;
+let startTime = 5;
 let remainingTime = startTime;
 let countDown;
 const timerT = document.querySelector('#timer');
@@ -72,11 +78,68 @@ function startTimer(){
 
         if(remainingTime=== 0){
             clearInterval (countDown);
+            gameRunning = false;            
         }
         }
         }, 1000);
         
 }
+
+// start game function //
+
+let score = 0;
+let gameRunning; //he calls isPlaying
+const currentLetter = document.getElementById("quiz-letter");
+const message = document.getElementById("message");
+
+//array for level 1 play    
+const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+function startGame (){
+
+document.getElementById('player-answer').focus()
+
+//level 1 play - load word from array //
+levelOne(letters);
+
+//listens for player feedback function
+
+//if correct moves to next letter function
+
+//checks to see if the game is over //CHANGE THE NAME OF THE FUNCTION
+setInterval(checkStatus);
+}
+
+
+//level 1 play - load word from array //
+//if (getElementById('level-indicator').innerHTML === 'Level 1'){
+
+
+function levelOne(letters) {
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    currentLetter.innerHTML=letters[randomIndex];
+}
+
+function checkStatus() {
+    if(!gameRunning && remainingTime === 0) {
+        message.innerHTML = 'Game Over';
+        }
+}
+
+
+
+//const result = getNextLetter(letter);
+//document.getElementById("quiz-letter").innerHTML = result
+//console.log(result);
+
+
+
+
+
+
+//}
+
+
 
 
 //event that listens for when the start button is clicked and toggles the displayed divs
@@ -89,8 +152,11 @@ function showGameArea(){
     startHidden.classList.toggle('hide');
     clickHidden.classList.toggle('hide');
 
-
+    startGame();
    startTimer();
+   
+
+
 };
 
 
@@ -119,32 +185,7 @@ pauseBtn.addEventListener('click',function() {
 
 //document.querySelector("#start-game").addEventListener('click', startGame); 
 
-// start game function //
 
-//function startGame (){
-
-    //game.score = 0;
-    //game.playerMoves =[];
-    //document.getElementById('player-answer').focus()
-
-
-
-
-//if (getElementById('level-indicator').innerHTML === 'Level 1'){
-//level 1 play//
-//const array1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
-//function getNextLetter(arr) {
-    //const randomIndex = Math.floor(Math.random() * arr.length);
-    //const letter = arr[randomIndex];
-    //return letter;
-//}
-
-//const result = getNextLetter(array1);
-//document.getElementById("quiz-letter").innerHTML = result
-
-//console.log(result);
-//}
 
 
 //level 2 play
