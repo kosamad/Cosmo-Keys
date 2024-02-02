@@ -16,6 +16,14 @@ function setLevelId(level) {
 	localStorage.setItem("selectedLevel", level);
 }
 
+//function which speaks the score at the end of the game
+function speakScore(score){
+    const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} points.`);
+window.speechSynthesis.speak(scoreVoice);   
+}
+
+
+
 // random word generator = wordnik API
 //my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
 
@@ -63,6 +71,7 @@ function startTimer() {
 				clearInterval(countDown);
 				gameRunning = false;
 				message.innerHTML = "Game Over";
+                speakScore(score);
 				playerAnswer.contentEditable = "false";
 				playerAnswer.innerHTML =
 					'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
@@ -213,4 +222,15 @@ pauseBtn.addEventListener("click", function () {
 //function nextTurn () {
 //game.playerMoves = [];
 
+//}
+
+
+//voice parts
+
+//if ('speechSynthesis' in window) {
+    // Web Speech API is supported
+    // Your code to use speech synthesis goes here
+//} else {
+    // Web Speech API is not supported
+  //  console.error('Web Speech API is not supported in this browser.');
 //}
