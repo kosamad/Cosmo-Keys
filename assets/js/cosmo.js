@@ -26,6 +26,46 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 // function that slects which level function to impletment using if/if else.
 
+//timer function
+
+let startTime = 60;
+let remainingTime = startTime;
+let countDown;
+const timerT = document.querySelector('#timer');
+const timerColor = document.querySelector('.time-container');
+let paused=false;
+
+function startTimer(){
+    timerColor.style.backgroundImage = 'radial-gradient(circle, #d0fdcc, #b1fdaa, #91fb85, #6bf95c, #30f61e)';
+    
+    timerT.innerHTML = `${remainingTime}`;
+
+    countDown = setInterval(() => {
+        if(!paused){
+        remainingTime--;
+        timerT.innerHTML = `${remainingTime}`;
+
+        //if statements to change the colour of the time-container as time reduces
+        if (remainingTime <= 50 && remainingTime >= 41) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #e5f6c2, #d2ee9c, #bee676, #a8de4c, #90d600)';
+        } else if (remainingTime <= 40  && remainingTime>= 31) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #fdf9b2, #f9f392, #f5ed71, #f0e74c, #ece10f)';
+        } else if (remainingTime <= 30  && remainingTime >= 21) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f3d7a5, #f2c983, #f1ba61, #f0ab3e, #ef9b09)';
+        } else if (remainingTime <= 20  && remainingTime >= 11) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8c7a8, #f8ae80, #f6945a, #f27934, #ec5b00)';
+        }else if (remainingTime<= 10  && remainingTime >= 0) {
+            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8afaf, #ff8f8b, #ff6d64, #fb473a, #f10000)';
+        };
+
+        if(remainingTime=== 0){
+            clearInterval (countDown);
+        }
+        }
+        }, 1000);
+        
+}
+
 //event that listens for when the start button is clicked and toggles the displayed divs
 const startHidden = document.querySelector('.start-hidden');
 const clickHidden = document.querySelector('.click-hidden');
@@ -38,73 +78,41 @@ function showGameArea(){
     
     startTimer();
 
-}
+};
 
 
 
 
-//timer function
-function startTimer(){
-
-  
-
-let startTime = 60;
-    const timerT = document.querySelector('#timer');
-    const timerColor = document.querySelector('.time-container');
-
-    timerColor.style.backgroundImage = 'radial-gradient(circle, #d0fdcc, #b1fdaa, #91fb85, #6bf95c, #30f61e)';
-    
-    timerT.innerHTML = `${startTime}`;
-
-    const countDown = setInterval(() => {
-        startTime--;
-        timerT.innerHTML = `${startTime}`;
-
-        //if statements to change the colour of the time-container as time reduces
-        if (startTime <= 50 && startTime >= 41) {
-            timerColor.style.backgroundImage = 'radial-gradient(circle, #e5f6c2, #d2ee9c, #bee676, #a8de4c, #90d600)';
-        } else if (startTime <= 40  && startTime >= 31) {
-            timerColor.style.backgroundImage = 'radial-gradient(circle, #fdf9b2, #f9f392, #f5ed71, #f0e74c, #ece10f)';
-        } else if (startTime <= 30  && startTime >= 21) {
-            timerColor.style.backgroundImage = 'radial-gradient(circle, #f3d7a5, #f2c983, #f1ba61, #f0ab3e, #ef9b09)';
-        } else if (startTime <= 20  && startTime >= 11) {
-            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8c7a8, #f8ae80, #f6945a, #f27934, #ec5b00)';
-        }else if (startTime <= 10  && startTime >= 0) {
-            timerColor.style.backgroundImage = 'radial-gradient(circle, #f8afaf, #ff8f8b, #ff6d64, #fb473a, #f10000)';
-        };
-
-        if(startTime === 0){
-            clearInterval (countDown);
-        }
-        }, 1000);
-}
 
 
-//pausing the timer/game and changing the symbol written in the DOM to restart the timer/game again. 
+//pausing the timer and changing the symbol written in the DOM to restart the timer again. 
 
-$('.btn-pause').click(function(){
-    $(this).find('i').toggleClass('fa-pause fa-play');
-    pauseGame();
+
+let pauseBtn = document.getElementById('pause-btn');
+let removeIcon = document.getElementById('pause-remove');
+
+pauseBtn.addEventListener('click',function() {
+
+    if (removeIcon.classList.contains('fa-pause')) {
+        removeIcon.classList.remove('fa-pause'); 
+        removeIcon.classList.add('fa-play');       
+        paused=true;
+        } else {removeIcon.classList.remove('fa-play'); 
+    removeIcon.classList.add('fa-pause');;
+        paused=false;
+        }         
 });
 
-function pauseGame() {
-
-let pauseBtn = document.querySelector('.btn-pause');
-let reStart = document.querySelector('.fa-play');
-
-pauseBtn.onclick = () {
-        clearInterval(Interval);
-    };
-
-reStart.onclick =() {
-    clearInterval(Interval);
-    Interval=setInterval()
-}
-
-//THIS IS WHERE I AM, NEED TO FINISH THIS TIMER FUNCTION
 
 
-}
+//when it comes to it this resets the timer
+//function resetTimer() {
+    //clearInterval(countDown);
+   // remainingTime = startTime;
+    //startTimer();
+///}
+
+
 
 
 
