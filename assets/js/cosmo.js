@@ -126,6 +126,11 @@ function startGame() {
 
 	//level 1 play - load word from array //
 	levelOne(letters);
+	
+
+	
+
+
 
    
 	//listens for player feedback function and checks if they match
@@ -137,18 +142,28 @@ function startGame() {
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
 function levelOne(letters) {
 	const randomIndex = Math.floor(Math.random() * letters.length);
-	currentLetter.innerHTML = letters[randomIndex];
+	currentLetter.innerHTML = letters[randomIndex];		
+	speakLetter(currentLetter.innerText);
 }
+
+
+//function which speaks the letter(level-1 play) selected
+function speakLetter(letter){
+    const letterVoice = new SpeechSynthesisUtterance(letter);
+window.speechSynthesis.speak(letterVoice);}
+
 
 //checks if user and computer inputs match. if yes (true) updates score, and ,after a delay, calls the next letter and clears the player input box
 function matchCheck() {
 	if (matchResult()) {
+		correctSound.play();
 		setTimeout(() => {
 			levelOne(letters);
 			playerAnswer.innerHTML = "";
 		}, 500);
 		score++;
 	} else {
+		wrongSound.play();
 		setTimeout(() => {
 			levelOne(letters);
 			playerAnswer.innerHTML = "";
@@ -158,13 +173,22 @@ function matchCheck() {
 	scoreDisplay.innerHTML = score;
 }
 
+//sound variables
+let correctSound=new Audio('assets/sounds/335908__littlerainyseasons__correct.mp3');
+correctSound.volume=0.5;
+let wrongSound=new Audio ('assets/sounds/554053__gronkjaer__wronganswer.mp3');
+wrongSound.volume=0.5;
+
+
 //trim function is required otherwise the answer returns wrong due to the presence of the space
+
 
 function matchResult() {
 	const playerAnswerContent = playerAnswer.innerHTML.trim();
 
 	if (playerAnswerContent === currentLetter.innerHTML) {
 		message.innerHTML = "Correct!";
+		//sound needs to go here
 		return true;
 	} else {
 		message.innerHTML = "Wrong!";
