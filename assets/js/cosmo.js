@@ -139,7 +139,6 @@ function levelOne(letters) {
 	speakLetter(currentLetter.innerText);
 	
 	playerAnswer.addEventListener("input", function(event){
-		playerAnswer.contenteditable='false';
 		matchCheck()});
 }
 
@@ -160,39 +159,59 @@ function startGame() {
 	
 	};
 
+	function matchCheck() {		
+		let playerAnswerContent=playerAnswer.textContent;			
+		if (playerAnswerContent === currentLetter.textContent) {
+			message.innerHTML = "Correct!";	
+			correctSound.play();	
+			score++;
+			scoreDisplay.innerHTML = score;
+			return true;			
+		} else {
+			message.innerHTML = "Wrong!";	
+			wrongSound.play();
+			scoreDisplay.innerHTML = score;
+			compTurn=true;
+			return false;
+		};
+	
+	}
+
 
 //checks if user and computer inputs match. if yes (true) updates score, and ,after a delay, calls the next letter and clears the player input box
-function matchCheck() {		
-		if (matchResult()) {			
-			setTimeout(() => {
-			levelOne(letters);
-			playerAnswer.innerHTML = "";
-			playerAnswer.contenteditable = "true";								
-			}, 1000);				
-		score++;
-	} else {				
-		setTimeout(() => {
-			levelOne(letters);
-			playerAnswer.innerHTML = "";	
-			playerAnswer.contenteditable = "true";				
-			}, 1000);
-			}
-		scoreDisplay.innerHTML = score;
-}
+// function matchCheck() {		
+// 	let playerAnswerContent=playerAnswer.textContent;
 
-// event parameter passed into matchResult function which means the user input can be limited to 1 character only.
-function matchResult() {	
-	let playerAnswerContent=playerAnswer.textContent;
-	if (playerAnswerContent === currentLetter.textContent) {
-		message.innerHTML = "Correct!";	
-		correctSound.play();	
-		return true;
-	} else {
-		message.innerHTML = "Wrong!";	
-		wrongSound.play();	
-		return false;
-	}
-};
+// 		if (matchResult()) {			
+// 			setTimeout(() => {
+// 			levelOne(letters);
+// 			playerAnswer.innerHTML = "";
+// 			playerAnswer.contenteditable = "true";								
+// 			}, 1000);				
+// 		score++;
+// 	} else {				
+// 		setTimeout(() => {
+// 			levelOne(letters);
+// 			playerAnswer.innerHTML = "";	
+// 			playerAnswer.contenteditable = "true";				
+// 			}, 1000);
+// 			}
+// 		scoreDisplay.innerHTML = score;
+// }
+
+// // event parameter passed into matchResult function which means the user input can be limited to 1 character only.
+// function matchResult() {	
+// 	let playerAnswerContent=playerAnswer.textContent;
+// 	if (playerAnswerContent === currentLetter.textContent) {
+// 		message.innerHTML = "Correct!";	
+// 		correctSound.play();	
+// 		return true;
+// 	} else {
+// 		message.innerHTML = "Wrong!";	
+// 		wrongSound.play();	
+// 		return false;
+// 	}
+// };
 
 //const result = getNextLetter(letter);
 //document.getElementById("quiz-letter").innerHTML = result
