@@ -43,13 +43,11 @@ function setLevelId(level) {
 	localStorage.setItem("selectedLevel", level);
 }
 
-// random word generator = wordnik API
-//my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
 
-// function that slects which level function to impletment using if/if else.
+
 
 //timer function
-
+//variables//
 let startTime = 5;
 let remainingTime = startTime;
 let countDown;
@@ -60,9 +58,7 @@ let paused = false;
 function startTimer() {
 	timerColor.style.backgroundImage =
 		"radial-gradient(circle, #d0fdcc, #b1fdaa, #91fb85, #6bf95c, #30f61e)";
-
 	timerT.innerHTML = `${remainingTime}`;
-
 	countDown = setInterval(() => {
 		if (!paused) {
 			remainingTime--;
@@ -104,7 +100,7 @@ function startTimer() {
 }
 
 // start game function //
-
+//variables//
 let score = 0;
 let gameRunning;
 const currentLetter = document.getElementById("quiz-letter");
@@ -113,16 +109,6 @@ const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
 let compTurn = true;
-
-//sound variables
-let correctSound = new Audio(
-	"assets/sounds/335908__littlerainyseasons__correct.mp3"
-);
-correctSound.volume = 0.5;
-let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
-wrongSound.volume = 0.5;
-let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
-endGameSound.volume = 0.5;
 
 //array for level 1 play
 const letters = [
@@ -154,6 +140,21 @@ const letters = [
 	"z",
 ];
 
+// random word generator = wordnik API
+//my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
+
+
+
+//sound variables
+let correctSound = new Audio("assets/sounds/335908__littlerainyseasons__correct.mp3");
+correctSound.volume = 0.5;
+let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
+wrongSound.volume = 0.5;
+let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
+endGameSound.volume = 0.5;
+
+
+
 //level 1 play - load word from array //
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
 function levelOne(letters) {
@@ -167,9 +168,7 @@ function startGame() {
 	playerAnswer.contenteditable = "true";
 	gameRunning = true;
 	document.getElementById("player-answer").focus();
-	computerTurn();
-
-	//listens for player typing (the input) and executes the matchCheck function
+	computerTurn();	
 }
 
 function computerTurn() {
@@ -180,7 +179,7 @@ function computerTurn() {
 
 function playerTurn() {
 	compTurn = false;
-	playerAnswer.addEventListener("input", matchCheck);
+	playerAnswer.addEventListener("input", matchCheck); //listens for player typing (the input) and executes the matchCheck function
 }
 
 if ((compTurn = false)) {
@@ -243,11 +242,3 @@ pauseBtn.addEventListener("click", function () {
 		paused = false;
 	}
 });
-
-//if ('speechSynthesis' in window) {
-// Web Speech API is supported
-// Your code to use speech synthesis goes here
-//} else {
-// Web Speech API is not supported
-//  console.error('Web Speech API is not supported in this browser.');
-//}
