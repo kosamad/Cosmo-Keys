@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else if (levelId === "level-3") {
 		levelIndicator.innerHTML = "Level 3";
 	}
-});
+
 
 if ("speechSynthesis" in window) {
 	//Web Speech API is supported
@@ -35,7 +35,7 @@ if ("speechSynthesis" in window) {
 	}
 } else {
 	// Web Speech API is not supported
-	console.error("Web Speech API is not supported in this browser.");
+	console.log("Web Speech API is not supported in this browser.");
 }
 
 // setting the select level key on the level.html page and storing it locally.
@@ -104,7 +104,7 @@ function startTimer() {
 let score = 0;
 let gameRunning;
 const currentLetter = document.getElementById("quiz-letter");
-const playerAnswer = document.getElementById("player-answer");
+let playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
@@ -139,6 +139,8 @@ const letters = [
 	"y",
 	"z",
 ];
+
+const wordsTwo = [];
 
 // random word generator = wordnik API
 //my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
@@ -182,11 +184,11 @@ function playerTurn() {
 	playerAnswer.addEventListener("input", matchCheck); //listens for player typing (the input) and executes the matchCheck function
 }
 
-if ((compTurn = false)) {
+if (compTurn === false) {
 	playerAnswer.contenteditable = "true";
-} else {
-	playerAnswer.contenteditable = "false";
-}
+} //else {
+	//playerAnswer.contenteditable = "false";
+//}
 
 function matchCheck() {
 	compTurn = true;
@@ -241,4 +243,9 @@ pauseBtn.addEventListener("click", function () {
 		removeIcon.classList.add("fa-pause");
 		paused = false;
 	}
+});
+
+
+module.exports = {wordsTwo};
+
 });
