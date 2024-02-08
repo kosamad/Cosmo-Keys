@@ -140,10 +140,22 @@ const letters = [
 	"z",
 ];
 
-const wordsTwo = [];
 
-// random word generator = wordnik API
-//my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
+
+//youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
+//modified to map data results into an array. 
+function findWords (){
+	fetch ('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
+	.then(response => {
+		return response.json();//wait for data and fill next promise (js format)
+	})
+	.then(data => {
+	let twoLetterWords = data.map(word => word.word);
+		console.log(twoLetterWords); 
+		})	
+	.catch(error => console.log(error)); //in case fetch doesn't work
+}
+
 
 
 
@@ -177,6 +189,8 @@ function computerTurn() {
 	compTurn = true;
 	//level 1 play - load word from array //
 	levelOne(letters);
+	findWords();
+
 }
 
 function playerTurn() {
@@ -222,12 +236,16 @@ function matchCheck() {
 const startHidden = document.querySelector(".start-hidden");
 const clickHidden = document.querySelector(".click-hidden");
 
-function showGameArea() {
+let showArea = document.querySelector(".start-game");
+
+	showArea.addEventListener("click", function () {
 	startHidden.classList.toggle("hide");
 	clickHidden.classList.toggle("hide");
 	startGame();
 	startTimer();
-}
+	});
+	
+
 
 //pausing the timer and changing the symbol written in the DOM to restart the timer again.
 let pauseBtn = document.getElementById("pause-btn");
@@ -246,6 +264,7 @@ pauseBtn.addEventListener("click", function () {
 });
 
 
-module.exports = {wordsTwo};
 
 });
+
+module.exports = { startGame, findWords };

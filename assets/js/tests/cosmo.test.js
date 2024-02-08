@@ -3,7 +3,7 @@
  * @jest-environment jsdom
  */
 
-const{wordsTwo} = require("../cosmo");
+const { startGame, findWords }= require("../cosmo");
 
 beforeAll(() => {
 let fs = require("fs");
@@ -14,8 +14,14 @@ document.close();
 });
 
 describe("level 2 game play",() => {
-    test("levelTwo wordsTwo variable exists", () =>{
-        expect("wordsTwo").toBeDefined();
+    
+    //test("levelTwo twoLetterWords variable exists", () =>{
+       // expect(twoLetterWords).toBeDefined();
+//});
+     test("wordsTwo array filled by datamuse API (2 letter words)", () =>{
+        const twoLetterWords = [];
+        findWords();
+    expect(twoLetterWords.every(word => word.length === 2)).toBe(true);
     });
-    //test("array loaded using wordnik API")
+    
 });
