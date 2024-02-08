@@ -18,9 +18,12 @@ function setLevelId(level) {
 
 //function which speaks the score at the end of the game
 function speakScore(score){
-    const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} points.`);
-window.speechSynthesis.speak(scoreVoice);   
-}
+	if (scoreDisplay.innerText=1){
+		const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} point.`);
+	window.speechSynthesis.speak(scoreVoice);   
+	} else {const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} points.`);
+	window.speechSynthesis.speak(scoreVoice);  }
+    }
 
 
 
@@ -73,10 +76,11 @@ function startTimer() {
 				gameRunning = false;
 				message.innerHTML = "Game Over";                
 				playerAnswer.contentEditable = "false";
-				playerAnswer.innerHTML =
-					'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+				
 					setTimeout(() => {
 						speakScore(score);
+						playerAnswer.innerHTML =
+					'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
 						}, 2500);
 		}
 		}
@@ -92,6 +96,7 @@ const playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
+let compTurn = true;
 
 //sound variables
 let correctSound=new Audio('assets/sounds/335908__littlerainyseasons__correct.mp3');
@@ -137,9 +142,8 @@ function levelOne(letters) {
 	const randomIndex = Math.floor(Math.random() * letters.length);
 	currentLetter.innerHTML = letters[randomIndex];		
 	speakLetter(currentLetter.innerText);
+	playerTurn();	
 	
-	playerAnswer.addEventListener("input", function(event){
-		matchCheck()});
 }
 
 //function which speaks the letter(level-1 play) selected
@@ -151,28 +155,49 @@ function startGame() {
 	playerAnswer.contenteditable = "true";
 	gameRunning = true;
 	document.getElementById("player-answer").focus();
-
-	//level 1 play - load word from array //
-	levelOne(letters);
-		   
+	computerTurn();
+			   
 	//listens for player typing (the input) and executes the matchCheck function
 	
 	};
 
+	function computerTurn(){
+	compTurn = true;
+		//level 1 play - load word from array //
+	levelOne(letters);
+	}
+
+	function playerTurn() {
+		compTurn = false;
+		playerAnswer.addEventListener("input", matchCheck)};
+
+	if (compTurn = false) {
+		playerAnswer.contenteditable = "true";
+	} else {playerAnswer.contenteditable = "false";}
+
 	function matchCheck() {		
+		compTurn = true;
 		let playerAnswerContent=playerAnswer.textContent;			
 		if (playerAnswerContent === currentLetter.textContent) {
 			message.innerHTML = "Correct!";	
-			correctSound.play();	
-			score++;
+			correctSound.play();				
+			score++;			
 			scoreDisplay.innerHTML = score;
-			return true;			
+			setTimeout(() => {
+				playerAnswer.innerHTML = "";
+				computerTurn();
+			}, 500);			
+			return true;						
 		} else {
 			message.innerHTML = "Wrong!";	
 			wrongSound.play();
 			scoreDisplay.innerHTML = score;
-			compTurn=true;
-			return false;
+			playerAnswer.innerHTML = "";
+			setTimeout(() => {
+			playerAnswer.innerHTML = "";
+			computerTurn();
+			}, 500);	
+			return false;				
 		};
 	
 	}
