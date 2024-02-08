@@ -11,21 +11,37 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+if ("speechSynthesis" in window) {
+	//Web Speech API is supported
+	//function which speaks the score at the end of the game
+	function speakScore(score) {
+		if ((scoreDisplay.innerText = 1)) {
+			const scoreVoice = new SpeechSynthesisUtterance(
+				`congratulations, you got ${scoreDisplay.innerText} point.`
+			);
+			window.speechSynthesis.speak(scoreVoice);
+		} else {
+			const scoreVoice = new SpeechSynthesisUtterance(
+				`congratulations, you got ${scoreDisplay.innerText} points.`
+			);
+			window.speechSynthesis.speak(scoreVoice);
+		}
+	}
+
+	//function which speaks the letter(level-1 play) selected
+	function speakLetter(letter) {
+		const letterVoice = new SpeechSynthesisUtterance(letter);
+		window.speechSynthesis.speak(letterVoice);
+	}
+} else {
+	// Web Speech API is not supported
+	console.error("Web Speech API is not supported in this browser.");
+}
+
 // setting the select level key on the level.html page and storing it locally.
 function setLevelId(level) {
 	localStorage.setItem("selectedLevel", level);
 }
-
-//function which speaks the score at the end of the game
-function speakScore(score){
-	if (scoreDisplay.innerText=1){
-		const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} point.`);
-	window.speechSynthesis.speak(scoreVoice);   
-	} else {const scoreVoice = new SpeechSynthesisUtterance(`congratulations, you got ${scoreDisplay.innerText} points.`);
-	window.speechSynthesis.speak(scoreVoice);  }
-    }
-
-
 
 // random word generator = wordnik API
 //my API key = 3lzog3go2uofwfe898ruc3q94lgp7jl1sqnhwc2dys5f752l2
@@ -74,15 +90,15 @@ function startTimer() {
 				endGameSound.play();
 				clearInterval(countDown);
 				gameRunning = false;
-				message.innerHTML = "Game Over";                
+				message.innerHTML = "Game Over";
 				playerAnswer.contentEditable = "false";
-				
-					setTimeout(() => {
-						speakScore(score);
-						playerAnswer.innerHTML =
-					'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
-						}, 2500);
-		}
+
+				setTimeout(() => {
+					speakScore(score);
+					playerAnswer.innerHTML =
+						'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+				}, 2500);
+			}
 		}
 	}, 1000);
 }
@@ -99,12 +115,14 @@ let playerAnswerContent = "";
 let compTurn = true;
 
 //sound variables
-let correctSound=new Audio('assets/sounds/335908__littlerainyseasons__correct.mp3');
-correctSound.volume=0.5;
-let wrongSound=new Audio ('assets/sounds/554053__gronkjaer__wronganswer.mp3');
-wrongSound.volume=0.5;
-let endGameSound = new Audio('assets/sounds/527650__fupicat__winsquare.wav');
-endGameSound.volume=0.5;
+let correctSound = new Audio(
+	"assets/sounds/335908__littlerainyseasons__correct.mp3"
+);
+correctSound.volume = 0.5;
+let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
+wrongSound.volume = 0.5;
+let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
+endGameSound.volume = 0.5;
 
 //array for level 1 play
 const letters = [
@@ -140,109 +158,62 @@ const letters = [
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
 function levelOne(letters) {
 	const randomIndex = Math.floor(Math.random() * letters.length);
-	currentLetter.innerHTML = letters[randomIndex];		
+	currentLetter.innerHTML = letters[randomIndex];
 	speakLetter(currentLetter.innerText);
-	playerTurn();	
-	
+	playerTurn();
 }
-
-//function which speaks the letter(level-1 play) selected
-function speakLetter(letter){
-    const letterVoice = new SpeechSynthesisUtterance(letter);
-window.speechSynthesis.speak(letterVoice);}
 
 function startGame() {
 	playerAnswer.contenteditable = "true";
 	gameRunning = true;
 	document.getElementById("player-answer").focus();
 	computerTurn();
-			   
+
 	//listens for player typing (the input) and executes the matchCheck function
-	
-	};
+}
 
-	function computerTurn(){
+function computerTurn() {
 	compTurn = true;
-		//level 1 play - load word from array //
+	//level 1 play - load word from array //
 	levelOne(letters);
-	}
+}
 
-	function playerTurn() {
-		compTurn = false;
-		playerAnswer.addEventListener("input", matchCheck)};
+function playerTurn() {
+	compTurn = false;
+	playerAnswer.addEventListener("input", matchCheck);
+}
 
-	if (compTurn = false) {
-		playerAnswer.contenteditable = "true";
-	} else {playerAnswer.contenteditable = "false";}
+if ((compTurn = false)) {
+	playerAnswer.contenteditable = "true";
+} else {
+	playerAnswer.contenteditable = "false";
+}
 
-	function matchCheck() {		
-		compTurn = true;
-		let playerAnswerContent=playerAnswer.textContent;			
-		if (playerAnswerContent === currentLetter.textContent) {
-			message.innerHTML = "Correct!";	
-			correctSound.play();				
-			score++;			
-			scoreDisplay.innerHTML = score;
-			setTimeout(() => {
-				playerAnswer.innerHTML = "";
-				computerTurn();
-			}, 500);			
-			return true;						
-		} else {
-			message.innerHTML = "Wrong!";	
-			wrongSound.play();
-			scoreDisplay.innerHTML = score;
-			playerAnswer.innerHTML = "";
-			setTimeout(() => {
+function matchCheck() {
+	compTurn = true;
+	let playerAnswerContent = playerAnswer.textContent;
+	if (playerAnswerContent === currentLetter.textContent) {
+		message.innerHTML = "Correct!";
+		correctSound.play();
+		score++;
+		scoreDisplay.innerHTML = score;
+		setTimeout(() => {
 			playerAnswer.innerHTML = "";
 			computerTurn();
-			}, 500);	
-			return false;				
-		};
-	
+		}, 500);
+		return true;
+	} else {
+		message.innerHTML = "Wrong!";
+		wrongSound.play();
+		scoreDisplay.innerHTML = score;
+		playerAnswer.innerHTML = "";
+		setTimeout(() => {
+			playerAnswer.innerHTML = "";
+			computerTurn();
+		}, 500);
+		return false;
 	}
-
-
-//checks if user and computer inputs match. if yes (true) updates score, and ,after a delay, calls the next letter and clears the player input box
-// function matchCheck() {		
-// 	let playerAnswerContent=playerAnswer.textContent;
-
-// 		if (matchResult()) {			
-// 			setTimeout(() => {
-// 			levelOne(letters);
-// 			playerAnswer.innerHTML = "";
-// 			playerAnswer.contenteditable = "true";								
-// 			}, 1000);				
-// 		score++;
-// 	} else {				
-// 		setTimeout(() => {
-// 			levelOne(letters);
-// 			playerAnswer.innerHTML = "";	
-// 			playerAnswer.contenteditable = "true";				
-// 			}, 1000);
-// 			}
-// 		scoreDisplay.innerHTML = score;
-// }
-
-// // event parameter passed into matchResult function which means the user input can be limited to 1 character only.
-// function matchResult() {	
-// 	let playerAnswerContent=playerAnswer.textContent;
-// 	if (playerAnswerContent === currentLetter.textContent) {
-// 		message.innerHTML = "Correct!";	
-// 		correctSound.play();	
-// 		return true;
-// 	} else {
-// 		message.innerHTML = "Wrong!";	
-// 		wrongSound.play();	
-// 		return false;
-// 	}
-// };
-
-//const result = getNextLetter(letter);
-//document.getElementById("quiz-letter").innerHTML = result
-//console.log(result);
-
-//}
+}
 
 //event that listens for when the start button is clicked and toggles the displayed divs
 //i.e going from a play button to the game play area.
@@ -253,7 +224,6 @@ const clickHidden = document.querySelector(".click-hidden");
 function showGameArea() {
 	startHidden.classList.toggle("hide");
 	clickHidden.classList.toggle("hide");
-
 	startGame();
 	startTimer();
 }
@@ -274,29 +244,10 @@ pauseBtn.addEventListener("click", function () {
 	}
 });
 
-//}
-// listening for when the play button is clicked to start the game //
-
-//document.querySelector("#start-game").addEventListener('click', startGame);
-
-//level 2 play
-
-//}
-
-//function playerResponse {}
-
-//function nextTurn () {
-//game.playerMoves = [];
-
-//}
-
-
-//voice parts
-
 //if ('speechSynthesis' in window) {
-    // Web Speech API is supported
-    // Your code to use speech synthesis goes here
+// Web Speech API is supported
+// Your code to use speech synthesis goes here
 //} else {
-    // Web Speech API is not supported
-  //  console.error('Web Speech API is not supported in this browser.');
+// Web Speech API is not supported
+//  console.error('Web Speech API is not supported in this browser.');
 //}
