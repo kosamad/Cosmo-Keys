@@ -267,4 +267,7 @@ pauseBtn.addEventListener("click", function () {
 
 });
 
-module.exports = { startGame, findWords };
+function addition(){
+	return 42;}
+
+module.exports = addition;
