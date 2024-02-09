@@ -228,6 +228,11 @@ function levelOne(letters) {
 	playerTurn();
 }
 
+//need to delay the twoletter words array as it hasn't been populated below which is why i'm getting the error
+//put in an ansync function???
+//make sure i'm not populating the array everytime levelTwo is called hence why the array (two letter words) neds to be outside the function. 
+//something wrong below too. the computer turn is called when the game starts but it needs to go after the level two array etc has been made 
+
 function levelTwo() {	
 	let randomIndexTwo = Math.floor(Math.random() * 50);
 	currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
@@ -250,7 +255,7 @@ function startGame() {
 	playerAnswer.contenteditable = "true";
 	gameRunning = true;
 	document.getElementById("player-answer").focus();
-	computerTurn();
+	// computerTurn();
 }
 
 

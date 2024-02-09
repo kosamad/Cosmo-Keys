@@ -20,7 +20,7 @@ beforeAll(() => {
 beforeAll((done) => {
   setTimeout(() => {
     done();
-  }, 1000);
+  }, 2000);
 });
 
 //simple addition test to ensure test suit working. can remove at end 
