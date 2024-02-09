@@ -135,22 +135,7 @@ const letters = [
 
 
 
-// // youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
-// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
 
-let twoLetterWords=[];
-
-async function findWords() {
-	try {
-	  let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
-	let data = await response.json();
-	  twoLetterWords = data.map(word => word.word);
-	  return twoLetterWords;
-	} catch (error) {
-	  console.error('an error has occured', error);
-	  throw error;
-	}
-  }
 
   //HAVE TO CALL THE FINDWORDS FUNCTION THIS WAY
   //async function example() {
@@ -211,16 +196,55 @@ wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
+// // youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
+// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
+
+let twoLetterWords;
+
+async function findWords() {
+	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
+        .then(response => response.json())
+        .then(data => data.map(word => word.word))
+        .catch(error => {
+            console.error('An error has occurred', error);
+            throw error;
+        });
+  }
+
+  findWords().then(words => {
+    twoLetterWords = words;
+	console.log(twoLetterWords);
+	computerTurn();
+});
+
 
 
 //level 1 play - load word from array //
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
 function levelOne(letters) {
-	const randomIndex = Math.floor(Math.random() * letters.length);
+	let randomIndex = Math.floor(Math.random() * letters.length);
 	currentLetter.innerHTML = letters[randomIndex];
 	speakLetter(currentLetter.innerText);
 	playerTurn();
 }
+
+function levelTwo() {	
+	let randomIndexTwo = Math.floor(Math.random() * 50);
+	currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
+	speakLetter(currentLetter.innerText);
+	playerTurn();
+}
+
+function computerTurn() {
+	compTurn = true;
+	//load correct level play
+	if (levelId === "level-1") {
+		levelOne(letters);
+	} else if (levelId === "level-2") {		
+		levelTwo();
+	};	
+}
+
 
 function startGame() {
 	playerAnswer.contenteditable = "true";
@@ -229,12 +253,7 @@ function startGame() {
 	computerTurn();
 }
 
-function computerTurn() {
-	compTurn = true;
-	//level 1 play - load word from array //
-	levelOne(letters);
-	findWords();
-}
+
 
 function playerTurn() {
 	compTurn = false;
@@ -311,4 +330,5 @@ function addition(a, b) {
 module.exports = {
 	addition,	
 	findWords,
+	levelTwo,
 };
