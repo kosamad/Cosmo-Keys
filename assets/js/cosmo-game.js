@@ -85,7 +85,7 @@ function startTimer() {
 				setTimeout(() => {
 					speakScore(score);
 					playerAnswer.innerHTML =
-						'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-two" class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+						'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-twoLetterWords variable be avaliable outide of the findwords function " class="fa-solid fa-arrow-rotate-right icon"></i></a>';
 				}, 2500);
 			}
 		}
@@ -135,21 +135,72 @@ const letters = [
 
 
 
-//youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
-//modified to map data results into an array. 
-function findWords() {
-	fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
-		.then(response => {
-			return response.json();//wait for data and fill next promise (js format)
-		})
-		.then(data => {
-			let twoLetterWords = data.map(word => word.word);
-			console.log(twoLetterWords);
-		})
-		.catch(error => console.log(error)); //in case fetch doesn't work
-}
+// // youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
+// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
+
+let twoLetterWords=[];
+
+async function findWords() {
+	try {
+	  let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
+	let data = await response.json();
+	  twoLetterWords = data.map(word => word.word);
+	  return twoLetterWords;
+	} catch (error) {
+	  console.error('an error has occured', error);
+	  throw error;
+	}
+  }
+
+  //HAVE TO CALL THE FINDWORDS FUNCTION THIS WAY
+  //async function example() {
+//   try {
+//     const twoLetterWords = await findWords();
+//     console.log(twoLetterWords);
+//     // Now you can work with the twoLetterWords array
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+//example();
 
 
+
+//OLD CODE THAT DOESN'T USE THE AWAIT FUNCION. 
+// function findWords() {
+// 	fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
+// 		.then(response => {
+// 			return response.json();//wait for data and fill next promise (js format)
+// 		})
+// 		.then(data => {
+// 			twoLetterWords = data.map(word => word.word);
+// 			console.log(twoLetterWords);
+// 		})
+// 		.catch(error => console.log(error)); //in case fetch doesn't work
+// }
+
+
+
+// function findWords() {
+// 	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
+// 	  .then(response => response.json())
+// 	  .then(data => data.map(word => word.word))
+// 	  .catch(error => {
+// 		console.error('Error:', error);
+// 		throw error; // Re-throw the error to be handled by the calling code
+// 	  });
+//   }
+
+//   findWords()
+//   .then(twoLetterWords => {
+//     // Use the twoLetterWords array here
+//     console.log(twoLetterWords);
+//   })
+//   .catch(error => {
+//     // Handle errors
+//     console.error('Error:', error);
+//   });
 
 
 //sound variables
@@ -258,6 +309,6 @@ function addition(a, b) {
 }
 
 module.exports = {
-	addition,
-	matchCheck
+	addition,	
+	findWords,
 };
