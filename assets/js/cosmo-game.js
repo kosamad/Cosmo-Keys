@@ -228,10 +228,23 @@ function levelOne(letters) {
 	playerTurn();
 }
 
+
+//WHEN I COME BACK TO THINS READ HERE!!!
 //need to delay the twoletter words array as it hasn't been populated below which is why i'm getting the error
 //put in an ansync function???
 //make sure i'm not populating the array everytime levelTwo is called hence why the array (two letter words) neds to be outside the function. 
 //something wrong below too. the computer turn is called when the game starts but it needs to go after the level two array etc has been made 
+
+//for read me how i fixed my jest bug = // Add a delay to wait for the DOM to load so varibles are decalred
+// beforeAll((done) => {
+// 	setTimeout(() => {
+// 	  done();
+// 	}, 2000);
+//   });
+
+// and then usef the mock fetch funcality of jest 
+
+
 
 function levelTwo() {	
 	let randomIndexTwo = Math.floor(Math.random() * 50);
