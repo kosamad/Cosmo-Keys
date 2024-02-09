@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		levelIndicator.innerHTML = "Level 3";
 	}
 
+});
 
 if ("speechSynthesis" in window) {
 	//Web Speech API is supported
@@ -38,13 +39,10 @@ if ("speechSynthesis" in window) {
 	console.log("Web Speech API is not supported in this browser.");
 }
 
-// setting the select level key on the level.html page and storing it locally.
+setting the select level key on the level.html page and storing it locally.
 function setLevelId(level) {
 	localStorage.setItem("selectedLevel", level);
 }
-
-
-
 
 //timer function
 //variables//
@@ -141,22 +139,19 @@ const letters = [
 ];
 
 
-
 //youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
 //modified to map data results into an array. 
-function findWords (){
-	fetch ('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
-	.then(response => {
-		return response.json();//wait for data and fill next promise (js format)
-	})
-	.then(data => {
-	let twoLetterWords = data.map(word => word.word);
-		console.log(twoLetterWords); 
-		})	
-	.catch(error => console.log(error)); //in case fetch doesn't work
+function findWords() {
+	fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
+		.then(response => {
+			return response.json();//wait for data and fill next promise (js format)
+		})
+		.then(data => {
+			let twoLetterWords = data.map(word => word.word);
+			console.log(twoLetterWords);
+		})
+		.catch(error => console.log(error)); //in case fetch doesn't work
 }
-
-
 
 
 //sound variables
@@ -182,7 +177,7 @@ function startGame() {
 	playerAnswer.contenteditable = "true";
 	gameRunning = true;
 	document.getElementById("player-answer").focus();
-	computerTurn();	
+	computerTurn();
 }
 
 function computerTurn() {
@@ -190,7 +185,6 @@ function computerTurn() {
 	//level 1 play - load word from array //
 	levelOne(letters);
 	findWords();
-
 }
 
 function playerTurn() {
@@ -201,8 +195,14 @@ function playerTurn() {
 if (compTurn === false) {
 	playerAnswer.contenteditable = "true";
 } //else {
-	//playerAnswer.contenteditable = "false";
+//playerAnswer.contenteditable = "false";
 //}
+
+function matchCheckTwo() {
+	let newVariable = true;
+};
+
+matchCheckTwo();
 
 function matchCheck() {
 	compTurn = true;
@@ -238,13 +238,13 @@ const clickHidden = document.querySelector(".click-hidden");
 
 let showArea = document.querySelector(".start-game");
 
-	showArea.addEventListener("click", function () {
+showArea.addEventListener("click", function () {
 	startHidden.classList.toggle("hide");
 	clickHidden.classList.toggle("hide");
 	startGame();
 	startTimer();
-	});
-	
+});
+
 
 
 //pausing the timer and changing the symbol written in the DOM to restart the timer again.
@@ -263,11 +263,16 @@ pauseBtn.addEventListener("click", function () {
 	}
 });
 
+function addition() {
+	return 42;
+}
 
+module.exports = {
+	addition,
+	matchCheckTwo,
+	startGame,
+	computerTurn,
+	// levelOne(letters)
+	levelOne,
+};
 
-});
-
-function addition(){
-	return 42;}
-
-module.exports = addition;

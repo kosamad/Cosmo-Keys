@@ -26,22 +26,24 @@ body {
 	padding-top: 5%;
 }
 
-.imodal-body{color: black;	
+.imodal-body {
+	color: black;
 	font-family: "Lexend", sans-serif;
 	font-size: 15px;
 	font-weight: 400;
-	padding: 5% 3%;	
-	}
+	padding: 5% 3%;
+}
 
 
-.amodal-body{color: black;	
+.amodal-body {
+	color: black;
 	font-family: "Lexend", sans-serif;
 	font-size: 15px;
 	font-weight: 400;
 	padding: 5% 5%;
 	text-align: justify;
-	
-	}
+
+}
 
 
 /*----Index.html styles----*/
@@ -86,57 +88,55 @@ body {
 
 .btn-home {
 	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
 	border-color: #3a096f;
 	font-family: "Lexend", sans-serif;
 	font-size: 30px;
 	font-weight: 600;
 	margin: 1vh;
 	border-radius: 1rem;
-	padding: 1.5vh 3vh;	
+	padding: 1.5vh 3vh;
 }
 
 .btn-home:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
 	border-color: black;
 	cursor: pointer;
-	}
+}
 
-.btn-home a {text-decoration: none;}
+.btn-home a {
+	text-decoration: none;
+}
 
-.hidden {opacity: 0;}
+.hidden {
+	opacity: 0;
+}
 
 .home-buttons {
 	margin-top: 5vh;
 }
 
 .btn:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
 	border-color: black;
 	cursor: pointer;
 	color: black;
-} 
+}
 
 .home-play {
 	color: black;
@@ -156,7 +156,9 @@ body {
 	padding: 2vh 10vh;
 }
 
-#back-btn-level {font-size: 30px;}
+#back-btn-level {
+	font-size: 30px;
+}
 
 .level-h4-text {
 	margin: 1vh;
@@ -203,26 +205,22 @@ body {
 #back-btn-level {
 	padding: 1.5vh 2vh;
 	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
 	border-color: #3a096f;
 }
 
 #back-btn-level:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
 	border-color: black;
 	cursor: pointer;
 	color: black;
@@ -254,42 +252,45 @@ body {
 
 /*-- top buttons and info--*/
 
-.btn-game-menu {	
+.btn-game-menu {
 	color: black;
-	background-image: linear-gradient(
-		to right top,
-		#e597f6,
-		#d27ff0,
-		#bd67eb,
-		#a64fe7,
-		#8a38e3
-	);
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
 	border-color: #3a096f;
-	border-radius: 0.5rem;	
+	border-radius: 0.5rem;
 }
 
 .btn-game-menu:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
 	border-color: black;
 	cursor: pointer;
 	color: black;
 }
 
-#back-btn-game {padding: 1vw 1.5vw;}
+#back-btn-game {
+	padding: 1vw 1.5vw;
+}
 
-#i-btn-game {padding: 1vw 2vw;}
+#i-btn-game {
+	padding: 1vw 2vw;
+}
 
-#reset-game {text-decoration: none;
-color: white;}
+#reset-game {
+	text-decoration: none;
+	color: white;
+}
 
-.icon {padding: 1.5vh 0;
+.icon {
+	padding: 1.5vh 0;
 	font-size: 25px;
 	text-decoration: none;
 	color: white;
@@ -311,36 +312,34 @@ color: white;}
 
 /*-- start game large button--*/
 
-.start-game {border: none;}
+.start-game {
+	border: none;
+}
 
 #start-box-container {
-	background-image: linear-gradient(
-		to right top,
-		#ea505a,
-		#f2624a,
-		#f57639,
-		#f28b27,
-		#eba012
-	);
+	background-image: linear-gradient(to right top,
+			#ea505a,
+			#f2624a,
+			#f57639,
+			#f28b27,
+			#eba012);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 7% 3% 5% 3%;
+	margin: 7% 3% 0% 3%;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 6em;	
+	align-items: center;
+	justify-content: center;
+	height: 6em;
 }
 
 #start-box-container:hover {
-	background-image: radial-gradient(
-		circle,
-		#6ee4ef,
-		#6adef2,
-		#69d8f4,
-		#6bd1f5,
-		#70caf5
-	);
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
 }
 
 .hide {
@@ -348,22 +347,20 @@ color: white;}
 }
 
 .score-container {
-	background-image: radial-gradient(
-		circle,
-		#eceaf3,
-		#e5e1f1,
-		#ddd8f0,
-		#d5d0ee,
-		#cdc7ed
-	);
+	background-image: radial-gradient(circle,
+			#eceaf3,
+			#e5e1f1,
+			#ddd8f0,
+			#d5d0ee,
+			#cdc7ed);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
 	margin: 0% 3% 5% 3%;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4em;	
+	align-items: center;
+	justify-content: center;
+	height: 4em;
 }
 
 #score {
@@ -375,22 +372,20 @@ color: white;}
 }
 
 .time-container {
-	background-image: radial-gradient(
-		circle,
-		#eceaf3,
-		#e5e1f1,
-		#ddd8f0,
-		#d5d0ee,
-		#cdc7ed
-	);
+	background-image: radial-gradient(circle,
+			#eceaf3,
+			#e5e1f1,
+			#ddd8f0,
+			#d5d0ee,
+			#cdc7ed);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
 	margin: 0% 3% 5% 3%;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4em;	
+	align-items: center;
+	justify-content: center;
+	height: 4em;
 }
 
 #timer {
@@ -404,22 +399,20 @@ color: white;}
 /*-- game play display--*/
 
 #quiz-box-container {
-	background-image: linear-gradient(
-		to right top,
-		#ea505a,
-		#f2624a,
-		#f57639,
-		#f28b27,
-		#eba012
-	);
+	background-image: linear-gradient(to right top,
+			#ea505a,
+			#f2624a,
+			#f57639,
+			#f28b27,
+			#eba012);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 7% 3% 5% 3%;
+	margin: 2% 3% 5% 3%;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 6em;	
+	align-items: center;
+	justify-content: center;
+	height: 6em;
 }
 
 
@@ -427,51 +420,48 @@ color: white;}
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	color: black;
-	font-size: 30px;	
-		}
+	font-size: 30px;
+}
 
 #player-answer {
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	color: black;
 	font-size: 30px;
-	outline: 0px solid transparent;	
+	outline: 0px solid transparent;
 	color: white;
 }
 
 
-#answer-container {
-	background-image: linear-gradient(
-		to right top,
-		#ea505a,
-		#f2624a,
-		#f57639,
-		#f28b27,
-		#eba012
-	);
+#answer-box-container {
+	background-image: linear-gradient(to right top,
+			#ea505a,
+			#f2624a,
+			#f57639,
+			#f28b27,
+			#eba012);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 7% 3% 5% 3%;
+	margin: 2% 3% 5% 3%;
 	display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 6em;
-	
-
+	align-items: center;
+	justify-content: center;
+	height: 6em;
 }
-
 
 /*-Game over-*/
 
-#message { font-size: 30px;
-font-family: "Audiowide", sans-serif;
-font-weight: 600;
-font-style: normal;
-color: white;
+#message {
+	font-size: 30px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	color: white;
 }
 
-#reset-game-two{text-decoration: none;
+#reset-game-two {
+	text-decoration: none;
 	color: greenyellow;
 }
 
@@ -494,15 +484,15 @@ color: white;
 		font-size: 25px;
 	}
 
-	
-	#start-game{
+
+	#start-game {
 		color: black;
 		font-size: 35px;
 	}
 
 	/*----Level.html MQ styles----*/
 
-	
+
 }
 
 /* If the screen size is 780px wide or less */
@@ -525,14 +515,16 @@ color: white;
 
 	.main-overlay-home {
 		padding: 4vh;
-	}	
+	}
 
 	/*----level.html MQ styles----*/
 	.level-h4-text {
-		font-size: 25px;				
+		font-size: 25px;
 	}
 
-	#back-btn-level {font-size: 25px;}
+	#back-btn-level {
+		font-size: 25px;
+	}
 
 	.btn-level {
 		font-size: 20px;
@@ -545,7 +537,7 @@ color: white;
 
 	/*----game.html MQ styles----*/
 
-	
+
 	#score {
 		font-size: 20px;
 		padding: 20% 0;
@@ -597,7 +589,8 @@ color: white;
 	}
 
 	#back-btn-game {
-		padding: 1vh 1.5vh; /*will need to change this once know vh's*/
+		padding: 1vh 1.5vh;
+		/*will need to change this once know vh's*/
 		font-size: 15px;
 	}
 }
@@ -605,6 +598,7 @@ color: white;
 /* If the screen size is 430px wide or less */
 
 @media screen and (max-width: 430px) {
+
 	/*----Index.html MQ styles----*/
 	.main-bg-home {
 		padding: 4vh;
@@ -623,7 +617,7 @@ color: white;
 		font-size: 20px;
 	}
 
-	
+
 	/*----Level.html MQ styles----*/
 	.level-h4-text {
 		font-size: 23px;
@@ -640,12 +634,14 @@ color: white;
 	}
 
 	/*----Game.html MQ styles----*/
-	
+
 
 	.ilevel-text {
-	font-size: 15px;
-	padding: 0.2rem;
-	}	/*----Need to adjust this size/padding----*/
+		font-size: 15px;
+		padding: 0.2rem;
+	}
+
+	/*----Need to adjust this size/padding----*/
 
 	.main-bg-game {
 		padding: 4vh;
@@ -654,8 +650,10 @@ color: white;
 	.main-overlay-game {
 		padding: 3vh;
 	}
-	
-	#i-btn-game {padding: 1vw 2.6vw;}
+
+	#i-btn-game {
+		padding: 1vw 2.6vw;
+	}
 
 	.icon {
 		font-size: 20px;
@@ -666,27 +664,30 @@ color: white;
 	}
 
 	#score {
-		font-size: 15px;		
+		font-size: 15px;
 	}
 
 	#timer {
-		font-size: 15px;		
+		font-size: 15px;
 	}
 }
 
 /* If the screen size is 380px wide or less */
 
 @media screen and (max-width: 380px) {
+
 	/*----Index.html MQ styles----*/
 	.description {
 		font-size: 15px;
 		padding-top: 1.5vh;
 	}
+
 	/*----Level.html MQ styles----*/
 	.level-h4-text {
 		font-size: 20px;
 		margin: 4vh 0 2vh 1.5vh;
 	}
+
 	.main-overlay-level {
 		padding: 2.5vh;
 	}
