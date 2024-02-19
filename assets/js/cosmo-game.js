@@ -5,7 +5,7 @@ setTimeout(function () {
 
 	// Show the game content
 	document.getElementById('game-content').style.display = 'block';
-  }, 3000); // Adjust the delay as needed
+}, 3000); // Adjust the delay as needed
 
 
 
@@ -198,6 +198,7 @@ async function levelTwo() {
 		console.error('An error occurred in levelTwo', error);
 		// Handle errors specific to levelTwo if needed
 	}
+
 }
 
 function computerTurn() {
@@ -240,7 +241,7 @@ function handleInput(event) {
 	if (levelId === "level-1") {
 		matchCheck();
 	}
-	else if (levelId === "level-2" && lettersTyped === 2)  {
+	else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
 	}
 	//need to add in level 3 play check here
@@ -276,6 +277,7 @@ function matchCheck() {
 //event that listens for when the start button is clicked and toggles the displayed divs
 //i.e going from a play button to the game play area.
 //starts the first game + timer
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -314,5 +316,8 @@ module.exports = {
 	levelTwo,
 	handleInput,
 	playerTurn,
-	matchCheck
-};
+	matchCheck,
+	startGame,
+	startTimer,
+	computerTurn,
+	};
