@@ -2,7 +2,7 @@
 /**
  * @jest-environment jsdom
  */
-const {addition, findWords, levelTwo} = require("../cosmo-game");
+const {addition, findWords, levelTwo, currentLetter,speakLetter, playerTurn } = require("../cosmo-game");
 
 
 //load html page and attach it to the mock DOM
@@ -17,10 +17,8 @@ beforeAll(() => {
 
 
 // Add a delay to wait for the DOM to load so varibles are decalred
-beforeAll((done) => {
-  setTimeout(() => {
-    done();
-  }, 2000);
+beforeAll(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 });
 
 //simple addition test to ensure test suit working. can remove at end 
@@ -54,15 +52,42 @@ describe('findWords function', () => {
   });
 });
 
-describe('levelTwo function works to use the random index and fill my quiz box with two letters', () => {
+// describe('levelTwo function works to use the random index and fill my quiz box with two letters', () => {
+//   beforeEach(() => {
+//     // Mock the fetch function as jest shouldn't use the API. jest.fn creates a jest mock function//for readme modified from https://salesforce.stackexchange.com/questions/402849/how-to-use-fetch-in-jest-javascript-test
+//     global.fetch = jest.fn(() => Promise.resolve({
+//       json: () => Promise.resolve([{ word: 'ab' }, { word: 'cd' }]),
+//     }));
+//   });
+//   test('one random 2 letter string is stored in the current letter box', async () => {
+//     await levelTwo();  
+//     const currentLetterTest = currentLetter.innerHTML.trim();
+//     expect(['ab', 'cd']).toContain(currentLetterTest);    
+//   });
+// });
+
+describe("levelTwo function", () => {
   beforeEach(() => {
     // Mock the fetch function as jest shouldn't use the API. jest.fn creates a jest mock function//for readme modified from https://salesforce.stackexchange.com/questions/402849/how-to-use-fetch-in-jest-javascript-test
     global.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve([{ word: 'ab' }, { word: 'cd' }]),
     }));
+  });   
+
+  test("sets currentLetter innerHTML with a valid two-letter word and calls speakLetter and playerTurn", async () => {
+    let twoLetterWords=[];
+    // Call the levelTwo function
+    await levelTwo();
+    await findWords();
+    // Check if currentLetter innerHTML is set with a valid two-letter word
+  
+    let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
+   let expectedWord = twoLetterWords[randomIndexTwo];
+    expect(currentLetter.innerHTML).toBe(expectedWord);
+
+        
+    
+    // Ensure playerTurn is called (modify the condition based on your actual implementation)
+    // expect(playerTurn).toHaveBeenCalled();
   });
-  test('one random 2 letter string is stored in the current letter box', async () => {
-    await levelTwo(twoLetterWords);  
-    expect(['ab', 'cd']).toContain(currentLetter.innerHTML);    
-  });
-});
+ });

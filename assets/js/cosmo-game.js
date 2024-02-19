@@ -41,7 +41,7 @@ if ("speechSynthesis" in window) {
 
 //timer function
 //variables//
-let startTime = 5;
+let startTime = 10;
 let remainingTime = startTime;
 let countDown;
 const timerT = document.querySelector("#timer");
@@ -96,7 +96,7 @@ function startTimer() {
 //variables//
 let score = 0;
 let gameRunning;
-const currentLetter = document.getElementById("quiz-letter");
+let currentLetter = document.getElementById("quiz-letter");
 let playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
@@ -132,6 +132,7 @@ const letters = [
 	"y",
 	"z",
 ];
+
 
 
 
@@ -201,22 +202,23 @@ endGameSound.volume = 0.5;
 
 let twoLetterWords;
 
-async function findWords() {
-	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
-        .then(response => response.json())
-        .then(data => data.map(word => word.word))
-        .catch(error => {
-            console.error('An error has occurred', error);
-            throw error;
-        });
-  }
+//cpded out as part of this experiment sssssss
 
-  findWords().then(words => {
-    twoLetterWords = words;
-	console.log(twoLetterWords);
-	computerTurn();
-});
+// async function findWords() {
+// 	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
+//         .then(response => response.json())
+//         .then(data => data.map(word => word.word))
+//         .catch(error => {
+//             console.error('An error has occurred', error);
+//             throw error;
+//         });
+//   }
 
+//   findWords().then(words => {
+//     twoLetterWords = words;
+// 	console.log(twoLetterWords);
+// 	computerTurn();
+// });
 
 
 //level 1 play - load word from array //
@@ -227,6 +229,35 @@ function levelOne(letters) {
 	speakLetter(currentLetter.innerText);
 	playerTurn();
 }
+
+
+
+async function findWords() {
+    try {
+        let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
+        let data = await response.json();
+        return data.map(word => word.word);
+    } catch (error) {
+        console.error('An error occurred during the word retrieval', error);
+        throw error;
+    }
+}
+
+async function initializeGame() {
+    try {
+        // Check if twoLetterWords is already populated
+        if (!twoLetterWords) {
+            // Call findWords and wait for it to complete
+            twoLetterWords = await findWords();
+            console.log(twoLetterWords);
+        }  
+		startGame();
+		startTimer();              
+    } catch (error) {
+        console.error('An error occurred during initialization', error);
+    }
+};
+
 
 
 //WHEN I COME BACK TO THINS READ HERE!!!
@@ -244,33 +275,50 @@ function levelOne(letters) {
 
 // and then usef the mock fetch funcality of jest 
 
+if (levelId === "level-2") {
+	initializeGame();	
+};
 
-
-function levelTwo() {	
-	let randomIndexTwo = Math.floor(Math.random() * 50);
-	currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
-	speakLetter(currentLetter.innerText);
-	playerTurn();
+async function levelTwo() {
+	try {
+		let twoLetterWords = await findWords(); // Wait for findWords to complete and get the array
+		let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
+		currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
+		speakLetter(currentLetter.innerText);
+		playerTurn();
+	} catch (error) {
+		console.error('An error occurred in levelTwo', error);
+		// Handle errors specific to levelTwo if needed
+	}
 }
+
+//old code but it doesn't wait for the twoletter words array to be populated hence get an error. 
+// function levelTwo() {		
+// 	let randomIndexTwo = Math.floor(Math.random() * 50);
+// 	currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
+// 	speakLetter(currentLetter.innerText);
+// 	playerTurn();
+// }
 
 function computerTurn() {
 	compTurn = true;
 	//load correct level play
 	if (levelId === "level-1") {
 		levelOne(letters);
-	} else if (levelId === "level-2") {		
+	} else if (levelId === "level-2") {			
 		levelTwo();
 	};	
 }
 
 
 function startGame() {
-	playerAnswer.contenteditable = "true";
-	gameRunning = true;
-	document.getElementById("player-answer").focus();
-	// computerTurn();
+    playerAnswer.contenteditable = "true";
+    gameRunning = true;
+    document.getElementById("player-answer").focus();
+      
+    // Start the game
+    computerTurn();
 }
-
 
 
 function playerTurn() {
@@ -320,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let play = document.getElementById("startgametwo");
 	play.addEventListener("click", function () {
 		play.innerHTML = '<a href="game.html"id="reset-game"type="button"aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>'
-		startGame();
+		initializeGame();
 		startTimer();
 	});
 
@@ -349,4 +397,7 @@ module.exports = {
 	addition,	
 	findWords,
 	levelTwo,
+	currentLetter,
+	speakLetter,
+	playerTurn 
 };
