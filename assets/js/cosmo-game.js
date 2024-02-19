@@ -1,11 +1,11 @@
 
-setTimeout(function () {
-	// Hide the loading screen
-	document.getElementById('loading-screen').style.display = 'none';
+// setTimeout(function () {
+// 	// Hide the loading screen
+// 	document.getElementById('loading-screen').style.display = 'none';
 
-	// Show the game content
-	document.getElementById('game-content').style.display = 'block';
-}, 3000); // Adjust the delay as needed
+// 	// Show the game content
+// 	document.getElementById('game-content').style.display = 'block';
+// }, 3000); // Adjust the delay as needed
 
 
 
@@ -20,33 +20,35 @@ if (levelId === "level-1") {
 	levelIndicator.innerHTML = "Level 3";
 }
 
-
-
 if ("speechSynthesis" in window) {
 	//Web Speech API is supported
 	//function which speaks the score at the end of the game
 	function speakScore(score) {
-		if ((scoreDisplay.innerText = 1)) {
-			const scoreVoice = new SpeechSynthesisUtterance(
+		if ((scoreDisplay.innerText === 1)) {
+			let scoreVoice = new SpeechSynthesisUtterance(
 				`congratulations, you got ${scoreDisplay.innerText} point.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
 		} else {
-			const scoreVoice = new SpeechSynthesisUtterance(
+			let scoreVoice = new SpeechSynthesisUtterance(
 				`congratulations, you got ${scoreDisplay.innerText} points.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
 		}
-	}
+	}}
 
 	//function which speaks the letter(level-1 play) selected
-	function speakLetter(letter) {
-		const letterVoice = new SpeechSynthesisUtterance(letter);
-		window.speechSynthesis.speak(letterVoice);
-	}
-} else {
-	// Web Speech API is not supported
-	console.log("Web Speech API is not supported in this browser.");
+	function speakLetter(letter) { 
+		if ("speechSynthesis" in window) { // Web Speech API is supported            
+        for (const char of letter) {
+            const charVoice = new SpeechSynthesisUtterance(char);
+			charVoice.rate = 1.5; //make it read faster than the default 1 (too slow)
+            window.speechSynthesis.speak(charVoice);
+        }
+    } else {
+        // Web Speech API is not supported
+        console.log("Web Speech API is not supported in this browser.");
+    }
 }
 
 
@@ -92,11 +94,8 @@ function startTimer() {
 				gameRunning = false;
 				message.innerHTML = "Game Over";
 				playerAnswer.contentEditable = "false";
-
 				setTimeout(() => {
-					speakScore(score);
-					playerAnswer.innerHTML =
-						'<a href="game.html" type="button" aria-label="reset game"><i id="reset-game-twoLetterWords variable be avaliable outide of the findwords function " class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+					speakScore(score);			
 				}, 2500);
 			}
 		}
@@ -227,7 +226,6 @@ function playerTurn() {
 	lettersTyped = 0;
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
-
 if (compTurn === false) {
 	playerAnswer.contenteditable = "true";
 } //else {
@@ -265,8 +263,7 @@ function matchCheck() {
 		message.innerHTML = "Wrong!";
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
-		playerAnswer.innerHTML = "";
-		setTimeout(() => {
+				setTimeout(() => {
 			playerAnswer.innerHTML = "";
 			computerTurn();
 		}, 500);
