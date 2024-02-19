@@ -4,18 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
-#loading-screen {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: #f0f0f0;
-  }
-
-  #loading-message {
-	font-size: 24px;
-	color: white;
-  }
 
  
 /*-Page background-*/
@@ -330,7 +318,7 @@ body {
 	border: none;
 }
 
-#start-box-container {
+.start-container {
 	background-image: linear-gradient(to right top,
 			#ea505a,
 			#f2624a,
@@ -347,7 +335,7 @@ body {
 	height: 6em;
 }
 
-#start-box-container:hover {
+.start-container:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
 			#6adef2,

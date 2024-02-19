@@ -91,7 +91,7 @@ function startTimer() {
 			if (remainingTime === 0) {
 				endGameSound.play();
 				clearInterval(countDown);
-				gameRunning = false;
+				gameRunning = false;				
 				message.innerHTML = "Game Over";
 				playerAnswer.contentEditable = "false";
 				setTimeout(() => {
@@ -277,14 +277,29 @@ function matchCheck() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+// 	let play = document.getElementById("startgametwo");
+// 		play.addEventListener("click", function () {                  
+//             play.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+//             startGame();
+//             startTimer();
+        
+//         })
+//     });
 
-	let play = document.getElementById("startgametwo");
-	play.addEventListener("click", function () {
-		play.innerHTML = '<a href="game.html"id="reset-game"type="button"aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>'
-		startGame();
-		startTimer();
-	});
+//I AM HERE NEED TO PUT IN FUNCATLITY TO HIDE/SHOW DIFERENT STRART?RELOAD BOXES
+
+document.addEventListener("DOMContentLoaded", function () {
+		let play = document.getElementById("startgametwo");
+			play.addEventListener("click", function () {                  
+	            play.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>';
+	            startGame();
+	            startTimer();
+			
+	        })
+	    });
+
+	document.getElementById('loading-screen').style.display = 'none';
 
 	//pausing the timer and changing the symbol written in the DOM to restart the timer again.
 	let pauseBtn = document.getElementById("pause-btn");
