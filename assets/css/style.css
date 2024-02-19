@@ -4,7 +4,23 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
+#loading-screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f0f0f0;
+  }
 
+  #loading-message {
+	font-size: 24px;
+	color: #333;
+  }
+
+  #game-content {
+	display: none; /* Initially hide the game content */
+  }
+  
 /*-Page background-*/
 
 body {

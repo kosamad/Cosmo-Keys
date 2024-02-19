@@ -1,3 +1,14 @@
+
+setTimeout(function () {
+	// Hide the loading screen
+	document.getElementById('loading-screen').style.display = 'none';
+
+	// Show the game content
+	document.getElementById('game-content').style.display = 'block';
+  }, 3000); // Adjust the delay as needed
+
+
+
 //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
 const levelId = localStorage.getItem("selectedLevel");
 const levelIndicator = document.getElementById("level-indicator");
@@ -102,6 +113,8 @@ const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
 let compTurn = true;
+let twoLetterWords;
+let lettersTyped = 0;
 
 //array for level 1 play
 const letters = [
@@ -133,62 +146,6 @@ const letters = [
 	"z",
 ];
 
-
-
-
-
-
-  //HAVE TO CALL THE FINDWORDS FUNCTION THIS WAY
-  //async function example() {
-//   try {
-//     const twoLetterWords = await findWords();
-//     console.log(twoLetterWords);
-//     // Now you can work with the twoLetterWords array
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-//example();
-
-
-
-//OLD CODE THAT DOESN'T USE THE AWAIT FUNCION. 
-// function findWords() {
-// 	fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200') //here sp = spelling and [a-z] ensures the first and second letter of array are a-z only (not numbers) 
-// 		.then(response => {
-// 			return response.json();//wait for data and fill next promise (js format)
-// 		})
-// 		.then(data => {
-// 			twoLetterWords = data.map(word => word.word);
-// 			console.log(twoLetterWords);
-// 		})
-// 		.catch(error => console.log(error)); //in case fetch doesn't work
-// }
-
-
-
-// function findWords() {
-// 	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
-// 	  .then(response => response.json())
-// 	  .then(data => data.map(word => word.word))
-// 	  .catch(error => {
-// 		console.error('Error:', error);
-// 		throw error; // Re-throw the error to be handled by the calling code
-// 	  });
-//   }
-
-//   findWords()
-//   .then(twoLetterWords => {
-//     // Use the twoLetterWords array here
-//     console.log(twoLetterWords);
-//   })
-//   .catch(error => {
-//     // Handle errors
-//     console.error('Error:', error);
-//   });
-
-
 //sound variables
 let correctSound = new Audio("assets/sounds/335908__littlerainyseasons__correct.mp3");
 correctSound.volume = 0.5;
@@ -197,28 +154,9 @@ wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
-// // youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
-// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
 
-let twoLetterWords;
 
-//cpded out as part of this experiment sssssss
 
-// async function findWords() {
-// 	return fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200')
-//         .then(response => response.json())
-//         .then(data => data.map(word => word.word))
-//         .catch(error => {
-//             console.error('An error has occurred', error);
-//             throw error;
-//         });
-//   }
-
-//   findWords().then(words => {
-//     twoLetterWords = words;
-// 	console.log(twoLetterWords);
-// 	computerTurn();
-// });
 
 
 //level 1 play - load word from array //
@@ -231,57 +169,27 @@ function levelOne(letters) {
 }
 
 
-
+// // ???? youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
+// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
 async function findWords() {
-    try {
-        let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
-        let data = await response.json();
-        return data.map(word => word.word);
-    } catch (error) {
-        console.error('An error occurred during the word retrieval', error);
-        throw error;
-    }
+	try {
+		let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
+		let data = await response.json();
+		return data.map(word => word.word);
+	} catch (error) {
+		console.error('An error occurred during the word retrieval', error);
+		throw error;
+	}
 }
-
-async function initializeGame() {
-    try {
-        // Check if twoLetterWords is already populated
-        if (!twoLetterWords) {
-            // Call findWords and wait for it to complete
-            twoLetterWords = await findWords();
-            console.log(twoLetterWords);
-        }  
-		startGame();
-		startTimer();              
-    } catch (error) {
-        console.error('An error occurred during initialization', error);
-    }
-};
-
-
-
-//WHEN I COME BACK TO THINS READ HERE!!!
-//need to delay the twoletter words array as it hasn't been populated below which is why i'm getting the error
-//put in an ansync function???
-//make sure i'm not populating the array everytime levelTwo is called hence why the array (two letter words) neds to be outside the function. 
-//something wrong below too. the computer turn is called when the game starts but it needs to go after the level two array etc has been made 
-
-//for read me how i fixed my jest bug = // Add a delay to wait for the DOM to load so varibles are decalred
-// beforeAll((done) => {
-// 	setTimeout(() => {
-// 	  done();
-// 	}, 2000);
-//   });
-
-// and then usef the mock fetch funcality of jest 
-
-if (levelId === "level-2") {
-	initializeGame();	
-};
 
 async function levelTwo() {
 	try {
-		let twoLetterWords = await findWords(); // Wait for findWords to complete and get the array
+		// Check if twoLetterWords is already populated
+		if (!twoLetterWords) {
+			// Wait for findWords to complete and get the array
+			twoLetterWords = await findWords();
+			console.log(twoLetterWords);
+		}
 		let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
 		currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
 		speakLetter(currentLetter.innerText);
@@ -292,38 +200,31 @@ async function levelTwo() {
 	}
 }
 
-//old code but it doesn't wait for the twoletter words array to be populated hence get an error. 
-// function levelTwo() {		
-// 	let randomIndexTwo = Math.floor(Math.random() * 50);
-// 	currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
-// 	speakLetter(currentLetter.innerText);
-// 	playerTurn();
-// }
-
 function computerTurn() {
 	compTurn = true;
 	//load correct level play
 	if (levelId === "level-1") {
 		levelOne(letters);
-	} else if (levelId === "level-2") {			
+	} else if (levelId === "level-2") {
 		levelTwo();
-	};	
+	};
 }
 
-
 function startGame() {
-    playerAnswer.contenteditable = "true";
-    gameRunning = true;
-    document.getElementById("player-answer").focus();
-      
-    // Start the game
-    computerTurn();
+	playerAnswer.contenteditable = "true";
+	gameRunning = true;
+	document.getElementById("player-answer").focus();
+
+	// Start the game
+	computerTurn();
 }
 
 
 function playerTurn() {
 	compTurn = false;
-	playerAnswer.addEventListener("input", matchCheck); //listens for player typing (the input) and executes the matchCheck function
+	// Reset the count of letters typed for each new player turn
+	lettersTyped = 0;
+	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
 
 if (compTurn === false) {
@@ -331,6 +232,20 @@ if (compTurn === false) {
 } //else {
 //playerAnswer.contenteditable = "false";
 //}
+
+function handleInput(event) {
+	// Increment the count of letters typed each time there is a type in the box
+	lettersTyped++;
+	// Check if the desired count is reached e.g 2 for level two play
+	if (levelId === "level-1") {
+		matchCheck();
+	}
+	else if (levelId === "level-2" && lettersTyped === 2)  {
+		matchCheck();
+	}
+	//need to add in level 3 play check here
+};
+
 
 function matchCheck() {
 	compTurn = true;
@@ -368,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let play = document.getElementById("startgametwo");
 	play.addEventListener("click", function () {
 		play.innerHTML = '<a href="game.html"id="reset-game"type="button"aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>'
-		initializeGame();
+		startGame();
 		startTimer();
 	});
 
@@ -394,10 +309,10 @@ function addition(a, b) {
 }
 
 module.exports = {
-	addition,	
+	addition,
 	findWords,
 	levelTwo,
-	currentLetter,
-	speakLetter,
-	playerTurn 
+	handleInput,
+	playerTurn,
+	matchCheck
 };
