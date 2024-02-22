@@ -124,8 +124,9 @@
 							</div>
 						</div>
 
-						<!-- play button which switches-->
-						<div class="row justify-content-center">
+						<!-- play button (which switches to reload), score counter and timer-->						
+						<div class="row justify-content-center align-items-center">
+														
 							<div
 								class="col-4 start-container start-play-icon"
 								id="start-box-container"
@@ -153,8 +154,14 @@
 									</button>
 								</a>
 							</div>
+							
 						</div>
 						<div class="row justify-content-center">
+							<div class="col-3 score-container">
+								<div class="row">
+									<div id="score">Score: <span id="js-score">0</span></div>
+								</div>
+							</div>	
 							<div class="col-4" id="quiz-box-container">
 								<div class="col-12" id="quiz-letter">
 									<div>?</div>
@@ -168,21 +175,12 @@
 									autofocus
 								></div>
 							</div>
-						</div>
-
-						<!-- score counter and timer-->
-						<div class="row align-items-center justify-content-center">
-							<div class="col-4 score-container">
-								<div class="row">
-									<div id="score">Score: <span id="js-score">0</span></div>
-								</div>
-							</div>
-							<div class="col-4 time-container">
+							<div class="col-3 time-container">
 								<div class="row justify-content-center align-items-center">
 									<div id="timer">60</div>
 								</div>
 							</div>
-						</div>
+						</div>						
 						<div class="row align-items-center justify-content-center">
 							<div class="col-6"><h2 id="message">Good Luck!</h2></div>
 						</div>

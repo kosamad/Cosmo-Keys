@@ -239,7 +239,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
-	padding: 4% 5.5%;
+	padding: 3% 4.5%;
 	position: relative;
 	max-height: 90vh;
 	margin: 10% auto;
@@ -249,14 +249,13 @@ body {
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 4%;
-	border-radius: 1.5rem;
-	max-height: 80%;	
+	padding: 2.5% 0;
+	border-radius: 1.5rem;	
 }
 
 /*-- top buttons and info--*/
 
-.top-row{ margin-bottom: 3%;}
+.top-row{ margin-bottom: 2%;}
 
 .btn-game-menu {
 	color: black;
@@ -329,7 +328,8 @@ body {
 	cursor: pointer;
 	border-radius: 0.5rem;
 	margin: 0 3% 3% 3%;		
-	height: 4rem;
+	height: 7vw;
+	width: 27vw;
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -379,18 +379,19 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 0 3% 3%;
+	margin: 2vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 4rem;
+	height: 7vw;
+	width: 12vw;
 }
 
 #score {
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	color: black;
-	font-size: 25px;
+	font-size: 20px;
 	padding: 25% 0;
 }
 
@@ -404,11 +405,12 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 0 3% 3%;
+	margin: 2vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 4rem;
+	height: 7vw;
+	width: 12vw;
 }
 
 #timer {
@@ -431,11 +433,12 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 0 3% 3% 3%;
+	margin: 0 2% 3% 2%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 6em;
+	height: 12vw;
+	width: 12vw;
 }
 
 
@@ -466,11 +469,12 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 0 3% 3% 3%;
+	margin: 0 2% 3% 2%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	height: 6em;
+	justify-content: center;	
+	height: 12vw;
+	width: 12vw;
 }
 
 /*-Game over-*/
