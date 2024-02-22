@@ -314,6 +314,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // 			reFocus.setSelectionRange(reFocus.value.length, reFocus.value.length);	
 // ;}
 
+function focusAtEnd() {
+    let reFocus = document.querySelector(".focus-point");
+    //cursor back inside the player answer box and moved to the end of the text already entered
+	reFocus.focus();	
+	let range = document.createRange(); 
+    range.collapse(false);
+	let selection = window.getSelection(); 
+    selection.removeAllRanges();
+    selection.addRange(range);
+
 	pauseBtn.addEventListener("click", function () {
 		if (removeIcon.classList.contains("fa-pause")) {
 			removeIcon.classList.remove("fa-pause");
@@ -323,11 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			removeIcon.classList.remove("fa-play");
 			removeIcon.classList.add("fa-pause");
 			paused = false;		
-			let reFocus = document.querySelector(".focus-point");
-			reFocus.focus();
-			setTimeout(function () {
-				reFocus.setSelectionRange(lettersTyped, lettersTyped);
-			}, 0);	
+			focusAtEnd();
 		}
 });
 
