@@ -290,17 +290,20 @@ function matchCheck() {
 //I AM HERE NEED TO PUT IN FUNCATLITY TO HIDE/SHOW DIFERENT STRART?RELOAD BOXES
 
 document.addEventListener("DOMContentLoaded", function () {
-		let play = document.getElementById("startgametwo");
+		let play = document.getElementById("start-game-button");
 			play.addEventListener("click", function () {                  
-	            play.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>';
-	            startGame();
-	            startTimer();
-			
+				var startContainer = document.getElementById("start-box-container");
+				var reloadContainer = document.getElementById("reload-box-container");
+		
+				startContainer.classList.add('hide');
+				reloadContainer.classList.remove('hide');	
+				
+				startGame();
+        		startTimer();
 	        })
 	    });
 
-	document.getElementById('loading-screen').style.display = 'none';
-
+	
 	//pausing the timer and changing the symbol written in the DOM to restart the timer again.
 	let pauseBtn = document.getElementById("pause-btn");
 	let removeIcon = document.getElementById("pause-remove");
@@ -316,7 +319,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			paused = false;
 		}
 	});
-})
 
 function addition(a, b) {
 	return a + b;
