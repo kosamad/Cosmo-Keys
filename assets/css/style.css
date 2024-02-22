@@ -316,11 +316,10 @@ body {
 
 /*-- start game large button--*/
 
-.start-game {
-	border: none;	
-}
 
-.restart-game {
+.icon-box {
+	font-size: 25px;
+	text-decoration: none;
 	border: none;	
 }
 
@@ -346,6 +345,7 @@ body {
 .hide {
 	display: none;
 }
+
 .start-container:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
@@ -353,8 +353,17 @@ body {
 			#69d8f4,
 			#6bd1f5,
 			#70caf5);
-}
+	}
 
+	.no-hover-effect-one:hover {
+	border: none !important;
+	box-shadow: none !important;	 
+ }
+
+ .no-hover-effect-two:hover {
+	border: none !important;
+	box-shadow: none !important;
+ }
 
 
 .score-container {
