@@ -238,6 +238,8 @@ function handleInput(event) {
 	// Check if the desired count is reached e.g 2 for level two play
 	if (levelId === "level-1") {
 		matchCheck();
+	} else if (levelId === "level-2" && lettersTyped === 1){
+		preMatchCheck();
 	}
 	else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
@@ -245,6 +247,22 @@ function handleInput(event) {
 	//need to add in level 3 play check here
 };
 
+function preMatchCheck() {
+	let playerAnswerContent = playerAnswer.textContent.trim();
+    let currentLetterContent = currentLetter.textContent.trim();
+	if (playerAnswerContent.charAt(0) === currentLetterContent.charAt(0)) {
+        compTurn = false;			
+	} else {
+		message.innerHTML = "Wrong!";
+		wrongSound.play();
+		scoreDisplay.innerHTML = score;
+				setTimeout(() => {
+			playerAnswer.innerHTML = "";
+			computerTurn();
+		}, 500);
+		return false;
+	}
+}
 
 function matchCheck() {
 	compTurn = true;
