@@ -287,7 +287,7 @@ function matchCheck() {
 //         })
 //     });
 
-//I AM HERE NEED TO PUT IN FUNCATLITY TO HIDE/SHOW DIFERENT STRART?RELOAD BOXES
+
 
 document.addEventListener("DOMContentLoaded", function () {
 		let play = document.getElementById("start-game-button");
@@ -308,6 +308,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	let pauseBtn = document.getElementById("pause-btn");
 	let removeIcon = document.getElementById("pause-remove");
 
+// function focusAtEnd() {
+// 	let reFocus = document.querySelector(".focus-point");
+// 			reFocus.focus();	
+// 			reFocus.setSelectionRange(reFocus.value.length, reFocus.value.length);	
+// ;}
+
 	pauseBtn.addEventListener("click", function () {
 		if (removeIcon.classList.contains("fa-pause")) {
 			removeIcon.classList.remove("fa-pause");
@@ -316,9 +322,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			removeIcon.classList.remove("fa-play");
 			removeIcon.classList.add("fa-pause");
-			paused = false;
+			paused = false;		
+			let reFocus = document.querySelector(".focus-point");
+			reFocus.focus();
+			setTimeout(function () {
+				reFocus.setSelectionRange(lettersTyped, lettersTyped);
+			}, 0);	
 		}
-	});
+});
+
+
 
 function addition(a, b) {
 	return a + b;
