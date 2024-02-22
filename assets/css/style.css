@@ -578,6 +578,37 @@ body {
 	/*----game.html MQ styles----*/
 }
 
+
+@media (max-width: 767px) {
+    .time-container {
+        width: 40%; 
+        margin: 2% 10%; 
+    }
+
+	.score-container { width: 40%;
+		margin: 2% 10%; }
+
+	#answer-box-container{
+	height: 20vw;
+	width: 20vw;
+	margin: 0 3% 3% 3%;
+}
+
+	#quiz-box-container{
+		height: 20vw;
+		width: 20vw;
+		margin: 0 3% 3% 3%;
+	}
+
+	.start-container{
+		margin: 0 3% 5% 3%;
+	}
+
+	.top-row {
+		margin-bottom: 1%;
+	}
+}
+
 /* If the screen size is 745px wide or less */
 
 @media screen and (max-width: 745px) {
@@ -595,6 +626,8 @@ body {
 	.home-buttons {
 		margin-top: 1.5vh;
 	}
+
+	
 }
 
 /* If the screen size is 580px wide or less */
@@ -650,10 +683,7 @@ body {
 
 	/*----Game.html MQ styles----*/
 
-	#level-indicator {
-		font-size: 15px;
-	}
-
+	
 	/*----Need to adjust this size/padding----*/
 
 	.main-bg-game {
