@@ -254,6 +254,8 @@ body {
 
 /*-- top buttons and info--*/
 
+.top-row{ margin-bottom: 5%;}
+
 .btn-game-menu {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -315,7 +317,11 @@ body {
 /*-- start game large button--*/
 
 .start-game {
-	border: none;
+	border: none;	
+}
+
+.restart-game {
+	border: none;	
 }
 
 .start-container {
@@ -328,13 +334,18 @@ body {
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 7% 3% 0% 3%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	margin: 0 3% 0% 3%;		
 	height: 6em;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* hide must come second so that the display style is set correctly  */
+
+.hide {
+	display: none;
+}
 .start-container:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
@@ -344,9 +355,7 @@ body {
 			#70caf5);
 }
 
-.hide {
-	display: none;
-}
+
 
 .score-container {
 	background-image: radial-gradient(circle,
