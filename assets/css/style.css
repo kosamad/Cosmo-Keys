@@ -318,10 +318,8 @@ body {
 
 
 .icon-box {
-	font-size: 25px;
-	text-decoration: none;
-	border: none;	
-}
+	font-size: 25px;	
+	}
 
 .start-container {
 	background-image: linear-gradient(to right top,
@@ -349,22 +347,30 @@ body {
 .start-container:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef);
 	}
 
-	.no-hover-effect-one:hover {
-	border: none !important;
-	box-shadow: none !important;	 
- }
-
- .no-hover-effect-two:hover {
-	border: none !important;
+.no-hover-effect:hover {
+	border: transparent !important;	
 	box-shadow: none !important;
+    background-image: inherit;
+    border: none;
+    text-decoration: none;
+    transition: none;
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef);	 
  }
 
+ /* #reload-game-button:hover {
+	box-shadow: none !important;	 
+ } */
 
 .score-container {
 	background-image: radial-gradient(circle,
