@@ -29,12 +29,17 @@ if ("speechSynthesis" in window) {
 				`congratulations, you got ${scoreDisplay.innerText} point.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
+		} else if ((scoreDisplay.innerText === '0')) {
+			let scoreVoice = new SpeechSynthesisUtterance(
+				`Oh dear, you didn't get any points.`
+			);
+			window.speechSynthesis.speak(scoreVoice);
 		} else {
 			let scoreVoice = new SpeechSynthesisUtterance(
 				`congratulations, you got ${scoreDisplay.innerText} points.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
-		}
+				}
 	}}
 
 	//function which speaks the letter(level-1 play) selected
