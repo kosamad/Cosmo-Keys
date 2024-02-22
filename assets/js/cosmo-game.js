@@ -202,6 +202,7 @@ async function levelTwo() {
 
 function computerTurn() {
 	compTurn = true;
+	message.innerHTML = "";
 	//load correct level play
 	if (levelId === "level-1") {
 		levelOne(letters);
@@ -253,13 +254,13 @@ function preMatchCheck() {
 	if (playerAnswerContent.charAt(0) === currentLetterContent.charAt(0)) {
         compTurn = false;			
 	} else {
+		compTurn = true;
 		message.innerHTML = "Wrong!";
+		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
-				setTimeout(() => {
-			playerAnswer.innerHTML = "";
-			computerTurn();
-		}, 500);
+		playerAnswer.innerHTML = "";
+		computerTurn();
 		return false;
 	}
 }
@@ -279,6 +280,7 @@ function matchCheck() {
 		return true;
 	} else {
 		message.innerHTML = "Wrong!";
+		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
 				setTimeout(() => {
