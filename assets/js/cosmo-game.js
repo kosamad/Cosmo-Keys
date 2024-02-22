@@ -319,12 +319,15 @@ function focusAtEnd() {
     //cursor back inside the player answer box and moved to the end of the text already entered
 	reFocus.focus();	
 	let range = document.createRange(); 
+	range.selectNodeContents(reFocus);
     range.collapse(false);
 	let selection = window.getSelection(); 
     selection.removeAllRanges();
     selection.addRange(range);
+}
 
 	pauseBtn.addEventListener("click", function () {
+		if(gameRunning){
 		if (removeIcon.classList.contains("fa-pause")) {
 			removeIcon.classList.remove("fa-pause");
 			removeIcon.classList.add("fa-play");
@@ -335,6 +338,7 @@ function focusAtEnd() {
 			paused = false;		
 			focusAtEnd();
 		}
+	}
 });
 
 
