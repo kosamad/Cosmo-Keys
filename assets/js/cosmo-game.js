@@ -50,6 +50,23 @@ if ("speechSynthesis" in window) {
 			charVoice.rate = 1.5; //make it read faster than the default 1 (too slow)
             window.speechSynthesis.speak(charVoice);
         }
+		// for (let i = 0; i < letter.length; i++) {
+		// 	const char = letter[i];			
+		// 	setTimeout(() => {
+		// 		const charVoice = new SpeechSynthesisUtterance(char);
+		// 		charVoice.rate = 1.5; // make it read faster than the default 1 (too slow)
+		// 		window.speechSynthesis.speak(charVoice);
+		// 	}, i * 50); // Delay each character by 300ms (adjust as needed)
+		// }
+		// const speechPromises = letters.map(char => {
+		// 	const charVoice = new SpeechSynthesisUtterance(char);
+		// 	charVoice.rate = 1.5; // Adjust rate as needed
+		// 	return new Promise(resolve => {
+		// 		charVoice.onend = resolve;
+		// 		window.speechSynthesis.speak(charVoice);
+		// 	});
+		// });
+		// return Promise.all(speechPromises);
     } else {
         // Web Speech API is not supported
         console.log("Web Speech API is not supported in this browser.");
