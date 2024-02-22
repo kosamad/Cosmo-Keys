@@ -4,8 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
-
- 
 /*-Page background-*/
 
 body {
@@ -13,10 +11,9 @@ body {
 	max-height: 100vh;
 	display: flex;
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 	margin: 0;
 }
-
 
 /*- Modals-*/
 
@@ -38,7 +35,6 @@ body {
 	padding: 5% 3%;
 }
 
-
 .amodal-body {
 	color: black;
 	font-family: "Lexend", sans-serif;
@@ -46,9 +42,7 @@ body {
 	font-weight: 400;
 	padding: 5% 5%;
 	text-align: justify;
-
 }
-
 
 /*----Index.html styles----*/
 
@@ -92,12 +86,14 @@ body {
 
 .btn-home {
 	color: black;
-	background-image: linear-gradient(to right top,
-			#e597f6,
-			#d27ff0,
-			#bd67eb,
-			#a64fe7,
-			#8a38e3);
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
 	border-color: #3a096f;
 	font-family: "Lexend", sans-serif;
 	font-size: 30px;
@@ -108,12 +104,14 @@ body {
 }
 
 .btn-home:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
 	border-color: black;
 	cursor: pointer;
 }
@@ -131,12 +129,14 @@ body {
 }
 
 .btn:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
 	border-color: black;
 	cursor: pointer;
 	color: black;
@@ -209,22 +209,26 @@ body {
 #back-btn-level {
 	padding: 1.5vh 2vh;
 	color: black;
-	background-image: linear-gradient(to right top,
-			#e597f6,
-			#d27ff0,
-			#bd67eb,
-			#a64fe7,
-			#8a38e3);
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
 	border-color: #3a096f;
 }
 
 #back-btn-level:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
 	border-color: black;
 	cursor: pointer;
 	color: black;
@@ -250,32 +254,38 @@ body {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
 	padding: 2.5% 0;
-	border-radius: 1.5rem;	
+	border-radius: 1.5rem;
 }
 
 /*-- top buttons and info--*/
 
-.top-row{ margin-bottom: 2%;}
+.top-row {
+	margin-bottom: 2%;
+}
 
 .btn-game-menu {
 	color: black;
-	background-image: linear-gradient(to right top,
-			#e597f6,
-			#d27ff0,
-			#bd67eb,
-			#a64fe7,
-			#8a38e3);
+	background-image: linear-gradient(
+		to right top,
+		#e597f6,
+		#d27ff0,
+		#bd67eb,
+		#a64fe7,
+		#8a38e3
+	);
 	border-color: #3a096f;
 	border-radius: 0.5rem;
 }
 
 .btn-game-menu:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6adef2,
+		#69d8f4,
+		#6bd1f5,
+		#70caf5
+	);
 	border-color: black;
 	cursor: pointer;
 	color: black;
@@ -308,31 +318,30 @@ body {
 	padding: 0.5rem 0;
 }
 
-
-
 /*-- start game large button--*/
 
-
 .icon-box {
-	font-size: 25px;	
-	}
+	font-size: 25px;
+}
 
 .start-container {
-	background-image: linear-gradient(to right top,
-			#ea505a,
-			#f2624a,
-			#f57639,
-			#f28b27,
-			#eba012);
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
-	margin: 0 3% 3% 3%;		
+	margin: 0 3% 3% 3%;
 	height: 7vw;
 	width: 27vw;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 /* hide must come second so that the display style is set correctly  */
@@ -342,40 +351,46 @@ body {
 }
 
 .start-container:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef);
-	}
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef
+	);
+}
 
 .no-hover-effect:hover {
-	border: transparent !important;	
+	border: transparent !important;
 	box-shadow: none !important;
-    background-image: inherit;
-    border: none;
-    text-decoration: none;
-    transition: none;
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef);	 
- }
+	background-image: inherit;
+	border: none;
+	text-decoration: none;
+	transition: none;
+	background-image: radial-gradient(
+		circle,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef,
+		#6ee4ef
+	);
+}
 
- /* #reload-game-button:hover {
+/* #reload-game-button:hover {
 	box-shadow: none !important;	 
  } */
 
 .score-container {
-	background-image: radial-gradient(circle,
-			#eceaf3,
-			#e5e1f1,
-			#ddd8f0,
-			#d5d0ee,
-			#cdc7ed);
+	background-image: radial-gradient(
+		circle,
+		#eceaf3,
+		#e5e1f1,
+		#ddd8f0,
+		#d5d0ee,
+		#cdc7ed
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -396,12 +411,14 @@ body {
 }
 
 .time-container {
-	background-image: radial-gradient(circle,
-			#eceaf3,
-			#e5e1f1,
-			#ddd8f0,
-			#d5d0ee,
-			#cdc7ed);
+	background-image: radial-gradient(
+		circle,
+		#eceaf3,
+		#e5e1f1,
+		#ddd8f0,
+		#d5d0ee,
+		#cdc7ed
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -424,12 +441,14 @@ body {
 /*-- game play display--*/
 
 #quiz-box-container {
-	background-image: linear-gradient(to right top,
-			#ea505a,
-			#f2624a,
-			#f57639,
-			#f28b27,
-			#eba012);
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -440,7 +459,6 @@ body {
 	height: 12vw;
 	width: 12vw;
 }
-
 
 #quiz-letter {
 	font-family: "Lexend", sans-serif;
@@ -458,21 +476,22 @@ body {
 	color: white;
 }
 
-
 #answer-box-container {
-	background-image: linear-gradient(to right top,
-			#ea505a,
-			#f2624a,
-			#f57639,
-			#f28b27,
-			#eba012);
+	background-image: linear-gradient(
+		to right top,
+		#ea505a,
+		#f2624a,
+		#f57639,
+		#f28b27,
+		#eba012
+	);
 	border-color: black;
 	cursor: pointer;
 	border-radius: 0.5rem;
 	margin: 0 2% 3% 2%;
 	display: flex;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 	height: 12vw;
 	width: 12vw;
 }
@@ -492,8 +511,6 @@ body {
 	color: greenyellow;
 }
 
-
-
 /*-Media Query-*/
 
 /* If the screen size is 1024px wide or less */
@@ -511,15 +528,12 @@ body {
 		font-size: 25px;
 	}
 
-
 	#start-game {
 		color: black;
 		font-size: 35px;
 	}
 
 	/*----Level.html MQ styles----*/
-
-
 }
 
 /* If the screen size is 780px wide or less */
@@ -538,7 +552,6 @@ body {
 	.btn-home {
 		padding: 2.3vh;
 	}
-
 
 	.main-overlay-home {
 		padding: 4vh;
@@ -563,17 +576,6 @@ body {
 	}
 
 	/*----game.html MQ styles----*/
-
-
-	#score {
-		font-size: 20px;
-		padding: 20% 0;
-	}
-
-	#timer {
-		font-size: 20px;
-		padding: 20% 0;
-	}
 }
 
 /* If the screen size is 745px wide or less */
@@ -598,34 +600,21 @@ body {
 /* If the screen size is 580px wide or less */
 @media screen and (max-width: 580px) {
 	#info-btn {
-		padding: 1vh 2.5vh;
-		font-size: 15px;
 	}
 
 	.main-bg-game {
-		padding: 1rem;
-		max-height: 98vh;
-		margin: 10rem;
-		max-width: 85vw;
 	}
 
 	.main-overlay-game {
-		padding: 1.5vh;
-		max-height: 95vh;
-		max-width: 80vw;
 	}
 
 	#back-btn-game {
-		padding: 1vh 1.5vh;
-		/*will need to change this once know vh's*/
-		font-size: 15px;
 	}
 }
 
 /* If the screen size is 430px wide or less */
 
 @media screen and (max-width: 430px) {
-
 	/*----Index.html MQ styles----*/
 	.main-bg-home {
 		padding: 4vh;
@@ -644,7 +633,6 @@ body {
 		font-size: 20px;
 	}
 
-
 	/*----Level.html MQ styles----*/
 	.level-h4-text {
 		font-size: 23px;
@@ -662,24 +650,19 @@ body {
 
 	/*----Game.html MQ styles----*/
 
-
-	.ilevel-text {
+	#level-indicator {
 		font-size: 15px;
-		padding: 0.2rem;
 	}
 
 	/*----Need to adjust this size/padding----*/
 
 	.main-bg-game {
-		padding: 4vh;
 	}
 
 	.main-overlay-game {
-		padding: 3vh;
 	}
 
 	#i-btn-game {
-		padding: 1vw 2.6vw;
 	}
 
 	.icon {
@@ -691,7 +674,7 @@ body {
 	}
 
 	#score {
-		font-size: 15px;
+		font-size: 10px;
 	}
 
 	#timer {
@@ -702,7 +685,6 @@ body {
 /* If the screen size is 380px wide or less */
 
 @media screen and (max-width: 380px) {
-
 	/*----Index.html MQ styles----*/
 	.description {
 		font-size: 15px;
