@@ -89,6 +89,7 @@ function startTimer() {
 			}
 
 			if (remainingTime === 0) {
+				speechSynthesis.cancel();
 				endGameSound.play();
 				clearInterval(countDown);
 				gameRunning = false;				
