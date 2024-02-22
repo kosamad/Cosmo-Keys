@@ -59,7 +59,7 @@ if ("speechSynthesis" in window) {
 
 //timer function
 //variables//
-let startTime = 10;
+let startTime = 60;
 let remainingTime = startTime;
 let countDown;
 const timerT = document.querySelector("#timer");
