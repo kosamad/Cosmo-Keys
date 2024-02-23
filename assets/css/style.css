@@ -275,6 +275,7 @@ body {
 	);
 	border-color: #3a096f;
 	border-radius: 0.5rem;
+	padding: 1vw 1.5vw;
 }
 
 .btn-game-menu:hover {
@@ -293,6 +294,7 @@ body {
 
 #back-btn-game {
 	padding: 1vw 1.5vw;
+	font-size: 20px;
 }
 
 #i-btn-game {
@@ -300,21 +302,25 @@ body {
 }
 
 .icon {
-	padding: 1vw 1.5vw;
-	font-size: 25px;
+	font-size: 28px;
 	text-decoration: none;	
 }
 
-.icon:hover {
-	color: #6adef2;
+.icon:hover {	
 	cursor: pointer;
 }
+
+.ilevel-text{ 
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    }
 
 #level-indicator {
 	font-size: 20px;
 	font-family: "Lexend", sans-serif;
-	font-weight: 600;
-	margin:0 auto;
+	font-weight: 600;	
+	margin-bottom: 0;
 }
 
 /*-- start game large button--*/

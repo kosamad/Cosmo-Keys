@@ -11,10 +11,13 @@ const levelId = localStorage.getItem("selectedLevel");
 const levelIndicator = document.getElementById("level-indicator");
 if (levelId === "level-1") {
 	levelIndicator.innerHTML = "Level 1";
+	levelIndicator.style.color = "#27e862";
 } else if (levelId === "level-2") {
 	levelIndicator.innerHTML = "Level 2";
+	levelIndicator.style.color = "#eab02f";
 } else if (levelId === "level-3") {
 	levelIndicator.innerHTML = "Level 3";
+	levelIndicator.style.color = "#e72b2b";
 }
 
 if ("speechSynthesis" in window) {
