@@ -157,7 +157,7 @@ function startTimer() {
 				timerColor.style.backgroundImage =
 					"radial-gradient(circle, #e97070, #ef5d5a, #f24943, #f33028, #f10000)";
 			}
-			//when remaining time is 0 the game is over. The timer stops, the end game sound runs and the score is declared.
+			//when remaining time is 0 the game is over. The timer stops, the end game sound plays and the score is declared.
 			if (remainingTime === 0) {
 				speechSynthesis.cancel();
 				endGameSound.play();
@@ -174,18 +174,23 @@ function startTimer() {
 }
 
 
+//differnt level play
 
-//level 1 play - load word from array //
-//if (getElementById('level-indicator').innerHTML === 'Level 1'){
+//level 1 play - load word from written array //
 function levelOne(letters) {
 	let randomIndex = Math.floor(Math.random() * letters.length);
-	currentLetter.innerHTML = letters[randomIndex];
+	currentLetter.innerHTML = letters[randomIndex]; //chooses a random letter from the array
 	speakLetter(currentLetter.innerText);
 	playerTurn();
 }
 
-// // ???? youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
-// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
+
+
+//level-2 play- uses API
+
+// youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
+// modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
+//async function used as the data needs to be collected from the API before it can be used. 
 
 async function findWords() {
 	try {
@@ -200,7 +205,7 @@ async function findWords() {
 			if (levelId === "level-2") {
 				return data.map((word) => word.word);
 			} else if (levelId === "level-3") {
-				let threeLetterWords = data.filter(word => word.word.length === 3);
+				let threeLetterWords = data.filter(word => word.word.length === 3);//API sometimes gives four letter words so this ensures three letter words only make it into the game
 				return threeLetterWords.map(word => word.word);
 			}
 		}
@@ -210,33 +215,7 @@ async function findWords() {
 	}
 }
 
-
-
-// async function findWords() {
-//     try {
-//         if (levelId === "level-2") {
-//             let response = await fetch(
-//                 "https://api.datamuse.com/words?sp=[a-z][a-z]&max=200"
-//             );
-//             let data = await response.json();
-//             return data.map((word) => word.word);
-//         } else if (levelId === "level-3") {
-//             let response = await fetch(
-//                 "https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200"
-//             );
-//             let data = await response.json();
-//             let threeLetterWords = data.filter(word => word.word.length === 3);
-//             if (threeLetterWords.length > 0) {
-//                 let threeLetterWordsArray = threeLetterWords.map(word => word.word);
-//                 return threeLetterWordsArray;
-//             }
-//         }
-//     } catch (error) {
-//         console.error("An error occurred during the word retrieval", error);
-//         throw error;
-//     }
-// }
-
+//async function that waits for the levelTwo letters to be populated by the API above.
 async function levelTwo() {
 	try {
 		// Check if twoLetterWords is already populated
@@ -246,7 +225,7 @@ async function levelTwo() {
 			console.log(twoLetterWords);
 		}
 		let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
-		currentLetter.innerHTML = twoLetterWords[randomIndexTwo];
+		currentLetter.innerHTML = twoLetterWords[randomIndexTwo]; //chooses a random word from the array
 		speakLetter(currentLetter.innerText);
 		playerTurn();
 	} catch (error) {
@@ -255,9 +234,10 @@ async function levelTwo() {
 	}
 }
 
+//level-3 play retrives 3 letter words
 async function levelThree() {
 	try {
-		// Check if twoLetterWords is already populated
+		// Check if threeLetterWords is already populated
 		if (!threeLetterWords) {
 			// Wait for findWords to complete and get the array
 			threeLetterWords = await findWords();
@@ -273,6 +253,9 @@ async function levelThree() {
 	}
 }
 
+//general game play
+
+//computer turn
 function computerTurn() {
 	compTurn = true;
 	message.innerHTML = "Good Luck!";
@@ -286,33 +269,30 @@ function computerTurn() {
 	}
 }
 
+//start game function which initialises the game and begins the first computer turn
 function startGame() {
-	playerAnswer.contenteditable = "true";
+	playerAnswer.contenteditable = "true"; //allows the user to type
 	gameRunning = true;
-	document.getElementById("player-answer").focus();
-
-	// Start the game
+	document.getElementById("player-answer").focus(); //puts the cursor in the player-answer box
 	computerTurn();
 }
 
+//player turn function
 function playerTurn() {
 	compTurn = false;
 	// Reset the count of letters typed for each new player turn
 	lettersTyped = 0;
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
-
-
 if (compTurn === false) {
-	playerAnswer.contenteditable = "true";
-} //else {
-//playerAnswer.contenteditable = "false";
-//}
+	playerAnswer.contenteditable = "true"; //ensures the user can type on their turn
+}
 
+//function to check how many letters have been typed and what function follows
 function handleInput(event) {
 	// Increment the count of letters typed each time there is a type in the box
 	lettersTyped++;
-	// Check if the desired count is reached e.g 2 for level two play
+	// Function chosen depending on level and how many letters need to be typed
 	if (levelId === "level-1") {
 		matchCheck();
 	} else if (levelId === "level-2" && lettersTyped === 1) {
@@ -326,6 +306,9 @@ function handleInput(event) {
 	}
 }
 
+//preMatchCheck's check each letter typed by the player against the computer (before the final letter). 
+//moves out of player turn if an incorrect letter is typed, plays the wrong sound and moves back to the computerTurn
+//pre match check for level 2
 function preMatchCheckTwo() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
 	let currentLetterContent = currentLetter.textContent.trim();
@@ -343,6 +326,7 @@ function preMatchCheckTwo() {
 	}
 }
 
+//pre match check for level 3
 function preMatchCheckThree() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
 	let currentLetterContent = currentLetter.textContent.trim();
@@ -362,6 +346,7 @@ function preMatchCheckThree() {
 	compTurn = false;
 }
 
+//matchCheck checks the completed player answer against the computer and issues subsequent function based on a correct or incorrect answer 
 function matchCheck() {
 	compTurn = true;
 	let playerAnswerContent = playerAnswer.textContent;
@@ -389,7 +374,7 @@ function matchCheck() {
 }
 
 
-
+//listener which waits for the DOM to load and then waits for the user to click the startgame button
 document.addEventListener("DOMContentLoaded", function () {
 	play = document.getElementById("start-game-button");
 
@@ -426,6 +411,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		startTimer();
 	});
 });
+
+//pausing the game functions (pause timer and computer is controlled by the timer function)
 
 //ensure cursor moves to the end of the prev typed letter (and not to the start)
 function focusAtEnd() {
