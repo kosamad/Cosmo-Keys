@@ -241,7 +241,7 @@ body {
 	border-radius: 0.5rem;
 	font-size: 20px;
 	border: none;	
-	padding: 6px;
+	padding: 3px;
 }
 
 .btn-game-menu:hover {
@@ -258,10 +258,6 @@ body {
 
 .top-row {
 	margin: 0 0 4% 3%;
-}
-
-#back-btn-game {
-	font-size: 20px;
 }
 
 #i-btn-game {
@@ -616,21 +612,17 @@ body {
 
 	}
 
-	#level-indicator {
-		font-size: 15px
-	}
-
-	.main-bg-game {
+		.main-bg-game {
 		padding: 3% 5%;
 		max-width: 65vw;
 	}
 
-	: .main-bg-level {
+	.main-bg-level {
 		padding: 3% 5%;
 		max-width: 65vw;
 	}
 
-	:
+	
 }
 
 
@@ -638,6 +630,10 @@ body {
 @media screen and (max-width: 680px) {
 	.btn-game-menu {
 		font-size: 12px;
+	}
+
+	#level-indicator {
+		font-size: 20px
 	}
 
 }
