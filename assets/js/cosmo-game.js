@@ -385,43 +385,31 @@ function matchCheck() {
 	}
 }
 
-//event that listens for when the start button is clicked and toggles the displayed divs
-//i.e going from a play button to the game play area.
-//starts the first game + timer
 
-// document.addEventListener("DOMContentLoaded", function () {
-// 	let play = document.getElementById("startgametwo");
-// 		play.addEventListener("click", function () {
-//             play.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>';
-//             startGame();
-//             startTimer();
-
-//         })
-//     });
+let play;
+let pauseBtn;
+let removeIcon;
 
 document.addEventListener("DOMContentLoaded", function () {
-	let play = document.getElementById("start-game-button");
+	play = document.getElementById("start-game-button");
 	play.addEventListener("click", function () {
 		var startContainer = document.getElementById("start-box-container");
 		var reloadContainer = document.getElementById("reload-box-container");
 
 		startContainer.classList.add("hide");
-		reloadContainer.classList.remove("hide");
+		reloadContainer.classList.remove("hide");	
+
+
+		pauseBtn = document.getElementById("pause-btn");
+		removeIcon = document.getElementById("pause-remove");
+
+		pauseBtn.addEventListener("click", togglePause);
 
 		startGame();
 		startTimer();
 	});
 });
 
-//pausing the timer and changing the symbol written in the DOM to restart the timer again.
-let pauseBtn = document.getElementById("pause-btn");
-let removeIcon = document.getElementById("pause-remove");
-
-// function focusAtEnd() {
-// 	let reFocus = document.querySelector(".focus-point");
-// 			reFocus.focus();
-// 			reFocus.setSelectionRange(reFocus.value.length, reFocus.value.length);
-// ;}
 
 function focusAtEnd() {
 	let reFocus = document.querySelector(".focus-point");
@@ -435,20 +423,23 @@ function focusAtEnd() {
 	selection.addRange(range);
 }
 
-pauseBtn.addEventListener("click", function () {
-	if (gameRunning) {
-		if (removeIcon.classList.contains("fa-pause")) {
-			removeIcon.classList.remove("fa-pause");
-			removeIcon.classList.add("fa-play");
-			paused = true;
-		} else {
-			removeIcon.classList.remove("fa-play");
-			removeIcon.classList.add("fa-pause");
-			paused = false;
-			focusAtEnd();
-		}
-	}
-});
+document.getElementById("pause-btn").addEventListener("click", togglePause);
+function togglePause() {
+	console.log ("i've been clicked")
+    if (gameRunning) {
+        if (removeIcon.classList.contains("fa-pause")) {
+							removeIcon.classList.remove("fa-pause");
+							removeIcon.classList.add("fa-play");
+							paused = true;
+						} else {
+							removeIcon.classList.remove("fa-play");
+							removeIcon.classList.add("fa-pause");
+							paused = false;
+							focusAtEnd();
+						}
+        }
+    }
+
 
 function addition(a, b) {
 	return a + b;
