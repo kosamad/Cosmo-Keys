@@ -20,6 +20,8 @@ if (levelId === "level-1") {
 	levelIndicator.style.color = "#e72b2b";
 }
 
+
+
 if ("speechSynthesis" in window) {
 	//Web Speech API is supported
 	//function which speaks the score at the end of the game
@@ -49,7 +51,7 @@ function speakLetter(letter) {
 		// Web Speech API is supported
 		if (levelId === "level-3") {
 			let levelThreeWord = new SpeechSynthesisUtterance(currentLetter.innerText);
-			levelThreeWord.rate = 1; 
+			levelThreeWord.rate = 1;
 			window.speechSynthesis.speak(levelThreeWord);
 		} else {
 			for (const char of letter) {
@@ -101,7 +103,7 @@ function startTimer() {
 					"radial-gradient(circle, #f8c7a8, #f8ae80, #f6945a, #f27934, #ec5b00)";
 			} else if (remainingTime <= 10 && remainingTime >= 0) {
 				timerColor.style.backgroundImage =
-				"radial-gradient(circle, #e97070, #ef5d5a, #f24943, #f33028, #f10000)";
+					"radial-gradient(circle, #e97070, #ef5d5a, #f24943, #f33028, #f10000)";
 			}
 			if (remainingTime === 0) {
 				speechSynthesis.cancel();
@@ -185,26 +187,26 @@ function levelOne(letters) {
 // // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
 
 async function findWords() {
-    try {
-        let response, data;
-        if (levelId === "level-2") {
-            response = await fetch("https://api.datamuse.com/words?sp=[a-z][a-z]&max=200");
-        } else if (levelId === "level-3") {
-            response = await fetch("https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200");
-        }
+	try {
+		let response, data;
+		if (levelId === "level-2") {
+			response = await fetch("https://api.datamuse.com/words?sp=[a-z][a-z]&max=200");
+		} else if (levelId === "level-3") {
+			response = await fetch("https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200");
+		}
 		if (response) {
-            data = await response.json();
-            if (levelId === "level-2") {
-                return data.map((word) => word.word);
-            } else if (levelId === "level-3") {
-                let threeLetterWords = data.filter(word => word.word.length === 3);
-                return threeLetterWords.map(word => word.word);
-            }
-        }
-    } catch (error) {
-        console.error("An error occurred during the word retrieval", error);
-        throw error;
-    }
+			data = await response.json();
+			if (levelId === "level-2") {
+				return data.map((word) => word.word);
+			} else if (levelId === "level-3") {
+				let threeLetterWords = data.filter(word => word.word.length === 3);
+				return threeLetterWords.map(word => word.word);
+			}
+		}
+	} catch (error) {
+		console.error("An error occurred during the word retrieval", error);
+		throw error;
+	}
 }
 
 
@@ -316,12 +318,12 @@ function handleInput(event) {
 		preMatchCheckTwo();
 	} else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
-	}	else if (levelId === "level-3" && (lettersTyped === 1 || lettersTyped === 2)) {
+	} else if (levelId === "level-3" && (lettersTyped === 1 || lettersTyped === 2)) {
 		preMatchCheckThree();
 	} else if (levelId === "level-3" && lettersTyped === 3) {
 		matchCheck();
 	}
-	}
+}
 
 function preMatchCheckTwo() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
@@ -344,19 +346,19 @@ function preMatchCheckThree() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
-        if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
-            compTurn = true;
-            message.innerHTML = "Wrong!";
-            speechSynthesis.cancel();
-            wrongSound.play();
-            scoreDisplay.innerHTML = score;
-            playerAnswer.innerHTML = "";
-            computerTurn();
-            return false;
-        }
-    }
-    // If all characters match, continue with the correct case
-    compTurn = false;
+		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
+			compTurn = true;
+			message.innerHTML = "Wrong!";
+			speechSynthesis.cancel();
+			wrongSound.play();
+			scoreDisplay.innerHTML = score;
+			playerAnswer.innerHTML = "";
+			computerTurn();
+			return false;
+		}
+	}
+	// If all characters match, continue with the correct case
+	compTurn = false;
 }
 
 function matchCheck() {
@@ -392,12 +394,22 @@ let removeIcon;
 
 document.addEventListener("DOMContentLoaded", function () {
 	play = document.getElementById("start-game-button");
+
+	//colour change of start button container only changes when the button is hovered over and returns to normal when the mouse is removed. 
+	play.addEventListener('mouseover', function () {
+		document.getElementById('start-box-container').style.backgroundImage = "radial-gradient(	circle,	#6ee4ef,	#6ee4ef,	#6ee4ef,#6ee4ef,#6ee4ef	)";
+	});
+
+	play.addEventListener('mouseout', function () {
+		document.getElementById('start-box-container').style.backgroundImage = "linear-gradient(	to right top,#ea505a,#f2624a,#f57639,#f28b27,#eba012)";
+	});
+
 	play.addEventListener("click", function () {
 		var startContainer = document.getElementById("start-box-container");
 		var reloadContainer = document.getElementById("reload-box-container");
 
 		startContainer.classList.add("hide");
-		reloadContainer.classList.remove("hide");	
+		reloadContainer.classList.remove("hide");
 
 
 		pauseBtn = document.getElementById("pause-btn");
@@ -425,20 +437,20 @@ function focusAtEnd() {
 
 document.getElementById("pause-btn").addEventListener("click", togglePause);
 function togglePause() {
-	console.log ("i've been clicked")
-    if (gameRunning) {
-        if (removeIcon.classList.contains("fa-pause")) {
-							removeIcon.classList.remove("fa-pause");
-							removeIcon.classList.add("fa-play");
-							paused = true;
-						} else {
-							removeIcon.classList.remove("fa-play");
-							removeIcon.classList.add("fa-pause");
-							paused = false;
-							focusAtEnd();
-						}
-        }
-    }
+	console.log("i've been clicked")
+	if (gameRunning) {
+		if (removeIcon.classList.contains("fa-pause")) {
+			removeIcon.classList.remove("fa-pause");
+			removeIcon.classList.add("fa-play");
+			paused = true;
+		} else {
+			removeIcon.classList.remove("fa-play");
+			removeIcon.classList.add("fa-pause");
+			paused = false;
+			focusAtEnd();
+		}
+	}
+}
 
 
 function addition(a, b) {
