@@ -292,13 +292,14 @@ body {
 	color: black;
 }
 
-/* #back-btn-game {
-	padding: 1vw 1.5vw;
+#back-btn-game {
+	margin-left: 3%;
 	font-size: 20px;
-} */
+}
 
 #i-btn-game {
 	padding: 1vw 2vw;
+	margin-right: 0;
 }
 
 .icon {
