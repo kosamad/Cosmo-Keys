@@ -1,4 +1,3 @@
-
 // setTimeout(function () {
 // 	// Hide the loading screen
 // 	document.getElementById('loading-screen').style.display = 'none';
@@ -6,8 +5,6 @@
 // 	// Show the game content
 // 	document.getElementById('game-content').style.display = 'block';
 // }, 3000); // Adjust the delay as needed
-
-
 
 //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
 const levelId = localStorage.getItem("selectedLevel");
@@ -24,12 +21,12 @@ if ("speechSynthesis" in window) {
 	//Web Speech API is supported
 	//function which speaks the score at the end of the game
 	function speakScore(score) {
-		if ((scoreDisplay.innerText === 1)) {
+		if (scoreDisplay.innerText === 1) {
 			let scoreVoice = new SpeechSynthesisUtterance(
 				`congratulations, you got ${scoreDisplay.innerText} point.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
-		} else if ((scoreDisplay.innerText === '0')) {
+		} else if (scoreDisplay.innerText === "0") {
 			let scoreVoice = new SpeechSynthesisUtterance(
 				`Oh dear, you didn't get any points.`
 			);
@@ -39,40 +36,34 @@ if ("speechSynthesis" in window) {
 				`congratulations, you got ${scoreDisplay.innerText} points.`
 			);
 			window.speechSynthesis.speak(scoreVoice);
-				}
-	}}
-
-	//function which speaks the letter(level-1 play) selected
-	function speakLetter(letter) { 
-		if ("speechSynthesis" in window) { // Web Speech API is supported            
-        for (const char of letter) {
-            const charVoice = new SpeechSynthesisUtterance(char);
-			charVoice.rate = 1.5; //make it read faster than the default 1 (too slow)
-            window.speechSynthesis.speak(charVoice);
-        }
-		// for (let i = 0; i < letter.length; i++) {
-		// 	const char = letter[i];			
-		// 	setTimeout(() => {
-		// 		const charVoice = new SpeechSynthesisUtterance(char);
-		// 		charVoice.rate = 1.5; // make it read faster than the default 1 (too slow)
-		// 		window.speechSynthesis.speak(charVoice);
-		// 	}, i * 50); // Delay each character by 300ms (adjust as needed)
-		// }
-		// const speechPromises = letters.map(char => {
-		// 	const charVoice = new SpeechSynthesisUtterance(char);
-		// 	charVoice.rate = 1.5; // Adjust rate as needed
-		// 	return new Promise(resolve => {
-		// 		charVoice.onend = resolve;
-		// 		window.speechSynthesis.speak(charVoice);
-		// 	});
-		// });
-		// return Promise.all(speechPromises);
-    } else {
-        // Web Speech API is not supported
-        console.log("Web Speech API is not supported in this browser.");
-    }
+		}
+	}
 }
 
+//function which speaks the letter(level-1 play) selected
+function speakLetter(letter) {
+	if ("speechSynthesis" in window) {
+		// Web Speech API is supported
+		if (levelId === "level-3") {
+			let levelThreeWord = new SpeechSynthesisUtterance(letter);
+            levelThreeWord.rate = 1.5; // make it read faster than the default 1 (too slow)
+            window.speechSynthesis.speak(levelThreeWord);
+		} else {
+			for (const char of letter) {
+				let charCheck = char;
+					if (char.toLowerCase() === "a") {
+					charCheck = "ay";
+					}
+				const charVoice = new SpeechSynthesisUtterance(charCheck);
+				charVoice.rate = 1.5; //make it read faster than the default 1 (too slow)
+				window.speechSynthesis.speak(charVoice);
+			}
+		}
+	} else {
+		// Web Speech API is not supported
+		console.log("Web Speech API is not supported in this browser.");
+	}
+}
 
 //timer function
 //variables//
@@ -114,11 +105,11 @@ function startTimer() {
 				speechSynthesis.cancel();
 				endGameSound.play();
 				clearInterval(countDown);
-				gameRunning = false;				
+				gameRunning = false;
 				message.innerHTML = "Game Over";
 				playerAnswer.contentEditable = "false";
 				setTimeout(() => {
-					speakScore(score);			
+					speakScore(score);
 				}, 2500);
 			}
 		}
@@ -169,17 +160,14 @@ const letters = [
 ];
 
 //sound variables
-let correctSound = new Audio("assets/sounds/335908__littlerainyseasons__correct.mp3");
+let correctSound = new Audio(
+	"assets/sounds/335908__littlerainyseasons__correct.mp3"
+);
 correctSound.volume = 0.5;
 let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
 wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
-
-
-
-
-
 
 //level 1 play - load word from array //
 //if (getElementById('level-indicator').innerHTML === 'Level 1'){
@@ -190,16 +178,26 @@ function levelOne(letters) {
 	playerTurn();
 }
 
-
 // // ???? youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
-// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function 
+// // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
 async function findWords() {
 	try {
-		let response = await fetch('https://api.datamuse.com/words?sp=[a-z][a-z]&max=200');
+		if (levelId === "level-2"){ 
+let response = await fetch(
+			"https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200"
+		);
 		let data = await response.json();
-		return data.map(word => word.word);
+		return data.map((word) => word.word);
+
+		} else if (levelId === "level-3"){
+			let response = await fetch(
+				"https://api.datamuse.com/words?sp=[a-z][a-z]&max=200"
+			);
+			let data = await response.json();
+			return data.map((word) => word.word);
+		}		
 	} catch (error) {
-		console.error('An error occurred during the word retrieval', error);
+		console.error("An error occurred during the word retrieval", error);
 		throw error;
 	}
 }
@@ -217,10 +215,27 @@ async function levelTwo() {
 		speakLetter(currentLetter.innerText);
 		playerTurn();
 	} catch (error) {
-		console.error('An error occurred in levelTwo', error);
+		console.error("An error occurred in levelTwo", error);
 		// Handle errors specific to levelTwo if needed
 	}
+}
 
+async function levelThree() {
+	try {
+		// Check if twoLetterWords is already populated
+		if (!threeLetterWords) {
+			// Wait for findWords to complete and get the array
+			threeLetterWords = await findWords();
+			console.log(threeLetterWords);
+		}
+		let randomIndexThree = Math.floor(Math.random() * threeLetterWords.length);
+		currentLetter.innerHTML = threeLetterWords[randomIndexThree];
+		speakLetter(currentLetter.innerText);
+		playerTurn();
+	} catch (error) {
+		console.error("An error occurred in levelTwo", error);
+		// Handle errors specific to levelTwo if needed
+	}
 }
 
 function computerTurn() {
@@ -231,8 +246,9 @@ function computerTurn() {
 		levelOne(letters);
 	} else if (levelId === "level-2") {
 		levelTwo();
-	};
-}
+	} else if (levelId === "level-3") {
+		levelThree();
+}}
 
 function startGame() {
 	playerAnswer.contenteditable = "true";
@@ -242,7 +258,6 @@ function startGame() {
 	// Start the game
 	computerTurn();
 }
-
 
 function playerTurn() {
 	compTurn = false;
@@ -262,20 +277,19 @@ function handleInput(event) {
 	// Check if the desired count is reached e.g 2 for level two play
 	if (levelId === "level-1") {
 		matchCheck();
-	} else if (levelId === "level-2" && lettersTyped === 1){
+	} else if (levelId === "level-2" && lettersTyped === 1) {
 		preMatchCheck();
-	}
-	else if (levelId === "level-2" && lettersTyped === 2) {
+	} else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
 	}
 	//need to add in level 3 play check here
-};
+}
 
 function preMatchCheck() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
-    let currentLetterContent = currentLetter.textContent.trim();
+	let currentLetterContent = currentLetter.textContent.trim();
 	if (playerAnswerContent.charAt(0) === currentLetterContent.charAt(0)) {
-        compTurn = false;			
+		compTurn = false;
 	} else {
 		compTurn = true;
 		message.innerHTML = "Wrong!";
@@ -306,7 +320,7 @@ function matchCheck() {
 		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
-				setTimeout(() => {
+		setTimeout(() => {
 			playerAnswer.innerHTML = "";
 			computerTurn();
 		}, 500);
@@ -318,59 +332,54 @@ function matchCheck() {
 //i.e going from a play button to the game play area.
 //starts the first game + timer
 
-
-
 // document.addEventListener("DOMContentLoaded", function () {
 // 	let play = document.getElementById("startgametwo");
-// 		play.addEventListener("click", function () {                  
+// 		play.addEventListener("click", function () {
 //             play.innerHTML = '<a href="game.html" id="reset-game" type="button" aria-label="reset game"><i class="fa-solid fa-arrow-rotate-right icon"></i></a>';
 //             startGame();
 //             startTimer();
-        
+
 //         })
 //     });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-		let play = document.getElementById("start-game-button");
-			play.addEventListener("click", function () {                  
-				var startContainer = document.getElementById("start-box-container");
-				var reloadContainer = document.getElementById("reload-box-container");
-		
-				startContainer.classList.add('hide');
-				reloadContainer.classList.remove('hide');	
-				
-				startGame();
-        		startTimer();
-	        })
-	    });
+	let play = document.getElementById("start-game-button");
+	play.addEventListener("click", function () {
+		var startContainer = document.getElementById("start-box-container");
+		var reloadContainer = document.getElementById("reload-box-container");
 
-	
-	//pausing the timer and changing the symbol written in the DOM to restart the timer again.
-	let pauseBtn = document.getElementById("pause-btn");
-	let removeIcon = document.getElementById("pause-remove");
+		startContainer.classList.add("hide");
+		reloadContainer.classList.remove("hide");
+
+		startGame();
+		startTimer();
+	});
+});
+
+//pausing the timer and changing the symbol written in the DOM to restart the timer again.
+let pauseBtn = document.getElementById("pause-btn");
+let removeIcon = document.getElementById("pause-remove");
 
 // function focusAtEnd() {
 // 	let reFocus = document.querySelector(".focus-point");
-// 			reFocus.focus();	
-// 			reFocus.setSelectionRange(reFocus.value.length, reFocus.value.length);	
+// 			reFocus.focus();
+// 			reFocus.setSelectionRange(reFocus.value.length, reFocus.value.length);
 // ;}
 
 function focusAtEnd() {
-    let reFocus = document.querySelector(".focus-point");
-    //cursor back inside the player answer box and moved to the end of the text already entered
-	reFocus.focus();	
-	let range = document.createRange(); 
+	let reFocus = document.querySelector(".focus-point");
+	//cursor back inside the player answer box and moved to the end of the text already entered
+	reFocus.focus();
+	let range = document.createRange();
 	range.selectNodeContents(reFocus);
-    range.collapse(false);
-	let selection = window.getSelection(); 
-    selection.removeAllRanges();
-    selection.addRange(range);
+	range.collapse(false);
+	let selection = window.getSelection();
+	selection.removeAllRanges();
+	selection.addRange(range);
 }
 
-	pauseBtn.addEventListener("click", function () {
-		if(gameRunning){
+pauseBtn.addEventListener("click", function () {
+	if (gameRunning) {
 		if (removeIcon.classList.contains("fa-pause")) {
 			removeIcon.classList.remove("fa-pause");
 			removeIcon.classList.add("fa-play");
@@ -378,13 +387,11 @@ function focusAtEnd() {
 		} else {
 			removeIcon.classList.remove("fa-play");
 			removeIcon.classList.add("fa-pause");
-			paused = false;		
+			paused = false;
 			focusAtEnd();
 		}
 	}
 });
-
-
 
 function addition(a, b) {
 	return a + b;
