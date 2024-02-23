@@ -45,15 +45,15 @@ function speakLetter(letter) {
 	if ("speechSynthesis" in window) {
 		// Web Speech API is supported
 		if (levelId === "level-3") {
-			let levelThreeWord = new SpeechSynthesisUtterance(letter);
-            levelThreeWord.rate = 1.5; // make it read faster than the default 1 (too slow)
-            window.speechSynthesis.speak(levelThreeWord);
+			let levelThreeWord = new SpeechSynthesisUtterance(currentLetter.innerText);
+			levelThreeWord.rate = 1; 
+			window.speechSynthesis.speak(levelThreeWord);
 		} else {
 			for (const char of letter) {
 				let charCheck = char;
-					if (char.toLowerCase() === "a") {
+				if (char.toLowerCase() === "a") {
 					charCheck = "ay";
-					}
+				}
 				const charVoice = new SpeechSynthesisUtterance(charCheck);
 				charVoice.rate = 1.5; //make it read faster than the default 1 (too slow)
 				window.speechSynthesis.speak(charVoice);
@@ -127,6 +127,7 @@ const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
 let compTurn = true;
 let twoLetterWords;
+let threeLetterWords;
 let lettersTyped = 0;
 
 //array for level 1 play
@@ -180,27 +181,56 @@ function levelOne(letters) {
 
 // // ???? youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
 // // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
-async function findWords() {
-	try {
-		if (levelId === "level-2"){ 
-let response = await fetch(
-			"https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200"
-		);
-		let data = await response.json();
-		return data.map((word) => word.word);
 
-		} else if (levelId === "level-3"){
-			let response = await fetch(
-				"https://api.datamuse.com/words?sp=[a-z][a-z]&max=200"
-			);
-			let data = await response.json();
-			return data.map((word) => word.word);
-		}		
-	} catch (error) {
-		console.error("An error occurred during the word retrieval", error);
-		throw error;
-	}
+async function findWords() {
+    try {
+        let response, data;
+        if (levelId === "level-2") {
+            response = await fetch("https://api.datamuse.com/words?sp=[a-z][a-z]&max=200");
+        } else if (levelId === "level-3") {
+            response = await fetch("https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200");
+        }
+		if (response) {
+            data = await response.json();
+            if (levelId === "level-2") {
+                return data.map((word) => word.word);
+            } else if (levelId === "level-3") {
+                let threeLetterWords = data.filter(word => word.word.length === 3);
+                return threeLetterWords.map(word => word.word);
+            }
+        }
+    } catch (error) {
+        console.error("An error occurred during the word retrieval", error);
+        throw error;
+    }
 }
+
+
+
+// async function findWords() {
+//     try {
+//         if (levelId === "level-2") {
+//             let response = await fetch(
+//                 "https://api.datamuse.com/words?sp=[a-z][a-z]&max=200"
+//             );
+//             let data = await response.json();
+//             return data.map((word) => word.word);
+//         } else if (levelId === "level-3") {
+//             let response = await fetch(
+//                 "https://api.datamuse.com/words?sp=^[a-z]{3}$&max=200"
+//             );
+//             let data = await response.json();
+//             let threeLetterWords = data.filter(word => word.word.length === 3);
+//             if (threeLetterWords.length > 0) {
+//                 let threeLetterWordsArray = threeLetterWords.map(word => word.word);
+//                 return threeLetterWordsArray;
+//             }
+//         }
+//     } catch (error) {
+//         console.error("An error occurred during the word retrieval", error);
+//         throw error;
+//     }
+// }
 
 async function levelTwo() {
 	try {
@@ -240,7 +270,7 @@ async function levelThree() {
 
 function computerTurn() {
 	compTurn = true;
-	message.innerHTML = "";
+	message.innerHTML = "Good Luck!";
 	//load correct level play
 	if (levelId === "level-1") {
 		levelOne(letters);
@@ -248,7 +278,8 @@ function computerTurn() {
 		levelTwo();
 	} else if (levelId === "level-3") {
 		levelThree();
-}}
+	}
+}
 
 function startGame() {
 	playerAnswer.contenteditable = "true";
@@ -265,6 +296,8 @@ function playerTurn() {
 	lettersTyped = 0;
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
+
+
 if (compTurn === false) {
 	playerAnswer.contenteditable = "true";
 } //else {
@@ -278,14 +311,17 @@ function handleInput(event) {
 	if (levelId === "level-1") {
 		matchCheck();
 	} else if (levelId === "level-2" && lettersTyped === 1) {
-		preMatchCheck();
+		preMatchCheckTwo();
 	} else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
+	}	else if (levelId === "level-3" && (lettersTyped === 1 || lettersTyped === 2)) {
+		preMatchCheckThree();
+	} else if (levelId === "level-3" && lettersTyped === 3) {
+		matchCheck();
 	}
-	//need to add in level 3 play check here
-}
+	}
 
-function preMatchCheck() {
+function preMatchCheckTwo() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
 	let currentLetterContent = currentLetter.textContent.trim();
 	if (playerAnswerContent.charAt(0) === currentLetterContent.charAt(0)) {
@@ -300,6 +336,25 @@ function preMatchCheck() {
 		computerTurn();
 		return false;
 	}
+}
+
+function preMatchCheckThree() {
+	let playerAnswerContent = playerAnswer.textContent.trim();
+	let currentLetterContent = currentLetter.textContent.trim();
+	for (let i = 0; i < playerAnswerContent.length; i++) {
+        if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
+            compTurn = true;
+            message.innerHTML = "Wrong!";
+            speechSynthesis.cancel();
+            wrongSound.play();
+            scoreDisplay.innerHTML = score;
+            playerAnswer.innerHTML = "";
+            computerTurn();
+            return false;
+        }
+    }
+    // If all characters match, continue with the correct case
+    compTurn = false;
 }
 
 function matchCheck() {
