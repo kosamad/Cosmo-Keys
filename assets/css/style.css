@@ -274,8 +274,8 @@ body {
 		#8a38e3
 	);
 	border-color: #3a096f;
-	border-radius: 0.5rem;
-	padding: 1vw 1.5vw;
+	border-radius: 0.5rem;	
+	font-size: 20px;
 }
 
 .btn-game-menu:hover {
@@ -292,10 +292,10 @@ body {
 	color: black;
 }
 
-#back-btn-game {
+/* #back-btn-game {
 	padding: 1vw 1.5vw;
 	font-size: 20px;
-}
+} */
 
 #i-btn-game {
 	padding: 1vw 2vw;
@@ -325,9 +325,6 @@ body {
 
 /*-- start game large button--*/
 
-.icon-box {
-	font-size: 25px;
-}
 
 .start-container {
 	background-image: linear-gradient(
