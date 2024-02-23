@@ -300,10 +300,9 @@ body {
 }
 
 .icon {
-	padding: 1.5vh 0;
+	padding: 1vw 1.5vw;
 	font-size: 25px;
-	text-decoration: none;
-	color: white;
+	text-decoration: none;	
 }
 
 .icon:hover {
@@ -311,11 +310,11 @@ body {
 	cursor: pointer;
 }
 
-.ilevel-text {
+#level-indicator {
 	font-size: 20px;
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
-	padding: 0.5rem 0;
+	margin:0 auto;
 }
 
 /*-- start game large button--*/
@@ -504,6 +503,7 @@ body {
 	font-weight: 600;
 	font-style: normal;
 	color: white;
+	margin-top: 3%;
 }
 
 #reset-game-two {
@@ -643,6 +643,15 @@ body {
 
 	#back-btn-game {
 	}
+	.score-container{ margin: 1% 10%; }
+
+	.start-container{
+		margin: 0 3% 3% 3%;}
+
+	#message {
+		font-size: 20px;
+	}
+	#level-indicator {font-size:20px}
 }
 
 /* If the screen size is 430px wide or less */
