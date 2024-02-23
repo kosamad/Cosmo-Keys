@@ -636,6 +636,14 @@ body {
 		font-size: 20px
 	}
 
+	#quiz-letter{
+		font-size: 25px;
+	}
+
+	#player-answer{
+		font-size: 25px;
+	}
+
 }
 
 
@@ -671,6 +679,14 @@ body {
 
 	#level-indicator {
 		font-size: 12px
+	}
+
+	#quiz-letter{
+		font-size: 20px;
+	}
+
+	#player-answer{
+		font-size: 20px;
 	}
 
 }
@@ -712,11 +728,7 @@ body {
 
 	.icon {
 		font-size: 20px;
-	}
-
-	#quiz-letter {
-		font-size: 40px;
-	}
+	}	
 
 	#score {
 		font-size: 10px;
@@ -773,5 +785,13 @@ body {
 	#timer {
 		font-size: 12px;
 		padding: 20% 0;
+	}
+
+	#quiz-letter{
+		font-size: 15px;
+	}
+
+	#player-answer{
+		font-size: 15px;
 	}
 }
