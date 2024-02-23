@@ -55,19 +55,22 @@
 				<div class="col-12 main-overlay-game text-center justify-content-center">
 					<div class="row top-row">
 						<div class="col-2">
-							<a
-								href="level.html"
-								class="btn btn-game-menu"
-								id="back-btn-game"
-								type="button"
-								aria-label="back to home button"
-								><i class="fa-solid fa-arrow-left"></i>
+							<a href="level.html">
+								<button
+									class="btn no-hover-effect col-12 btn-game-menu"
+									id="back-btn-game"
+								>
+									<i
+										class="fa-solid fa-arrow-left"
+										aria-label="back to home button"
+									></i>
+								</button>
 							</a>
-						</div>	
-						<div class="col-4 btn-game-menu">
+						</div>
+						<div class="col-2">
 							<a href="game.html">
 								<button
-									class="btn no-hover-effect col-12"
+									class="btn no-hover-effect col-12 btn-game-menu"
 									id="reload-game-button"
 								>
 									<i
@@ -75,12 +78,12 @@
 										aria-label="reset game"
 									></i>
 								</button>
-							</a>														
+							</a>
 						</div>
 						<div class="col-4 ilevel-text">
-							<div class ="col-12">
+							<div class="col-12">
 								<h4 id="level-indicator"></h4>
-							</div>							
+							</div>
 						</div>
 						<div class="col-2">
 							<button
@@ -128,25 +131,29 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<!-- play button (which switches to reload), score counter and timer-->
+						<div class="container-fluid">
+							<div class="row justify-content-center align-items-center">
+								<div
+									class="start-container start-play-icon"
+									id="start-box-container"
+								>
+									<button
+										class="btn no-hover-effect col-12"
+										id="start-game-button"
+									>
+										<i class="fa-solid fa-play icon-box" id=""></i>
+									</button>
+								</div>
 
-					<!-- play button (which switches to reload), score counter and timer-->
-					<div class='container-fluid'>
-					<div class="row justify-content-center align-items-center">
-						<div class="start-container start-play-icon"	id="start-box-container"
-						>
-							<button class="btn no-hover-effect col-12" id="start-game-button">
-								<i class="fa-solid fa-play icon-box" id=""></i>
-							</button>
-						</div>
-
-						<!-- <div class="col-4">							
+								<!-- <div class="col-4">							
 							<div class="col-6 btn-pause btn-game-menu" id="pause-btn">
 								<i class="fa-solid fa-pause icon" id="pause-remove"></i>
 							</div>							
 					</div> -->
 
-
-						<!-- <div
+								<!-- <div
 							class="start-container hide start-reload-icon"
 							id="reload-box-container"
 						>
@@ -163,45 +170,47 @@
 							</a>
 						</div> -->
 
-						<div
-							class="start-container hide start-reload-icon"
-							id="reload-box-container"
-						><div class="col-6 btn-pause btn-game-menu" id="pause-btn">
-							<i class="fa-solid fa-pause icon" id="pause-remove"></i>
-						</div>								
+								<div
+									class="start-container hide start-reload-icon"
+									id="reload-box-container"
+								>
+									<div class="col-6 btn-pause btn-game-menu" id="pause-btn">
+										<i class="fa-solid fa-pause icon" id="pause-remove"></i>
+									</div>
+								</div>
+							</div>
 						</div>
-
-
+						<div class="row">
+							<div class="container-fluid">
+								<div class="row justify-content-center">
+									<div class="order-3 order-md-1 score-container">
+										<div class="row">
+											<div id="score">Score: <span id="js-score">0</span></div>
+										</div>
+									</div>
+									<div class="order-1 order-md-2" id="quiz-box-container">
+										<div class="col-12" id="quiz-letter">
+											<div>?</div>
+										</div>
+									</div>
+									<div class="order-2 order-md-3" id="answer-box-container">
+										<div
+											class="col-12 focus-point"
+											id="player-answer"
+											contenteditable="true"
+											autofocus
+										></div>
+									</div>
+									<div class="order-4 order-md-4 time-container">
+										<div class="row justify-content-center align-items-center">
+											<div id="timer">60</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class='container-fluid'>
-					<div class="row justify-content-center">
-						<div class="order-3 order-md-1 score-container">
-							<div class="row">
-								<div id="score">Score: <span id="js-score">0</span></div>
-							</div>
-						</div>
-						<div class="order-1 order-md-2" id="quiz-box-container">
-							<div class="col-12" id="quiz-letter">
-								<div>?</div>
-							</div>
-						</div>
-						<div class="order-2 order-md-3 " id="answer-box-container">
-							<div
-								class="col-12 focus-point"
-								id="player-answer"
-								contenteditable="true"
-								autofocus
-							></div>
-						</div>
-						<div class="order-4 order-md-4 time-container">
-							<div class="row justify-content-center align-items-center">
-								<div id="timer">60</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- <div class='container-fluid'>
+					<!-- <div class='container-fluid'>
 					<div class="row justify-content-center">
 						<div class="col-md-2 col-8 order-3 order-md-1 score-container">
 							<div class="row">
@@ -228,12 +237,16 @@
 						</div>
 					</div>
 				</div> -->
-				<div class='container'>
-					<div class="row align-items-center justify-content-center">
-						<div class="col-md-6 col-12"><h2 id="message">Good Luck!</h2></div>
+					<div class="row">
+						<div class="container">
+							<div class="row align-items-center justify-content-center">
+								<div class="col-md-6 col-12">
+									<h2 id="message">Good Luck!</h2>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 
