@@ -98,9 +98,8 @@ function startTimer() {
 					"radial-gradient(circle, #f8c7a8, #f8ae80, #f6945a, #f27934, #ec5b00)";
 			} else if (remainingTime <= 10 && remainingTime >= 0) {
 				timerColor.style.backgroundImage =
-					"radial-gradient(circle, #f8afaf, #ff8f8b, #ff6d64, #fb473a, #f10000)";
+				"radial-gradient(circle, #e97070, #ef5d5a, #f24943, #f33028, #f10000)";
 			}
-
 			if (remainingTime === 0) {
 				speechSynthesis.cancel();
 				endGameSound.play();
