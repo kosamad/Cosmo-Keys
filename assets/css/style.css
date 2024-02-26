@@ -536,6 +536,7 @@ border-color: black;
 	.start-container {
 		width: 80%;
 		margin: 2% 10%;
+		height: 14vw;		
 	}
 
 	.time-container {
@@ -661,9 +662,7 @@ border-color: black;
 @media screen and (max-width: 520px) {
 
 
-	#start-game-button {
-		font-size: 20px;
-	}
+	
 
 	#timer {
 		font-size: 20px;
@@ -694,11 +693,6 @@ border-color: black;
 	.btn-level {
 		margin: 1vh;
 		font-size: 15px;
-	}
-
-	.fa-play {
-		color: black;
-		font-size: 20px;
 	}
 
 	.description{font-size: 18px;}
@@ -754,6 +748,10 @@ border-color: black;
 
 
 	/*----Game.html MQ styles----*/
+
+	#start-game-button {
+		font-size: 25px;
+	}
 
 	#info-btn {
 		padding: 1vh 1.9vh;
