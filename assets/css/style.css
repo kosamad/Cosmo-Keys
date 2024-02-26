@@ -8,11 +8,11 @@
 
 body {
 	background-color: black;
-	max-height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0;
+	margin: 0%
 }
 
 .main-bg-home {
@@ -23,9 +23,8 @@ body {
 	-o-background-size: cover;
 	border-radius: 1.5rem;
 	padding: 3.5%;
-	position: relative;	
-	margin: 50% auto;
-	width: 45vw;
+	position: relative;		
+	min-width: 45vw;
 }
 
 .main-overlay-home {
@@ -193,30 +192,6 @@ border-color: black;
 	font-weight: 600;	
 }
 
-
-.main-bg-level {
-	background: url(../images/space-bg.jpg) no-repeat center center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	border-radius: 1.5rem;
-	padding: 3.5%;
-	position: relative;
-	max-height: 90vh;
-	margin: 10% auto;
-	max-width: 75vw;
-}
-
-.main-overlay-level {
-	background-color: rgba(7, 4, 60, 0.8);
-	color: white;
-	padding: 3.5vh;
-	border-radius: 1.5rem;
-	max-height: 75vh;
-}
-
-
 /*----Game.html styles----*/
 /*-- backgrounds --*/
 .main-bg-game {
@@ -227,16 +202,15 @@ border-color: black;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
 	padding: 2% 3.5%;
-	position: relative;
-	max-height: 90vh;
-	margin: 50% auto;
+	position: relative;	
 	max-width: 75vw;
 }
 
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 2.5% 0;
+	/* padding: 2.5% 0; */
+	padding: 4%;
 	border-radius: 1.5rem;
 }
 
@@ -525,14 +499,19 @@ border-color: black;
 	/*----Level.html MQ styles----*/
 }
 
-/* If the screen size is 780px wide or less */
+/* If the screen size is 770px wide or less */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 770px) {
 	/*----Index.html MQ styles----*/
+	
+	body{background-color: black;					
+		margin: 10% 10%;
+		display: block;
+	}
 
-	/* .main-bg-home {
-		padding: 3.5vh;
-	} */
+	.main-bg-home {
+		width: auto;
+	}
 
 	.title {
 		font-size: 8vw;
@@ -553,30 +532,31 @@ border-color: black;
 	.level-h4-text {
 		font-size: 25px;
 	}
-}
+ 
+	.start-container {
+		width: 80%;
+		margin: 2% 10%;
+	}
 
-
-@media (max-width: 767px) {
 	.time-container {
-		width: 40%;
+		width: 80%;
 		margin: 2% 10%;
 	}
 
 	.score-container {
-		width: 40%;
+		width: 80%;
 		margin: 0 10%;
 	}
 
-
 	#quiz-box-container {
-		height: 13vw;
-		width: 13vw;
+		height: 26vw;
+		width: 26vw;
 		margin: 0 1.5% 3% 2%;
 	}
 
 	#answer-box-container {
-		height: 13vw;
-		width: 13vw;
+		height: 26vw;
+		width: 26vw;
 		margin: 0 2% 3% 1.5%;
 	}
 
@@ -617,10 +597,10 @@ border-color: black;
 
 	}
 
-		.main-bg-game {
+		/* .main-bg-game {
 		padding: 3% 5%;
 		max-width: 65vw;
-	}
+	} */
 
 	.main-bg-level {
 		padding: 3% 5%;
@@ -633,12 +613,15 @@ border-color: black;
 
 /* If the screen size is 680px wide or less */
 @media screen and (max-width: 680px) {
+
+	
+
 	.btn-game-menu {
 		font-size: 12px;
 	}
 
 	#level-indicator {
-		font-size: 20px
+		font-size: 18px
 	}
 
 	#quiz-letter{
@@ -667,6 +650,10 @@ border-color: black;
 	#message {
 		font-size: 20px;
 		margin-top: 1.5%;
+	}
+
+	.main-bg-game {		padding: 3% 5%;
+		
 	}
 }
 
@@ -727,6 +714,10 @@ border-color: black;
 
 	/*----Game.html MQ styles----*/
 
+	.main-bg-game {
+		padding: 3% 7%;
+	}
+
 	.icon {
 		font-size: 20px;
 	}	
@@ -736,10 +727,6 @@ border-color: black;
 	}
 
 	#timer {
-		font-size: 15px;
-	}
-
-	#level-indicator {
 		font-size: 15px;
 	}
 
@@ -773,13 +760,7 @@ border-color: black;
 		font-size: 15px;
 	}
 
-	.ilevel-text {
-		font-size: 10px;
-		padding: 2vh 0;
-		margin-left: 20px;
-	}
-
-	#score {
+		#score {
 		font-size: 12px;
 		padding: 20% 0;
 	}
@@ -796,4 +777,5 @@ border-color: black;
 	#player-answer{
 		font-size: 15px;
 	}
+
 }
