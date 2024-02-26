@@ -310,7 +310,7 @@ function handleInput(event) {
 //moves out of player turn if an incorrect letter is typed, plays the wrong sound and moves back to the computerTurn
 
 function preMatchCheck() {
-	let playerAnswerContent = playerAnswer.textContent.trim();
+	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
 		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
@@ -333,7 +333,7 @@ function preMatchCheck() {
 //matchCheck checks the completed player answer against the computer and issues subsequent function based on a correct or incorrect answer 
 function matchCheck() {
 	compTurn = true;
-	let playerAnswerContent = playerAnswer.textContent;
+	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	if (playerAnswerContent === currentLetter.textContent) {
 		message.innerHTML = "Correct!";
 		correctSound.play();
