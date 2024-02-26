@@ -4,7 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
-/*-Page background-*/
+/*-Page backgrounds-*/
 
 body {
 	background-color: black;
@@ -15,8 +15,55 @@ body {
 	margin: 0;
 }
 
-/*- Modals-*/
+.main-bg-home {
+	background: url(../images/space-bg.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	border-radius: 1.5rem;
+	padding: 3.5%;
+	position: relative;	
+	margin: 50% auto;
+	width: 45vw;
+}
 
+.main-overlay-home {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 4%;
+	border-radius: 1.5rem;
+}
+
+/*- Styles applied to multiple pages-*/
+
+.top-boarder-container {margin-bottom: 4%;}
+
+.title {
+	font-size: 75px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.description {
+	font-family: "Lexend", sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	padding-top: 6%;
+}
+
+
+
+.hidden {
+	opacity: 0;
+}
+
+.home-buttons {
+	margin-top: 4%;
+}
+
+/*- Modals-*/
 .imodal-title {
 	color: black;
 	font-size: 30px;
@@ -45,48 +92,6 @@ body {
 }
 
 /*----Index.html styles----*/
-
-/*-Home Image-*/
-.main-bg-home {
-	background: url(../images/space-bg.jpg) no-repeat center center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	border-radius: 1.5rem;
-	padding: 3.5%;
-	position: relative;
-	max-height: 90vh;
-	margin: 50% auto;
-	width: 45vw;
-}
-
-/*-Container plus inner feature styles (words/buttons)-*/
-
-.main-overlay-home {
-	background-color: rgba(7, 4, 60, 0.8);
-	color: white;
-	padding: 4%;
-	border-radius: 1.5rem;
-	max-height: 75vh;
-}
-
-.top-boarder-container {margin-bottom: 4%;}
-
-.title {
-	font-size: 75px;
-	font-family: "Audiowide", sans-serif;
-	font-weight: 600;
-	font-style: normal;
-}
-
-.description {
-	font-family: "Lexend", sans-serif;
-	font-size: 30px;
-	font-weight: 400;
-	padding-top: 6%;
-}
-
 .btn-home {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -124,28 +129,7 @@ body {
 	#6bd1f5,
 	#70caf5);
 border-color: black;
-
 }
-
-.hidden {
-	opacity: 0;
-}
-
-.home-buttons {
-	margin-top: 4%;
-}
-
-/* .btn:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
-	border-color: black;
-	cursor: pointer;
-	color: black;
-} */
 
 .home-play {
 	color: black;
@@ -190,7 +174,13 @@ border-color: black;
 
 .btn-level a {
     text-decoration: none;
+	color: black;
+	cursor: pointer;
 }
+
+.btn-level:hover {	
+	cursor: default;}
+
 
 #back-btn-level {
 	font-size: 20px;

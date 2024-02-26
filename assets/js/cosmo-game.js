@@ -320,8 +320,10 @@ function preMatchCheckTwo() {
 		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
-		playerAnswer.innerHTML = "";
-		computerTurn();
+		setTimeout(() => {
+			playerAnswer.innerHTML = "";
+			computerTurn();
+		}, 500);
 		return false;
 	}
 }
@@ -337,8 +339,10 @@ function preMatchCheckThree() {
 			speechSynthesis.cancel();
 			wrongSound.play();
 			scoreDisplay.innerHTML = score;
-			playerAnswer.innerHTML = "";
-			computerTurn();
+			setTimeout(() => {
+				playerAnswer.innerHTML = "";
+				computerTurn();
+			}, 500);
 			return false;
 		}
 	}
