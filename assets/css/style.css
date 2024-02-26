@@ -232,7 +232,7 @@ body {
 	padding: 2% 3.5%;
 	position: relative;
 	max-height: 90vh;
-	margin: 10% auto;
+	margin: 50% auto;
 	max-width: 75vw;
 }
 
@@ -338,9 +338,6 @@ body {
 	display: none;
 }
 
-/* .start-container:hover {
-	
-} */
 
 #start-game-button:hover {
 	background-image: radial-gradient(circle,
@@ -521,12 +518,7 @@ body {
 	.home-buttons {
 		padding-right: 0;
 		padding-left: 0;
-	}
-
-	.btn-home {
-		padding: 2vh;
-		font-size: 25px;
-	}
+	}	
 
 	#start-game {
 		color: black;
@@ -541,33 +533,29 @@ body {
 @media screen and (max-width: 780px) {
 	/*----Index.html MQ styles----*/
 
-	.main-bg-home {
+	/* .main-bg-home {
 		padding: 3.5vh;
-	}
+	} */
 
 	.title {
 		font-size: 8vw;
 	}
 
-	.btn-home {
-		padding: 2.3vh;
+	.btn-home,
+	.btn-level{
+		font-size: 15px;
+		padding: 4%;		
 	}
 
-	.main-overlay-home {
-		padding: 4vh;
+
+	.description {
+		font-size: 20px;
+			
 	}
 
-	/*----level.html MQ styles----*/
 	.level-h4-text {
 		font-size: 25px;
 	}
-
-	.btn-level {
-		font-size: 20px;
-		padding: 1vh 8vh;
-	}
-
-	/*----game.html MQ styles----*/
 }
 
 
@@ -716,16 +704,11 @@ body {
 
 @media screen and (max-width: 463px) {
 
-	/*----Index.html MQ styles----*/
-	.main-bg-home {
-		padding: 4vh;
-		max-height: 100vh;
-	}
+	/*----Index.html MQ styles----*/	
 
-	.btn-home {
+	.btn-home,
+	.btn-level {
 		margin: 1vh;
-		border-radius: 1rem;
-		padding: 2vh;
 		font-size: 15px;
 	}
 
@@ -734,7 +717,8 @@ body {
 		font-size: 20px;
 	}
 
-	/*----Level.html MQ styles----*/
+	.description{font-size: 18px;}
+	
 	.level-h4-text {
 		font-size: 23px;
 	}
@@ -771,7 +755,8 @@ body {
 
 @media screen and (max-width: 380px) {
 
-	/*----Index.html MQ styles----*/
+.title{font-size: 25px;}
+
 	.description {
 		font-size: 15px;
 		padding-top: 1.5vh;
