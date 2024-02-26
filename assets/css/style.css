@@ -104,20 +104,27 @@ body {
 	padding: 3%;
 }
 
-
-.btn-home:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6adef2,
-			#69d8f4,
-			#6bd1f5,
-			#70caf5);
-	border-color: black;
-	cursor: pointer;
+.btn-home:hover {	
+	cursor: default;
 }
 
 .btn-home a {
 	text-decoration: none;
+	cursor: pointer;
+}
+
+#info-btn-home:hover,
+#about-btn-home:hover {
+	text-decoration: none;
+	cursor: pointer;
+	background-image: radial-gradient(circle,
+	#6ee4ef,
+	#6adef2,
+	#69d8f4,
+	#6bd1f5,
+	#70caf5);
+border-color: black;
+
 }
 
 .hidden {
@@ -128,7 +135,7 @@ body {
 	margin-top: 4%;
 }
 
-.btn:hover {
+/* .btn:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
 			#6adef2,
@@ -138,7 +145,7 @@ body {
 	border-color: black;
 	cursor: pointer;
 	color: black;
-}
+} */
 
 .home-play {
 	color: black;
