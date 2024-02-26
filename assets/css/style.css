@@ -56,9 +56,9 @@ body {
 	border-radius: 1.5rem;
 	padding: 3.5%;
 	position: relative;
-	max-height: 90vh;
-	margin: 10% auto;
-	max-width: 75vw;
+	height: 90vh;
+	margin: 50% auto;
+	width: 45vw;
 }
 
 /*-Container plus inner feature styles (words/buttons)-*/
@@ -102,6 +102,7 @@ body {
 	padding: 3%;
 }
 
+
 .btn-home:hover {
 	background-image: radial-gradient(circle,
 			#6ee4ef,
@@ -142,17 +143,44 @@ body {
 	font-size: 20px;
 }
 
+.social-icon a {color: #e597f6;}
+
 /*----Level.html styles----*/
 
 .btn-level {
-	color: black;
-	border-color: #3a096f;
+	color: black;	
 	font-family: "Lexend", sans-serif;
-	font-size: 30px;
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
+	border-color: #3a096f;
+	font-size: 20px;
 	font-weight: 600;
 	margin: 1vh;
 	border-radius: 1rem;
-	padding: 2vh 10vh;
+	padding: 3%;
+}
+
+.one {
+	background-image: radial-gradient(circle, #14ff5c, #10f154, #0be34c, #06d645, #00c83d);
+	border-color: #00C83D;
+}
+
+.two {	
+	background-image: radial-gradient(circle, #ffb000, #f4a901, #eaa203, #df9b04, #d59405);
+	border-color: #d59405;
+	}
+
+.three {	
+	background-image: radial-gradient(circle, #e72b2b, #de2423, #d61c1b, #cd1412, #c40808);
+	border-color:#c40808;	
+}
+
+.btn-level a {
+    text-decoration: none;
 }
 
 #back-btn-level {
@@ -166,17 +194,6 @@ body {
 	font-weight: 600;	
 }
 
-#level-1 {
-	background-color: #27e862;
-}
-
-#level-2 {
-	background-color: #eab02f;
-}
-
-#level-3 {
-	background-color: #e72b2b;
-}
 
 .main-bg-level {
 	background: url(../images/space-bg.jpg) no-repeat center center;
