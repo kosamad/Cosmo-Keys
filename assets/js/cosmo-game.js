@@ -296,40 +296,20 @@ function handleInput(event) {
 	if (levelId === "level-1") {
 		matchCheck();
 	} else if (levelId === "level-2" && lettersTyped === 1) {
-		preMatchCheckTwo();
+		preMatchCheck();
 	} else if (levelId === "level-2" && lettersTyped === 2) {
 		matchCheck();
 	} else if (levelId === "level-3" && (lettersTyped === 1 || lettersTyped === 2)) {
-		preMatchCheckThree();
+		preMatchCheck();
 	} else if (levelId === "level-3" && lettersTyped === 3) {
 		matchCheck();
 	}
 }
 
-//preMatchCheck's check each letter typed by the player against the computer (before the final letter). 
+//preMatchCheck's for level 2 and 3, check each letter typed by the player against the computer (before the final letter). 
 //moves out of player turn if an incorrect letter is typed, plays the wrong sound and moves back to the computerTurn
-//pre match check for level 2
-function preMatchCheckTwo() {
-	let playerAnswerContent = playerAnswer.textContent.trim();
-	let currentLetterContent = currentLetter.textContent.trim();
-	if (playerAnswerContent.charAt(0) === currentLetterContent.charAt(0)) {
-		compTurn = false;
-	} else {
-		compTurn = true;
-		message.innerHTML = "Wrong!";
-		speechSynthesis.cancel();
-		wrongSound.play();
-		scoreDisplay.innerHTML = score;
-		setTimeout(() => {
-			playerAnswer.innerHTML = "";
-			computerTurn();
-		}, 500);
-		return false;
-	}
-}
 
-//pre match check for level 3
-function preMatchCheckThree() {
+function preMatchCheck() {
 	let playerAnswerContent = playerAnswer.textContent.trim();
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
