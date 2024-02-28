@@ -155,7 +155,7 @@ Each page will be responsive and the user will be able to navigate between pages
 
 I wanted the typing game to be fun for people of all ages. Space is a popular subject and there are lovely images and graphics that can be found to make the page engaging for everyone. Additionally and most importantly for my VI inspired game, space is dark! Which makes using contracting colours easy. They fit into the theme and are best for VI users to differentiate different parts of the screen. 
 
-As a consequence of this subject i named the game "Cosmo Keys". Cosmo links to space and also implies speed, whilst Keys informs that the game is for typing (keys on a keyboard).
+As a consequence of this subject I named the game "Cosmo Keys". Cosmo links to space and also implies speed, whilst Keys informs that the game is for typing (keys on a keyboard).
 
 ### Favicon
 
@@ -187,9 +187,9 @@ All page features:
 
 SCREEN SHOT OF HOME SCREEN
 
- The home page captivates the user with a distinctive and clean game-like imagry which has a container displaying the game's name (Cosmo Keys) and it's key purpose, "The accessible touch typing game". There are links to the games social media platforms which additionaly make the game feel more professional.  
+The home page captivates the user with a distinctive and clean game-like imagery which has a container displaying the game's name (Cosmo Keys) and its key purpose, "The accessible touch typing game". There are links to the games social media platforms which additionally make the game feel more professional.  
  Below this there are three buttons which allow the user to:
- 1. View the rules of the game or the "about" the game info. Both of these display as modals to improve VI usability. The about modal tells the user that the game has been desinged for VI users and gives the contact informtation for players to get in touch. 
+ 1. View the rules of the game or the "about” the game info. Both of these display as modals to improve VI usability. The about modal tells the user that the game has been designed for VI users and gives the contact information for players to get in touch.
  2. Move on to play the game, and select the level of play.
 
 
@@ -203,29 +203,31 @@ The game play for phase 1 roll out has three levels:
 - Level 2 - 2 letter play
 - Level 3 - 3 letter play
 
-To aid VI users these are colour co-ordinated from green to red so a level can be selected based on colour (easier to see) than having to read the words with a magnifyer. 
+To aid VI users these are colour coordinated from green to red so a level can be selected based on colour (easier to see) than having to read the words with a magnifier.
 
 #### The Game Play Page
 
-This page is designed to make viewing it (on any device) easy for VI users. Therefore, whilst still being appealing to sighted users, there are some design elements which may have been modified if this was for sighted users only e.g the size of buttons/boxes are purposfully larger than needed and colour choices are more stark than they might otherwise be.
+This page is designed to make viewing it (on any device) easy for VI users. Therefore, whilst still being appealing to sighted users, there are some design elements which may have been modified if this was for sighted users only e.g the size of buttons/boxes are purposefully larger than needed and colour choices are more stark than they might otherwise be.
 
-On small devices, initially the page apears on the small side but this is to allow for the keyboard on a phone to be displayed, whilst all the other game are remains visible. 
+On small devices, initially the page appears on the small side but this is to allow for the keyboard on a phone to be displayed, whilst all the other game aspects remain visible.
+ 
 
 IMAGES SHOWING THIS!
 
-There are buttons which allow the user to reload the game (before a game has finished) or re-read the rules. This navigation-like bar at the top DOES NOT toggle to a burger on smaller devices. This was a concious choice to aid VI users as these menus can be cumbersome (the screen reader reads out every option, evertime it is selected).
+There are buttons which allow the user to reload the game (before a game has finished) or re-read the rules. This navigation-like bar at the top DOES NOT toggle to a burger on smaller devices. This was a conscious choice to aid VI users as these menus can be cumbersome (the screen reader reads out every option, every time it is selected).
 
 The level that has been selected is displayed on the page.
 
 During game play:
 
-- To aid VI users the timer, which counts down from 60 to 0, has been desinged to change colour as the time reduces, so a user doesn't have to read the numbers to know how long is left. 
+- To aid VI users the timer, which counts down from 60 to 0, has been designed to change colour as the time reduces, so a user doesn't have to read the numbers to know how long is left.
 
-- Using a web speech API, each letter/word is read to the user. Additinaly, at the end of the game the score is announced.
+- Using a web speech API, each letter/word is read to the user. Additionally, at the end of the game the score is announced.
 
-- Following a right or wrong answer a corresponding sound is played to imrove UX for all users. I chose not to annouce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The score box increments with each correct answer. Additinaly, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users. 
+- Following a right or wrong answer a corresponding sound is played to improve UX for all users. I chose not to announce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The score box increments with each correct answer. Additionally, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users.
 
-- The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play. 
+- The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play.
+
 
 ### Future roll outs
 
