@@ -159,7 +159,7 @@ As a consequence of this subject i named the game "Cosmo Keys". Cosmo links to s
 
 ### Favicon
 
-A rocket image was found on vecteezy for the favicon of the game. 
+A rocket image was found on vecteezy (by endang firmansyah) for and converted into a favicon. 
 
 
 
@@ -228,3 +228,15 @@ During game play:
 - The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play. 
 
 ### Future roll outs
+
+MORE CONTENT
+
+## Credit
+
+### Content
+
+### Media
+
+- All images are sourced from Freepix, with specific credit to:
+
+- The favicon was generated using an image from Vecteezy with specific credit to the content creator Endang Firmansyah.
