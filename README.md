@@ -84,6 +84,8 @@ The following opportunity matrix summarises the key features that could be imple
 
 Based on the score, the opportunities were sumarised into their roll out phase. 
 
+#### Table 2 Roll Out
+
 |Opportunity                             | Phase for Roll Out|
 |:-------------------------------------:|:-----------------:|
 | Rules                                 | 1                 |
@@ -273,9 +275,24 @@ During game play:
 - The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play.
 
 
-### Future roll outs
+### Future Roll Outs
 
-MORE CONTENT
+This game could be developed in several areas in the future. Firstly I'd like to address the features that were outlined for [phase 2](#table-2-roll-out). This would be to add:
+
+1. A separate area for a contact form.
+2. The functionality to control the volume from the game it self, rather than relying on the device's controls.
+3. Features that would allow the population of a leaderboard. e.g a username and then a page which would save and display.
+4. Additional levels of increasing word  and the option to select symbol practice (something that is particularly difficult for VI users).
+
+I would also address other issues that arose during the development of the game. There are:
+
+1. To investigate and possibly implement an alternative talkback API as Web Speech is a little slow on level 2 play.
+
+    The WebSpeech API does not allow you to trigger multiple Speech’s at once, i.e separate the two-letter array into its individual characters and then speak them “simultaneously”, but in reality use a timeout feature to separate their utterance by a few ms. This is something I would modify for the future. Putting in place a different API that allows for “simultaneous”speech or using audio files for each letter which will allow for parallel play.
+
+2. Alter the use of the modal
+
+  Modals were selected to limit the amount of page navigation a VI user would have to undertake (you can exit the rules modal by clicking anywhere). However, some screen readers recite everything underneath the modal before reading its content. This is a recognised issue for VI users and appears on the most commercial of website's (e.g the BBC). However, as this game is designed specifically for VI users this is a feature that shouldn't occur and therefore development of how the rules/about info is presented would be advantageous and would improve UX.
 
 ## Technologies Used
 
