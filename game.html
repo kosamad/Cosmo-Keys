@@ -73,25 +73,25 @@
 			<div class="conatiner main-overlay-game text-center justify-content-center">
 				<div class="row top-row text-center justify-content-center">
 					<div class="col-md-2 col-3" id="back-btn-game">
-						<a href="level.html">
+						<a href="level.html"><span class="sr-only">Back Button</span>
 							<button class="col-12 btn-game-menu">
-								<span class="sr-only">Back Button</span><i class="fa-solid fa-arrow-left" aria-label="back to home button"></i>
+								<i class="fa-solid fa-arrow-left" aria-label="back to home button"></i>
 							</button>
 						</a>
+					</div>
+					<div class="col-md-2 block">
+						<a href="game.html"><span class="sr-only">Reload Game</span>
+							<button class="col-12 btn-game-menu" id="reload-game-button">
+								<i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
+							</button>
+						</a>
+					</div>					
+					<div class="col-md-6 col-6 ilevel-text">
+						<a href="index.html" class="no-line"><span class="sr-only">Navigate to home</span>
+							<h4 id="game-title">Cosmo Keys - <span id="level-indicator"></span></h4></a>
 					</div>
 					<div class="col-md-2 col-3">
-						<a href="game.html">
-							<button class="col-12 btn-game-menu" id="reload-game-button">
-								<span class="sr-only">Reload Game</span><i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
-							</button>
-						</a>
-					</div>
-					<div class="col-md-3 col-3 offset-md-3 offset-sm-0 ilevel-text">
-						<h4 id="level-indicator"></h4>
-
-					</div>
-					<div class="col-2 offset-sm-0">
-						<button class="btn-game-menu" id="i-btn-game" type="button" aria-label="instructions"
+						<button class="btn-game-menu col-12" id="i-btn-game" type="button" aria-label="instructions"
 							data-bs-toggle="modal" data-bs-target="#infoModal">
 							<span class="sr-only">Rules</span><i class="fa-solid fa-info"></i>
 						</button>
@@ -136,7 +136,7 @@
 				<div class="row justify-content-center">
 					<div class="order-3 order-md-1 score-container">
 						<div class="row">
-							<div id="score">Score: <span id="js-score">0</span></div>
+							<span class="sr-only">Score</span><div id="score">Score: <span id="js-score">0</span></div>
 						</div>
 					</div>
 					<div class="order-1 order-md-2" id="quiz-box-container">
@@ -157,8 +157,15 @@
 				<div class="row">
 					<div class="container">
 						<div class="row align-items-center justify-content-center">
-							<div class="col-md-6 col-12">
+							<div class="col-6">
 								<h2 id="message">Good Luck!</h2>
+							</div>
+							<div class="col-3 offset-2 show">
+								<a href="game.html"><span class="sr-only">Reload Game</span>
+									<button class="col-12 btn-game-menu" id="reload-game-button">
+										<i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>

@@ -53,7 +53,6 @@ body {
 }
 
 
-
 .hidden {
 	opacity: 0;
 }
@@ -195,7 +194,7 @@ border-color: black;
 }
 
 /*----Game.html styles----*/
-/*-- backgrounds --*/
+
 .main-bg-game {
 	background: url(../images/space-bg.jpg) no-repeat center center;
 	background-size: cover;
@@ -211,17 +210,14 @@ border-color: black;
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	/* padding: 2.5% 0; */
-	padding: 4%;
+	padding: 2% 4%;
 	border-radius: 1.5rem;
 }
 
 /*-- top buttons and info--*/
-
 .top-row {
-	margin-bottom: 2%;
+	margin-bottom: 4%;
 }
-
 .btn-game-menu {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -247,10 +243,6 @@ border-color: black;
 	border-color: black;
 	cursor: pointer;
 	color: black;
-}
-
-.top-row {
-	margin: 0 0 4% 3%;
 }
 
 #i-btn-game {
@@ -284,9 +276,17 @@ border-color: black;
 	margin-bottom: 0;
 }
 
+#game-title {
+	font-size: 23px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;	
+	text-decoration: none;
+	color: white;
+}
+
+.no-line{text-decoration: none;}
+
 /*-- start game large button--*/
-
-
 .start-container {
 	background-image: linear-gradient(to right top,
 			#ea505a,
@@ -306,11 +306,9 @@ border-color: black;
 }
 
 /* hide must come second so that the display style is set correctly  */
-
 .hide {
 	display: none;
 }
-
 
 #start-game-button:hover {
 	background-image: radial-gradient(circle,
@@ -355,10 +353,6 @@ border-color: black;
 .btn.no-hover-effect:hover {
 	transform: none!important;
 }
-
-/* #reload-game-button:hover {
-	box-shadow: none !important;	 
- } */
 
 .score-container {
 	background-image: radial-gradient(circle,
@@ -481,6 +475,10 @@ border-color: black;
 	color: greenyellow;
 }
 
+.show{
+	display: none;
+}
+
 /*-Media Query-*/
 
 /* If the screen size is 1024px wide or less */
@@ -499,6 +497,14 @@ border-color: black;
 	}
 
 	/*----Level.html MQ styles----*/
+}
+
+/* If the screen size is 840px wide or less */
+@media screen and (max-width: 840px) {
+
+	#game-title {font-size: 20px;}
+	
+	#level-indicator{font-size: 21px;}
 }
 
 /* If the screen size is 770px wide or less */
@@ -571,6 +577,10 @@ border-color: black;
 		margin-bottom: 2.5%;
 	}
 
+	#game-title {font-size: 18px;}
+	
+	#level-indicator{font-size: 20px;}
+
 	#message {
 		font-size: 20px;
 	}
@@ -600,17 +610,19 @@ border-color: black;
 
 	}
 
-		/* .main-bg-game {
-		padding: 3% 5%;
-		max-width: 65vw;
-	} */
-
+	
 	.main-bg-level {
 		padding: 3% 5%;
 		max-width: 65vw;
 	}
 
-	
+	.block { 
+		display: none;
+	}	
+
+	.show{
+		display: block;
+	}
 }
 
 
@@ -623,9 +635,9 @@ border-color: black;
 		font-size: 12px;
 	}
 
-	#level-indicator {
+	#level-indicator, #game-title {
 		font-size: 18px
-	}
+	}	
 
 	#quiz-letter{
 		font-size: 25px;
@@ -670,7 +682,7 @@ border-color: black;
 		font-size: 20px;
 	}
 
-	#level-indicator {
+	#level-indicator, #game-title {
 		font-size: 12px
 	}
 
