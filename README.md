@@ -134,31 +134,31 @@ As this is a game and not an informative website the pages will not take up the 
 
 ### Wireframes
 
-The following wireframes outline how the content will be veiwed on different devices. They were created using balsamic.
+The following wireframes outline how the content will be viewed on different devices. They were created using balsamic.
 
 1. 1 Home page (all devices)
 
-![index.html wireframe](documentation/wireframes/cosmo-keys-index.png)
+    ![index.html wireframe](documentation/wireframes/cosmo-keys-index.png)
 
 1. 2 Home page example of how the modal will look
 
-![modal example wireframe](documentation/wireframes/modal-example.png)
+    ![modal example wireframe](documentation/wireframes/modal-example.png)
 
 2. Level selection page (small screen)
 
-![level.html wireframe](documentation/wireframes/level-sm-sc.png)
+    ![level.html wireframe](documentation/wireframes/level-sm-sc.png)
 
-The level select page on other devices matches the home page layout.
+    The level select page on other devices matches the home page layout.
 
 3. 1 Game play page (small screen)
 
-![game.html small wireframe](documentation/wireframes/play-sm-sc.png)
+    ![game.html small wireframe](documentation/wireframes/play-sm-sc.png)
 
 3. 2 Game play page (large screen)
 
-![game.html large wireframe](documentation/wireframes/play-lg-sc.png)
+    ![game.html large wireframe](documentation/wireframes/play-lg-sc.png)
 
-Each page will be responsive and the user will be able to navigate between pages using the back button. There will be multiple oppertunities for the user to interact with the page and play the game in a way that suits them. 
+Each page will be responsive and the user will be able to navigate between pages using the back button. There will be multiple opportunities for the user to interact with the page and play the game in a way that suits them. 
 
 ---
 
@@ -170,45 +170,69 @@ I wanted the typing game to be fun for people of all ages. Space is a popular su
 
 As a consequence of this subject I named the game "Cosmo Keys". Cosmo links to space and also implies speed, whilst Keys informs that the game is for typing (keys on a keyboard).
 
+I found my background image on Freepik and used this for all subsequent design elements.
+
+![background image](assets/images/space-bg.jpg)
+
 ### Favicon
 
-The background image was cropped to give a small, square rocket image that was converted into a favicon. 
+The background image was cropped to give a small, square rocket image that was converted into a favicon using favicon.io. 
 
-
+![favicon rocket](assets/images/favicon/favicon-32x32.png)
 
 ### Colour Scheme
 
+From my background image I selected base, high contrasting colours using ColorZilla (purple #8a38e3, blue #70caf5, orange #f2624a) and created gradient backgrounds to use across my buttons using colourSpace.
+
+Other colours were selected to complement these e.g the red, orange and green used on the level page. 
+
 ### Typography
 
-### Imagery
+The two fonts I have used for Cosmo Keys are from the Google font library. "Audiowide" was used for the title and impact words as it has a very game-like appearance and linked with my space theme. 
+
+![audiowide example](documentation/screen_shots/audiowide-font-example.PNG)
+
+The more informative text was written using Lexend. This was selected after reading the article by google fonts titled ["Introducing accessibility in typography"](https://fonts.google.com/knowledge/readability_and_accessibility/introducing_accessibility_in_typography). It states that Lexend was designed to be easier to read, ensuring each character is distinctive from others.
+
+![lexend example](documentation/screen_shots/lexend-font-example.PNG)
+
+### Sounds
+
+The sounds for the "correct", "wrong" and "game-over" were selected from freesound. They are short, snappy sounds that don't take up too much time as part of the game and have distinctive tones which match a users expectations for right, wrong and the end of a game. 
+
+To create the talk-back functionality of the game I used the Web Speech API created by Mozilla. 
+
 
 ### Features
 
-
-
-
-All page features:
-
+All pages:
 
 - Buttons/links (and surrounding container) change colour when they are hovered over to a blue colour that is consistent through all the pages. 
 
-- The back button for all pages will be positioned in the same, typical place (top left corner) to improve UX as this is where users expect a back button to be. 
+    ![hover effect ](documentation/screen_shots/hover-effect.png)
 
-(EXAMPLE PICTURES SHOWING THE HOVER EFFECT)
+- The back button for all pages will be positioned in the same, typical place (top left corner) to improve UX as this is where users expect a back button to be. 
 
 #### The Home Page
 
-SCREEN SHOT OF HOME SCREEN
+ ![Home page ](documentation/device_shots/index-screens.PNG)
 
 The home page captivates the user with a distinctive and clean game-like imagery which has a container displaying the game's name (Cosmo Keys) and its key purpose, "The accessible touch typing game". There are links to the games social media platforms which additionally make the game feel more professional.  
+
  Below this there are three buttons which allow the user to:
- 1. View the rules of the game or the "about” the game info. Both of these display as modals to improve VI usability. The about modal tells the user that the game has been designed for VI users and gives the contact information for players to get in touch.
- 2. Move on to play the game, and select the level of play.
+
+ 1. View the rules of the game or the "about” the game info. 
+ 
+    Both of these display as modals to improve VI usability. The about modal tells the user that the game has been designed for VI users and gives the contact information for players to get in touch. the rules modal instructs the user how to play the game.
+
+      ![Rules modal ](documentation/device_shots/rules_modal.PNG)
+
+ 2. Move on to play the game (play button), and select the level of play.
 
 
 #### The Level Selection Page
 
-SCREEN SHOT
+  ![Level page ](documentation/device_shots/level-screens.PNG)
 
 The game play for phase 1 roll out has three levels:
 
@@ -220,20 +244,27 @@ To aid VI users these are colour coordinated from green to red so a level can be
 
 #### The Game Play Page
 
+  ![game page ](documentation/device_shots/game-screens.PNG)
+
 This page is designed to make viewing it (on any device) easy for VI users. Therefore, whilst still being appealing to sighted users, there are some design elements which may have been modified if this was for sighted users only e.g the size of buttons/boxes are purposefully larger than needed and colour choices are more stark than they might otherwise be.
 
-On small devices, initially the page appears on the small side but this is to allow for the keyboard on a phone to be displayed, whilst all the other game aspects remain visible.
- 
+On small devices, initially the page appears on the small side, with a large black space at the bottom of the page, but this is to allow for the keyboard on a phone to be displayed, whilst all the other game aspects remain visible.
 
-IMAGES SHOWING THIS!
+No keypad:
+ 
+   ![no keypad ](documentation/device_shots/game-play-no-keypad.png)
+
+With keypad once the game has started:
+
+  ![no keypad ](documentation/device_shots/game-play-keypad.png)
 
 There are buttons which allow the user to reload the game (before a game has finished) or re-read the rules. This navigation-like bar at the top DOES NOT toggle to a burger on smaller devices. This was a conscious choice to aid VI users as these menus can be cumbersome (the screen reader reads out every option, every time it is selected).
 
-The level that has been selected is displayed on the page.
+The level that has been selected is displayed on the page, coloured to correspond to the level of difficulty.
 
 During game play:
 
-- To aid VI users the timer, which counts down from 60 to 0, has been designed to change colour as the time reduces, so a user doesn't have to read the numbers to know how long is left.
+- To aid VI users the timer, which counts down from 60 to 0, has been designed to change colour as the time reduces, so a user doesn't have to read the numbers to know how long is left. This is done from green to red.
 
 - Using a web speech API, each letter/word is read to the user. Additionally, at the end of the game the score is announced.
 
@@ -246,12 +277,29 @@ During game play:
 
 MORE CONTENT
 
+## Technologies Used
+
+### Languages
+
+HTML, CSS and Javascript.
+
+### Frameworks, Libraries, Programmes and Tools Used
+
+
 ## Credit
 
 ### Content
 
+- Colour gradients were created using [ColourSpace](https://mycolor.space/)
+- The favicon was generated using [Favicon](https://favicon.io/favicon-converter/)
+- [ColorZilla](https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?pli=1) was used to select colours from other sources
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> by Mozilla. 
+
+
+
 ### Media
 
-- All images are sourced from Freepix, with specific credit to:
+- The only image used on this site was taken from Freepix, with specific credit to vectorpouch (<a href="http://www.freepik.com">Designed by vectorpouch / Freepik</a>)
 
-- The favicon was generated using an image from Vecteezy with specific credit to the content creator Endang Firmansyah.
+- All sounds were selected from [Freesound](https://freesound.org/) with specfic credit to LittleRainySeasons for the "right" sound, Gronkjaer for the "wrong" sound and fupicat, for the final, game over sound. 
+
