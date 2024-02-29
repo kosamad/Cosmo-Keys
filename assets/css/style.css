@@ -137,6 +137,8 @@ border-color: black;
 
 .social-icon {color: #e597f6;}
 
+.social-icon:hover {color:#6ee4ef;}
+
 /*----Level.html styles----*/
 
 .btn-level {
