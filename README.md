@@ -136,16 +136,29 @@ As this is a game and not an informative website the pages will not take up the 
 
 The following wireframes outline how the content will be veiwed on different devices. They were created using balsamic.
 
-NEED TO PUT THESE IN HERE!!!!
+1. 1 Home page (all devices)
 
+![index.html wireframe](documentation/wireframes/cosmo-keys-index.png)
 
-1. Home page
+1. 2 Home page example of how the modal will look
 
-2. Level page
+![modal example wireframe](documentation/wireframes/modal-example.png)
 
-3. Game play page
+2. Level selection page (small screen)
 
-Each page will be responsive and the user will be able to navigate between pages in multiple ways. There will be multiple oppertunities for the user to interact with the page and play the game in a way that suits them. 
+![level.html wireframe](documentation/wireframes/level-sm-sc.png)
+
+The level select page on other devices matches the home page layout.
+
+3. 1 Game play page (small screen)
+
+![game.html small wireframe](documentation/wireframes/play-sm-sc.png)
+
+3. 2 Game play page (large screen)
+
+![game.html large wireframe](documentation/wireframes/play-lg-sc.png)
+
+Each page will be responsive and the user will be able to navigate between pages using the back button. There will be multiple oppertunities for the user to interact with the page and play the game in a way that suits them. 
 
 ---
 
