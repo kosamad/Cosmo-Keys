@@ -75,14 +75,14 @@
 					<div class="col-md-2 col-3" id="back-btn-game">
 						<a href="level.html">
 							<button class="col-12 btn-game-menu">
-								<i class="fa-solid fa-arrow-left" aria-label="back to home button"></i>
+								<span class="sr-only">Back Button</span><i class="fa-solid fa-arrow-left" aria-label="back to home button"></i>
 							</button>
 						</a>
 					</div>
 					<div class="col-md-2 col-3">
 						<a href="game.html">
 							<button class="col-12 btn-game-menu" id="reload-game-button">
-								<i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
+								<span class="sr-only">Reload Game</span><i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
 							</button>
 						</a>
 					</div>
@@ -93,7 +93,7 @@
 					<div class="col-2 offset-sm-0">
 						<button class="btn-game-menu" id="i-btn-game" type="button" aria-label="instructions"
 							data-bs-toggle="modal" data-bs-target="#infoModal">
-							<i class="fa-solid fa-info"></i>
+							<span class="sr-only">Rules</span><i class="fa-solid fa-info"></i>
 						</button>
 						<!-- info, how to play modal-->
 						<div class="modal" tabindex="-1" id="infoModal" aria-labelledby="game instructions"
@@ -123,7 +123,7 @@
 				<div class="row justify-content-center align-items-center">
 					<div class="start-container start-play-icon" id="start-box-container">
 						<button class="btn no-hover-effect col-12" id="start-game-button">
-							<i class="fa-solid fa-play icon-box" id=""></i>
+							<span class="sr-only">Start game/pause button</span><i class="fa-solid fa-play icon-box" id=""></i>
 						</button>
 					</div>
 					<div class="start-container hide" id="reload-box-container">
@@ -141,15 +141,15 @@
 					</div>
 					<div class="order-1 order-md-2" id="quiz-box-container">
 						<div class="col-12" id="quiz-letter">
-							<div>?</div>
+							<span class="sr-only">Challenge box</span><div>?</div>
 						</div>
 					</div>
 					<div class="order-2 order-md-3" id="answer-box-container">
-						<div class="col-12 focus-point" id="player-answer" contenteditable="true" autofocus></div>
+						<span class="sr-only">Player answer box</span><div class="col-12 focus-point" id="player-answer" contenteditable="true" autofocus></div>
 					</div>
 					<div class="order-4 order-md-4 time-container">
 						<div class="row justify-content-center align-items-center">
-							<div id="timer">60</div>
+							<span class="sr-only">Timer</span><div id="timer">60</div>
 						</div>
 					</div>
 				</div>
