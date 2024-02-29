@@ -172,7 +172,7 @@ As a consequence of this subject I named the game "Cosmo Keys". Cosmo links to s
 
 ### Favicon
 
-A rocket image was found on vecteezy (by endang firmansyah) for and converted into a favicon. 
+The background image was cropped to give a small, square rocket image that was converted into a favicon. 
 
 
 
