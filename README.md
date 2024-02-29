@@ -285,15 +285,45 @@ HTML, CSS and Javascript.
 
 ### Frameworks, Libraries, Programmes and Tools Used
 
+- [Gitpod](https://gitpod.io/workspaces) and [Visual Studio Code Desktop Version](https://visualstudio.microsoft.com/#vscode-section) - to create the site (IDE's).
+  
+- [Balsamiq](https://balsamiq.com/) - to create wireframes.
+  
+- [Github](https://github.com/) - to save and store the files for the website.
+
+- [Git](https://git-scm.com/) - for version control, using the Gittpod terminal to commit to Git and Push to GitHub.
+
+- [Bootstrap version 5.3.2](https://getbootstrap.com/) - to input different features of the website including buttons and modals and to assist responsive styling.
+
+- [Font Awesome:](https://fontawesome.com/) - to add icons and improve the UX.
+
+- [Google Fonts](https://fonts.google.com/) - for the fonts used on the website.
+
+- [ColorZilla](https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp) - to pick colours from the background image and get hex codes.
+  
+- [Google Developer Tools](https://developer.chrome.com/docs/devtools/) - to veiw responsive styling and troubleshoot/solve issues.
+
+- [Favicon.io](https://favicon.io/) - to create the Cosmo Keys favicon.
+
+- [ColourSpace](https://mycolor.space/) - to create the colour gradients.
+
+- [Am I Responsive?](http://ami.responsivedesign.is/) - to show the website on different devices/screen sizes.
+
+- [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - to view the website under different accesibiity filters.
+
+- [GitHub Wiki Toc generator](https://ecotrust-canada.github.io/markdown-toc/) - to automatically create my contents page in the README.md file.
+
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> by Mozilla - to generate the talkback features of the game.
+
+- [Datamuse API](https://www.datamuse.com/api/) - to generate words for level 2 and level 3 play.
+
 
 ## Credit
 
 ### Content
 
-- Colour gradients were created using [ColourSpace](https://mycolor.space/)
-- The favicon was generated using [Favicon](https://favicon.io/favicon-converter/)
-- [ColorZilla](https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?pli=1) was used to select colours from other sources
-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> by Mozilla. 
+
+
 
 
 
