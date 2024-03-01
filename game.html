@@ -49,12 +49,12 @@
 			<div class="conatiner main-overlay-game text-center justify-content-center">
 				<div class="row top-row text-center align-items-center justify-content-between">
 					<div class="col-md-2 col-3 btn-game-menu right-margin" id="back-btn-game">
-						<a href="level.html" class="d-block"><span class="sr-only">Back to level select</span><i class="fa-solid fa-arrow-left" aria-label="back to home button"></i>
+						<a href="level.html" class="d-block"><span class="sr-only">Back to level select</span><i class="fa-solid fa-arrow-left"></i>
 						</a>
 					</div>
-					<div class="col-md-2 block btn-game-menu" id="reload-game-button">
+					<div class="col-md-2 block btn-game-menu" id="reload-game-btn">
 						<a href="game.html"><i class="fa-solid fa-arrow-rotate-right icon-box"></i>
-							<span class="sr-only">Reset game</span></i>
+							<span class="sr-only">Reset game</span>
 						</a>
 					</div>
 					<div class="col-md-5 col-6 ilevel-text">
@@ -96,7 +96,7 @@
 					<div class="start-container start-play-icon" id="start-box-container">
 						<button class="btn no-hover-effect col-12" id="start-game-button">
 							<span class="sr-only">Start game/pause button</span><i class="fa-solid fa-play icon-box"
-								id=""></i>
+								id="i"></i>
 						</button>
 					</div>
 					<div class="start-container hide" id="reload-box-container">
@@ -133,17 +133,14 @@
 
 				<div class="row">
 					<div class="container">
-						<div class="row align-items-center justify-content-center">
+						<div class="row margin align-items-center justify-content-center">
 							<div class="col-3 show"></div>
-
 							<div class="col-6">
 								<h2 id="message">Good Luck!</h2>
 							</div>
-							<div class="col-3 show">
-								<a href="game.html"><span class="sr-only">Reload Game</span>
-									<button class="col-12 btn-game-menu" id="reload-game-button">
-										<i class="fa-solid fa-arrow-rotate-right icon-box" aria-label="reset game"></i>
-									</button>
+							<div class="col-3 show btn-game-menu">
+								<a href="game.html" id="reload-game-button"><span class="sr-only">Reload Game</span>
+										<i class="fa-solid fa-arrow-rotate-right icon-box"></i>									
 								</a>
 							</div>
 						</div>

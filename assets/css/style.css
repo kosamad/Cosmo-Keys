@@ -357,22 +357,6 @@ body {
 			#6ee4ef);
 }
 
-
-.no-hover-effect:hover & :focus {
-	border: none !important;
-	box-shadow: none !important;
-	background-image: inherit;
-	text-decoration: none;
-	transform: none;
-	transition: none !important;
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef);
-}
-
 .no-hover-effect:hover {
 	border: transparent !important;
 	box-shadow: none !important;
@@ -649,8 +633,10 @@ body {
 
 	#message {
 		font-size: 25px;
+		margin: 0;		
 	}
 
+	.margin {margin: 2%;}
 }
 
 /* If the screen size is 766px wide or less */
@@ -670,12 +656,7 @@ body {
 	.home-buttons {
 		margin-top: 1.5vh;
 	}
-
-	.top-row {
-		margin: 0 0 3%;
-
-	}
-
+	
 
 	.main-bg-level {
 		padding: 3% 5%;

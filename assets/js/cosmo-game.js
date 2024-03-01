@@ -21,7 +21,6 @@ let currentLetter = document.getElementById("quiz-letter");
 let playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
-let playerAnswerContent = "";
 let compTurn = true;
 let twoLetterWords;
 let threeLetterWords;
@@ -77,14 +76,12 @@ let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
 wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
+let SpeechSynthesisUtterance;
+let speechSynthesis;
 
 //speech/sound functions
-
-//function to speak the score at end of the game
-if ("speechSynthesis" in window) {
-	//Web Speech API is supported
-	//function which speaks the score at the end of the game
-	function speakScore(score) {
+//function which speaks the score at the end of the game
+function speakScore(score) {
 		if (scoreDisplay.innerText === 1) {
 			let scoreVoice = new SpeechSynthesisUtterance(
 				`congratulations, you got ${scoreDisplay.innerText} point.`
@@ -102,7 +99,6 @@ if ("speechSynthesis" in window) {
 			window.speechSynthesis.speak(scoreVoice);
 		}
 	}
-}
 
 //function which speaks the letter (level-1/2 play) or word (level-3 play)
 function speakLetter(letter) {
@@ -213,7 +209,7 @@ async function findWords() {
 		console.error("An error occurred during the word retrieval", error);
 		throw error;
 	}
-}
+};
 
 //async function that waits for the levelTwo letters to be populated by the API above.
 async function levelTwo() {
@@ -232,7 +228,7 @@ async function levelTwo() {
 		console.error("An error occurred in levelTwo", error);
 		// Handle errors specific to levelTwo if needed
 	}
-}
+};
 
 //level-3 play retrives 3 letter words
 async function levelThree() {
