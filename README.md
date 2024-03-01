@@ -300,9 +300,6 @@ I would also address other issues that arose during the development of the game.
 
     On the computer this does not affect play as the hover classes tell the user when the button is selected. However, on a mobile, a player is likely to click anywhere in the container and expect the button to work. This should be corrected in future roll outs. 
 
-4. Improve screen-reader class
-
-   On some browsers the screen reader content was showing briefly as the page was loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
   
 ### Accessibility
 
@@ -353,6 +350,8 @@ HTML, CSS and Javascript.
 
 - [ColourSpace](https://mycolor.space/) - to create the colour gradients.
 
+- [TinyPNG](https://tinypng.com/) - to compress backgroun image.
+
 - [Am I Responsive?](http://ami.responsivedesign.is/) - to show the website on different devices/screen sizes.
 
 - [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - to view the website under different accesibiity filters.
@@ -365,9 +364,43 @@ HTML, CSS and Javascript.
 
 - [Datamuse API](https://www.datamuse.com/api/) - to generate words for level 2 and level 3 play.
 
+---
+
+## Deployment & Local Development
+
+### Deployment
+
+The [Cosmo Keys game](https://kosamad.github.io/Cosmo-Keys/index.html) was deployed using GitHub pages using the following steps:
+
+1. Login (or signup) to Github.
+2. Navigate to the project repository ( e.g [Cosmo Keys](https://github.com/kosamad/Cosmo-Keys))
+3. To deploy the site to Github pages:
+    1. Click the settings button at the top of the page.
+    2. Select pages in the left hand navigation menu.
+    3. Under Build and Deployment, click the "Branch "dropdown menu and change it from "None", to "Main". Then click save.
+4. To find the site:
+    1. Click on "Deployments", on the right hand side of the repository.
+    2. Under the Deployments menu on the left, select "All Environments".
+    3. The page can then be selected from the Active deployments section.
+
+### Forking and Cloning the Github Repository
+
+Both forking and cloning the repository follow steps 1 and 2 above. 
+
+Then to fork:
+
+1. Click on the "Fork" button at the top right of the page.
+
+To clone:
+
+1. Click on the code button and under the "Local" tab and select how you would like to clone (HTTPS, SSH or GitHub CLI.)
+2. Copy the link and use it to create a new workspace in your chosen IDE (code editor).
+
+---
+
 ## Testing
 
-Please see the separate [testing](TESTING.md) file 
+Please see the separate [testing](TESTING.md) file for testing carried out on Cosmo Keys.
 
 ---
 
@@ -380,8 +413,9 @@ Please see the separate [testing](TESTING.md) file
 | 3 | Player initiating a new letter with every letter typed (even if the turn wasn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also added an if/else function to prevent the player from typing when it was the computer’s turn.| 
 | 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.PNG) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen
 
+### Known Bugs
 
-
+* On some browsers the screen reader content shows briefly as the page is loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
 
 ## Credit
 
