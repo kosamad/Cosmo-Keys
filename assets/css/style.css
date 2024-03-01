@@ -16,7 +16,7 @@ body {
 }
 
 .main-bg-home {
-	background: url(../images/space-bg.jpg) no-repeat center center;
+	background: url(../images/main-bg-sm.jpg) no-repeat center center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -214,7 +214,7 @@ body {
 /*----Game.html styles----*/
 
 .main-bg-game {
-	background: url(../images/space-bg.jpg) no-repeat center center;
+	background: url(../images/main-bg-sm.jpg) no-repeat center center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
