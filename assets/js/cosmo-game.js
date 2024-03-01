@@ -1,3 +1,5 @@
+//setting the focus on the player answer box so a click event can be simulated and bring up the keyboard on a phone screen. 
+
 let focusPoint = document.querySelector(".focus-point");
 focusPoint.focus();
 focusPoint.click();
@@ -317,7 +319,7 @@ function preMatchCheck() {
 			setTimeout(() => {
 				playerAnswer.innerHTML = "";
 				computerTurn();
-			}, 500);
+			}, 2000);
 			return false;
 		}
 	}
@@ -347,7 +349,7 @@ function matchCheck() {
 		setTimeout(() => {
 			playerAnswer.innerHTML = "";
 			computerTurn();
-		}, 500);
+		}, 2000);
 		return false;
 	}
 }
