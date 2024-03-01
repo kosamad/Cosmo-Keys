@@ -23,7 +23,7 @@ body {
 	-o-background-size: cover;
 	border-radius: 1.5rem;
 	padding: 3.5%;
-	position: relative;		
+	position: relative;
 	min-width: 45vw;
 }
 
@@ -36,7 +36,9 @@ body {
 
 /*- Styles applied to multiple pages-*/
 
-.top-boarder-container {margin-bottom: 4%;}
+.top-boarder-container {
+	margin-bottom: 4%;
+}
 
 .title {
 	font-size: 75px;
@@ -107,7 +109,7 @@ body {
 	padding: 3%;
 }
 
-.btn-home:hover {	
+.btn-home:hover {
 	cursor: default;
 }
 
@@ -121,12 +123,12 @@ body {
 	text-decoration: none;
 	cursor: pointer;
 	background-image: radial-gradient(circle,
-	#6ee4ef,
-	#6adef2,
-	#69d8f4,
-	#6bd1f5,
-	#70caf5);
-border-color: black;
+			#6ee4ef,
+			#6adef2,
+			#69d8f4,
+			#6bd1f5,
+			#70caf5);
+	border-color: black;
 }
 
 .home-play {
@@ -134,14 +136,18 @@ border-color: black;
 	font-size: 20px;
 }
 
-.social-icon {color: #e597f6;}
+.social-icon {
+	color: #e597f6;
+}
 
-.social-icon:hover {color:#6ee4ef;}
+.social-icon:hover {
+	color: #6ee4ef;
+}
 
 /*----Level.html styles----*/
 
 .btn-level {
-	color: black;	
+	color: black;
 	font-family: "Lexend", sans-serif;
 	background-image: linear-gradient(to right top,
 			#e597f6,
@@ -162,24 +168,25 @@ border-color: black;
 	border-color: #00C83D;
 }
 
-.two {	
+.two {
 	background-image: radial-gradient(circle, #ffb000, #f4a901, #eaa203, #df9b04, #d59405);
 	border-color: #d59405;
-	}
+}
 
-.three {	
+.three {
 	background-image: radial-gradient(circle, #e72b2b, #de2423, #d61c1b, #cd1412, #c40808);
-	border-color:#c40808;	
+	border-color: #c40808;
 }
 
 .btn-level a {
-    text-decoration: none;
+	text-decoration: none;
 	color: black;
 	cursor: pointer;
 }
 
-.btn-level:hover {	
-	cursor: default;}
+.btn-level:hover {
+	cursor: default;
+}
 
 
 #back-btn-level {
@@ -190,7 +197,7 @@ border-color: black;
 	margin: 3%;
 	font-size: 35px;
 	font-family: "Lexend", sans-serif;
-	font-weight: 600;	
+	font-weight: 600;
 }
 
 /*----Game.html styles----*/
@@ -203,7 +210,7 @@ border-color: black;
 	-o-background-size: cover;
 	border-radius: 1.5rem;
 	padding: 2% 3.5%;
-	position: relative;	
+	position: relative;
 	max-width: 75vw;
 }
 
@@ -218,6 +225,7 @@ border-color: black;
 .top-row {
 	margin-bottom: 4%;
 }
+
 .btn-game-menu {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -229,7 +237,7 @@ border-color: black;
 	border-color: #3a096f;
 	border-radius: 0.5rem;
 	font-size: 20px;
-	border: none;	
+	border: none;
 	padding: 3px;
 }
 
@@ -270,21 +278,23 @@ border-color: black;
 }
 
 #level-indicator {
-	font-size: 25px;
+	font-size: 30px;
 	font-family: "Lexend", sans-serif;
 	font-weight: 600;
 	margin-bottom: 0;
 }
 
 #game-title {
-	font-size: 23px;
+	font-size: 30px;
 	font-family: "Audiowide", sans-serif;
-	font-weight: 600;	
+	font-weight: 600;
 	text-decoration: none;
 	color: white;
 }
 
-.no-line{text-decoration: none;}
+.no-line {
+	text-decoration: none;
+}
 
 /*-- start game large button--*/
 .start-container {
@@ -351,7 +361,7 @@ border-color: black;
 }
 
 .btn.no-hover-effect:hover {
-	transform: none!important;
+	transform: none !important;
 }
 
 .score-container {
@@ -475,11 +485,20 @@ border-color: black;
 	color: greenyellow;
 }
 
-.show{
+.show {
 	display: none;
 }
 
 /*-Media Query-*/
+
+/* If the screen size is 1100px wide or less */
+@media screen and (max-width: 1100px) {
+
+	#game-title,
+	#level-indicator {
+		font-size: 25px;
+	}
+}
 
 /* If the screen size is 1024px wide or less */
 
@@ -489,30 +508,43 @@ border-color: black;
 	.home-buttons {
 		padding-right: 0;
 		padding-left: 0;
-	}	
+	}
 
 	#start-game {
 		color: black;
 		font-size: 35px;
 	}
 
-	/*----Level.html MQ styles----*/
 }
+
+@media screen and (max-width: 915px) {
+
+	#game-title,
+	#level-indicator {
+		font-size: 22px;
+	}
+}
+
 
 /* If the screen size is 840px wide or less */
 @media screen and (max-width: 840px) {
 
-	#game-title {font-size: 20px;}
-	
-	#level-indicator{font-size: 21px;}
+	#game-title {
+		font-size: 20px;
+	}
+
+	#level-indicator {
+		font-size: 21px;
+	}
 }
 
 /* If the screen size is 770px wide or less */
 
 @media screen and (max-width: 766px) {
 	/*----Index.html MQ styles----*/
-	
-	body{background-color: black;					
+
+	body {
+		background-color: black;
 		margin: 10% 10%;
 		display: block;
 	}
@@ -526,25 +558,25 @@ border-color: black;
 	}
 
 	.btn-home,
-	.btn-level{
+	.btn-level {
 		font-size: 15px;
-		padding: 4%;		
+		padding: 4%;
 	}
 
 
 	.description {
 		font-size: 20px;
-			
+
 	}
 
 	.level-h4-text {
 		font-size: 25px;
 	}
- 
+
 	.start-container {
 		width: 80%;
 		margin: 2% 10%;
-		height: 14vw;		
+		height: 14vw;
 	}
 
 	.time-container {
@@ -577,12 +609,16 @@ border-color: black;
 		margin-bottom: 2.5%;
 	}
 
-	#game-title {font-size: 18px;}
-	
-	#level-indicator{font-size: 20px;}
+	#game-title {
+		font-size: 25px;
+	}
+
+	#level-indicator {
+		font-size: 25px;
+	}
 
 	#message {
-		font-size: 20px;
+		font-size: 25px;
 	}
 
 }
@@ -610,17 +646,17 @@ border-color: black;
 
 	}
 
-	
+
 	.main-bg-level {
 		padding: 3% 5%;
 		max-width: 65vw;
 	}
 
-	.block { 
+	.block {
 		display: none;
-	}	
+	}
 
-	.show{
+	.show {
 		display: block;
 	}
 }
@@ -629,26 +665,24 @@ border-color: black;
 /* If the screen size is 680px wide or less */
 @media screen and (max-width: 680px) {
 
-	
-
 	.btn-game-menu {
 		font-size: 12px;
 	}
 
-	#level-indicator, #game-title {
-		font-size: 18px
-	}	
+	#level-indicator,
+	#game-title {
+		font-size: 22px
+	}
 
-	#quiz-letter{
+	#quiz-letter {
 		font-size: 25px;
 	}
 
-	#player-answer{
+	#player-answer {
 		font-size: 25px;
 	}
 
 }
-
 
 
 /* If the screen size is 580px wide or less */
@@ -667,30 +701,33 @@ border-color: black;
 		margin-top: 1.5%;
 	}
 
-	.main-bg-game {		padding: 3% 5%;
-		
+	.main-bg-game {
+		padding: 3% 5%;
+	}
+
+	#level-indicator,
+	#game-title {
+		font-size: 20px
 	}
 }
 
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
 
-
-	
-
 	#timer {
 		font-size: 20px;
 	}
 
-	#level-indicator, #game-title {
-		font-size: 12px
+	#level-indicator,
+	#game-title {
+		font-size: 18px
 	}
 
-	#quiz-letter{
+	#quiz-letter {
 		font-size: 20px;
 	}
 
-	#player-answer{
+	#player-answer {
 		font-size: 20px;
 	}
 
@@ -701,7 +738,7 @@ border-color: black;
 
 @media screen and (max-width: 463px) {
 
-	/*----Index.html MQ styles----*/	
+	/*----Index.html MQ styles----*/
 
 	.btn-home,
 	.btn-level {
@@ -710,8 +747,10 @@ border-color: black;
 	}
 
 
-	.description{font-size: 18px;}
-	
+	.description {
+		font-size: 18px;
+	}
+
 	.level-h4-text {
 		font-size: 23px;
 	}
@@ -720,16 +759,18 @@ border-color: black;
 		font-size: 15px;
 	}
 
-
-	/*----Game.html MQ styles----*/
-
 	.main-bg-game {
 		padding: 3% 7%;
 	}
 
 	.icon {
 		font-size: 20px;
-	}	
+	}
+
+	#level-indicator,
+	#game-title {
+		font-size: 16px
+	}
 
 	#score {
 		font-size: 10px;
@@ -744,25 +785,32 @@ border-color: black;
 	}
 }
 
+
+@media screen and (max-width: 420px) {
+#level-indicator,
+	#game-title {
+		font-size: 14px
+	}}
+
+
+
 /* If the screen size is 380px wide or less */
 
 @media screen and (max-width: 380px) {
 
-.title{font-size: 25px;}
+	.title {
+		font-size: 25px;
+	}
 
 	.description {
 		font-size: 15px;
 		padding-top: 1.5vh;
 	}
 
-	/*----Level.html MQ styles----*/
 	.level-h4-text {
 		font-size: 20px;
 		margin: 4vh 0 2vh 1.5vh;
 	}
-
-
-	/*----Game.html MQ styles----*/
 
 	#start-game-button {
 		font-size: 25px;
@@ -773,7 +821,7 @@ border-color: black;
 		font-size: 15px;
 	}
 
-		#score {
+	#score {
 		font-size: 12px;
 		padding: 20% 0;
 	}
@@ -783,12 +831,16 @@ border-color: black;
 		padding: 20% 0;
 	}
 
-	#quiz-letter{
+	#quiz-letter {
 		font-size: 15px;
 	}
 
-	#player-answer{
+	#player-answer {
 		font-size: 15px;
 	}
-
+	
+	#level-indicator,
+	#game-title {
+		font-size: 12px
+	}
 }
