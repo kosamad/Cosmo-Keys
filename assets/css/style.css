@@ -797,7 +797,12 @@ body {
 #level-indicator,
 	#game-title {
 		font-size: 14px
-	}}
+	}
+
+	#message {
+		font-size: 15px;
+	}
+}
 
 
 
@@ -854,6 +859,10 @@ body {
 	#game-title {
 		font-size: 12px
 	}
+
+	#message {
+		font-size: 12px;
+	}
 }
 
 /* If the screen size is 326px wide or less */
@@ -865,5 +874,9 @@ body {
 	#level-indicator,
 	#game-title {
 		font-size: 10px
+	}
+
+	#message {
+		font-size: 10px;
 	}
 }
