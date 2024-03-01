@@ -432,14 +432,14 @@ function addition(a, b) {
 	return a + b;
 }
 
-// module.exports = {
-// 	addition,
-// 	findWords,
-// 	levelTwo,
-// 	handleInput,
-// 	playerTurn,
-// 	matchCheck,
-// 	startGame,
-// 	startTimer,
-// 	computerTurn,
-// 	};
+module.exports = {
+	addition,
+	findWords,
+	levelTwo,
+	handleInput,
+	playerTurn,
+	matchCheck,
+	startGame,
+	startTimer,
+	computerTurn,
+	};

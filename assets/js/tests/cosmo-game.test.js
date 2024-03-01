@@ -20,15 +20,10 @@ beforeAll(() => {
 });
 
 
-
-
-
 //Add a delay to wait for the DOM to load so varibles are decalred
-// beforeAll(async () => {
-//   await new Promise((resolve) => setTimeout(resolve, 2000));
-// });
-
-
+beforeAll(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+});
 
 
 //simple addition test to ensure test suit working. can remove at end 
@@ -46,6 +41,7 @@ describe("check content of DOM element fills e.g scorebox", () => {
     expect(element).not.toBeNull();
   });
 });
+
 
 //testing level 2 play
 
@@ -81,8 +77,8 @@ describe("comuter turn works correctly", () => {
 
 describe("levelTwo works correctly", () => {
   beforeEach(() => {
-    twoLetterWords = ['up', 'on', 'in', 'to',] ; 
-    currentLetter.innerText = ''; 
+    let currentLetter = 'up';
+    twoLetterWords = ['up', 'on', 'in', 'to',] ;   
     });
   test("level two function", () => {
     levelTwo();
@@ -90,10 +86,6 @@ describe("levelTwo works correctly", () => {
     expect(twoLetterWords).toContain(innerText);  
   });
 });
-
-
-
-
 
 
 

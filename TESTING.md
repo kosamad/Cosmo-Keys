@@ -58,8 +58,23 @@ Lighthouse (a Chrome Developer tool) was used to test the performance, quality a
 
 All pages score poorly for performance. Improvements could be made by eliminating render-blocking resources caused from external styling and removing unused JavaScript (separating Bootstraps bundle). Also, separating my CSS into separate files to minimise what is loaded on each page (e.g the index page does not need the css for the game play page).
 
----
+### Jest
 
+I attempted to test the javascript elements of the game using Jest, an automatic testing suit that allows you to ......However, the format of my javascript file did not seem to be compatible with jest testing. The following error message was logged for many elements, here shown for the pause button:
+
+
+![pause button error](testing/jest-issue.PNG)
+
+
+To remove this error I had to put my event listener into the function that waits for the DOM content to be loaded before filling the elements. However, by doing that I can no-longer test them using Jest. I additionally encountered numerous errors whilst attempting to use Jest which were extremely time consuming.
+
+
+After speaking with the CI tutors they advised me to pause Jest testing of my game and focus on the javascript itself. However this is a feature of javascript development that should be utilised in the future. With additional time and resources I would alter the way I structured my javascript to be compatible with testing.
+
+
+The (unfinished) [jest testing file](assets/js/tests/cosmo-game.test.js) has been kept on file to demonstrate my attempts to use jest.
+
+---
 
 ## Manual Testing
 
