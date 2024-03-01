@@ -40,13 +40,6 @@ body {
 	margin-bottom: 4%;
 }
 
-.title {
-	font-size: 75px;
-	font-family: "Audiowide", sans-serif;
-	font-weight: 600;
-	font-style: normal;
-}
-
 .description {
 	font-family: "Lexend", sans-serif;
 	font-size: 30px;
@@ -54,6 +47,14 @@ body {
 	padding-top: 6%;
 }
 
+.title {
+	font-size: 75px;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 600;
+	font-style: normal;	
+	color: white;
+	text-decoration: none;	
+}
 
 .hidden {
 	opacity: 0;
@@ -92,6 +93,7 @@ body {
 }
 
 /*----Index.html styles----*/
+
 .btn-home {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -162,6 +164,15 @@ body {
 	border-radius: 1rem;
 	padding: 3%;
 }
+
+.title-a a {
+	text-decoration: none;
+}
+
+.title-level:hover{
+	color: #6ee4ef;
+	cursor: pointer;}
+
 
 .one {
 	background-image: radial-gradient(circle, #14ff5c, #10f154, #0be34c, #06d645, #00c83d);
@@ -296,6 +307,7 @@ body {
 	color: #6ee4ef;
 	cursor: pointer;
 }
+
 .no-line {
 	text-decoration: none;
 }

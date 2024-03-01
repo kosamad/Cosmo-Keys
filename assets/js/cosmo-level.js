@@ -1,3 +1,8 @@
+//colour re-set when the page is accessed using a back button. 
+let levelOneBtnOut = document.getElementById("level-one-outer").style.backgroundImage  = "radial-gradient(circle, #14ff5c, #10f154, #0be34c, #06d645, #00c83d)";
+let levelTwoBtnOut  = document.getElementById("level-two-outer").style.backgroundImage  = "radial-gradient(circle, #ffb000, #f4a901, #eaa203, #df9b04, #d59405)";
+let levelThreeBtnOut  =  document.getElementById("level-three-outer").style.backgroundImage  = "radial-gradient(circle, #e72b2b, #de2423, #d61c1b, #cd1412, #c40808)";
+
 // setting the select level key on the level.html page and storing it locally.
 function setLevelId(level) {
 	localStorage.setItem("selectedLevel", level);
