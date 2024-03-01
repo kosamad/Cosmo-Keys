@@ -300,6 +300,9 @@ I would also address other issues that arose during the development of the game.
 
     On the computer this does not affect play as the hover classes tell the user when the button is selected. However, on a mobile, a player is likely to click anywhere in the container and expect the button to work. This should be corrected in future roll outs. 
 
+4. Improve screen-reader class
+
+   On some browsers the screen reader content was showing briefly as the page was loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
   
 ### Accessibility
 
