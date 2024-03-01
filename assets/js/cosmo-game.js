@@ -2,7 +2,9 @@
 
 let focusPoint = document.querySelector(".focus-point");
 focusPoint.focus();
+playerAnswer.contentEditable = "false";
 focusPoint.click();
+console.log(focusPoint);
 
 
 //setting the level indicator for the user (top of the screen)
@@ -28,7 +30,7 @@ let playerAnswer = document.getElementById("player-answer");
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
-let compTurn = true;
+// let compTurn = true;
 let twoLetterWords;
 let threeLetterWords;
 let lettersTyped = 0;
@@ -254,7 +256,7 @@ async function levelThree() {
 //general game play
 //computer turn
 function computerTurn() {
-	compTurn = true;
+	// compTurn = true;
 	message.innerHTML = "Good Luck!";
 	//load correct level play
 	if (levelId === "level-1") {
@@ -276,14 +278,16 @@ function startGame() {
 
 //player turn function
 function playerTurn() {
-	compTurn = false;
+	// compTurn = false;
 	// Reset the count of letters typed for each new player turn
 	lettersTyped = 0;
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
-if (compTurn === false) {
-	playerAnswer.contenteditable = "true"; //ensures the user can type on their turn
-}
+
+// if (compTurn === false) {
+// 	playerAnswer.contenteditable = "true";//ensures the user can type on their turn
+// }
+
 
 //function to check how many letters have been typed and what function follows
 function handleInput(event) {
@@ -311,25 +315,26 @@ function preMatchCheck() {
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
 		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
-			compTurn = true;
+			// compTurn = true;
 			message.innerHTML = "Wrong!";
 			speechSynthesis.cancel();
 			wrongSound.play();
 			scoreDisplay.innerHTML = score;
+			playerAnswer.removeEventListener("input", handleInput);
 			setTimeout(() => {
 				playerAnswer.innerHTML = "";
 				computerTurn();
-			}, 2000);
+			}, 1000);
 			return false;
 		}
 	}
 	// If all characters match, continue with the correct case
-	compTurn = false;
+	// compTurn = false;
 }
 
 //matchCheck checks the completed player answer against the computer and issues subsequent function based on a correct or incorrect answer 
 function matchCheck() {
-	compTurn = true;
+	// compTurn = true;
 	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	if (playerAnswerContent === currentLetter.textContent) {
 		message.innerHTML = "Correct!";
@@ -343,13 +348,14 @@ function matchCheck() {
 		return true;
 	} else {
 		message.innerHTML = "Wrong!";
+		playerAnswer.removeEventListener("input", handleInput);
 		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
 		setTimeout(() => {
 			playerAnswer.innerHTML = "";
 			computerTurn();
-		}, 2000);
+		}, 1000);
 		return false;
 	}
 }
