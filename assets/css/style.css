@@ -252,10 +252,6 @@ body {
 	padding: 0.5% 0;		
 }
 
-/* .right-margin{
-	margin-right: 1%;
-} */
-
 .btn-game-menu a {
 	color: black;		
 }
@@ -636,7 +632,7 @@ body {
 		margin: 0;		
 	}
 
-	.margin {margin: 2%;}
+	.margin {margin: 2% 1%;}
 }
 
 /* If the screen size is 766px wide or less */
