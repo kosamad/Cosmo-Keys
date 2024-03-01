@@ -1,5 +1,6 @@
 let focusPoint = document.querySelector(".focus-point");
 focusPoint.focus();
+focusPoint.click();
 
 
 //setting the level indicator for the user (top of the screen)
