@@ -46,6 +46,9 @@ Please note, warnings relate to the vendor extensions and can be ignored.
 
 Please note, warnings relate the use of ES6 and are acceptable for the parameters of this project. 
 
+One unused variable is declared "playerAnswerContent". However, this is used in the game and removal of the variable at line 23 causes the game to break.
+Additionally, jshint declares there are two undefined variables "SpeechSynthesisUtterance" and "speechSynthesis". However, declaring these variables outside of their function also causes the game to break. 
+
 ---
 
 ### Lighthouse
@@ -79,3 +82,57 @@ The (unfinished) [jest testing file](assets/js/tests/cosmo-game.test.js) has bee
 ## Manual Testing
 
 The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone8) and a Levona tablet.
+
+### User Stories
+
+- #### Client Goals
+
+| Goal | How are they achieved? | 
+| :--- | :--- | 
+| To have clear, concise information that is easy to navigate and is accessible on multiple screen sizes and to those using screen readers.| Pages were designed to be minimalistic, with limited buttons for navigation/play ( i.e there is no traditional, website navigation bar/footer) and all were checked for responsive design.|
+| To link to the games social media site and improve the visibility of the webwise.| Social media links were added on the title page |
+| To create a game that can be used by VI and sighted users with little differences in functionality.| The design ensures compatibility with screen readers and uses audio elements that can be enjoyed by all users. Visually, the game is attractive no matter what level of vision a player has. Minor additions are present that would only be observed by a sighted user (e.g the "right/wrong" messages).|
+
+- #### First Time User Goals
+
+| Goal | How are they achieved? | 
+| :--- | :--- | 
+|I want to play a game to practise my typing. | Sounds are used to announce the letter/word and to give feedback on a right/wrong answer. A sound is played to announce the end of the game and the score is read out to the player.|
+| I want to be able to navigate the page without any difficulties inc. using a screen reader or computer magnifier.| Screen-reader only classes with informative text were added to key parts of the page that display using icons (e.g the play button, reload button etc). This ensures a VI player can "see" what is on the page. |
+| I want to be able to find the rules of the game and understand game play.| The rules and about the game are clearly displayed on the index page. The rules modal is also available on the game page if a user needs reminding of how to play. Both modals are designed to exit without having to find the "X". |
+
+- #### Frequent/Return User Goals
+
+| Goal | How are they achieved? |
+| :--- | :--- |
+|I want to be able to alter the level of difficulty that matches my current skill level.| A level selection page allows the user to start the game at a level that matches their skill set. Three levels have been designed within this roll out which gives a good level of variety for different users.|
+|I want to be able to quickly navigate to the game play page.| The game was designed to lead the user to the game play page easily. The "play" buttons are always central to the screen. Furthermore, the rules/other information is hidden to eliminate the need to navigate these features for return users.|
+
+- #### Real User Testing
+
+The game was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page. Particular checks were carried out by a VI player to document how they could play the game. 
+
+- VI player feedback:
+
+    - The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md). 
+    - The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuative". Also the hover changes helped the player know when they were correclty over the button/links. 
+    - "This game is great and will really help me improve my typing accuracy!"
+
+In addition to this I gave two people real-life scenarios to test.
+
+
+(Sighted User)
+
+- You want to play this typing game but cannot have your sound on, can you still play?
+
+    - "Yes, I can see the letters and can see if my answer was correct or not from the display at the bottom."
+
+(VI User)
+
+- Can you tell me how the game is played before moving off of the home page?
+
+    - "Yes, I clicked on the rules button and used my screen reader to learn that I had to type the same letters as the computer, and that I'd have one minute to get as many as I could."
+
+- Can you select a level of difficulty without using your magnifier?
+
+    -"I guessed that green was the easiest level and red was the hardest so I went for green to begin with. The colours meant I could tell what the levels were without reading the words."

@@ -42,21 +42,19 @@ Using UX design principles, I outlined the key features a typing game would requ
 
 3. To create a game that can be used by VI and sighted users with little differences in functionality. 
 
-- #### First Time User Goals
+- #### First Time User Goals (Visually Impaired)
 
-   1. To play a game that allows a user (sighted or VI) to practise typing and get feedback for correct/incorrect answers. 
+   1. I want to play a game to practise my typing.
 
-   2.  To be able to navigate the page without any difficulties inc using a screen reader or computer magnifyer.
+   2.  I want to be able to navigate the page without any difficulties inc using a screen reader or computer magnifyer.
 
-   3. To be able to find the rules of the game and understand game play.
+   3. I want to be able to find the rules of the game and understand game play.
 
  - #### Frequent/Return User Goals
 
-  1. To be able to alter the level of difficulty that mathces current skill level. 
+  1. I want to be able to alter the level of difficulty that mathces my current skill level. 
 
-  2. To be able to quickly navigate to the game play page.
-
-  3. To be able to follow the museum on a chosen social media platform.
+  2. I want to be able to quickly navigate to the game play page.
 
   ---
 
@@ -421,6 +419,7 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 
 ### Content
 
+- To understand how to fetch from the datamuse API I watched the [YouTube](https://www.youtube.com/watch?v=lvvBpPIzalI) video by ByteGrad. I modifed this to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function.
 
 ### Media
 
@@ -429,4 +428,5 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 - All sounds were selected from [Freesound](https://freesound.org/) with specfic credit to LittleRainySeasons for the "right" sound, Gronkjaer for the "wrong" sound and fupicat, for the final, game over sound.
 
 -?? bug fix bits
+
 
