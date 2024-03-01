@@ -1,5 +1,4 @@
-
-//setting the level indicator for the user
+//setting the level indicator for the user (top of the screen)
 //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
 const levelId = localStorage.getItem("selectedLevel");
 const levelIndicator = document.getElementById("level-indicator");
@@ -79,6 +78,7 @@ let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
 //speech/sound functions
+
 //function which speaks the score at the end of the game
 function speakScore(score) {
 		if (scoreDisplay.innerText === 1) {
@@ -124,9 +124,7 @@ function speakLetter(letter) {
 	}
 }
 
-
-
-//timer functions
+//timer function
 function startTimer() {
 	timerColor.style.backgroundImage =
 		"radial-gradient(circle, #d0fdcc, #b1fdaa, #91fb85, #6bf95c, #30f61e)";
@@ -168,8 +166,7 @@ function startTimer() {
 	}, 1000);
 }
 
-
-//differnt level play
+//Differnt level play
 
 //level 1 play - load word from written array //
 function levelOne(letters) {
@@ -178,7 +175,6 @@ function levelOne(letters) {
 	speakLetter(currentLetter.innerText);
 	playerTurn();
 }
-
 
 
 //level-2 play- uses API
@@ -249,7 +245,6 @@ async function levelThree() {
 }
 
 //general game play
-
 //computer turn
 function computerTurn() {
 	compTurn = true;
@@ -352,7 +347,6 @@ function matchCheck() {
 	}
 }
 
-
 //listener which waits for the DOM to load and then waits for the user to click the startgame button
 document.addEventListener("DOMContentLoaded", function () {
 	play = document.getElementById("start-game-button");
@@ -392,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //pausing the game functions (pause timer and computer is controlled by the timer function)
-
 //ensure cursor moves to the end of the prev typed letter (and not to the start)
 function focusAtEnd() {
 	let reFocus = document.querySelector(".focus-point");
@@ -405,10 +398,8 @@ function focusAtEnd() {
 	selection.addRange(range);
 }
 
-
 //adding the event listener again after the initial click has been done to start the game
 document.getElementById("pause-btn").addEventListener("click", togglePause);
-
 
 //changes pause/play icon depending on which is showing if the game is running 
 function togglePause() {
@@ -426,7 +417,7 @@ function togglePause() {
 	}
 }
 
-
+//function only present to test Jest
 function addition(a, b) {
 	return a + b;
 }
