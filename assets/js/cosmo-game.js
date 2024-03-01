@@ -121,7 +121,7 @@ function speakLetter(letter) {
 					charCheck = "ay"; //required as "a" sound is not pronouced like the alphabetical "ay"
 				}
 				const charVoice = new SpeechSynthesisUtterance(charCheck);
-				charVoice.rate = 1.5; //make it read faster than the default 1 is too slow for single letter speak
+				charVoice.rate = 1; 
 				window.speechSynthesis.speak(charVoice);
 			}
 		}
