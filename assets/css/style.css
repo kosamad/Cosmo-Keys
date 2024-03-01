@@ -165,7 +165,7 @@ body {
 	padding: 3%;
 }
 
-.title-a a {
+.title-a a{
 	text-decoration: none;
 }
 
@@ -249,7 +249,15 @@ body {
 	border-radius: 0.5rem;
 	font-size: 20px;
 	border: none;
-	padding: 3px;
+	padding: 0.5% 0;		
+}
+
+/* .right-margin{
+	margin-right: 1%;
+} */
+
+.btn-game-menu a {
+	color: black;		
 }
 
 .btn-game-menu:hover {
@@ -267,6 +275,10 @@ body {
 #i-btn-game {
 	padding-left: 2vw;
 	padding-right: 2vw;
+	color: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
 #start-game-button {
@@ -508,11 +520,11 @@ body {
 /*-Media Query-*/
 
 /* If the screen size is 1100px wide or less */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1250px) {
 
 	#game-title,
 	#level-indicator {
-		font-size: 25px;
+		font-size: 24px;
 	}
 }
 
@@ -531,13 +543,18 @@ body {
 		font-size: 35px;
 	}
 
-}
-
-@media screen and (max-width: 915px) {
-
 	#game-title,
 	#level-indicator {
 		font-size: 22px;
+	}
+
+}
+
+@media screen and (max-width: 921px) {
+
+	#game-title,
+	#level-indicator {
+		font-size: 20px;
 	}
 }
 
@@ -545,12 +562,9 @@ body {
 /* If the screen size is 840px wide or less */
 @media screen and (max-width: 840px) {
 
-	#game-title {
-		font-size: 20px;
-	}
-
+	#game-title,
 	#level-indicator {
-		font-size: 21px;
+		font-size: 18px;
 	}
 }
 
