@@ -297,7 +297,6 @@ I would also address other issues that arose during the development of the game.
 3. Re-design the page layout to make the buttons the total size of the container.
 
     On the computer this does not affect play as the hover classes tell the user when the button is selected. However, on a mobile, a player is likely to click anywhere in the container and expect the button to work. This should be corrected in future roll outs. 
-
   
 ### Accessibility
 

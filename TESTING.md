@@ -145,3 +145,25 @@ The game was played on Chrome, Microsoft Edge and Firefox to check the view was 
 
 It was played on a desktop, mobile (pixel5 and iphone8) and a Levona tablet.
 
+`Home Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :---: | :---: | :---: | :---: | :---: |
+|Social Media Icons| Link to Social media home pages|Clicked each Icon|Directs to home pages|Pass|
+| Rules Button| Rules are displayed in a modal| Clicked on rules button | Modal opens | Pass|
+| About Button| About info is displayed in a modal| Clicked on about button | Modal opens | Pass|
+|Modal close with and without using the "X"| Modals close| Clicked anywhere on the screen when the modal was open and checked the "X"| Modals close| Pass| 
+| Play button| Navigates to level select page| Clicked on play button| Level selection page is opened| Pass| 
+| Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer| Hovered over all clickable elements| Each item turned blue with a pointer cursor and returned to original colour when mouse was moved|Pass| 
+| 
+
+`Level Page`
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :---: | :---: | :---: | :---: | :---: |
+|Back button| Navigates to home page| Clicked back button| home page loaded| Pass| 
+|The game title| Navigates to home page| Clicked back button| home page loaded| Pass| 
+| Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer| Hovered over all clickable elements| Each item turned blue with a pointer cursor and returned to original colour when mouse was moved|Pass| 
+
+Write next section inc console log's to show level have been stored once clicked 
+|Back button| Navigates to home page| Clicked back button| home page loaded| Pass| 
+| 
