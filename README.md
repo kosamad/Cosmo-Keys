@@ -1,10 +1,10 @@
 <h1 align="center">Cosmo Keys</h1>
 
-![Cosmo Keys home page on different screens](documentation/device_shots/screen-overveiw.PNG)
+![Cosmo Keys on different screens](documentation/device_shots/screen-overveiw.PNG)
 
 <h2>
 
-[View the live website here: Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
+[View the live website here - Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
 
 </h2>
 
