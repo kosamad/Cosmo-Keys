@@ -401,19 +401,23 @@ To clone:
 Please see the separate [testing](TESTING.md) file for testing carried out on Cosmo Keys.
 
 ---
+## Bugs
 
-## Solved Bugs
+### Solved Bugs
 
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
 | 1 | Play button on index.html not styling like the rest of the buttons. ![bug 1 button](testing/images/bugs/bug-1-button.PNG)| I attempted to adjust the padding settings for each screen size but couldn’t line it up perfectly. I solved this bug by putting a span of text either side of the icon which has an opacity of 0 (therefore cannot be seen). Therefore the padding renders to this and keeps the boxes the same for each element on the page.|
 | 2 |Level ID in game.html could not be set from level.html using my original code. [Bug 2 level id](testing/images/bugs/bug-2-level-id.PNG). This successfully logged the level but didn’t transfer this data onto my game.html page (therefore the content wasn’t loaded to the DOM)| After some internet searching, I found [this article](https://codetheweb.blog/javascript-localstorage/) which outlined you can store a variable using local storage which means you can then access and retrieve the variable on a subsequent page. I chose local storage as I want the level id to be retained even if the game is reloaded (without moving back to the level page).|
 | 3 | Player initiating a new letter with every letter typed (even if the turn wasn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also added an if/else function to prevent the player from typing when it was the computer’s turn.| 
-| 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.PNG) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen
+| 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.PNG) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen|
 
-### Known Bugs
+
+### Other Known Bugs
 
 * On some browsers the screen reader content shows briefly as the page is loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
+
+---
 
 ## Credit
 
@@ -427,6 +431,5 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 
 - All sounds were selected from [Freesound](https://freesound.org/) with specfic credit to LittleRainySeasons for the "right" sound, Gronkjaer for the "wrong" sound and fupicat, for the final, game over sound.
 
--?? bug fix bits
 
 

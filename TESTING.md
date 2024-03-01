@@ -136,3 +136,12 @@ In addition to this I gave two people real-life scenarios to test.
 - Can you select a level of difficulty without using your magnifier?
 
     -"I guessed that green was the easiest level and red was the hardest so I went for green to begin with. The colours meant I could tell what the levels were without reading the words."
+
+---
+
+## Content Testing
+
+The game was played on Chrome, Microsoft Edge and Firefox to check the view was consistent between browsers.  
+
+It was played on a desktop, mobile (pixel5 and iphone8) and a Levona tablet.
+
