@@ -1,6 +1,6 @@
 <h1 align="center">Cosmo Keys-Testing</h1>
 
-![Cosmo Keys game play on different screens](testing/images/game-play-screens.PNG)
+![Cosmo Keys game play on different screens](testing/images/validation/game-play-screens.PNG)
 
 [View the live website here - Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
 
@@ -52,6 +52,11 @@ Please note, warnings relate the use of ES6 and are acceptable for the parameter
 
 Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
 
+![index-lighthouse](testing/images/lighthouse/lighthouse-index.PNG)
+![level-lighthouse](testing/images/lighthouse/lighthouse-level.PNG)
+![game-lighthouse](testing/images/lighthouse/lighthouse.game.PNG)
+
+All pages score poorly for performance. Improvements could be made by eliminating render-blocking resources caused from external styling and removing unused JavaScript (separating Bootstraps bundle). Also, separating my CSS into separate files to minimise what is loaded on each page (e.g the index page does not need the css for the game play page).
 
 ---
 
