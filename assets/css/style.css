@@ -292,6 +292,10 @@ body {
 	color: white;
 }
 
+#game-title:hover{
+	color: #6ee4ef;
+	cursor: pointer;
+}
 .no-line {
 	text-decoration: none;
 }
@@ -838,9 +842,25 @@ body {
 	#player-answer {
 		font-size: 15px;
 	}
+
+	#message{
+		font-size: 15px;
+	}
 	
 	#level-indicator,
 	#game-title {
 		font-size: 12px
+	}
+}
+
+/* If the screen size is 326px wide or less */
+@media screen and (max-width: 326px){
+	#message{
+		font-size: 12px;
+	}
+	
+	#level-indicator,
+	#game-title {
+		font-size: 10px
 	}
 }

@@ -255,13 +255,13 @@ This page is designed to make viewing it (on any device) easy for VI users. Ther
 
 On small devices, initially the page appears on the small side, with a large black space at the bottom of the page, but this is to allow for the keyboard on a phone to be displayed, whilst all the other game aspects remain visible.
 
-No keypad:
+No keypad image:
  
-   ![no keypad](documentation/device_shots/game-play-no-keypad.png)
+   ![no keypad](documentation/device_shots/no-keypad.png)
 
 With keypad once the game has started:
 
-  ![no keypad](documentation/device_shots/game-play-keypad.png)
+  ![no keypad](documentation/device_shots/keypad.png)
 
 There are buttons which allow the user to reload the game (before a game has finished) or re-read the rules. This navigation-like bar at the top DOES NOT toggle to a burger on smaller devices. This was a conscious choice to aid VI users as these menus can be cumbersome (the screen reader reads out every option, every time it is selected).
 
@@ -295,7 +295,11 @@ I would also address other issues that arose during the development of the game.
 
 2. Alter the use of the modal
 
-  Modals were selected to limit the amount of page navigation a VI user would have to undertake (you can exit the rules modal by clicking anywhere). However, some screen readers recite everything underneath the modal before reading its content. This is a recognised issue for VI users and appears on the most commercial of website's (e.g the BBC). However, as this game is designed specifically for VI users this is a feature that shouldn't occur and therefore development of how the rules/about info is presented would be advantageous and would improve UX.
+    Modals were selected to limit the amount of page navigation a VI user would have to undertake (you can exit the rules modal by clicking anywhere). However, some screen readers recite everything underneath the modal before reading its content. This is a recognised issue for VI users and appears on the most commercial of website's (e.g the BBC). However, as this game is designed specifically for VI users this is a feature that shouldn't occur and therefore development of how the rules/about info is presented would be advantageous and would improve UX.
+
+3. Re-design the page layout to make the buttons the total size of the container.
+
+    On the computer this does not affect play as the hover classes tell the user when the button is selected. However, on a mobile, a player is likely to click anywhere in the container and expect the button to work. This should be corrected in future roll outs. 
 
   
 ### Accessibility
