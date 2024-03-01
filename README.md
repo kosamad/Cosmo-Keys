@@ -1,6 +1,6 @@
 <h1 align="center">Cosmo Keys</h1>
 
-![Cosmo Keys home page on different screens](documentation/device_shots/index-screens.PNG)
+![Cosmo Keys home page on different screens](documentation/device_shots/screen-overveiw.PNG)
 
 <h2>
 
@@ -211,7 +211,6 @@ All pages are responsive and have:
 
 - A title which links back to the home page. 
 
-
 - Buttons/links (and surrounding container) change colour when they are hovered over to a blue colour that is consistent through all the pages. 
 
     ![hover effect ](documentation/screen_shots/hover-effect.png)
@@ -355,20 +354,22 @@ HTML, CSS and Javascript.
 
 - [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - to view the website under different accesibiity filters.
 
+[Silktide Accessibility Checker ](https://chromewebstore.google.com/detail/mpobacholfblmnpnfbiomjkecoojakah)  - to check the website for accesibiity and sample the screen reader function. 
+
 - [GitHub Wiki Toc generator](https://ecotrust-canada.github.io/markdown-toc/) - to automatically create my contents page in the README.md file.
 
-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> by Mozilla - to generate the talkback features of the game.
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) - by Mozilla to generate the talkback features of the game.
 
 - [Datamuse API](https://www.datamuse.com/api/) - to generate words for level 2 and level 3 play.
+
+## Testing
+
+Please see the separate [testing](TESTING.md) file 
 
 
 ## Credit
 
 ### Content
-
-
-
-
 
 
 ### Media
