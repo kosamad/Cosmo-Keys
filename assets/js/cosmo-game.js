@@ -1,3 +1,7 @@
+let focusPoint = document.querySelector(".focus-point");
+focusPoint.focus();
+
+
 //setting the level indicator for the user (top of the screen)
 //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
 const levelId = localStorage.getItem("selectedLevel");
