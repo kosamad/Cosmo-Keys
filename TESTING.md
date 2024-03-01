@@ -24,13 +24,13 @@ I specifically used the console to log and monitor javascript code which assited
 
 Please note that the error messages which relate to a "Trailing slash on void elements" have been filtered as they are automatically added by the browser and are not a true error (as advised by the CI tutors).
 
-- [index.html](testing/images/index.html-validated.PNG) - passed
-- [level.html](testing/images/level.html-validated.PNG) - passed
-- [game.html](testing/images/game.html-validated.PNG) - passed
+- [index.html](testing/images/validation/index.html-validated.PNG) - passed
+- [level.html](testing/images/validation/level.html-validated.PNG) - passed
+- [game.html](testing/images/validation/game.html-validated.PNG) - passed
 
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator).
 
-- [style.css](testing/images/css-validated.PNG) - passed 
+- [style.css](testing/images/validation/css-validated.PNG) - passed 
 
 Please note, warnings relate to the vendor extensions and can be ignored.
 
@@ -40,9 +40,9 @@ Please note, warnings relate to the vendor extensions and can be ignored.
 
 [jshint](https://jshint.com/) was used to validate the JavaScript.
 
-- [cosmo-level.js](testing/images/level-js-valid.PNG) - passed
-- [cosmo-index.js](testing/images/index-js-valid.PNG) - passed
-- [cosmo-game.js](testing/images/game-js-valid.PNG) - passed
+- [cosmo-index.js](testing/images/validation/index-js-valid.PNG) - passed
+- [cosmo-level.js](testing/images/validation/level-js-valid.PNG) - passed
+- [cosmo-game.js](testing/images/validation/game-js-valid.PNG) - passed
 
 Please note, warnings relate the use of ES6 and are acceptable for the parameters of this project. 
 
@@ -50,7 +50,10 @@ Please note, warnings relate the use of ES6 and are acceptable for the parameter
 
 ### Lighthouse
 
-Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys.
+Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
+
+
+---
 
 
 ## Manual Testing
