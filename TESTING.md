@@ -114,7 +114,7 @@ The game was reviewed by friends and family. They were encouraged to comment on 
 
 - Player feedback:
 
-    - Two users commented on the position of the game content (as noted in the [README](README.md), game play page ?????????????????) and didn't like the large black space at the bottom of the game play page. As previously discussed, this gives space for the keyboard to load. I tried to address this following the user feedback but could not get the keyboard to appear with the screen load. For more detials see [README](README.md), known bugs.section.?????????????????????????????
+    - Two users commented on the position of the game content (as noted in the [README](README.md), game play page ?????????????????) and didn't like the large black space at the bottom of the game play page. As previously discussed, this gives space for the keyboard to load. I tried to address this following the user feedback but could not get the keyboard to appear with the screen load. For more detials see [README](README.md), known bugs.section.????????????????????????????? I therfore changed the design of the game to include a screen which informs the user a keypad will occupy the lower space. FINISH THIS SECTION AND LINK WITH README. 
 
 
     -  They also said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
@@ -127,7 +127,9 @@ The game was reviewed by friends and family. They were encouraged to comment on 
 - VI spcific player feedback:
 
     - The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md). 
+
     - The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuative". Also the hover changes helped  player know when they were correclty over the button/links. 
+
     - "This game is great and will really help me improve my typing accuracy!"
 
 In addition to this I gave two people real-life scenarios to test.
