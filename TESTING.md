@@ -165,27 +165,51 @@ In addition to this I gave two people real-life scenarios to test.
 
 The game was played on Chrome, Microsoft Edge and Firefox to check the view was consistent between browsers.  
 
-It was played on a desktop, mobile (pixel5 and iphone8) and a Levona tablet.
+It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
 
-`Home Page`
+#### Home Page Content
+
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| :---: | :---: | :---: | :---: | :---: |
-|Social Media Icons| Link to Social media home pages|Clicked each Icon|Directs to home pages|Pass|
-| Rules Button| Rules are displayed in a modal| Clicked on rules button | Modal opens | Pass|
-| About Button| About info is displayed in a modal| Clicked on about button | Modal opens | Pass|
-|Modal close with and without using the "X"| Modals close| Clicked anywhere on the screen when the modal was open and checked the "X"| Modals close| Pass| 
-| Play button| Navigates to level select page| Clicked on play button| Level selection page is opened| Pass| 
-| Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer| Hovered over all clickable elements| Each item turned blue with a pointer cursor and returned to original colour when mouse was moved|Pass| 
-| 
+| --- | --- | --- | --- | --- |
+| Social Media Icons | Link to Social media home pages | Clicked each Icon |Directs to home pages | Pass|
+| Rules Button | Rules are displayed in a modal | Clicked on rules button | Modal opens | Pass|
+| About Button| About info is displayed in a modal | Clicked on about button | Modal opens | Pass|
+| Modal close with and without using the "X" | Modals close | Clicked anywhere on the screen when the modal was open and checked the "X" | Modals close | Pass | 
+| Play button | Navigates to level select page | Clicked on play button | Level selection page is opened | Pass | 
+| Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over all clickable elements | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass | 
+---
+    
+#### Level Page Content
 
-`Level Page`
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| :---: | :---: | :---: | :---: | :---: |
-|Back button| Navigates to home page| Clicked back button| home page loaded| Pass| 
-|The game title| Navigates to home page| Clicked back button| home page loaded| Pass| 
-| Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer| Hovered over all clickable elements| Each item turned blue with a pointer cursor and returned to original colour when mouse was moved|Pass| 
+| --- | --- | --- | --- | --- |
+| Back button | Navigates to home page | Clicked back button | home page loaded | Pass | 
+| The game title | Navigates to home page | Clicked back button | home page loaded | Pass | 
+| Hover | Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over all clickable elements | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass | 
+| Level ID stored | Correct level on subsequent game.html is displayed and correct game is loaded | Clicked on each level button and viewed result on game.html page. As the level is displayed at the top of the page this acts to confirm what has been clicked | All levels are loaded and display correctly | Pass|
 
-Write next section inc console log's to show level have been stored once clicked 
-|Back button| Navigates to home page| Clicked back button| home page loaded| Pass| 
-| 
+
+#### Game Page Content
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+|Back  button | Navigates to home page | Clicked back button | home page loaded | Pass | 
+| The game title | Navigates to home | Clicked back button | home page loaded| Pass | 
+| Info button | Displays rules modal |  Clicked on "i"button| Rule modal loads| Pass | 
+| Play button | Game starts and play symbol changes to a pause symbol| Clicked the play button | Game starts (timer begins, first letter/word is , player can type) and a pause icon is displayed | Pass |      
+| Reload button | Refreshes the page so the user can begin a new game | Clicked reload button | game.html is reloaded and the game restarts (score is at 0 again etc).| Pass |
+| Device keypad info display | Only visible on small screens | Looked at the page on a range of screen sizes | Box is only visible on small screens | Pass |
+---
+
+#### Game Page Playing
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Pause button | Pause the game | Clicked the pause button | The timer stops and the player cannot type in the box | Pass | 
+| Question display | Correct level of letter/words are loaded from the API/array | Console log the data or view what the computer displays | Level 1![Level 1](testing/images/validation/level1-question-box.PNG) Level 2 ![Level 2](testing/images/validation/console-log-level2.PNG) Level 3 ![Level 3](testing/images/validation/console-log-level3.PNG) | Pass | 
+| Timer display | Changes colour as the time reduces | Visualised the timer as the game progressed from 60-0 seconds | Timer changed colour at each 10s interval as expected | Pass |
+| Correct Answer| Correct Sound plays and display changes | Input a correct answer| Sound played and display changed to "Correct!"| Pass| 
+| Wrong Answer | Wrong Sound plays and display changes | Input a wrong answer | Sound played and display changed to "Wrong!"| Pass|
+| Score counter | The score counter begins at 0. Each time the player answers correctly the score increases by 10. If an incorrect answer is given the score should remain the same | Inputed correct and wrong answers | A correct answer increased the score by 1, a wrong answer didn't change the score | Pass |
+| End of Quiz | Game over sound plays, the score is announced and the message changes to "Game Over" | Played the game to the end with a score of either 0, 1 or 5 | At the end of the game (timer 0) the game over sound played, the display changed to "Game Over" and the score said: ![score announcement](testing/images/validation/points-display.PNG) | Pass |   
