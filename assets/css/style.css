@@ -561,6 +561,7 @@ body {
 
 	.main-bg-home {
 		width: auto;
+		min-height: 90vh;
 	}
 
 	.title {
@@ -741,6 +742,20 @@ body {
 	#player-answer {
 		font-size: 20px;
 	}
+
+	.main-bg-home {
+		min-height: 90vh;
+	}
+
+	.main-overlay-home {
+		min-height: 80vh;
+	}
+
+	.top-boarder-container{margin-bottom: 10vh;}
+
+	.description{margin-bottom: 5vh;}
+
+
 
 }
 
