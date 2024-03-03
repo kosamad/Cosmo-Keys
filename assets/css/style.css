@@ -229,7 +229,7 @@ body {
 .main-overlay-game {
 	background-color: rgba(7, 4, 60, 0.8);
 	color: white;
-	padding: 2% 4%;
+	padding: 2% 2%;
 	border-radius: 1.5rem;
 }
 
@@ -579,8 +579,8 @@ body {
 	}
 
 	.main-bg-game {
-		padding: 3% 5%;
-		max-width: 100vw;
+		padding: 3% 5%;		
+		margin-top: 20%;
 	}
 
 	.level-h4-text {
@@ -720,10 +720,7 @@ body {
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
 
-	body {
-		margin: 5% 7%;
-	}
-
+	
 	#timer {
 		font-size: 20px;
 	}
@@ -749,8 +746,8 @@ body {
 		min-height: 75vh;
 	}
 
-	.main-bg-game {
-		min-height: 80vh;
+	.main-bg-game {		min-height: 90vh;
+		
 	}
 
 	/* .main-overlay-game {
@@ -759,7 +756,7 @@ body {
 
 	.overlay-game-two {
 		margin-top: 3%;
-		min-height: 30vh;
+		min-height: 35vh;
 		background-color: rgba(7, 4, 60, 0.8);
 		color: white;
 		padding: 2% 4%;
@@ -792,18 +789,15 @@ body {
 }
 
 
-/* If the screen size is 463px wide or less */
+/* If the screen size is 465px wide or less */
 
-@media screen and (max-width: 463px) {
-
-	/*----Index.html MQ styles----*/
-
+@media screen and (max-width: 465px) {
+	
 	.btn-home,
 	.btn-level {
 		margin: 1vh;
 		font-size: 15px;
 	}
-
 
 	.description {
 		font-size: 18px;
@@ -817,11 +811,10 @@ body {
 		font-size: 15px;
 	}
 
-	.main-bg-game {
-		padding: 3% 7%;
-	}
+	.main-overlay-game{margin-top: 2%;}
+	
 
-	.icon {
+		.icon {
 		font-size: 20px;
 	}
 
@@ -854,11 +847,15 @@ body {
 	#message {
 		font-size: 15px;
 	}
+
+	.overlay-game-two {		
+		min-height: 40vh;
+}
 }
 
-/* If the screen size is 380px wide or less */
+/* If the screen size is 382px wide or less */
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 382px) {
 
 	.description {
 		font-size: 15px;
@@ -909,6 +906,12 @@ body {
 	#message {
 		font-size: 12px;
 	}
+
+	.main-bg-game {min-height: 85vh;}
+
+	#keypad-box {
+	margin-top:10%}
+	
 }
 
 /* If the screen size is 326px wide or less */
@@ -929,4 +932,7 @@ body {
 	.main-bg-game{padding: 5% 7%;}
 
 #start-game-button {font-size: 18px ;}
+
+#keypad-box {
+	margin-top:20%}
 }
