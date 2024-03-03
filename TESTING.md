@@ -114,8 +114,15 @@ The game was reviewed by friends and family. They were encouraged to comment on 
 
 - Player feedback:
 
-Two users commented on the position of the game content (as noted in the [README](README.md), game play page ?????????????????) and didn't like the large black space at the bottom of the game play page. As previously discussed, this gives space for the keyboard to load. I tried to address this following the user feedback but could not get the keyboard to appear with the screen load. For more detials see [README](README.md), known bugs.section.?????????????????????????????
-They also said the position of the other page content could be better. Therefore on small devises I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
+    - Two users commented on the position of the game content (as noted in the [README](README.md), game play page ?????????????????) and didn't like the large black space at the bottom of the game play page. As previously discussed, this gives space for the keyboard to load. I tried to address this following the user feedback but could not get the keyboard to appear with the screen load. For more detials see [README](README.md), known bugs.section.?????????????????????????????
+
+
+    -  They also said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
+
+    - One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occuring. 
+
+    - The voice on Apple devices differs from that on Android. a 1.5 speed for level 1/2 speak was [too fast](testing/videos/speech-speed.mp4) and some letters sounded like other letters e.g ???????????????? Therefore I reduced the speed of individual letter speak to 1 (standard) and put in more phenetic phrasing for confusing letters. ?????????????? ALSO NEED TO SPELL CHECK THIS SECTION ///
+
 
 - VI spcific player feedback:
 
