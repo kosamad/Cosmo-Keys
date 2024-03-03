@@ -416,6 +416,8 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 
 * On some browsers the screen reader content shows briefly as the page is loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
 
+* UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
+
 ---
 
 ## Credit

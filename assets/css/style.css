@@ -51,9 +51,9 @@ body {
 	font-size: 75px;
 	font-family: "Audiowide", sans-serif;
 	font-weight: 600;
-	font-style: normal;	
+	font-style: normal;
 	color: white;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .hidden {
@@ -139,7 +139,7 @@ body {
 }
 
 .social-icon {
-	color: #e597f6;	
+	color: #e597f6;
 }
 
 .social-icon:hover {
@@ -165,13 +165,14 @@ body {
 	padding: 3%;
 }
 
-.title-a a{
+.title-a a {
 	text-decoration: none;
 }
 
-.title-level:hover{
+.title-level:hover {
 	color: #6ee4ef;
-	cursor: pointer;}
+	cursor: pointer;
+}
 
 
 .one {
@@ -249,11 +250,11 @@ body {
 	border-radius: 0.5rem;
 	font-size: 20px;
 	border: none;
-	padding: 0.5% 0;		
+	padding: 0.5% 0;
 }
 
 .btn-game-menu a {
-	color: black;		
+	color: black;
 }
 
 .btn-game-menu:hover {
@@ -272,9 +273,9 @@ body {
 	padding-left: 2vw;
 	padding-right: 2vw;
 	color: inherit;
-  background-color: transparent;
-  border: none;
-  padding: 0;
+	background-color: transparent;
+	border: none;
+	padding: 0;
 }
 
 #start-game-button {
@@ -311,7 +312,7 @@ body {
 	color: white;
 }
 
-#game-title:hover{
+#game-title:hover {
 	color: #6ee4ef;
 	cursor: pointer;
 }
@@ -478,6 +479,10 @@ body {
 	width: 11vw;
 }
 
+#keypad-box {
+	display: none;
+}
+
 /*-Game over-*/
 
 #message {
@@ -560,7 +565,7 @@ body {
 	}
 
 	.main-bg-home {
-		width: auto;		
+		width: auto;
 	}
 
 	.title {
@@ -628,10 +633,12 @@ body {
 
 	#message {
 		font-size: 25px;
-		margin: 0;		
+		margin: 0;
 	}
 
-	.margin {margin: 2% 1%;}
+	.margin {
+		margin: 2% 1%;
+	}
 
 	.title {
 		font-size: 8vw;
@@ -645,7 +652,7 @@ body {
 	.home-buttons {
 		margin-top: 1.5vh;
 	}
-	
+
 
 	.main-bg-level {
 		padding: 3% 5%;
@@ -684,7 +691,6 @@ body {
 
 }
 
-
 /* If the screen size is 580px wide or less */
 @media screen and (max-width: 580px) {
 
@@ -714,9 +720,9 @@ body {
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
 
-	body {	
+	body {
 		margin: 5% 7%;
-		}
+	}
 
 	#timer {
 		font-size: 20px;
@@ -736,18 +742,52 @@ body {
 	}
 
 	.main-bg-home {
-		min-height: 90vh;
+		min-height: 85vh;
 	}
 
 	.main-overlay-home {
+		min-height: 75vh;
+	}
+
+	.main-bg-game {
 		min-height: 80vh;
 	}
 
-	.top-boarder-container{margin-bottom: 10vh;}
+	/* .main-overlay-game {
+		min-height: 65vh;
+	} */
 
-	.description{margin-bottom: 5vh;}
+	.overlay-game-two {
+		margin-top: 3%;
+		min-height: 30vh;
+		background-color: rgba(7, 4, 60, 0.8);
+		color: white;
+		padding: 2% 4%;
+		border-radius: 1.5rem;
+	}
 
+	#phone-keypad {
+		font-size: 6vw;
+		font-family: "Audiowide", sans-serif;
+		font-weight: 600;
+		font-style: normal;
+	}
 
+	#keypad-box {
+		display: block;
+	}
+
+	.top-boarder-container {
+		margin-bottom: 10vh;
+	}
+
+	.description {
+		margin-bottom: 5vh;
+	}
+
+	.title {
+		font-size: 12vw;
+	}
 
 }
 
@@ -805,7 +845,8 @@ body {
 
 
 @media screen and (max-width: 420px) {
-#level-indicator,
+
+	#level-indicator,
 	#game-title {
 		font-size: 14px
 	}
@@ -815,15 +856,9 @@ body {
 	}
 }
 
-
-
 /* If the screen size is 380px wide or less */
 
 @media screen and (max-width: 380px) {
-
-	.title {
-		font-size: 25px;
-	}
 
 	.description {
 		font-size: 15px;
@@ -862,10 +897,10 @@ body {
 		font-size: 15px;
 	}
 
-	#message{
+	#message {
 		font-size: 15px;
 	}
-	
+
 	#level-indicator,
 	#game-title {
 		font-size: 12px
@@ -877,11 +912,11 @@ body {
 }
 
 /* If the screen size is 326px wide or less */
-@media screen and (max-width: 326px){
-	#message{
+@media screen and (max-width: 326px) {
+	#message {
 		font-size: 12px;
 	}
-	
+
 	#level-indicator,
 	#game-title {
 		font-size: 10px
@@ -890,4 +925,8 @@ body {
 	#message {
 		font-size: 10px;
 	}
+
+	.main-bg-game{padding: 5% 7%;}
+
+#start-game-button {font-size: 18px ;}
 }
