@@ -548,7 +548,7 @@ body {
 	}
 }
 
-/* If the screen size is 770px wide or less */
+/* If the screen size is 766px wide or less */
 
 @media screen and (max-width: 766px) {
 	/*----Index.html MQ styles----*/
@@ -560,8 +560,7 @@ body {
 	}
 
 	.main-bg-home {
-		width: auto;
-		min-height: 90vh;
+		width: auto;		
 	}
 
 	.title {
@@ -577,11 +576,6 @@ body {
 	.main-bg-game {
 		padding: 3% 5%;
 		max-width: 100vw;
-	}
-
-	.description {
-		font-size: 20px;
-
 	}
 
 	.level-h4-text {
@@ -638,12 +632,6 @@ body {
 	}
 
 	.margin {margin: 2% 1%;}
-}
-
-/* If the screen size is 766px wide or less */
-
-@media screen and (max-width: 766px) {
-	/*----Index.html MQ styles----*/
 
 	.title {
 		font-size: 8vw;
@@ -725,6 +713,10 @@ body {
 
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
+
+	body {	
+		margin: 5% 7%;
+		}
 
 	#timer {
 		font-size: 20px;
