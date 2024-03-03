@@ -85,61 +85,68 @@ The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox 
 
 ### User Stories
 
-- #### Client Goals
+#### 1. Client Goals
 
 | Goal | How are they achieved? | 
 | :--- | :--- | 
 | To have clear, concise information that is easy to navigate and is accessible on multiple screen sizes and to those using screen readers.| Pages were designed to be minimalistic, with limited buttons for navigation/play ( i.e there is no traditional, website navigation bar/footer) and all were checked for responsive design.|
 | To link to the games social media site and improve the visibility of the webwise.| Social media links were added on the title page |
 | To create a game that can be used by VI and sighted users with little differences in functionality.| The design ensures compatibility with screen readers and uses audio elements that can be enjoyed by all users. Visually, the game is attractive no matter what level of vision a player has. Minor additions are present that would only be observed by a sighted user (e.g the "right/wrong" messages).|
+---
+---
 
-- #### First Time User Goals
+#### 2. First Time User Goals
 
 | Goal | How are they achieved? | 
 | :--- | :--- | 
 |I want to play a game to practise my typing. | Sounds are used to announce the letter/word and to give feedback on a right/wrong answer. A sound is played to announce the end of the game and the score is read out to the player.|
 | I want to be able to navigate the page without any difficulties inc. using a screen reader or computer magnifier.| Screen-reader only classes with informative text were added to key parts of the page that display using icons (e.g the play button, reload button etc). This ensures a VI player can "see" what is on the page. |
 | I want to be able to find the rules of the game and understand game play.| The rules and about the game are clearly displayed on the index page. The rules modal is also available on the game page if a user needs reminding of how to play. Both modals are designed to exit without having to find the "X". |
+---
+---
 
-- #### Frequent/Return User Goals
+#### 3. Frequent/Return User Goals
 
 | Goal | How are they achieved? |
 | :--- | :--- |
 |I want to be able to alter the level of difficulty that matches my current skill level.| A level selection page allows the user to start the game at a level that matches their skill set. Three levels have been designed within this roll out which gives a good level of variety for different users.|
 |I want to be able to quickly navigate to the game play page.| The game was designed to lead the user to the game play page easily. The "play" buttons are always central to the screen. Furthermore, the rules/other information is hidden to eliminate the need to navigate these features for return users.|
+---
+---
 
-- #### Real User Testing
+#### 4. Real User Testing
 
 The game was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page. Particular checks were carried out by a VI player to document how they could play the game. 
 
-- Player feedback:
+<u> Player feedback:</u>
 
-    - Three users (and my mentor) commented on the position of the game content when veiwing on small devices. They didn't like the large black space at the bottom of the game play page. 
+- Three users (and my mentor) commented on the position of the game content when veiwing on small devices. They didn't like the large black space at the bottom of the game play page. This was intentioally left to provide space for the keypad and ensure the whole game play area remained visible once the keypad appeared. However, as it was an issue for so many users I adapted the play screen to notify small screen users where their device keypad would be, and thus fill the space.   
     
-        No keypad image:
+     No keypad image:
  
-        ![no keypad](documentation/device_shots/no-keypad.png)
+    ![no keypad](documentation/device_shots/no-keypad.png)
 
-        With keypad once the game has started:
+     With keypad once the game has started:
 
-        ![no keypad](documentation/device_shots/keypad.png)
-    
-    This was intentioally left to provide space for the keypad and ensure the whole game play area remained visible once the keypad appeared. However, as it was an issue for so many users I adapted the play screen to notify users where their device keypad would be.        
+    ![no keypad](documentation/device_shots/keypad.png)       
+         
 
-    -  One user said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
+-  One user said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
 
-    - One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occuring. 
+- One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occuring. 
 
-    - The voice on Apple devices differs from that on Android. a 1.5 speed for level 1/2 speak was [too fast](testing/videos/speech-speed.mp4) and some letters sounded like other letters e.g ???????????????? Therefore I reduced the speed of individual letter speak to 1 (standard) and put in more phenetic phrasing for confusing letters. ?????????????? ALSO NEED TO SPELL CHECK THIS SECTION ///
+- The voice on Apple devices differs from that on Android. a 1.5 speed for level 1/2 speak was [too fast](testing/videos/speech-speed.mp4) and some letters sounded like other letters e.g ???????????????? Therefore I reduced the speed of individual letter speak to 1 (standard) and put in more phenetic phrasing for confusing letters. ?????????????? ALSO NEED TO SPELL CHECK THIS SECTION ///    
 
 
-- VI spcific player feedback:
+<u> VI spcific player feedback:</u>
 
-    - The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md). 
+- The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md). 
 
-    - The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuative". Also the hover changes helped  player know when they were correclty over the button/links. 
+- The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuative". Also the hover changes helped  player know when they were correclty over the button/links. 
 
-    - "This game is great and will really help me improve my typing accuracy!"
+- "This game is great and will really help me improve my typing accuracy!"
+
+<u>Real life scenarios:</u>
 
 In addition to this I gave two people real-life scenarios to test.
 
@@ -157,15 +164,15 @@ In addition to this I gave two people real-life scenarios to test.
 
 - Can you select a level of difficulty without using your magnifier?
 
-    -"I guessed that green was the easiest level and red was the hardest so I went for green to begin with. The colours meant I could tell what the levels were without reading the words."
+    - "I guessed that green was the easiest level and red was the hardest so I went for green to begin with. The colours meant I could tell what the levels were without reading the words."
 
 ---
 
-## Content Testing
+### Content Testing
 
 The game was played on Chrome, Microsoft Edge and Firefox to check the view was consistent between browsers.  
 
-It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
+It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tablet.
 
 #### Home Page Content
 
@@ -179,6 +186,7 @@ It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
 | Play button | Navigates to level select page | Clicked on play button | Level selection page is opened | Pass | 
 | Hover| Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over all clickable elements | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass | 
 ---
+---
     
 #### Level Page Content
 
@@ -188,7 +196,8 @@ It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
 | The game title | Navigates to home page | Clicked back button | home page loaded | Pass | 
 | Hover | Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over all clickable elements | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass | 
 | Level ID stored | Correct level on subsequent game.html is displayed and correct game is loaded | Clicked on each level button and viewed result on game.html page. As the level is displayed at the top of the page this acts to confirm what has been clicked | All levels are loaded and display correctly | Pass|
-
+---
+---
 
 #### Game Page Content
 
@@ -200,6 +209,7 @@ It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
 | Play button | Game starts and play symbol changes to a pause symbol| Clicked the play button | Game starts (timer begins, first letter/word is , player can type) and a pause icon is displayed | Pass |      
 | Reload button | Refreshes the page so the user can begin a new game | Clicked reload button | game.html is reloaded and the game restarts (score is at 0 again etc).| Pass |
 | Device keypad info display | Only visible on small screens | Looked at the page on a range of screen sizes | Box is only visible on small screens | Pass |
+---
 ---
 
 #### Game Page Playing
@@ -213,3 +223,5 @@ It was played on a desktop, mobile (pixel5 and iphone8) and a Lenovo tablet.
 | Wrong Answer | Wrong Sound plays and display changes | Input a wrong answer | Sound played and display changed to "Wrong!"| Pass|
 | Score counter | The score counter begins at 0. Each time the player answers correctly the score increases by 10. If an incorrect answer is given the score should remain the same | Inputed correct and wrong answers | A correct answer increased the score by 1, a wrong answer didn't change the score | Pass |
 | End of Quiz | Game over sound plays, the score is announced and the message changes to "Game Over" | Played the game to the end with a score of either 0, 1 or 5 | At the end of the game (timer 0) the game over sound played, the display changed to "Game Over" and the score said: ![score announcement](testing/images/validation/points-display.PNG) | Pass |   
+---
+---
