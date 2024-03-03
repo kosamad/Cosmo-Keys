@@ -12,7 +12,46 @@ This is a typing game designed with visually impaired users in mind. Everything 
 
 <h2>Contents</h2>
 
-xxxxxxx
+- [STRATERGY FOR THE WEBSITE](#stratergy-for-the-website)
+- [User Experience (UX)](#user-experience--ux-)
+  * [The Game's Features](#the-game-s-features)
+  * [User Stories](#user-stories)
+    + [Client Goals](#client-goals)
+    + [First Time User Goals (Visually Impaired)](#first-time-user-goals--visually-impaired-)
+    + [Frequent/Return User Goals](#frequent-return-user-goals)
+- [SCOPE](#scope)
+  * [Opportunities Martix](#opportunities-martix)
+    + [Table 1 Opportunity Summary](#table-1-opportunity-summary)
+    + [Table 2 Roll Out](#table-2-roll-out)
+- [STRUCTURE](#structure)
+  * [Pages](#pages)
+  * [Wireframes](#wireframes)
+- [SURFACE DESIGN](#surface-design)
+  * [Theme](#theme)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Sounds](#sounds)
+  * [Features](#features)
+    + [The Home Page](#the-home-page)
+    + [The Level Selection Page](#the-level-selection-page)
+    + [The Game Play Page](#the-game-play-page)
+  * [Future Roll Outs](#future-roll-outs)
+  * [Accessibility](#accessibility)
+- [Technologies Used](#technologies-used)
+  * [Languages](#languages)
+  * [Frameworks, Libraries, Programmes and Tools Used](#frameworks--libraries--programmes-and-tools-used)
+- [Deployment & Local Development](#deployment---local-development)
+  * [Deployment](#deployment)
+  * [Forking and Cloning the Github Repository](#forking-and-cloning-the-github-repository)
+- [Testing](#testing)
+- [Bugs](#bugs)
+  * [Solved Bugs](#solved-bugs)
+  * [Other Known Bugs](#other-known-bugs)
+- [Credits](#credits)
+  * [Content](#content)
+  * [Code](#code)
+  * [Media](#media)
+- [Acknowledgments](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -172,7 +211,7 @@ As a consequence of this subject I named the game "Cosmo Keys". Cosmo links to s
 
 I found my background image on Freepik and used this for all subsequent design elements.
 
-![background image](assets/images/space-bg.jpg)
+![background image](assets/images/main-bg-sm.jpg)
 
 ### Colour Scheme
 
@@ -195,7 +234,6 @@ The more informative text was written using Lexend. This was selected after read
 The sounds for the "correct", "wrong" and "game-over" were selected from freesound. They are short, snappy sounds that don't take up too much time as part of the game and have distinctive tones which match a users expectations for right, wrong and the end of a game. 
 
 To create the talk-back functionality of the game I used the Web Speech API created by Mozilla. 
-
 
 ### Features
 
@@ -345,7 +383,7 @@ HTML, CSS and Javascript.
 
 - [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - to view the website under different accesibiity filters.
 
-[Silktide Accessibility Checker ](https://chromewebstore.google.com/detail/mpobacholfblmnpnfbiomjkecoojakah)  - to check the website for accesibiity and sample the screen reader function. 
+- [Silktide Accessibility Checker ](https://chromewebstore.google.com/detail/mpobacholfblmnpnfbiomjkecoojakah)  - to check the website for accesibiity and sample the screen reader function. 
 
 - [GitHub Wiki Toc generator](https://ecotrust-canada.github.io/markdown-toc/) - to automatically create my contents page in the README.md file.
 
@@ -400,7 +438,7 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 | :--- | :--- | :--- |
 | 1 | Play button on index.html not styling like the rest of the buttons. ![bug 1 button](testing/images/bugs/bug-1-button.PNG)| I attempted to adjust the padding settings for each screen size but couldn’t line it up perfectly. I solved this bug by putting a span of text either side of the icon which has an opacity of 0 (therefore cannot be seen). Therefore the padding renders to this and keeps the boxes the same for each element on the page.|
 | 2 |Level ID in game.html could not be set from level.html using my original code. [Bug 2 level id](testing/images/bugs/bug-2-level-id.PNG). This successfully logged the level but didn’t transfer this data onto my game.html page (therefore the content wasn’t loaded to the DOM)| After some internet searching, I found [this article](https://codetheweb.blog/javascript-localstorage/) which outlined you can store a variable using local storage which means you can then access and retrieve the variable on a subsequent page. I chose local storage as I want the level id to be retained even if the game is reloaded (without moving back to the level page).|
-| 3 | Player initiating a new letter with every letter typed (even if the turn wasn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also added an if/else function to prevent the player from typing when it was the computer’s turn.| 
+| 3 | Player initiating a new letter with every letter typed (even if the turn wasn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also removed the listening capability of the event listener so it could no-longer detect a player's input.| 
 | 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.PNG) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen|
 
 
@@ -412,17 +450,44 @@ Please see the separate [testing](TESTING.md) file for testing carried out on Co
 
 ---
 
-## Credit
+## Credits
 
 ### Content
 
+Words for level 2 and level 3 play are generated by the [Datamuse API](https://www.datamuse.com/api/).
+
+All other content for the game was written by myself. 
+
+### Code
+
+In addition to the articles and videos mentioned above.
+
+- My modal code is taken and modified from [Bootstrap](https://getbootstrap.com/docs/5.3/components/modal/#how-it-works). I also used Bootstrap grid systems and other classes that I to make the page responsive. 
+
 - To understand how to fetch from the datamuse API I watched the [YouTube](https://www.youtube.com/watch?v=lvvBpPIzalI) video by ByteGrad. I modifed this to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function.
+
+- I used [this video](https://www.youtube.com/watch?v=R-7eQIHRszQ) by Web Dev Simplified  to see how someone might structure the javascript for a typing game. However, I did not directly take any code from this tutorial. 
+
 
 ### Media
 
 - The only image used on this site was taken from Freepix, with specific credit to vectorpouch (<a href="http://www.freepik.com">Designed by vectorpouch / Freepik</a>)
 
 - All sounds were selected from [Freesound](https://freesound.org/) with specfic credit to LittleRainySeasons for the "right" sound, Gronkjaer for the "wrong" sound and fupicat, for the final, game over sound.
+
+## Acknowledgments
+
+I would like to thank:
+
+- The Code Institute for all course material and their tutors for their aid when I was stuck with Jest.
+
+- My friends and family for testing the game and letting me talk my code at them, helping me figure out how to fix it. 
+
+- The City Of Bristol 2023 September cohort, for providing support on slack and specifically Chloe for making me feel less alone in my Jest/javascrtip struggles. 
+
+- My mentor Jubril Akolade for the support, feedback and encouragement that he gave me during this milestone project.
+
+- My tutors at the City of Bristol College for their support when this project was just an idea and their feedback once it was complete.
 
 
 
