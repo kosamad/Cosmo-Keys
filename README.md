@@ -250,19 +250,11 @@ To aid VI users these are colour coordinated from green to red so a level can be
 
 This page is designed to make viewing it (on any device) easy for VI users. Therefore, whilst still being appealing to sighted users, there are some design elements which may have been modified if this was for sighted users only e.g the size of buttons/boxes are purposefully larger than needed and colour choices are more stark than they might otherwise be.
 
-On small devices, initially the page appears on the small side, with a large black space at the bottom of the page, but this is to allow for the keyboard on a phone to be displayed, whilst all the other game aspects remain visible.
-
-No keypad image:
- 
-   ![no keypad](documentation/device_shots/no-keypad.png)
-
-With keypad once the game has started:
-
-  ![no keypad](documentation/device_shots/keypad.png)
-
 There are buttons which allow the user to reload the game (before a game has finished) or re-read the rules. This navigation-like bar at the top DOES NOT toggle to a burger on smaller devices. This was a conscious choice to aid VI users as these menus can be cumbersome (the screen reader reads out every option, every time it is selected).
 
 The level that has been selected is displayed on the page, coloured to correspond to the level of difficulty.
+
+On small screens a box is added to notify the users that the page has space for their keypad (see [TESTING](TESTING.md) user stories).
 
 During game play:
 

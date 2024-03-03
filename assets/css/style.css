@@ -746,7 +746,7 @@ body {
 		min-height: 75vh;
 	}
 
-	.main-bg-game {		min-height: 90vh;
+	.main-bg-game {	min-height: 90vh;
 		
 	}
 
@@ -908,9 +908,6 @@ body {
 	}
 
 	.main-bg-game {min-height: 85vh;}
-
-	#keypad-box {
-	margin-top:10%}
 	
 }
 
@@ -933,6 +930,4 @@ body {
 
 #start-game-button {font-size: 18px ;}
 
-#keypad-box {
-	margin-top:20%}
 }

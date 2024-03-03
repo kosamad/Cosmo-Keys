@@ -114,10 +114,19 @@ The game was reviewed by friends and family. They were encouraged to comment on 
 
 - Player feedback:
 
-    - Two users commented on the position of the game content (as noted in the [README](README.md), game play page ?????????????????) and didn't like the large black space at the bottom of the game play page. As previously discussed, this gives space for the keyboard to load. I tried to address this following the user feedback but could not get the keyboard to appear with the screen load. For more detials see [README](README.md), known bugs.section.????????????????????????????? I therfore changed the design of the game to include a screen which informs the user a keypad will occupy the lower space. FINISH THIS SECTION AND LINK WITH README. 
+    - Three users (and my mentor) commented on the position of the game content when veiwing on small devices. They didn't like the large black space at the bottom of the game play page. 
+    
+        No keypad image:
+ 
+        ![no keypad](documentation/device_shots/no-keypad.png)
 
+        With keypad once the game has started:
 
-    -  They also said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
+        ![no keypad](documentation/device_shots/keypad.png)
+    
+    This was intentioally left to provide space for the keypad and ensure the whole game play area remained visible once the keypad appeared. However, as it was an issue for so many users I adapted the play screen to notify users where their device keypad would be.        
+
+    -  One user said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container. 
 
     - One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occuring. 
 
@@ -133,7 +142,6 @@ The game was reviewed by friends and family. They were encouraged to comment on 
     - "This game is great and will really help me improve my typing accuracy!"
 
 In addition to this I gave two people real-life scenarios to test.
-
 
 (Sighted User)
 
