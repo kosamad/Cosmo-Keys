@@ -1,11 +1,5 @@
 //setting the focus on the player answer box so a click event can be simulated and bring up the keyboard on a phone screen. 
 
-let focusPoint = document.querySelector(".focus-point");
-focusPoint.focus();
-playerAnswer.contentEditable = "false";
-focusPoint.click();
-console.log(focusPoint);
-
 
 //setting the level indicator for the user (top of the screen)
 //takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
@@ -362,6 +356,13 @@ function matchCheck() {
 
 //listener which waits for the DOM to load and then waits for the user to click the startgame button
 document.addEventListener("DOMContentLoaded", function () {
+
+	let focusPoint = document.querySelector(".focus-point");
+	focusPoint.focus();
+	focusPoint.click();	
+	console.log("true");
+	focusPoint.contentEditable = "false";
+
 	play = document.getElementById("start-game-button");
 
 	//colour change of start button container only changes when the button is hovered over and returns to normal when the mouse is removed. 
