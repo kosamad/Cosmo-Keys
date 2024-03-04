@@ -114,7 +114,7 @@ function speakLetter(letter) {
 			for (const char of letter) { //separates the characters which is important for level-2 play
 				let charCheck = char;
 				if (char.toLowerCase() === "a") {
-					charCheck = "ay"; //required as "a" sound is not pronouced like the alphabetical "ay"
+					charCheck = "ai"; //required as "a" sound is not pronouced like the alphabetical a pronounced "ai"
 				}
 				const charVoice = new SpeechSynthesisUtterance(charCheck);
 				charVoice.rate = 1; 
@@ -242,7 +242,7 @@ async function levelThree() {
 		speakLetter(currentLetter.innerText);
 		playerTurn();
 	} catch (error) {
-		console.error("An error occurred in levelTwo", error);
+		console.error("An error occurred in levelThree", error);
 		// Handle errors specific to levelTwo if needed
 	}
 }
