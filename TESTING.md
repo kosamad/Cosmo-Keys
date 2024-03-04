@@ -141,7 +141,7 @@ The (unfinished) [jest testing file](assets/js/tests/cosmo-game.test.js) has bee
 ## Manual Testing
 
 
-The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone8) and a Levona tablet.
+The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone13) and a Levona tablet.
 
 
 ### User Stories
