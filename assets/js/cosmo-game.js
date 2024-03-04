@@ -114,7 +114,7 @@ function speakLetter(letter) {
 			for (const char of letter) { //separates the characters which is important for level-2 play
 				let charCheck = char;
 				if (char.toLowerCase() === "a") {
-					charCheck = "ai"; //required as "a" sound is not pronouced like the alphabetical a pronounced "ai"
+					charCheck = "ey"; //required as "a" sound is not pronouced like the alphabetical a pronounced "ai"
 				}
 				const charVoice = new SpeechSynthesisUtterance(charCheck);
 				charVoice.rate = 1; 
