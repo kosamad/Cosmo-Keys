@@ -75,11 +75,11 @@ Using UX design principles, I outlined the key features a typing game would requ
 
 - #### Client Goals
 
-1. To have clear, concise information that is easy to navigate and is accessible on multiple screen sizes and to those using screen readers.
+  1. To have clear, concise information that is easy to navigate and is accessible on multiple screen sizes and to those using screen readers.
 
-2. To link to the games social media site and improve the visibility of the webwise.
+  2. To link to the games social media site and improve the visibility of the webwise.
 
-3. To create a game that can be used by VI and sighted users with little differences in functionality.
+  3. To create a game that can be used by VI and sighted users with little differences in functionality.
 
 - #### First Time User Goals (Visually Impaired)
 
@@ -91,9 +91,9 @@ Using UX design principles, I outlined the key features a typing game would requ
 
  - #### Frequent/Return User Goals
 
-  1. I want to be able to alter the level of difficulty that matches my current skill level.
+    1. I want to be able to alter the level of difficulty that matches my current skill level.
 
-  2. I want to be able to quickly navigate to the game play page.
+    2. I want to be able to quickly navigate to the game play page.
 
   ---
 
