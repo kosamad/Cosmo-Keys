@@ -226,9 +226,17 @@ I found my background image on Freepik and used this for all subsequent design e
 
 ### Colour Scheme
 
-From my background image I selected base, high contrasting colours using ColorZilla (purple #8a38e3, blue #70caf5, orange #f2624a) and created gradient backgrounds to use across my buttons using colourSpace.
+From my background image I selected base, high contrasting colours using ColorZilla (purple #8a38e3, light blue #70caf5, orange/red #f2624a and dark blue #07043C).
 
-Other colours were selected to complement these e.g the red, orange and green used on the level page.
+![colours used](documentation/screen_shots/colours.PNG)
+
+This dark blue was used for my overlay on all pages (with transparency) and I created gradient backgrounds (using colourSpace) using the other colours as a starting point to use across my buttons.
+
+![colours used](documentation/screen_shots/orange_button.PNG)
+![colours used](documentation/screen_shots/purple_button.PNG)
+![colours used](documentation/screen_shots/hover-colour.PNG)
+
+Other colours were selected to complement these e.g the red, orange and green used on the level page and the grey on the game play page.
 
 ### Typography
 
