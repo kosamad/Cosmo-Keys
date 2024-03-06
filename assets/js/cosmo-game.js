@@ -1,4 +1,3 @@
-//setting the focus on the player answer box so a click event can be simulated and bring up the keyboard on a phone screen. 
 
 
 //setting the level indicator for the user (top of the screen)
@@ -21,10 +20,11 @@ let score = 0;
 let gameRunning;
 let currentLetter = document.getElementById("quiz-letter");
 let playerAnswer = document.getElementById("player-answer");
+playerAnswer.contentEditable = "false";
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
-// let compTurn = true;
+let compTurn = true;
 let twoLetterWords;
 let threeLetterWords;
 let lettersTyped = 0;
@@ -79,6 +79,10 @@ let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
 wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
+
+// if (compTurn === false) {
+// 	playerAnswer.contenteditable = "true"; //ensures the user can type on their turn
+// }
 
 //speech/sound functions
 
@@ -250,7 +254,7 @@ async function levelThree() {
 //general game play
 //computer turn
 function computerTurn() {
-	// compTurn = true;
+	compTurn = true;
 	message.innerHTML = "Good Luck!";
 	//load correct level play
 	if (levelId === "level-1") {
@@ -264,7 +268,7 @@ function computerTurn() {
 
 //start game function which initialises the game and begins the first computer turn
 function startGame() {
-	playerAnswer.contenteditable = "true"; //allows the user to type
+	// playerAnswer.contentEditable = "true"; 
 	gameRunning = true;
 	document.getElementById("player-answer").focus(); //puts the cursor in the player-answer box
 	computerTurn();
@@ -272,16 +276,14 @@ function startGame() {
 
 //player turn function
 function playerTurn() {
-	// compTurn = false;
+	playerAnswer.contentEditable = "true";//allows the user to type
+	playerAnswer.click();
+	playerAnswer.focus();
+	console.log(playerAnswer);
 	// Reset the count of letters typed for each new player turn
 	lettersTyped = 0;
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
 }
-
-// if (compTurn === false) {
-// 	playerAnswer.contenteditable = "true";//ensures the user can type on their turn
-// }
-
 
 //function to check how many letters have been typed and what function follows
 function handleInput(event) {
@@ -311,6 +313,7 @@ function preMatchCheck() {
 		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
 			// compTurn = true;
 			message.innerHTML = "Wrong!";
+			playerAnswer.contentEditable = "false";
 			speechSynthesis.cancel();
 			wrongSound.play();
 			scoreDisplay.innerHTML = score;
@@ -323,12 +326,12 @@ function preMatchCheck() {
 		}
 	}
 	// If all characters match, continue with the correct case
-	// compTurn = false;
+	compTurn = false;
 }
 
 //matchCheck checks the completed player answer against the computer and issues subsequent function based on a correct or incorrect answer 
 function matchCheck() {
-	// compTurn = true;
+	compTurn = true;
 	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	if (playerAnswerContent === currentLetter.textContent) {
 		message.innerHTML = "Correct!";
@@ -343,6 +346,7 @@ function matchCheck() {
 	} else {
 		message.innerHTML = "Wrong!";
 		playerAnswer.removeEventListener("input", handleInput);
+		playerAnswer.contentEditable = "false";
 		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;
@@ -425,19 +429,5 @@ function togglePause() {
 	}
 }
 
-//function only present to test Jest
-function addition(a, b) {
-	return a + b;
-}
-
-// module.exports = {
-// 	addition,
-// 	findWords,
-// 	levelTwo,
-// 	handleInput,
-// 	playerTurn,
-// 	matchCheck,
-// 	startGame,
-// 	startTimer,
-// 	computerTurn,
-// 	};
+module.exports = {	
+	};
