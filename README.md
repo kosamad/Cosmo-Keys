@@ -310,7 +310,7 @@ During game play:
 
 - Using a web speech API, each letter/word is read to the user. Additionally, at the end of the game the score is announced.
 
-- Following a right or wrong answer a corresponding sound is played to improve UX for all users. I chose not to announce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The score box increments with each correct answer. Additionally, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users.
+- Following a right or wrong answer a corresponding sound is played to improve UX for all users. I chose not to announce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The game is NOT case sensitive. This ensures users on a mobile device don't have to adjust their keypad to lowercase letters. The score box increments with each correct answer. Additionally, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users.
 
 - The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play.
 
@@ -344,6 +344,7 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 | 2 |Level ID in game.html could not be set from level.html using my original code. [Bug 2 level id](testing/images/bugs/bug-2-level-id.PNG). This successfully logged the level but didn’t transfer this data onto my game.html page (therefore the content wasn’t loaded to the DOM)| After some internet searching, I found [this article](https://codetheweb.blog/javascript-localstorage/) which outlined you can store a variable using local storage which means you can then access and retrieve the variable on a subsequent page. I chose local storage as I want the level id to be retained even if the game is reloaded (without moving back to the level page).|
 | 3 | Player initiates a new letter with every letter typed (even if the turn isn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also removed the listening capability of the event listener so it could no-longer detect a player's input.|
 | 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.PNG) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen|
+| 5 | Screen reader content showing | Upon loading each page the screen reader content showed briefly. This was due to Bootstraps sr-only class being applied slower than the rest of the content. By making my own sr-only class the content remains hidden at all times.|
 
 ### Other Known Bugs
 
@@ -485,11 +486,12 @@ I would also address other issues that arose during the development of the game.
 
     Modals were selected to limit the amount of page navigation a VI user would have to undertake (you can exit the rules modal by clicking anywhere). However, some screen readers recite everything underneath the modal before reading its content. This is a recognised issue for VI users and appears on the most commercial of website's (e.g the BBC). However, as this game is designed specifically for VI users this is a feature that shouldn't occur and therefore development of how the rules/about info is presented would be advantageous and would improve UX.
 
-3. Re-design the page layout to make the buttons the total size of the container.
+3. Uppercase/lowercase presentation
 
-    On the computer this does not affect play as the hover classes tell the user when the button is selected. However, on a mobile, a player is likely to click anywhere in the container and expect the button to work. This should be corrected in future roll outs.
+    To improve UX I would redesign the game slightly so that the lowercase/uppercase functionality of playing on a phone matches what the computer asks. E.g making typed uppercase letters lowercase on the screen or making the first computer letters uppercase to match how the keypad on a phone loads.
 
 Furthermore I would address and fix the [known bugs](#other-known-bugs).
+
 ---
 
 # ACKNOWLEDGMENTS
