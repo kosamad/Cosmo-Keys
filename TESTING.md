@@ -152,11 +152,11 @@ The game was reviewed by friends and family. They were encouraged to comment on 
 
 - One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occurring.
 
-- The voice on Apple devices differs from that on Android. a 1.5 speed for level 1 and 2 speak was [too fast](testing/videos/speech-speed.mp4). Therefore, I reduced the speed of individual letter speak to 1 (standard). Additinally the letter "a" (pronouced "ay) sounded like "i". See Known bugs section in the [README](README.md).
+- The voice on Apple devices differs from that on Android. a 1.5 speed for level 1 and 2 speak was [too fast](testing/videos/speech-speed.mp4). Therefore, I reduced the speed of individual letter speak to 1 (standard). Additinally the letter "a" (pronouced "ay) sounded like "i". See [Other Known Bugs](README.md#other-known-bugs) section of my README.md file.
 
 <u> VI specific player feedback:</u>
 
-- The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md).
+- The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the [Future Roll Outs](README.md#future-roll-outs) section of the README.md. 
 
 - The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuitive". Also the hover changes helped  player know when they were correctly over the button/links.
 
@@ -188,7 +188,7 @@ In addition to this I gave two people real-life scenarios to test.
 
 The game was played on Chrome, Microsoft Edge and Firefox to check the view was consistent between browsers.  
 
-It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tablet.
+It was played on a desktop and mobiles (pixel5, pixel7 and iphone8) (I do not have access to a tablet).
 
 #### Home Page Content
 
