@@ -46,7 +46,7 @@ Please note that the error messages which relate to a "Trailing slash on void el
 
 - [index.html](testing/images/validation/index.html-validated.PNG) - passed
 - [level.html](testing/images/validation/level.html-validated.PNG) - passed
-- [game.html](testing/images/validation/game.html-validated.PNG) - passed
+- [game.html](testing/images/validation/game-js-valid.PNG) - passed
 
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator).
 
@@ -64,7 +64,7 @@ Please note, warnings relate to the vendor extensions and can be ignored.
 - [cosmo-level.js](testing/images/validation/level-js-valid.PNG) - passed
 - [cosmo-game.js](testing/images/validation/game-js-valid.PNG) - passed
 
-Please note, warnings relate the use of ES6 and are acceptable for the parameters of this project.
+Please note, warnings relate the use of ES6/8 and are acceptable for the parameters of this project.
 
 One unused variable is declared "playerAnswerContent". However, this is used in the game and removal of the variable at line 23 causes the game to break.
 Additionally, jshint declares there are two undefined variables "SpeechSynthesisUtterance" and "speechSynthesis". However, declaring these variables outside of their function also causes the game to break.
