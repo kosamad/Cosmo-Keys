@@ -1,7 +1,5 @@
-
-
 //setting the level indicator for the user (top of the screen)
-//takes the stored selected level key (from the level page) and uses it to set the corresponsing level id
+//takes the stored selected level key (from the level page) and uses it to set the corresponsing level id and colour
 const levelId = localStorage.getItem("selectedLevel");
 const levelIndicator = document.getElementById("level-indicator");
 if (levelId === "level-1") {
@@ -24,7 +22,6 @@ playerAnswer.contentEditable = "false";
 const message = document.getElementById("message");
 const scoreDisplay = document.getElementById("js-score");
 let playerAnswerContent = "";
-let compTurn = true;
 let twoLetterWords;
 let threeLetterWords;
 let lettersTyped = 0;
@@ -80,12 +77,8 @@ wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
-// if (compTurn === false) {
-// 	playerAnswer.contenteditable = "true"; //ensures the user can type on their turn
-// }
 
 //speech/sound functions
-
 //function which speaks the score at the end of the game
 function speakScore(score) {
 		if (scoreDisplay.innerText === 1) {
@@ -173,8 +166,7 @@ function startTimer() {
 	}, 1000);
 }
 
-//Differnt level play
-
+//Loading correct words depending on which level is selected 
 //level 1 play - load word from written array //
 function levelOne(letters) {
 	let randomIndex = Math.floor(Math.random() * letters.length);
@@ -183,13 +175,10 @@ function levelOne(letters) {
 	playerTurn();
 }
 
-
 //level-2 play- uses API
-
 // youtube video by ByteGrad to help set up my 2 letter array using a fetch from the datamuse API
 // modified to map data results into an array amd to have the twoLetterWords variable be avaliable outide of the findwords function
 //async function used as the data needs to be collected from the API before it can be used. 
-
 async function findWords() {
 	try {
 		let response, data;
@@ -267,8 +256,7 @@ function computerTurn() {
 }
 
 //start game function which initialises the game and begins the first computer turn
-function startGame() {
-	// playerAnswer.contentEditable = "true"; 
+function startGame() {	 
 	gameRunning = true;
 	document.getElementById("player-answer").focus(); //puts the cursor in the player-answer box
 	computerTurn();
@@ -278,14 +266,13 @@ function startGame() {
 function playerTurn() {
 	playerAnswer.contentEditable = "true";//allows the user to type
 	playerAnswer.click();
-	playerAnswer.focus();
-	console.log(playerAnswer);
-	// Reset the count of letters typed for each new player turn
-	lettersTyped = 0;
-	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the matchCheck function
+	playerAnswer.focus();//brings back the cursor to the box to allow the user to type following a wrong answer. 
+	console.log(playerAnswer);	
+	lettersTyped = 0;// Reset the count of letters typed for each new player turn
+	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the handleinput function
 }
 
-//function to check how many letters have been typed and what function follows
+//function to check how many letters have been typed and what match function follows
 function handleInput(event) {
 	// Increment the count of letters typed each time there is a type in the box
 	lettersTyped++;
@@ -305,7 +292,6 @@ function handleInput(event) {
 
 //preMatchCheck's for level 2 and 3, check each letter typed by the player against the computer (before the final letter). 
 //moves out of player turn if an incorrect letter is typed, plays the wrong sound and moves back to the computerTurn
-
 function preMatchCheck() {
 	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	let currentLetterContent = currentLetter.textContent.trim();
@@ -429,5 +415,3 @@ function togglePause() {
 	}
 }
 
-module.exports = {	
-	};
