@@ -1,14 +1,10 @@
 <h1 align="center">Cosmo Keys-Testing</h1>
 
-
 ![Cosmo Keys game play on different screens](testing/images/validation/game-play-screens.PNG)
-
 
 [View the live website here - Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
 
-
 ---
-
 
 <h2>Contents</h2>
 
@@ -32,123 +28,82 @@
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
-
 ---
-
 
 Whilst building the game, I continuously used Chrome developer tools to test my pages for responsiveness to different screen sizes and to troubleshoot any problems that arose, using a systematic approach to find and fix issues.
 
-
 I specifically used the console to log and monitor javascript code which assisted me to problem solve aspects of the game which weren't working as expected.
-
 
 ---
 
-
 ## Automated Testing
-
 
 ### W3C Validator
 
-
 [W3C](https://validator.w3.org/) was used to validate the HTML on each game page.
 
-
 Please note that the error messages which relate to a "Trailing slash on void elements" have been filtered as they are automatically added by the browser and are not a true error (as advised by the CI tutors).
-
 
 - [index.html](testing/images/validation/index.html-validated.PNG) - passed
 - [level.html](testing/images/validation/level.html-validated.PNG) - passed
 - [game.html](testing/images/validation/game.html-validated.PNG) - passed
 
-
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator).
-
 
 - [style.css](testing/images/validation/css-validated.PNG) - passed
 
-
 Please note, warnings relate to the vendor extensions and can be ignored.
-
 
 ---
 
-
 ### JavaScript Validator
 
-
 [jshint](https://jshint.com/) was used to validate the JavaScript.
-
 
 - [cosmo-index.js](testing/images/validation/index-js-valid.PNG) - passed
 - [cosmo-level.js](testing/images/validation/level-js-valid.PNG) - passed
 - [cosmo-game.js](testing/images/validation/game-js-valid.PNG) - passed
 
-
 Please note, warnings relate the use of ES6 and are acceptable for the parameters of this project.
-
 
 One unused variable is declared "playerAnswerContent". However, this is used in the game and removal of the variable at line 23 causes the game to break.
 Additionally, jshint declares there are two undefined variables "SpeechSynthesisUtterance" and "speechSynthesis". However, declaring these variables outside of their function also causes the game to break.
 
-
 ---
-
 
 ### Lighthouse
 
-
 Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
-
 
 ![index-lighthouse](testing/images/lighthouse/lighthouse-index.PNG)
 ![level-lighthouse](testing/images/lighthouse/lighthouse-level.PNG)
 ![game-lighthouse](testing/images/lighthouse/lighthouse.game.PNG)
 
-
 All pages score poorly for performance. Improvements could be made by eliminating render-blocking resources caused from external styling and removing unused JavaScript (separating Bootstraps bundle). Also, separating my CSS into separate files to minimise what is loaded on each page (e.g the index page does not need the css for the game play page).
-
 
 ### Jest
 
+I attempted to test the JavaScript elements of the game using Jest, an JavaScript automatic testing framework which ensures correctness of any JavaScript codebase. I managed to test a few variable and functions. However, the format of my JavaScript file did not seem to be compatible with advanced Jest testing. The following error message was logged for many elements, here shown for the pause button:
 
-I attempted to test the javascript elements of the game using Jest, an automatic testing suit that allows you to ......However, the format of my javascript file did not seem to be compatible with jest testing. The following error message was logged for many elements, here shown for the pause button:
+![pause button error](testing/jest/jest-issue.PNG)
 
+To remove this error I had to put my event listener into the function that waits for the DOM content to be loaded before filling the elements. However, by doing that I can no-longer test them using Jest. I additionally encountered numerous errors whilst attempting to use Jest which were extremely time consuming. After speaking with the CI tutors they advised me to pause Jest testing of my game and focus on the JavaScript itself. However this is a feature of JavaScript development that should be utilised in the future. With additional time and resources I would alter the way I structured my JavaScript to be compatible with testing.
 
+My [Jest testing file](assets/js/tests/cosmo-game.test.js) is here. Please note to run you have to comment out the pause button event listener like so:
 
+// document.getElementById("pause-btn").addEventListener("click", togglePause);
 
-![pause button error](testing/jest-issue.PNG)
-
-
-
-
-To remove this error I had to put my event listener into the function that waits for the DOM content to be loaded before filling the elements. However, by doing that I can no-longer test them using Jest. I additionally encountered numerous errors whilst attempting to use Jest which were extremely time consuming.
-
-
-
-
-After speaking with the CI tutors they advised me to pause Jest testing of my game and focus on the javascript itself. However this is a feature of javascript development that should be utilised in the future. With additional time and resources I would alter the way I structured my javascript to be compatible with testing.
-
-
-
-
-The (unfinished) [jest testing file](assets/js/tests/cosmo-game.test.js) has been kept on file to demonstrate my attempts to use jest.
-
+[This file](testing/jest/jest-attempts) shows some of the other methods I was using to try and test using Jest. I have kept it on file to show how I was approaching these problems. 
 
 ---
 
-
 ## Manual Testing
-
 
 The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone13) and a Levona tablet.
 
-
 ### User Stories
 
-
 #### 1. Client Goals
-
 
 | Goal | How are they achieved? |
 | :--- | :--- |
@@ -158,9 +113,7 @@ The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox 
 ---
 ---
 
-
 #### 2. First Time User Goals
-
 
 | Goal | How are they achieved? |
 | :--- | :--- |
@@ -170,9 +123,7 @@ The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox 
 ---
 ---
 
-
 #### 3. Frequent/Return User Goals
-
 
 | Goal | How are they achieved? |
 | :--- | :--- |
@@ -181,15 +132,11 @@ The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox 
 ---
 ---
 
-
 #### 4. Real User Testing
-
 
 The game was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page. Particular checks were carried out by a VI player to document how they could play the game.
 
-
 <u> Player feedback:</u>
-
 
 - Three users (and my mentor) commented on the position of the game content when viewing on small devices. They didn't like the large black space at the bottom of the game play page. This was intentionally left to provide space for the keypad and ensure the whole game play area remained visible once the keypad appeared. However, as it was an issue for so many users I adapted the play screen to notify small screen users where their device keypad would be, and thus fill the space.  
    
@@ -197,81 +144,53 @@ The game was reviewed by friends and family. They were encouraged to comment on 
  
     ![no keypad](documentation/device_shots/no-keypad.png)
 
-
      With keypad once the game has started:
 
-
-    ![no keypad](documentation/device_shots/keypad.png)      
-         
-
-
+    ![no keypad](documentation/device_shots/keypad.png) 
+        
 -  One user said the position of the other page content could be better. Therefore on small devices I altered the index and level pages to be positioned more centrally and reduced the black space around the content container.
-
 
 - One user demonstrated that if he typed too quickly following a wrong answer, two computer turns were triggered ([demonstration video](testing/videos/duplicate-triggers.mp4)). I modified the wrong answer function to "turn off" the event listener which prevented this from occurring.
 
-
-- The voice on Apple devices differs from that on Android. a 1.5 speed for level 1/2 speak was [too fast](testing/videos/speech-speed.mp4) and some letters sounded like other letters e.g ???????????????? Therefore I reduced the speed of individual letter speak to 1 (standard) and put in more phenetic phrasing for confusing letters. ?????????????? ALSO NEED TO SPELL CHECK THIS SECTION ///    
-
-
-
+- The voice on Apple devices differs from that on Android. a 1.5 speed for level 1 and 2 speak was [too fast](testing/videos/speech-speed.mp4). Therefore, I reduced the speed of individual letter speak to 1 (standard). Additinally the letter "a" (pronouced "ay) sounded like "i". See Known bugs section in the [README](README.md).
 
 <u> VI specific player feedback:</u>
 
-
 - The "talk-back" screen reader (not their general one), read everything underneath the modal. This is discussed and documented in the Future Roll Outs section of the [README](README.md).
-
 
 - The use of colour really helped them understand progression of the game (timer) and aids level selection as they "are very intuitive". Also the hover changes helped  player know when they were correctly over the button/links.
 
-
 - "This game is great and will really help me improve my typing accuracy!"
-
 
 <u>Real life scenarios:</u>
 
-
 In addition to this I gave two people real-life scenarios to test.
-
 
 (Sighted User)
 
-
 - You want to play this typing game but cannot have your sound on, can you still play?
-
 
     - "Yes, I can see the letters and can see if my answer was correct or not from the display at the bottom."
 
-
 (VI User)
-
 
 - Can you tell me how the game is played before moving off of the home page?
 
-
     - "Yes, I clicked on the rules button and used my screen reader to learn that I had to type the same letters as the computer, and that I'd have one minute to get as many as I could."
-
 
 - Can you select a level of difficulty without using your magnifier?
 
-
     - "I guessed that green was the easiest level and red was the hardest so I went for green to begin with. The colours meant I could tell what the levels were without reading the words."
-
 
 ---
 
-
 ### Content Testing
-
 
 The game was played on Chrome, Microsoft Edge and Firefox to check the view was consistent between browsers.  
 
-
 It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tablet.
 
-
 #### Home Page Content
-
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
@@ -286,7 +205,6 @@ It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tab
    
 #### Level Page Content
 
-
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Back button | Navigates to home page | Clicked back button | home page loaded | Pass |
@@ -296,9 +214,7 @@ It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tab
 ---
 ---
 
-
 #### Game Page Content
-
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
@@ -311,9 +227,7 @@ It was played on a desktop, mobile (pixel5, pixel7 and iphone8) and a Lenovo tab
 ---
 ---
 
-
 #### Game Page Playing
-
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
