@@ -243,6 +243,7 @@ async function levelThree() {
 //general game play
 //computer turn
 function computerTurn() {
+	
 	compTurn = true;
 	message.innerHTML = "Good Luck!";
 	//load correct level play
@@ -252,8 +253,8 @@ function computerTurn() {
 		levelTwo();
 	} else if (levelId === "level-3") {
 		levelThree();
-	}
-}
+	}}
+
 
 //start game function which initialises the game and begins the first computer turn
 function startGame() {	 
@@ -263,7 +264,7 @@ function startGame() {
 }
 
 //player turn function
-function playerTurn() {
+function playerTurn() {	
 	playerAnswer.contentEditable = "true";//allows the user to type
 	playerAnswer.click();
 	playerAnswer.focus();//brings back the cursor to the box to allow the user to type following a wrong answer. 
@@ -386,6 +387,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //pausing the game functions (pause timer and computer is controlled by the timer function)
 //ensure cursor moves to the end of the prev typed letter (and not to the start)
 function focusAtEnd() {
+	playerAnswer.contentEditable = "true"
 	let reFocus = document.querySelector(".focus-point");
 	reFocus.focus();
 	let range = document.createRange();
@@ -406,6 +408,7 @@ function togglePause() {
 			removeIcon.classList.remove("fa-pause");
 			removeIcon.classList.add("fa-play");
 			paused = true;
+			playerAnswer.contentEditable = "false";
 		} else {
 			removeIcon.classList.remove("fa-play");
 			removeIcon.classList.add("fa-pause");
