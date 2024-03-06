@@ -15,16 +15,18 @@ body {
 	margin: 0%
 }
 
-.sr-only{position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
 
-	
+
 .main-bg-home {
 	background: url(../images/main-bg-sm.jpg) no-repeat center center;
 	background-size: cover;
@@ -102,7 +104,9 @@ body {
 	text-align: justify;
 }
 
-.modal-btn{font-size: x-large}
+.modal-btn {
+	font-size: x-large
+}
 
 /*----Index.html styles----*/
 
@@ -216,13 +220,6 @@ body {
 #back-btn-level {
 	font-size: 20px;
 }
-
-/* .level-h4-text {
-	margin: 3%;
-	font-size: 35px;
-	font-family: "Lexend", sans-serif;
-	font-weight: 600;
-} */
 
 /*----Game.html styles----*/
 
@@ -434,7 +431,7 @@ body {
 	font-weight: 600;
 	color: black;
 	font-size: 25px;
-	padding: 25% 0;		
+	padding: 25% 0;
 }
 
 
@@ -515,6 +512,51 @@ body {
 	display: none;
 }
 
+/*----404.html styles----*/
+
+.btn-choice {
+	color: black;
+	font-family: "Lexend", sans-serif;
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
+	border-color: #3a096f;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 1vh;
+	border-radius: 1rem;
+	padding: 3%;
+}
+
+.btn-choice:hover {
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef);
+	cursor: default;
+}
+
+.btn-choice a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+.error-p {
+	color: white;
+	font-family: "Lexend", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 1vh 0 0.5vh 0;
+	border-radius: 1rem;
+	padding: 3%;
+}
+
 /*-Media Query-*/
 
 /* If the screen size is 1100px wide or less */
@@ -590,18 +632,15 @@ body {
 		padding: 4%;
 	}
 
-	.btn-level {	
+	.btn-level,
+	.btn-choice {
 		padding: 4%;
 	}
 
 	.main-bg-game {
-		padding: 3% 5%;		
+		padding: 3% 5%;
 		margin-top: 20%;
 	}
-
-	/* .level-h4-text {
-		font-size: 25px;
-	} */
 
 	.start-container {
 		width: 80%;
@@ -682,6 +721,10 @@ body {
 	.show {
 		display: block;
 	}
+
+	.error-p {
+		font-size: 18px;
+	}
 }
 
 
@@ -736,7 +779,7 @@ body {
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
 
-	
+
 	#timer {
 		font-size: 20px;
 	}
@@ -762,13 +805,10 @@ body {
 		min-height: 75vh;
 	}
 
-	.main-bg-game {	min-height: 90vh;
-		
-	}
+	.main-bg-game {
+		min-height: 90vh;
 
-	/* .main-overlay-game {
-		min-height: 65vh;
-	} */
+	}
 
 	.overlay-game-two {
 		margin-top: 3%;
@@ -802,15 +842,20 @@ body {
 		font-size: 12vw;
 	}
 
+	.error-p {
+		margin: 0;
+	}
+
 }
 
 
 /* If the screen size is 465px wide or less */
 
 @media screen and (max-width: 465px) {
-	
+
 	.btn-home,
-	.btn-level {
+	.btn-level,
+	.btn-choice {
 		margin: 1vh;
 		font-size: 15px;
 	}
@@ -819,18 +864,11 @@ body {
 		font-size: 18px;
 	}
 
-	/* .level-h4-text {
-		font-size: 23px;
-	} */
-
-	.btn-level {
-		font-size: 15px;
+	.main-overlay-game {
+		margin-top: 2%;
 	}
 
-	.main-overlay-game{margin-top: 2%;}
-	
-
-		.icon {
+	.icon {
 		font-size: 20px;
 	}
 
@@ -864,9 +902,9 @@ body {
 		font-size: 15px;
 	}
 
-	.overlay-game-two {		
+	.overlay-game-two {
 		min-height: 40vh;
-}
+	}
 }
 
 /* If the screen size is 382px wide or less */
@@ -877,11 +915,6 @@ body {
 		font-size: 15px;
 		padding-top: 1.5vh;
 	}
-
-	/* .level-h4-text {
-		font-size: 20px;
-		margin: 4vh 0 2vh 1.5vh;
-	} */
 
 	#start-game-button {
 		font-size: 25px;
@@ -923,8 +956,14 @@ body {
 		font-size: 12px;
 	}
 
-	.main-bg-game {min-height: 85vh;}
-	
+	.main-bg-game {
+		min-height: 85vh;
+	}
+
+	.error-p {
+		font-size: 13px;
+	}
+
 }
 
 /* If the screen size is 326px wide or less */
@@ -942,8 +981,12 @@ body {
 		font-size: 10px;
 	}
 
-	.main-bg-game{padding: 5% 7%;}
+	.main-bg-game {
+		padding: 5% 7%;
+	}
 
-#start-game-button {font-size: 18px ;}
+	#start-game-button {
+		font-size: 18px;
+	}
 
 }
