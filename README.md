@@ -1,23 +1,16 @@
 <h1 align="center">Cosmo Keys</h1>
 
-
 ![Cosmo Keys on different screens](documentation/device_shots/screen-overveiw.PNG)
-
 
 <h2>
 
-
 [View the live website here - Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
-
 
 </h2>
 
-
 This is a typing game designed with visually impaired users in mind. Everything has been created to suit their needs  e.g colour choices, spoken elements and responsive functionality. However, it is also aimed to appeal to sighted users. It is a fun, interactive game with different levels of difficulty to accommodate different levels of skill.
 
-
 <h2>Contents</h2>
-
 
 - [STRATEGY FOR THE WEBSITE](#strategy-for-the-website)
   * [USER EXPERIENCE (UX)](#user-experience--ux-)
@@ -62,7 +55,6 @@ This is a typing game designed with visually impaired users in mind. Everything 
 - [ACKNOWLEDGMENTS](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ---
 
