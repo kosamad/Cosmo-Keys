@@ -322,6 +322,15 @@ During game play:
 
 #### The 404 Error Page
 
+ ![404 error page](documentation/device_shots/404-screens.png)
+
+The 404 error page displays the Cosmo Keys title, which like on the other pages, acts as a link back to the home (index) page. There is a message on the page that notifies the user there has been a problem (error) navigating to their desired page. The "Go Home" button will redirect the user back to the home page to start again. I chose not to give the user options as this keeps the page simple and ensures a level is selected before game play starts. 
+
+#### The 500 Error Page
+
+![500 error page](documentation/device_shots/500-screens.png)
+
+The 500 error page displays if there is an error calling the API. The Cosmo Keys title links back to the home page. The Error message notifies the user there has been an error trying to retrieve their challenge letters. As above, I have only given the user the option to navigate home with a "Go Home" button. 
 
 ### ACCESSIBILITY
 
