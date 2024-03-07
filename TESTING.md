@@ -223,6 +223,7 @@ It was played on a desktop and mobiles (pixel5, pixel7 and iphone8) (I do not ha
 | --- | --- | --- | --- | --- |
 |Back  button | Navigates to home page | Clicked back button | home page loaded | Pass |
 | The game title | Navigates to home | Clicked back button | home page loaded| Pass |
+| Hover | Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over all clickable elements | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass |
 | Info button | Displays rules modal |  Clicked on "i"button| Rule modal loads| Pass |
 | Play button | Game starts and play symbol changes to a pause symbol| Clicked the play button | Game starts (timer begins, first letter/word is , player can type) and a pause icon is displayed | Pass |      
 | Reload button | Refreshes the page so the user can begin a new game | Clicked reload button | game.html is reloaded and the game restarts (score is at 0 again etc).| Pass |
@@ -241,5 +242,27 @@ It was played on a desktop and mobiles (pixel5, pixel7 and iphone8) (I do not ha
 | Wrong Answer | Wrong Sound plays and display changes | Input a wrong answer | Sound played and the display changed to "Wrong!"| Pass|
 | Score counter | The score counter begins at 0. Each time the player answers correctly the score increases by 10. If an incorrect answer is given the score should remain the same | Inputted correct and wrong answers | A correct answer increased the score by 1, a wrong answer didn't change the score | Pass |
 | End of Quiz | Game over sound plays, the score is announced and the message changes to "Game Over" | Played the game to the end with a score of either 0, 1 or 5 | At the end of the game (timer 0) the game over sound played, the display changed to "Game Over" and the score said: ![score announcement](testing/images/validation/points-display.PNG) | Pass |  
+---
+---
+
+#### 404 Error Page Content
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| The game title | Navigates to home page | Clicked title | Home page loaded | Pass |
+| The game title hover | Turns blue | Hoverd over title | Turned blue | Pass |
+| Hover | Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over the button | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass |
+|Go Home button | Navigates to home page | Clicked Go Home button | home page loaded | Pass
+---
+---
+
+#### 500 Error Page Content
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| The game title | Navigates to home page | Clicked title | Home page loaded | Pass |
+| The game title hover | Turns blue | Hoverd over title | Turned blue | Pass |
+| Hover | Buttons/Links turn temporarily blue and cursor becomes a pointer | Hovered over the button | Each item turned blue with a pointer cursor and returned to original colour when mouse was moved | Pass |
+|Go Home button | Navigates to home page | Clicked Go Home button | home page loaded | Pass
 ---
 ---
