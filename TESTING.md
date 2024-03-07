@@ -45,7 +45,9 @@ Please note that the error messages which relate to a "Trailing slash on void el
 
 - [index.html](testing/images/validation/index.html-validated.PNG) - passed
 - [level.html](testing/images/validation/level.html-validated.PNG) - passed
-- [game.html](testing/images/validation/game-js-valid.PNG) - passed
+- [game.html](testing/images/validation/game.html-validated.PNG) - passed
+- [404.html](testing/images/validation/404-validation.png) - passed
+- [500.html](testing/images/validation/500-validation.png) - passed
 
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator).
 
@@ -74,9 +76,11 @@ Additionally, jshint declares there are two undefined variables "SpeechSynthesis
 
 Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
 
-![index-lighthouse](testing/images/lighthouse/lighthouse-index.PNG)
-![level-lighthouse](testing/images/lighthouse/lighthouse-level.PNG)
-![game-lighthouse](testing/images/lighthouse/lighthouse.game.PNG)
+![index-lighthouse](testing/images/lighthouse/lighthouse-index.png)
+![level-lighthouse](testing/images/lighthouse/lighthouse-level.png)
+![game-lighthouse](testing/images/lighthouse/lighthouse-game.png)
+![404-lighthouse](testing/images/lighthouse/lighthouse-404.png)
+![500-lighthouse](testing/images/lighthouse/lighthouse-500.png)
 
 All pages score poorly for performance. Improvements could be made by eliminating render-blocking resources caused from external styling and removing unused JavaScript (separating Bootstraps bundle). Also, separating my CSS into separate files to minimise what is loaded on each page (e.g the index page does not need the css for the game play page).
 
