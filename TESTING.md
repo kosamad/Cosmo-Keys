@@ -1,6 +1,6 @@
 <h1 align="center">Cosmo Keys-Testing</h1>
 
-![Cosmo Keys game play on different screens](testing/images/validation/game-play-screens.PNG)
+![Cosmo Keys game play on different screens](testing/images/validation/game-play-screens.png)
 
 [View the live website here - Cosmo Keys](https://kosamad.github.io/Cosmo-Keys/)
 
@@ -43,15 +43,15 @@ I specifically used the console to log and monitor javascript code which assiste
 
 Please note that the error messages which relate to a "Trailing slash on void elements" have been filtered as they are automatically added by the browser and are not a true error (as advised by the CI tutors).
 
-- [index.html](testing/images/validation/index.html-validated.PNG) - passed
-- [level.html](testing/images/validation/level.html-validated.PNG) - passed
-- [game.html](testing/images/validation/game.html-validated.PNG) - passed
+- [index.html](testing/images/validation/index.html-validated.png) - passed
+- [level.html](testing/images/validation/level.html-validated.png) - passed
+- [game.html](testing/images/validation/game.html-validated.png) - passed
 - [404.html](testing/images/validation/404-validation.png) - passed
 - [500.html](testing/images/validation/500-validation.png) - passed
 
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator).
 
-- [style.css](testing/images/validation/css-validated.PNG) - passed
+- [style.css](testing/images/validation/css-validated.png) - passed
 
 Please note, warnings relate to the vendor extensions and can be ignored.
 
@@ -61,9 +61,9 @@ Please note, warnings relate to the vendor extensions and can be ignored.
 
 [jshint](https://jshint.com/) was used to validate the JavaScript.
 
-- [cosmo-index.js](testing/images/validation/index-js-valid.PNG) - passed
-- [cosmo-level.js](testing/images/validation/level-js-valid.PNG) - passed
-- [cosmo-game.js](testing/images/validation/game-js-valid.PNG) - passed
+- [cosmo-index.js](testing/images/validation/index-js-valid.png) - passed
+- [cosmo-level.js](testing/images/validation/level-js-valid.png) - passed
+- [cosmo-game.js](testing/images/validation/game-js-valid.png) - passed
 
 Please note, warnings relate the use of ES6/8 and are acceptable for the parameters of this project.
 
@@ -77,10 +77,11 @@ Additionally, jshint declares there are two undefined variables "SpeechSynthesis
 Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
 
 ![index-lighthouse](testing/images/lighthouse/lighthouse-index.png)
-![level-lighthouse](testing/images/lighthouse/lighthouse-level.png)
-![game-lighthouse](testing/images/lighthouse/lighthouse-game.png)
+![level-lighthouse](testing/images/lighthouse/lighthouse-level.PNG)
+![game-lighthouse](testing/images/lighthouse/lighthouse-level.png)
 ![404-lighthouse](testing/images/lighthouse/lighthouse-404.png)
 ![500-lighthouse](testing/images/lighthouse/lighthouse-500.png)
+
 
 All pages score poorly for performance. Improvements could be made by eliminating render-blocking resources caused from external styling and removing unused JavaScript (separating Bootstraps bundle). Also, separating my CSS into separate files to minimise what is loaded on each page (e.g the index page does not need the css for the game play page).
 
@@ -236,12 +237,12 @@ It was played on a desktop and mobiles (pixel5, pixel7 and iphone8) (I do not ha
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Pause button | Pause the game | Clicked the pause button | The timer stops and the player cannot type in the box | Pass |
-| Question display | Correct level of letter/words are loaded from the API/array | Console log the data or view what the computer displays | Level 1![Level 1](testing/images/validation/level1-question-box.PNG) Level 2 ![Level 2](testing/images/validation/console-log-level2.PNG) Level 3 ![Level 3](testing/images/validation/console-log-level3.PNG) | Pass |
+| Question display | Correct level of letter/words are loaded from the API/array | Console log the data or view what the computer displays | Level 1![Level 1](testing/images/validation/level1-question-box.png) Level 2 ![Level 2](testing/images/validation/console-log-level2.png) Level 3 ![Level 3](testing/images/validation/console-log-level3.png) | Pass |
 | Timer display | Changes colour as the time reduces | Visualised the timer as the game progressed from 60-0 seconds | Timer changed colour at each 10s interval as expected | Pass |
 | Correct Answer| Correct Sound plays and display changes | Input a correct answer| Sound played and the display changed to "Correct!"| Pass|
 | Wrong Answer | Wrong Sound plays and display changes | Input a wrong answer | Sound played and the display changed to "Wrong!"| Pass|
 | Score counter | The score counter begins at 0. Each time the player answers correctly the score increases by 10. If an incorrect answer is given the score should remain the same | Inputted correct and wrong answers | A correct answer increased the score by 1, a wrong answer didn't change the score | Pass |
-| End of Quiz | Game over sound plays, the score is announced and the message changes to "Game Over" | Played the game to the end with a score of either 0, 1 or 5 | At the end of the game (timer 0) the game over sound played, the display changed to "Game Over" and the score said: ![score announcement](testing/images/validation/points-display.PNG) | Pass |  
+| End of Quiz | Game over sound plays, the score is announced and the message changes to "Game Over" | Played the game to the end with a score of either 0, 1 or 5 | At the end of the game (timer 0) the game over sound played, the display changed to "Game Over" and the score said: ![score announcement](testing/images/validation/points-display.png) | Pass |  
 ---
 ---
 
