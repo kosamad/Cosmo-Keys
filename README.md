@@ -170,6 +170,12 @@ As this is a game and not an informative website the pages will not take up the 
 - Score counter for correct answers.
 - Boxes which display the computer’s challenge and the user's response.
 
+4. Error pages
+
+- Large, distinctive buttons.
+- Informative
+- Links back to home page (index.html)
+
 ---
 
 # GAME DESIGN AND ROLL OUT
@@ -313,6 +319,9 @@ During game play:
 - Following a right or wrong answer a corresponding sound is played to improve UX for all users. I chose not to announce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The game is NOT case sensitive. This ensures users on a mobile device don't have to adjust their keypad to lowercase letters. The score box increments with each correct answer. Additionally, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users.
 
 - The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play.
+
+#### The 404 Error Page
+
 
 ### ACCESSIBILITY
 
