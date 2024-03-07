@@ -528,7 +528,9 @@ body {
 	font-weight: 600;
 	margin: 1vh;
 	border-radius: 1rem;
-	padding: 3%;
+	padding: 10%;
+	text-decoration: none;
+	color: black;
 }
 
 .btn-choice:hover {
@@ -538,13 +540,7 @@ body {
 			#6ee4ef,
 			#6ee4ef,
 			#6ee4ef);
-	cursor: default;
-}
-
-.btn-choice a {
-	text-decoration: none;
-	color: black;
-	cursor: pointer;
+		cursor: pointer;
 }
 
 .error-p {
@@ -632,8 +628,7 @@ body {
 		padding: 4%;
 	}
 
-	.btn-level,
-	.btn-choice {
+	.btn-level	 {
 		padding: 4%;
 	}
 
