@@ -36,6 +36,8 @@ This is a typing game designed with visually impaired users in mind. Everything 
       - [The Home Page](#the-home-page)
       - [The Level Selection Page](#the-level-selection-page)
       - [The Game Play Page](#the-game-play-page)
+      - [The 404 Error Page](#the-404-error-page)
+      - [The 500 Error Page](#the-500-error-page)
     + [ACCESSIBILITY](#accessibility)
   * [BUGS](#bugs)
     + [Solved Bugs](#solved-bugs)

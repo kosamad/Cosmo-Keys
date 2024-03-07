@@ -24,6 +24,8 @@
     + [Level Page Content](#level-page-content)
     + [Game Page Content](#game-page-content)
     + [Game Page Playing](#game-page-playing)
+    + [404 Error Page Content](#404-error-page-content)
+    + [500 Error Page Content](#500-error-page-content)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
