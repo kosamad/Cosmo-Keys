@@ -31,6 +31,8 @@
 
 ---
 
+Testing ensures the site works as expected, that it is clear of bugs and that users can utilise each feature of the website before it is released onto the general market. This ensures a positive UX and ensures players will come back to the game again and again. 
+
 Whilst building the game, I continuously used Chrome developer tools to test my pages for responsiveness to different screen sizes and to troubleshoot any problems that arose, using a systematic approach to find and fix issues.
 
 I specifically used the console to log and monitor javascript code which assisted me to problem solve aspects of the game which weren't working as expected.
@@ -38,6 +40,8 @@ I specifically used the console to log and monitor javascript code which assiste
 ---
 
 ## Automated Testing
+
+Automated testing uses specialised tools and scripts to automatically test the website's  (to validate it) and functionality, to test if the application behaves as expected. It is fast and accurate. Automated testing is most suited to repetitive tasks and long-term, large projects. (Information taken from [this article](https://www.linkedin.com/pulse/manual-testing-vs-automation-detailed-comparison/))
 
 ### W3C Validator
 
@@ -105,7 +109,9 @@ My [Jest testing file](assets/js/tests/cosmo-game.test.js) is here. Please note 
 
 ## Manual Testing
 
-The website was viewed on Chrome, Internet Explorer, Microsoft Edge and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone13) and a Levona tablet.
+Manual testing involves a human user testing each feature of a website without any automated tools. It relies on their observation skills and intuition to identify errors and assess the user experience. It is most effective where exploratory testing is required, assessing usability and is especially applied to small scale projects (like Cosmo Keys).(Information taken from [this article](https://www.linkedin.com/pulse/manual-testing-vs-automation-detailed-comparison/))
+
+The website was viewed on Chrome, Internet Explorer and Firefox to check the view was consistent between browsers. It was also viewed on a desktop, mobile (pixel5 and iphone13) and a Levona tablet.
 
 ### User Stories
 
