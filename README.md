@@ -324,17 +324,17 @@ There are buttons which allow the user to reload the game (before a game has fin
 
 The level that has been selected is displayed on the page, coloured to correspond to the level of difficulty.
 
-On small screens a box is added to notify the users that the page has space for their keypad (see [TESTING](TESTING.md#4-real-user-testing) user stories).
+On small screens a box is added to notify the users that the page has space for their keypad (see [TESTING](TESTING.md#4-real-user-testing) user stories). Additionally, the reload button moves to the bottom of the page to ensure the playing space is maximised and all content is visible. 
 
 During game play:
 
 - To aid VI users the timer, which counts down from 60 to 0, has been designed to change colour as the time reduces, so a user doesn't have to read the numbers to know how long is left. This is done from green to red.
 
-- Using a web speech API, each letter/word is read to the user. Additionally, at the end of the game the score is announced.
+- Using a web speech API, each letter/word is read to the user. The speech utterance is cancelled if a user gets part of a word/letter set wrong. It is also cancelled if (a sighted user) types all the letters quicker than the speech utterance. This speeds up the game and prevents the speech being left behind the sighted user. Additionally, at the end of the game the score is announced.
 
 - Following a right or wrong answer a corresponding sound is played to improve UX for all users. I chose not to announce the players typed letter/word to improve how the game runs (even though this would help a user identify how they are going wrong). The game is NOT case sensitive. This ensures users on a mobile device don't have to adjust their keypad to lowercase letters. The score box increments with each correct answer. Additionally, there is a display that announces an answer as "right!" or "wrong!", improving UX for sighted users.
 
-- The start game button turns into the pause button. This is to help VI users find it as often their display/mouse is left hovering over this element during game play.
+- The start game button turns into the pause button. This positioning is to help VI users find it as often their display/mouse is left hovering over this element during game play.
 
 #### The 404 Error Page
 
@@ -388,8 +388,6 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 ### Other Known Bugs
 
 * UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
-
-* When a sighted user plays the game very quickly the speech functionality can get left behind. The Using a different method to invoke speech (see [Future Roll Outs](README.md/#future-roll-outs)).
 
 ---
 
