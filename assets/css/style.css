@@ -1,20 +1,8 @@
-/*----General styles----*/
-
 /*-Google Fonts-*/
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&display=swap");
 
-/*-Page backgrounds-*/
-
-body {
-	background-color: black;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0%
-}
-
+/*-Screen reader only styling-*/
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -26,6 +14,16 @@ body {
 	border: 0;
 }
 
+/*-Page body/backgrounds-*/
+
+body {
+	background-color: black;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0%
+}
 
 .main-bg-home {
 	background: url(../images/main-bg-sm.jpg) no-repeat center center;
@@ -46,8 +44,26 @@ body {
 	border-radius: 1.5rem;
 }
 
-/*- Styles applied to multiple pages-*/
+.main-bg-game {
+	background: url(../images/main-bg-sm.jpg) no-repeat center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	border-radius: 1.5rem;
+	padding: 2% 3.5%;
+	position: relative;
+	max-width: 75vw;
+}
 
+.main-overlay-game {
+	background-color: rgba(7, 4, 60, 0.8);
+	color: white;
+	padding: 2% 2%;
+	border-radius: 1.5rem;
+}
+
+/*- Styles applied to multiple pages-*/
 .top-boarder-container {
 	margin-bottom: 4%;
 }
@@ -75,6 +91,7 @@ body {
 .home-buttons {
 	margin-top: 4%;
 }
+
 
 /*- Modals-*/
 .imodal-title {
@@ -108,8 +125,10 @@ body {
 	font-size: x-large
 }
 
+
 /*----Index.html styles----*/
 
+/*----buttons and hover----*/
 .btn-home {
 	color: black;
 	background-image: linear-gradient(to right top,
@@ -154,6 +173,7 @@ body {
 	font-size: 20px;
 }
 
+/*----social icons----*/
 .social-icon {
 	color: #e597f6;
 }
@@ -162,8 +182,8 @@ body {
 	color: #6ee4ef;
 }
 
-/*----Level.html styles----*/
-
+/*----Level.html, 404.html and 505.html styles----*/
+/*----buttons and hover----*/
 .btn-level {
 	color: black;
 	font-family: "Lexend", sans-serif;
@@ -190,7 +210,7 @@ body {
 	cursor: pointer;
 }
 
-
+/*----colours to specify each level----*/
 .one {
 	background-image: radial-gradient(circle, #14ff5c, #10f154, #0be34c, #06d645, #00c83d);
 	border-color: #00C83D;
@@ -216,33 +236,52 @@ body {
 	cursor: default;
 }
 
-
 #back-btn-level {
 	font-size: 20px;
 }
 
-/*----Game.html styles----*/
-
-.main-bg-game {
-	background: url(../images/main-bg-sm.jpg) no-repeat center center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	border-radius: 1.5rem;
-	padding: 2% 3.5%;
-	position: relative;
-	max-width: 75vw;
+/*----404/500 page choice button and paragraph----*/
+.btn-choice {
+	color: black;
+	font-family: "Lexend", sans-serif;
+	background-image: linear-gradient(to right top,
+			#e597f6,
+			#d27ff0,
+			#bd67eb,
+			#a64fe7,
+			#8a38e3);
+	border-color: #3a096f;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 1vh;
+	border-radius: 1rem;
+	padding: 10%;
+	text-decoration: none;
+	color: black;
 }
 
-.main-overlay-game {
-	background-color: rgba(7, 4, 60, 0.8);
+.btn-choice:hover {
+	background-image: radial-gradient(circle,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef,
+			#6ee4ef);
+	cursor: pointer;
+}
+
+.error-p {
 	color: white;
-	padding: 2% 2%;
-	border-radius: 1.5rem;
+	font-family: "Lexend", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 1vh 0 0.5vh 0;
+	border-radius: 1rem;
+	padding: 3%;
 }
 
-/*-- top buttons and info--*/
+/*----Game.html styles----*/
+/*-- top nav buttons(/hover) and info icon for modal--*/
 .top-row {
 	margin-bottom: 4%;
 }
@@ -287,10 +326,6 @@ body {
 	padding: 0;
 }
 
-#start-game-button {
-	font-size: 35px;
-}
-
 .icon {
 	font-size: 35px;
 	text-decoration: none;
@@ -299,6 +334,8 @@ body {
 .icon:hover {
 	cursor: pointer;
 }
+
+/*-- level indicator--*/
 
 .ilevel-text {
 	display: flex;
@@ -313,6 +350,7 @@ body {
 	margin-bottom: 0;
 }
 
+/*--game title--*/
 #game-title {
 	font-size: 30px;
 	font-family: "Audiowide", sans-serif;
@@ -330,7 +368,7 @@ body {
 	text-decoration: none;
 }
 
-/*-- start game large button--*/
+/*-- start game button--*/
 .start-container {
 	background-image: linear-gradient(to right top,
 			#ea505a,
@@ -349,7 +387,11 @@ body {
 	align-items: center;
 }
 
-/* hide must come second so that the display style is set correctly  */
+#start-game-button {
+	font-size: 35px;
+}
+
+/* hide must come second so that the display style is set correctly, allows this button to become the start/pause button */
 .hide {
 	display: none;
 }
@@ -363,6 +405,7 @@ body {
 			#6ee4ef);
 }
 
+/*-- removing boostrap default styling--*/
 .no-hover-effect:hover {
 	border: transparent !important;
 	box-shadow: none !important;
@@ -382,6 +425,7 @@ body {
 	transform: none !important;
 }
 
+/*-- score box and timer--*/
 .score-container {
 	background-image: radial-gradient(circle,
 			#eceaf3,
@@ -435,8 +479,7 @@ body {
 }
 
 
-/*-- game play display--*/
-
+/*-- computer "quiz" box and player areas--*/
 #quiz-box-container {
 	background-image: linear-gradient(to right top,
 			#ea505a,
@@ -493,7 +536,7 @@ body {
 	display: none;
 }
 
-/*-Game over-*/
+/*-Game over/other messages-*/
 
 #message {
 	font-size: 35px;
@@ -503,54 +546,8 @@ body {
 	color: white;
 }
 
-#reset-game-two {
-	text-decoration: none;
-	color: greenyellow;
-}
-
 .show {
 	display: none;
-}
-
-/*----404.html styles----*/
-
-.btn-choice {
-	color: black;
-	font-family: "Lexend", sans-serif;
-	background-image: linear-gradient(to right top,
-			#e597f6,
-			#d27ff0,
-			#bd67eb,
-			#a64fe7,
-			#8a38e3);
-	border-color: #3a096f;
-	font-size: 20px;
-	font-weight: 600;
-	margin: 1vh;
-	border-radius: 1rem;
-	padding: 10%;
-	text-decoration: none;
-	color: black;
-}
-
-.btn-choice:hover {
-	background-image: radial-gradient(circle,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef,
-			#6ee4ef);
-		cursor: pointer;
-}
-
-.error-p {
-	color: white;
-	font-family: "Lexend", sans-serif;
-	font-size: 20px;
-	font-weight: 400;
-	margin: 1vh 0 0.5vh 0;
-	border-radius: 1rem;
-	padding: 3%;
 }
 
 /*-Media Query-*/
@@ -565,7 +562,6 @@ body {
 }
 
 /* If the screen size is 1024px wide or less */
-
 @media screen and (max-width: 1024px) {
 	/*----Index.html MQ styles----*/
 
@@ -583,9 +579,9 @@ body {
 	#level-indicator {
 		font-size: 22px;
 	}
-
 }
 
+/* If the screen size is 921px wide or less */
 @media screen and (max-width: 921px) {
 
 	#game-title,
@@ -593,7 +589,6 @@ body {
 		font-size: 20px;
 	}
 }
-
 
 /* If the screen size is 840px wide or less */
 @media screen and (max-width: 840px) {
@@ -605,9 +600,7 @@ body {
 }
 
 /* If the screen size is 766px wide or less */
-
 @media screen and (max-width: 766px) {
-	/*----Index.html MQ styles----*/
 
 	body {
 		background-color: black;
@@ -628,7 +621,7 @@ body {
 		padding: 4%;
 	}
 
-	.btn-level	 {
+	.btn-level {
 		padding: 4%;
 	}
 
@@ -722,7 +715,6 @@ body {
 	}
 }
 
-
 /* If the screen size is 680px wide or less */
 @media screen and (max-width: 680px) {
 
@@ -742,7 +734,6 @@ body {
 	#player-answer {
 		font-size: 25px;
 	}
-
 }
 
 /* If the screen size is 580px wide or less */
@@ -773,8 +764,6 @@ body {
 
 /* If the screen size is 520px wide or less */
 @media screen and (max-width: 520px) {
-
-
 	#timer {
 		font-size: 20px;
 	}
@@ -840,12 +829,9 @@ body {
 	.error-p {
 		margin: 0;
 	}
-
 }
 
-
 /* If the screen size is 465px wide or less */
-
 @media screen and (max-width: 465px) {
 
 	.btn-home,
@@ -885,7 +871,6 @@ body {
 	}
 }
 
-
 @media screen and (max-width: 420px) {
 
 	#level-indicator,
@@ -903,9 +888,7 @@ body {
 }
 
 /* If the screen size is 382px wide or less */
-
 @media screen and (max-width: 382px) {
-
 	.description {
 		font-size: 15px;
 		padding-top: 1.5vh;
@@ -958,7 +941,6 @@ body {
 	.error-p {
 		font-size: 13px;
 	}
-
 }
 
 /* If the screen size is 326px wide or less */
@@ -983,5 +965,4 @@ body {
 	#start-game-button {
 		font-size: 18px;
 	}
-
 }
