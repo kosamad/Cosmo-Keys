@@ -8,11 +8,13 @@
 
 </h2>
 
-This is a typing game designed with visually impaired users in mind. Everything has been created to suit their needs  e.g colour choices, spoken elements and responsive functionality. However, it is also aimed to appeal to sighted users. It is a fun, interactive game with different levels of difficulty to accommodate different levels of skill.
+
+Cosmo keys is a typing game that has been designed for visually impaired users. Everything has been created to suit their needs e.g colour choices, spoken elements and responsive functionality. However, it is also aimed to appeal to sighted users. It is a fun, interactive game with different levels of difficulty to accommodate different levels of skill.
 
 <h2>Contents</h2>
 
 - [STRATEGY FOR THE WEBSITE](#strategy-for-the-website)
+  * [WHY A TYPING GAME FOR VISUALLY IMPAIRED USERS?](#why-a-typing-game-for-visually-impaired-users-)
   * [USER EXPERIENCE (UX)](#user-experience--ux-)
     + [The Game's Features](#the-game-s-features)
     + [User Stories](#user-stories)
@@ -62,9 +64,13 @@ This is a typing game designed with visually impaired users in mind. Everything 
 
 # STRATEGY FOR THE WEBSITE
 
+## WHY A TYPING GAME FOR VISUALLY IMPAIRED USERS?
+
+Cosmo keys has been designed following conversations with a visually impaired (VI) individual. They explained how typing (especially on a mobile device) is very difficult, but that there is no opportunity to practise typing as most typing games rely on the user being able to see the letters they are asked to type. A platform that gives them a fun way to practise typing would allow them to gain some muscle memory and learn where their fingers need to be to accurately type each letter. This prompted the development of Cosmo Keys, a typing game for the visually impaired
+
 ## USER EXPERIENCE (UX)
 
-Using UX design principles, I outlined the key features a typing game would require and what a visually impaired (VI) user would require to ensure they could use the game.
+Using UX design principles, I outlined the key features a typing game would require and what a VI user would require to ensure they could use the game.
 
 ### The Game's Features
 
