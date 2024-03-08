@@ -388,7 +388,7 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 
 * UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
 
-* On Apple devices the letter "a" sounds like "i". I attempted several different pronunciations to fix this ("eh", "ayy", "ey") but none sounded like the alphabetical sound of "a". This was difficult to work on as I don't own an apple device. This should be addressed in the future. 
+* On Apple devices and on the browser Firefox the letter "a" sounds like "i". I attempted several different pronunciations to fix this ("eh", "ayy", "ey") but none sounded like the alphabetical sound of "a". This should be addressed in the future . 
 
 ---
 
