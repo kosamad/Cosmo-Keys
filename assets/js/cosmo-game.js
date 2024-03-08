@@ -322,6 +322,7 @@ function matchCheck() {
 	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	if (playerAnswerContent === currentLetter.textContent) {
 		message.innerHTML = "Correct!";
+		speechSynthesis.cancel();
 		correctSound.play();
 		score++;
 		scoreDisplay.innerHTML = score;

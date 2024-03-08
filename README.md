@@ -381,6 +381,7 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 | 3 | Player initiates a new letter with every letter typed (even if the turn isn't over). |  After going back over the Simon game CI tutorial and some YouTube game examples I concluded I needed to add a boolean variable that set a computer turn to false for when the player could move and true the rest of the time. I also removed the listening capability of the event listener so it could no-longer detect a player's input.|
 | 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.png) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen|
 | 5 | Screen reader content showing | Upon loading each page the screen reader content showed briefly. This was due to Bootstraps sr-only class being applied slower than the rest of the content. By making my own sr-only class the content remains hidden at all times.|
+| 6 | On Apple devices and on the browser Firefox my fix to get the letter "a" to sound like "ay" didn't work as the computer was pronouncing it like "i". This was incompatable for a VI user playing on these devices.| I had to try numerous different ways of spelling the sound "ay" to get it to sound ok across browsers. When researching how I could spell it i came across this [YoutTube video](https://www.youtube.com/watch?v=UCE3ZO0Rc0E) that promted me to try "eigh".
 ---
 ---
 
@@ -388,7 +389,7 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 
 * UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
 
-* On Apple devices and on the browser Firefox the letter "a" sounds like "i". I attempted several different pronunciations to fix this ("eh", "ayy", "ey") but none sounded like the alphabetical sound of "a". This should be addressed in the future . 
+* When a sighted user plays the game very quickly the speech functionality can get left behind. The Using a different method to invoke speech (see [Future Roll Outs](README.md/#future-roll-outs)).
 
 ---
 
