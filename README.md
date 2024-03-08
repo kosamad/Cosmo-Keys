@@ -386,8 +386,6 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 
 ### Other Known Bugs
 
-* On some browsers the screen reader content shows briefly as the page is loading. Additional development should be implemented that prevents this from occurring, perhaps using javascript to write the screen reader content once the page is loaded.
-
 * UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
 
 * On Apple devices the letter "a" sounds like "i". I attempted several different pronunciations to fix this ("eh", "ayy", "ey") but none sounded like the alphabetical sound of "a". This was difficult to work on as I don't own an apple device. This should be addressed in the future. 
@@ -533,6 +531,10 @@ I would also address other issues that arose during the development of the game.
 3. Uppercase/lowercase presentation
 
     To improve UX I would redesign the game slightly so that the lowercase/uppercase functionality of playing on a phone matches what the computer asks. E.g making typed uppercase letters lowercase on the screen or making the first computer letters uppercase to match how the keypad on a phone loads.
+
+4. Homonyms
+
+   On level 3 play you may get a word like "bye" that could also be spelt "buy". A VI user cannot see the letters and therefore doesn't know which word is being asked. For future roll outs I would ensure that the API array is ammended to remove these homonyms.
 
 Furthermore I would address and fix the [known bugs](#other-known-bugs).
 
