@@ -265,6 +265,7 @@ function startGame() {
 
 //player turn function
 function playerTurn() {
+	compTurn = false;
 	playerAnswer.contentEditable = "true";//allows the user to type	
 	playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
