@@ -59,6 +59,8 @@ const letters = [
 	"z",
 ];
 
+
+
 //timer variables
 let startTime = 60;
 let remainingTime = startTime;
@@ -72,11 +74,12 @@ let correctSound = new Audio(
 	"assets/sounds/335908__littlerainyseasons__correct.mp3"
 );
 correctSound.volume = 0.5;
-let wrongSound = new Audio("assets/sounds/554053__gronkjaer__wronganswer.mp3");
+let wrongSound = new Audio('assets/sounds/554053__gronkjaer__wronganswer.mp3');
 wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
+findWords();//find the words for level 2 and 3 play
 
 //speech/sound functions
 //function which speaks the score at the end of the game
@@ -190,7 +193,8 @@ async function findWords() {
 		if (response) {
 			data = await response.json();
 			if (levelId === "level-2") {
-				return data.map((word) => word.word);
+				let twoLetterWords = data.map((word) => word.word);
+				return twoLetterWords;
 			} else if (levelId === "level-3") {
 				let threeLetterWords = data.filter(word => word.word.length === 3);//API sometimes gives four letter words so this ensures three letter words only make it into the game
 				return threeLetterWords.map(word => word.word);
@@ -203,7 +207,7 @@ async function findWords() {
 }
 
 //async function that waits for the levelTwo letters to be populated by the API above.
-async function levelTwo() {
+async function levelTwo(twoLetterWords) {
 	try {
 		// Check if twoLetterWords is already populated
 		if (!twoLetterWords) {
@@ -222,7 +226,7 @@ async function levelTwo() {
 }
 
 //level-3 play retrives 3 letter words
-async function levelThree() {
+async function levelThree(threeLetterWords) {
 	try {
 		// Check if threeLetterWords is already populated
 		if (!threeLetterWords) {
@@ -249,9 +253,9 @@ function computerTurn() {
 	if (levelId === "level-1") {
 		levelOne(letters);
 	} else if (levelId === "level-2") {
-		levelTwo();
+		levelTwo(twoLetterWords);
 	} else if (levelId === "level-3") {
-		levelThree();
+		levelThree(threeLetterWords);
 	}
 }
 
