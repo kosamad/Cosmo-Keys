@@ -317,6 +317,7 @@ function matchCheck() {
 	compTurn = true;
 	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
 	if (playerAnswerContent === currentLetter.textContent) {
+		playerAnswer.removeEventListener("input", handleInput);
 		message.innerHTML = "Correct!";
 		speechSynthesis.cancel();
 		correctSound.play();
