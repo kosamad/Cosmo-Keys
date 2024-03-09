@@ -81,23 +81,23 @@ endGameSound.volume = 0.5;
 //speech/sound functions
 //function which speaks the score at the end of the game
 function speakScore(score) {
-		if (scoreDisplay.innerText === 1) {
-			let scoreVoice = new SpeechSynthesisUtterance(
-				`congratulations, you got ${scoreDisplay.innerText} point.`
-			);
-			window.speechSynthesis.speak(scoreVoice);
-		} else if (scoreDisplay.innerText === "0") {
-			let scoreVoice = new SpeechSynthesisUtterance(
-				`Oh dear, you didn't get any points.`
-			);
-			window.speechSynthesis.speak(scoreVoice);
-		} else {
-			let scoreVoice = new SpeechSynthesisUtterance(
-				`congratulations, you got ${scoreDisplay.innerText} points.`
-			);
-			window.speechSynthesis.speak(scoreVoice);
-		}
+	if (scoreDisplay.innerText === 1) {
+		let scoreVoice = new SpeechSynthesisUtterance(
+			`congratulations, you got ${scoreDisplay.innerText} point.`
+		);
+		window.speechSynthesis.speak(scoreVoice);
+	} else if (scoreDisplay.innerText === "0") {
+		let scoreVoice = new SpeechSynthesisUtterance(
+			`Oh dear, you didn't get any points.`
+		);
+		window.speechSynthesis.speak(scoreVoice);
+	} else {
+		let scoreVoice = new SpeechSynthesisUtterance(
+			`congratulations, you got ${scoreDisplay.innerText} points.`
+		);
+		window.speechSynthesis.speak(scoreVoice);
 	}
+}
 
 //function which speaks the letter (level-1/2 play) or word (level-3 play)
 function speakLetter(letter) {
@@ -114,7 +114,7 @@ function speakLetter(letter) {
 					charCheck = "eigh"; //required as "a" sound is not pronouced like the alphabetical a pronounced "ay"
 				}
 				const charVoice = new SpeechSynthesisUtterance(charCheck);
-				charVoice.rate = 1; 
+				charVoice.rate = 1;
 				window.speechSynthesis.speak(charVoice);
 			}
 		}
@@ -243,7 +243,6 @@ async function levelThree() {
 //general game play
 //computer turn
 function computerTurn() {
-	
 	compTurn = true;
 	message.innerHTML = "Good Luck!";
 	//load correct level play
@@ -253,22 +252,21 @@ function computerTurn() {
 		levelTwo();
 	} else if (levelId === "level-3") {
 		levelThree();
-	}}
+	}
+}
 
 
 //start game function which initialises the game and begins the first computer turn
-function startGame() {	 
+function startGame() {
 	gameRunning = true;
 	document.getElementById("player-answer").focus(); //puts the cursor in the player-answer box
 	computerTurn();
 }
 
 //player turn function
-function playerTurn() {	
-	playerAnswer.contentEditable = "true";//allows the user to type
-	playerAnswer.click();
-	playerAnswer.focus();//brings back the cursor to the box to allow the user to type following a wrong answer. 
-	console.log(playerAnswer);	
+function playerTurn() {
+	playerAnswer.contentEditable = "true";//allows the user to type	
+	playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the handleinput function
 }
@@ -298,13 +296,11 @@ function preMatchCheck() {
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
 		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
-			// compTurn = true;
+			playerAnswer.removeEventListener("input", handleInput);
 			message.innerHTML = "Wrong!";
-			playerAnswer.contentEditable = "false";
 			speechSynthesis.cancel();
 			wrongSound.play();
 			scoreDisplay.innerHTML = score;
-			playerAnswer.removeEventListener("input", handleInput);
 			setTimeout(() => {
 				playerAnswer.innerHTML = "";
 				computerTurn();
@@ -334,7 +330,6 @@ function matchCheck() {
 	} else {
 		message.innerHTML = "Wrong!";
 		playerAnswer.removeEventListener("input", handleInput);
-		playerAnswer.contentEditable = "false";
 		speechSynthesis.cancel();
 		wrongSound.play();
 		scoreDisplay.innerHTML = score;

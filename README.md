@@ -389,6 +389,21 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 
 * UX could be improved by forcing the keypad on phones to load when the game play page is loaded, automatically. This would replace the box I've added saying "your keypad will be here". I searched multiple slack forums and tried several methods to force a .click() event in javascript after setting the .focus() of the player answer box but none of the methods I tried worked.  
 
+* A user can continue to type into the box when they have a.finished a word or b.entered a wrong answer. To solve this I stopped the player answer box from being "content editable" after a wrong answer (or at the end of the correct answer). The example here shows how the funtion was written:
+
+![prematchcheck bug](testing/images/bugs//bug_prematchcheck.png)
+
+and then returned it when it was the player answer turn. This required a click and refocus to put the cursor back in the box.
+
+![player answer box](testing/images/bugs/bug_playeranswer.png)
+
+This solved the problem for google chrome and android devices. However, this did not work on apple devices.
+Furthermore, as a result of this modification the keypad on mobile devices kept hiding and then displaying again which was a poor user experience:
+
+[Video of keypad showing/hiding](testing/images/bugs/keypad_updown.mp4)
+
+I therefore removed this feature and simply turned off the event listener to prevent typed letters being logged. It would improve the UX to prevent a user from typing when they should not be able to whilst retaining the mobile device keypad.  
+
 ---
 
 ## TESTING
