@@ -83,8 +83,8 @@ Additionally, jshint declares there are two undefined variables "SpeechSynthesis
 Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
 
 ![index-lighthouse](testing/images/lighthouse/lighthouse-index.png)
-![level-lighthouse](testing/images/lighthouse/lighthouse-level.PNG)
-![game-lighthouse](testing/images/lighthouse/lighthouse-level.png)
+![level-lighthouse](testing/images/lighthouse/lighthouse-level.png)
+![game-lighthouse](testing/images/lighthouse/lighthouse.game.png)
 ![404-lighthouse](testing/images/lighthouse/lighthouse-404.png)
 ![500-lighthouse](testing/images/lighthouse/lighthouse-500.png)
 
