@@ -176,10 +176,10 @@ function startTimer() {
 //level 1 play - load word from written array //
 function levelOne(letters) {
 	let randomIndex = Math.floor(Math.random() * letters.length);
-	currentLetter.innerHTML = letters[randomIndex]; //chooses a random letter from the array
+	currentLetter.innerText = letters[randomIndex]; //chooses a random letter from the array
 	setTimeout(() => {
 		speakLetter(currentLetter.innerText);
-	}, 100);
+	}, 100); //delay to speech API req to function correctly (especially on apple devices)
 	playerTurn();
 }
 
@@ -220,10 +220,10 @@ async function levelTwo() {
 			console.log(twoLetterWords);
 		}
 		let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
-		currentLetter.innerHTML = twoLetterWords[randomIndexTwo]; //chooses a random word from the array
+		currentLetter.innerText  = twoLetterWords[randomIndexTwo]; //chooses a random word from the array
 		setTimeout(() => {
 			speakLetter(currentLetter.innerText);
-		}, 100);
+		}, 100); //delay to speech API req to function correctly (especially on apple devices)
 		playerTurn();
 	} catch (error) {
 		console.error("An error occurred in levelTwo", error);
@@ -241,10 +241,10 @@ async function levelThree() {
 			console.log(threeLetterWords);
 		}
 		let randomIndexThree = Math.floor(Math.random() * threeLetterWords.length);
-		currentLetter.innerHTML = threeLetterWords[randomIndexThree];
+		currentLetter.innerText = threeLetterWords[randomIndexThree];
 		setTimeout(() => {
 			speakLetter(currentLetter.innerText);
-		}, 100);		
+		}, 100);	//delay to speech API req to function correctly (especially on apple devices)	 
 		playerTurn();
 	} catch (error) {
 		console.error("An error occurred in levelThree", error);
@@ -267,7 +267,6 @@ function computerTurn() {
 	}
 }
 
-
 //start game function which initialises the game and begins the first computer turn
 function startGame() {
 	gameRunning = true;
@@ -279,7 +278,7 @@ function startGame() {
 //player turn function
 function playerTurn() {
 	compTurn = false;
-	playerAnswer.contentEditable = "true"		
+	playerAnswer.contentEditable = "true"
 	playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the handleinput function
@@ -409,7 +408,7 @@ function focusAtEnd() {
 	range.collapse(false);
 	let selection = window.getSelection();
 	selection.removeAllRanges();
-	selection.addRange(range);	
+	selection.addRange(range);
 	speakLetter(currentLetter.innerText);//reminds user of what they are supposed to be typing. 
 }
 
@@ -422,7 +421,7 @@ function togglePause() {
 		if (removeIcon.classList.contains("fa-pause")) {
 			removeIcon.classList.remove("fa-pause");
 			removeIcon.classList.add("fa-play");
-			paused = true;
+			paused = true;//stops the timer
 			speechSynthesis.cancel();//stop computer from speaking
 			playerAnswer.contentEditable = "false";
 		} else {
