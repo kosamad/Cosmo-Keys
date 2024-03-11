@@ -273,6 +273,15 @@ function startGame() {
 //player turn function
 function playerTurn() {
 	compTurn = false;
+	playerAnswer.contentEditable = "true"
+	let reFocus = document.querySelector(".focus-point");
+	reFocus.focus();
+	let range = document.createRange();
+	range.selectNodeContents(reFocus);
+	range.collapse(false);
+	let selection = window.getSelection();
+	selection.removeAllRanges();
+	selection.addRange(range);		
 	// playerAnswer.contentEditable = "true";//allows the user to type	
 	// playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
@@ -384,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("reload-box-container").style.backgroundImage = "linear-gradient(	to right top,#ea505a,#f2624a,#f57639,#f28b27,#eba012)";
 		});
 
-		findWords();//find the words for level 2 and 3 play
+		findWords();//find the words for level 2 and 3 play	
 
 		//game and timer functions are called to start the game
 		startGame();
@@ -403,7 +412,7 @@ function focusAtEnd() {
 	range.collapse(false);
 	let selection = window.getSelection();
 	selection.removeAllRanges();
-	selection.addRange(range);
+	selection.addRange(range);	
 	speakLetter(currentLetter.innerText);//reminds user of what they are supposed to be typing. 
 }
 
