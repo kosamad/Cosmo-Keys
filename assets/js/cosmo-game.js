@@ -177,7 +177,9 @@ function startTimer() {
 function levelOne(letters) {
 	let randomIndex = Math.floor(Math.random() * letters.length);
 	currentLetter.innerHTML = letters[randomIndex]; //chooses a random letter from the array
-	speakLetter(currentLetter.innerText);
+	setTimeout(() => {
+		speakLetter(currentLetter.innerText);
+	}, 100);
 	playerTurn();
 }
 
@@ -219,7 +221,9 @@ async function levelTwo() {
 		}
 		let randomIndexTwo = Math.floor(Math.random() * twoLetterWords.length);
 		currentLetter.innerHTML = twoLetterWords[randomIndexTwo]; //chooses a random word from the array
-		speakLetter(currentLetter.innerText);
+		setTimeout(() => {
+			speakLetter(currentLetter.innerText);
+		}, 100);
 		playerTurn();
 	} catch (error) {
 		console.error("An error occurred in levelTwo", error);
@@ -238,7 +242,9 @@ async function levelThree() {
 		}
 		let randomIndexThree = Math.floor(Math.random() * threeLetterWords.length);
 		currentLetter.innerHTML = threeLetterWords[randomIndexThree];
-		speakLetter(currentLetter.innerText);
+		setTimeout(() => {
+			speakLetter(currentLetter.innerText);
+		}, 100);		
 		playerTurn();
 	} catch (error) {
 		console.error("An error occurred in levelThree", error);
@@ -273,17 +279,8 @@ function startGame() {
 //player turn function
 function playerTurn() {
 	compTurn = false;
-	playerAnswer.contentEditable = "true"
-	let reFocus = document.querySelector(".focus-point");
-	reFocus.focus();
-	let range = document.createRange();
-	range.selectNodeContents(reFocus);
-	range.collapse(false);
-	let selection = window.getSelection();
-	selection.removeAllRanges();
-	selection.addRange(range);		
-	// playerAnswer.contentEditable = "true";//allows the user to type	
-	// playerAnswer.focus();//brings back the cursor to the box
+	playerAnswer.contentEditable = "true"		
+	playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the handleinput function
 }
