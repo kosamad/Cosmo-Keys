@@ -28,6 +28,7 @@ let lettersTyped = 0;
 let play;
 let pauseBtn;
 let removeIcon;
+let compTurn = true;
 
 //array for level 1 play as API not used
 const letters = [
@@ -79,7 +80,9 @@ wrongSound.volume = 0.5;
 let endGameSound = new Audio("assets/sounds/527650__fupicat__winsquare.wav");
 endGameSound.volume = 0.5;
 
-findWords();//find the words for level 2 and 3 play
+if (compTurn === false) {
+	playerAnswer.contenteditable = "true"; //ensures the user can type on their turn
+}
 
 //speech/sound functions
 //function which speaks the score at the end of the game
@@ -193,10 +196,9 @@ async function findWords() {
 		if (response) {
 			data = await response.json();
 			if (levelId === "level-2") {
-				let twoLetterWords = data.map((word) => word.word);
-				return twoLetterWords;
+				return data.map((word) => word.word);
 			} else if (levelId === "level-3") {
-				let threeLetterWords = data.filter(word => word.word.length === 3);//API sometimes gives four letter words so this ensures three letter words only make it into the game
+				threeLetterWords = data.filter(word => word.word.length === 3);//API sometimes gives four letter words so this ensures three letter words only make it into the game
 				return threeLetterWords.map(word => word.word);
 			}
 		}
@@ -207,9 +209,9 @@ async function findWords() {
 }
 
 //async function that waits for the levelTwo letters to be populated by the API above.
-async function levelTwo(twoLetterWords) {
+async function levelTwo() {
 	try {
-		// Check if twoLetterWords is already populated
+		// Check if twoLetterWords is already populated if it isn't use API to fetch 2 letter array
 		if (!twoLetterWords) {
 			// Wait for findWords to complete and get the array
 			twoLetterWords = await findWords();
@@ -226,7 +228,7 @@ async function levelTwo(twoLetterWords) {
 }
 
 //level-3 play retrives 3 letter words
-async function levelThree(threeLetterWords) {
+async function levelThree() {
 	try {
 		// Check if threeLetterWords is already populated
 		if (!threeLetterWords) {
@@ -253,9 +255,9 @@ function computerTurn() {
 	if (levelId === "level-1") {
 		levelOne(letters);
 	} else if (levelId === "level-2") {
-		levelTwo(twoLetterWords);
+		levelTwo();
 	} else if (levelId === "level-3") {
-		levelThree(threeLetterWords);
+		levelThree();
 	}
 }
 
@@ -263,6 +265,7 @@ function computerTurn() {
 //start game function which initialises the game and begins the first computer turn
 function startGame() {
 	gameRunning = true;
+	playerAnswer.contentEditable = "true";//allows the user to type	and brings up the keypad on mobile devices
 	document.getElementById("player-answer").focus(); //puts the cursor in the player-answer box
 	computerTurn();
 }
@@ -270,8 +273,8 @@ function startGame() {
 //player turn function
 function playerTurn() {
 	compTurn = false;
-	playerAnswer.contentEditable = "true";//allows the user to type	
-	playerAnswer.focus();//brings back the cursor to the box
+	// playerAnswer.contentEditable = "true";//allows the user to type	
+	// playerAnswer.focus();//brings back the cursor to the box
 	lettersTyped = 0;// Reset the count of letters typed for each new player turn
 	playerAnswer.addEventListener("input", handleInput); //listens for player typing (the input) and executes the handleinput function
 }
@@ -297,11 +300,12 @@ function handleInput(event) {
 //preMatchCheck's for level 2 and 3, check each letter typed by the player against the computer (before the final letter). 
 //moves out of player turn if an incorrect letter is typed, plays the wrong sound and moves back to the computerTurn
 function preMatchCheck() {
-	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();
+	let playerAnswerContent = playerAnswer.textContent.trim().toLowerCase();//makes play case insensitive
 	let currentLetterContent = currentLetter.textContent.trim();
 	for (let i = 0; i < playerAnswerContent.length; i++) {
 		if (playerAnswerContent.charAt(i) !== currentLetterContent.charAt(i)) {
-			playerAnswer.removeEventListener("input", handleInput);
+			compTurn = true; //poss code out
+			playerAnswer.removeEventListener("input", handleInput);//stops the computer listening if the user is mid typing next letter (prevents next letter being initiated)
 			message.innerHTML = "Wrong!";
 			speechSynthesis.cancel();
 			wrongSound.play();
@@ -380,6 +384,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("reload-box-container").style.backgroundImage = "linear-gradient(	to right top,#ea505a,#f2624a,#f57639,#f28b27,#eba012)";
 		});
 
+		findWords();//find the words for level 2 and 3 play
+
 		//game and timer functions are called to start the game
 		startGame();
 		startTimer();
@@ -398,6 +404,7 @@ function focusAtEnd() {
 	let selection = window.getSelection();
 	selection.removeAllRanges();
 	selection.addRange(range);
+	speakLetter(currentLetter.innerText);//reminds user of what they are supposed to be typing. 
 }
 
 //adding the event listener again after the initial click has been done to start the game
@@ -410,6 +417,7 @@ function togglePause() {
 			removeIcon.classList.remove("fa-pause");
 			removeIcon.classList.add("fa-play");
 			paused = true;
+			speechSynthesis.cancel();//stop computer from speaking
 			playerAnswer.contentEditable = "false";
 		} else {
 			removeIcon.classList.remove("fa-play");
