@@ -382,7 +382,7 @@ I also tested the game using [Silktide's](https://chromewebstore.google.com/deta
 | 4 | After pausing the game, the focus moved to the beginning of the player answer box (and therefore immediately incurred a wrong result when the player started typing again). | I first tried to use a [focus.point](testing/images/bugs/bug-3-focus.png) on my querySelector using the length within my player answer box to move the cursor to the end. However, this didn’t work. This is because my element in not an input, but a contenteditable. Therefore I had to use the range method as described [here](https://phuoc.ng/collection/html-dom/move-the-cursor-to-the-end-of-a-content-editable-element/) by Phuoc Nguyen|
 | 5 | Screen reader content showing | Upon loading each page the screen reader content showed briefly. This was due to Bootstraps sr-only class being applied slower than the rest of the content. By making my own sr-only class the content remains hidden at all times.|
 | 6 | On Apple devices and on the browser Firefox my fix to get the letter "a" to sound like "ay" didn't work as the computer was pronouncing it like "i". This was incompatable for a VI user playing on these devices.| I had to try numerous different ways of spelling the sound "ay" to get it to sound ok across browsers. When researching how I could spell it i came across this [YoutTube video](https://www.youtube.com/watch?v=UCE3ZO0Rc0E) that promted me to try "eigh".| 
-| 7 |  On Apple devices, level 2 and level 3 play were not saying the computer letters. However, after pausing they did work| I first tried to input the focusAtEnd() features but this didn't work. I then asked chat GTP why a speech() using the API might not work straigt away but work on subsequent rounds. One of the suggestions was to "Introduce a small delay before calling speakLetter to allow the input element to gain focus." This made sense as it would explain why the function worked correctly after the game had been paused.| 
+| 7 |  On Apple devices, level 2 and level 3 play were not saying the computer letters. However, after pausing they worked | I first tried to input the focusAtEnd() features (minicing the pause event) into the player turn function but this didn't work. I then asked chat GTP why a speech() using the API might not work straigt away but work on subsequent rounds. One of the suggestions was to "Introduce a small delay before calling speakLetter to allow the input element to gain focus." This made sense as it would explain why the function worked correctly after the game had been paused. i therefore put a slight time delay for the computer's letter speech which solved the problem.| 
 ---
 ---
 
@@ -561,7 +561,7 @@ I would like to thank:
 
 - The Code Institute for all course material and their tutors for their aid when I was stuck with Jest.
 
-- My friends and family for testing the game and letting me talk my code at them, helping me figure out how to fix it.
+- My friends and family for testing the game and letting me talk my code at them, helping me figure out how to fix it. This is espeially true for my sister who had to repeatedly test the apple functionality of the game. 
 
 - The City Of Bristol 2023 September cohort, for providing support on slack and specifically Chloe for making me feel less alone in my Jest/javascript struggles.
 
